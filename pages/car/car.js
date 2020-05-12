@@ -5,11 +5,11 @@ Page({
   data: {
     btnkg: 0,     //0  ok       1 off
     htmlReset: 0,
-    goods: [1,1,],
+    goods: [{ "num": 1 }, { "num": 1 },],
     spimg: [],
     goods_sele: [
-			{num:1},
-			{num:1},
+			{"num":1},
+			{"num":1},
 		],
     xuan: false,
     all: false,
