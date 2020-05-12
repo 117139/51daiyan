@@ -1,0 +1,77 @@
+{
+  "pages": [
+    "pages/car/car",
+    "pages/xiaoxi/xiaoxi",
+    "pages/my/my",
+    "pages/faxian/faxian",
+    "pages/index/index",
+    "pages/details/details",
+    "pages/list/list",
+    "pages/position/position",
+    "pages/login/login",
+    "pages/index1/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "enablePullDownRefresh": true,
+    "backgroundColor": "#f4f4f4",
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "51代言",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#9b9b9b",
+    "selectedColor": "#f7b43b",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/static/images/b_03.png",
+        "selectedIconPath": "/static/images/b1_03.png"
+      },
+      {
+        "pagePath": "pages/faxian/faxian",
+        "text": "发现",
+        "iconPath": "/static/images/b_05.png",
+        "selectedIconPath": "/static/images/b1_05.png"
+      },
+      {
+        "pagePath": "pages/xiaoxi/xiaoxi",
+        "text": "消息",
+        "iconPath": "/static/images/b_07.png",
+        "selectedIconPath": "/static/images/b1_07.png"
+      },
+      {
+        "pagePath": "pages/car/car",
+        "text": "购物车",
+        "iconPath": "/static/images/b_09.png",
+        "selectedIconPath": "/static/images/b1_09.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "/static/images/b_11.png",
+        "selectedIconPath": "/static/images/b1_11.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "plugins": {
+    "routePlan": {
+      "version": "1.0.5",
+      "provider": "wx50b5593e81dd937a"
+    }
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序定位"
+    }
+  },
+  "usingComponents": {
+    "van-stepper": "vendor/vant/lib/stepper/index",
+    "van-submit-bar": "vendor/vant/lib/submit-bar/index",
+    "van-popup": "vendor/vant/lib/popup/index",
+    "van-action-sheet": "vendor/vant/lib/action-sheet/index"
+  }
+}

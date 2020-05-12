@@ -1,0 +1,52 @@
+/* pages/faxian/faxian.wxss */
+.container{
+  width: 100%;
+  min-height: 100vh;
+  background: #f5f5f5;
+}
+.fx_li{
+  width: 100%;
+  background: #fff;
+  height: 90rpx;
+  padding-right: 28rpx;
+	display: flex;
+	align-items: center;
+	margin-bottom: 3rpx;
+	
+	box-sizing: border-box;
+}
+.li_icon{
+  width: 90rpx;
+  height: 90rpx;
+}
+.fx_tit{
+	flex:1;
+	display: flex;
+	align-items: center;
+	font-size: 30rpx;
+	color: #333;
+}
+.fx_r_img{
+	position: relative;
+}
+.fx_r_img image{
+	width: 63rpx;
+	height: 63rpx;
+}
+.fx_r_img text{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 14rpx;
+	height: 14rpx;
+	background: #FE3A35;
+	border-radius:50%;
+}
+.iconnext3{
+	margin-left: 20rpx;
+	font-size: 28rpx;
+	color: #BBBBBB;
+}
+.mt20{
+	margin-top: 20rpx;
+}

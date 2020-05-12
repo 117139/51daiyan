@@ -1,0 +1,151 @@
+<!--pages/index/index.wxml-->
+<import src="/utils/htmlStatus/index.wxml" />
+<wxs src="../../utils/filter.wxs" module="filter" />
+<view class="container">
+  <template is="htmlStatus" data="{{...htmlStatus}}" />
+  <view class="header_box">
+    <view class="index_box1">
+      <image class="user_tx" src="/static/images/tx.jpg"></image>
+      <view class="sousuo_box">
+        <text class="iconfont iconsousuo"></text> 搜索人名代言号/商品/品牌
+      </view>
+      <view class="game_js">
+        <text class="iconfont iconic_help_px"></text>
+        玩法介绍
+      </view>
+    </view>
+    <view class="index_box1 index_box2">
+      <view class="cur">代言动态<text></text></view>
+      <view>代言商城</view>
+      <view>明星</view>
+      <view>达人</view>
+      <view>好友</view>
+      <view>排行</view>
+    </view>
+  </view>
+  <view class="index_box1 index_box3">
+    <text class="iconfont iconyiping"></text>
+    <view>您还有12件商品未代言，快来代言吧～</view>
+  </view>
+  <view class="index_box1 index_box4">
+    <view>明星达人代言人推荐：</view>
+    <text>各种玩法尽在明星达人代言秀</text>
+  </view>
+  <scroll-view class="start_list" scroll-x>
+    <view class="start_list1">
+      <view class="start_li" wx:for="{{start_li}}" wx:for-item="item" bindtap="jump" data-url="{{item.url}}">
+        <view class="star_tx">
+          <image src="/static/images/tx.jpg" mode="aspectFill"></image>
+          <view>
+            <image src="/static/images/star_b.png"></image>
+          </view>
+        </view>
+        <view class="star_name">范冰冰</view>
+        <view class="star_btn">关注</view>
+      </view>
+    </view>
+  </scroll-view>
+  <view class="find_star">
+    <view class="find_tit">
+      <view>寻找代言人:</view>
+      <text>（赏金任务）</text>
+    </view>
+    <view class="find_sj">
+      <view class="sj_list">
+        <image class="sj_li" src="/static/images/tx.png" mode="aspectFill"></image>
+        <image class="sj_li" src="/static/images/tx.png" mode="aspectFill"></image>
+        <image class="sj_li" src="/static/images/tx.png" mode="aspectFill"></image>
+        <image class="sj_li" src="/static/images/tx.png" mode="aspectFill"></image>
+        <image class="sj_li" src="/static/images/tx.png" mode="aspectFill"></image>
+      </view>
+      <text class="iconfont iconnext3"></text>
+    </view>
+  </view>
+  <view class="goods_index">
+    <view>
+      <view class="goodstype_name">代言人短视频 <image src="/static/images/goods_type1.png"></image></view>
+      <view class="goods_tip">已为您更新10个视频</view>
+      <view class="goods_list">
+        <view class="goods_li">
+          <image class="goods_img" src="/static/images/goods.png" mode="aspectFill"></image>
+          <image class="goods_play" src="/static/images/goods_play.png"></image>
+        </view>
+        <view class="goods_li">
+          <image class="goods_img" src="/static/images/goods1.png" mode="aspectFill"></image>
+          <image class="goods_play" src="/static/images/goods_play.png"></image>
+        </view>
+      </view>
+      <!-- <image src="/static/images/goods_type1.png"></image> -->
+    </view>
+    <view>
+      <view class="goodstype_name goodstype_name1">好货推荐<image src="/static/images/goods_type2.png"></image></view>
+      <view class="goods_tip">发现更多人气代言好货</view>
+      <view class="goods_list">
+        <view class="goods_li">
+          <image class="goods_img" src="/static/images/goods.png" mode="aspectFill"></image>
+        </view>
+        <view class="goods_li">
+          <image class="goods_img" src="/static/images/goods1.png" mode="aspectFill"></image>
+        </view>
+      </view>
+      <!-- <image src="/static/images/goods_type2.png"></image> -->
+    </view>
+  </view>
+  <!-- 代言圈 -->
+  <view class="quan_list">
+    <view class="quan_li" wx:for="{{start_li}}" wx:for-index="idx" wx:for-item="item" bindtap="jump" data-url="{{item.url}}">
+      <view class="quan_user_box">
+        <image class="quan_user_tx" src="/static/images/tx.png" mode="aspectFill"></image>
+        <view class="quan_user_msg">
+          <view class="quan_user_name">倪小丫 <image src="/static/images/star_b.png"></image></view>
+          <view class="quan_user_time"><text>10-14 18:03</text><text>演员</text></view>
+        </view>
+        <view class="quan_user_btn">为我投票</view>
+      </view>
+      <view class="quan_msg">
+        <view class="oh4  quan_msg_text">可能这辈子都戒不掉米饭了，吃好饭的用好锅，我为苏泊尔智能电饭锅代言。</view>
+        <view wx:if="{{idx==2}}" class="quan_msg_img">
+          <image class="one" src="/static/images/goods1.png" mode="aspectFill"></image>
+        </view>
+        <view wx:else class="quan_msg_img">
+          <image src="/static/images/goods1.png" mode="aspectFill"></image>
+          <image src="/static/images/goods1.png" mode="aspectFill"></image>
+          <image src="/static/images/goods1.png" mode="aspectFill"></image>
+        </view>
+      </view>
+      <view class="quan_goods">
+        <image class="quan_goods_img" src="/static/images/goods1.png" mode="aspectFill"></image>
+        <view class="quan_goods_msg">
+          <view class="quan_goods_name oh1">苏泊尔IH家用大容量智能电饭锅</view>
+          <view class="quan_goods_pri">
+            <text class="pri1">¥668</text>
+            <text class="pri2">¥1368</text>
+          </view>
+          <view class="quan_goods_btn">
+            <view class="goods_btn1">库存:11000</view>
+            <view  class="goods_btn2"><text>5200+</text>代言人</view>
+          </view>
+        </view>
+      </view>
+      <view class="quan_li_cz">
+        <!-- <text class="iconfont iconcaozuo" catchtap=""></text>
+        <view class="cz_li">
+          <view>
+            <text class="iconfont iconhongxinicon"></text>赞
+          </view>
+          |
+          <view>
+           <text class="iconfont iconpinglun"></text>评论
+          </view>
+        </view> -->
+        <view class="cz_li">跟随购买：6321</view>
+        <view class="cz_li"><text class="iconfont iconpinglun"></text>1566</view>
+        <view class="cz_li" catchtap="zan" data-id="idx"><text class="iconfont iconzan"></text>1566</view>
+      </view>
+    </view>
+  </view>
+  <!-- <view class="zxkf_btn">
+		<button open-type="contact" bindcontact="kffuc"></button>
+		<image src="../../static/images/zxkf.png"></image>
+	</view> -->
+</view>

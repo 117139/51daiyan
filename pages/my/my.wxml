@@ -1,0 +1,146 @@
+<!--pages/my/my.wxml-->
+<view class="container">
+ 
+	<view class="header_box">
+		<view class="user_box">
+			<view class="user_tx">
+				<image class="user_tx" src="../../static/images/tx.png"></image>
+				<image class="star_v" src="../../static/images/star_b.png"></image>
+			</view>
+			<view class="user_tx">
+				<image class="user_tx" src="../../static/images/tx.jpg"></image>
+			</view>
+			<view class="user_msg">
+				<view class="user_name"><text>范冰冰</text> <view class="daiyan_lv"><text class="iconfont iconxingzhuang60kaobei2"></text>代言星级 3</view></view>
+				<view class="user_id">代言ID: zy010</view>
+			</view>
+			<view>
+				<text class="iconfont iconshezhi"></text>
+			</view>
+		</view>
+		<view class="user_money user_money1">
+				<view class="user_money_tit">
+					<view class="v1">
+						<text class="iconfont iconyue"></text><view class="v1_tit">余额</view><text class="yue_tip">（可提现）</text>
+					</view>
+					<view class="v1">
+						<view class="v1_tit">¥233</view>
+					</view>
+					<view class="v2">立即提现<text class="iconfont iconnext3"></text></view>
+				</view>
+				
+				<view class="inr_box">
+					<view class="yue_li">
+						<view class="yue_num">¥122</view>
+						<view>待入账收益</view>
+					</view>
+					<view class="yue_li">
+						<view class="yue_num">¥122</view>
+						<view>已入账收益</view>
+					</view>
+					<view class="yue_li">
+						<view class="yue_num">¥122</view>
+						<view>已提现收益</view>
+					</view>
+				</view>
+		</view>
+	</view>
+	<view class="my_mian">
+    <view class="user_money user_money">
+			<view class="user_money_tit">
+				<view class="v1">
+					<text class="iconfont iconshuju"></text><view class="v1_tit">我的代言指数</view>
+				</view>
+				
+			</view>
+			
+			<view class="inr_box">
+				<view class="yue_li">
+					<view>代言商品</view>
+					<view class="zhishu"><text>1135</text>件</view>
+				</view>
+				<view class="yue_li">
+					<view>跟随购买</view>
+					<view class="zhishu"><text>1135</text>件</view>
+				</view>
+				<view class="yue_li">
+					<view>超过好友</view>
+					<view class="zhishu"><text>1135</text>件</view>
+				</view>
+				<view class="yue_li">
+					<view>公益指数</view>
+					<view class="zhishu"><text>1135</text>件</view>
+				</view>
+			</view>
+    </view>
+    <view class="user_money mt20">
+			<view class="user_money_tit">
+				<view class="v1">
+					<text class="iconfont icondingdan"></text><view class="v1_tit">我的订单</view>
+				</view>
+				<view class="v2">查看更多<text class="iconfont iconnext3"></text></view>
+			</view>
+			
+			<view class="inr_box">
+				<view class="yue_li">
+					<image class="order_icon" src="../../static/images/my21.png"></image>
+					<view>待付款</view>
+				</view>
+				<view class="yue_li">
+					<image class="order_icon" src="../../static/images/my20.png"></image>
+					<view>待收货</view>
+				</view>
+				<view class="yue_li">
+					<image class="order_icon" src="../../static/images/my22.png"></image>
+					<view>待代言</view>
+				</view>
+				<view class="yue_li">
+					<image class="order_icon" src="../../static/images/my23.png"></image>
+					<view>退换/售后</view>
+				</view>
+			</view>
+    </view>
+    <view class="my_list">
+			<view class="fx_li mt20" bindtap="jump" data-url="">
+			  <image class="li_icon" src="/static/images/images/faxian_05.jpg"></image>
+			  <view class="fx_tit">我的代言</view>
+			  <text class="iconfont iconnext3"></text>
+			</view>
+			<view class="fx_li" bindtap="jump" data-url="">
+			  <image class="li_icon" src="/static/images/images/faxian_07.jpg"></image>
+			  <view class="fx_tit">我的关注</view>
+			  <text class="iconfont iconnext3"></text>
+			</view>
+			<view class="fx_li" bindtap="jump" data-url="">
+			  <image class="li_icon" src="/static/images/images/faxian_09.jpg"></image>
+			  <view class="fx_tit">我的收藏</view>
+			  <text class="iconfont iconnext3"></text>
+			</view>
+			<view class="fx_li" bindtap="jump" data-url="">
+			  <image class="li_icon" src="/static/images/images/faxian_11.jpg"></image>
+			  <view class="fx_tit">我的优惠券</view>
+			  <text class="iconfont iconnext3"></text>
+			</view>
+			<view class="fx_li" bindtap="jump" data-url="">
+			  <image class="li_icon" src="/static/images/images/faxian_13.jpg"></image>
+			  <view class="fx_tit">我的钱包</view>
+			  <text class="iconfont iconnext3"></text>
+			</view>
+			<view class="fx_li" bindtap="jump" data-url="">
+			  <image class="li_icon" src="/static/images/images/faxian_15.jpg"></image>
+			  <view class="fx_tit">我的代言豆</view>
+			  <text class="iconfont iconnext3"></text>
+			</view>
+			<view class="fx_li" bindtap="jump" data-url="">
+			  <image class="li_icon" src="/static/images/images/faxian_17.jpg"></image>
+			  <view class="fx_tit">关于51代言</view>
+			  <text class="iconfont iconnext3"></text>
+			</view>
+			<view class="fx_li" bindtap="jump" data-url="">
+			  <image class="li_icon" src="/static/images/images/faxian_17.jpg"></image>
+			  <view class="fx_tit">51认证申请</view>
+			  <text class="iconfont iconnext3"></text>
+			</view>
+		</view>
+  </view>
+</view>
