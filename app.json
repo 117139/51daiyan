@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/daiyan_ph/daiyan_ph",
     "pages/my_friends/my_friends",
     "pages/index/index", 
     "pages/star_list/star_list",

@@ -1,0 +1,21 @@
+<!--pages/daiyan_ph/daiyan_ph.wxml-->
+<import src="/utils/htmlStatus/index.wxml" />
+<wxs src="../../utils/filter.wxs" module="filter" />
+<view class="container">
+	<template is="htmlStatus" data="{{...htmlStatus}}" />
+	<view class="list">
+		<view class="list_tit {{ph_type==1?'cur':''}}">
+			<view class="ph_fri">
+				<image  class="ph_fri " src="{{ph_type==0?'../../static/images/daiyan_ph1.png':'../../static/images/daiyan_ph.png'}}"></image>
+				<view class="pl_li" bindtap="ph_fuc" data-type="0">好友排行</view>
+			</view>
+			<view  class="pl_li1" bindtap="ph_fuc" data-type="1">世界排行</view>
+		</view>
+		<view class="list_tit_1">
+			<view class="{{ph_type1==0?'cur':''}}" bindtap="ph_fuc1" data-type="0">代言数量排行</view>
+			<view class="{{ph_type1==1?'cur':''}}" bindtap="ph_fuc1" data-type="1">代言收益排行</view>
+			<view class="{{ph_type1==2?'cur':''}}" bindtap="ph_fuc1" data-type="2">公益之星排行</view>
+		</view>
+	</view>
+</view>
+
