@@ -1,0 +1,83 @@
+<!--pages/search/search.wxml-->
+<import src="/utils/htmlStatus/index.wxml" />
+<wxs src="../../utils/filter.wxs" module="filter" />
+<view class="container">
+  <template is="htmlStatus" data="{{...htmlStatus}}" />
+	<view class="top_box">
+		<view class="top_search_box">
+			<view class="top_search">
+				<text class="iconfont iconsousuo"></text>
+				<input type="text" placeholder="搜索人名代言号/商品/品牌" />
+				<text class="iconfont iconguanbi"></text>
+			</view>
+			<view class="top_search_cancel">取消</view>
+		</view>
+		<view class="search_type">
+			<view class="{{ss_cur==0?'cur':''}}" bindtap="ss_type" data-type="0">用户</view>
+			<view class="{{ss_cur==1?'cur':''}}" bindtap="ss_type" data-type="1">商品</view>
+			<view class="{{ss_cur==2?'cur':''}}" bindtap="ss_type" data-type="2">品牌</view>
+		</view>
+	</view>
+	<!-- 用户 -->
+	 <view class="ss_list" wx:if="{{ss_cur==0}}">
+		 <view class="data_null" wx:if="{{data_list.length==0}}">
+		 			 <image src="../../static/images/data_null.png"></image>
+		 </view>
+		 <view wx:el class="li_box" wx:for="{{data_list}}" wx:for-item="item" bindtap="jump" data-url="/pages/details/details">
+				<view class="user_tx">
+					<image class="user_tx" src="../../static/images/tx.png"></image>
+					<image class="user_v" src="../../static/images/star_b.png"></image>
+				</view>
+				<view class="user_name oh1">王力宏</view>
+				<view class="user_btn">+关注</view>
+				<view class="user_btn user_btn1">已关注</view>
+		 </view>
+	 </view>
+	 <!-- 商品 -->
+	 <view class="ss_list" wx:if="{{ss_cur==1}}">
+		 <view class="data_null" wx:if="{{data_list.length==0}}">
+		 			 <image src="../../static/images/data_null.png"></image>
+		 </view>
+		 <view wx:el class="li_box goods_li" wx:for="{{data_list}}" wx:for-item="item" bindtap="jump" data-url="/pages/details/details">
+			 <view class="ss_goods_img">
+				 <image class="ss_goods_img" src="../../static/images/goods.png"></image>
+			 </view>
+			 <view class="goods_msg">
+				 <view class="goods_name">苏泊尔IH家用大容量智能电饭锅</view>
+				 <view  class="goods_pri">
+					 <view class="pri1">￥668</view>
+					 <view class="pri3">代言费：¥30</view>
+				 </view>
+				 <view class="goods_dy">
+					 <view class="goods_zan">
+						 <text class="iconfont icondianzan2"></text>5200代言人
+					 </view>
+					 <view class="find_sj"  bindtap="jump" data-url="/pages/daiyanren/daiyanren">
+					   <view class="sj_list">
+					     <image class="sj_li" src="/static/images/tx.png" mode="aspectFill"></image>
+					     <image class="sj_li" src="/static/images/tx.png" mode="aspectFill"></image>
+					     <image class="sj_li" src="/static/images/tx.png" mode="aspectFill"></image>
+					     <image class="sj_li" src="/static/images/tx.png" mode="aspectFill"></image>
+					     <image class="sj_li" src="/static/images/tx.png" mode="aspectFill"></image>
+					   </view>
+					   <text class="iconfont iconnext3"></text>
+					 </view>
+				 </view>
+			 </view>
+		 </view>
+	 </view>
+	 <!-- 品牌 -->
+	 <view class="ss_list" wx:if="{{ss_cur==2}}">
+		 <view class="data_null" wx:if="{{data_list.length==0}}">
+		 			 <image src="../../static/images/data_null.png"></image>
+		 </view>
+		 <view wx:el class="li_box" wx:for="{{data_list}}" wx:for-item="item" bindtap="jump" data-url="/pages/details/details">
+			 <view class="user_tx">
+			 	<image class="user_tx" src="../../static/images/tx.jpg"></image>
+			 </view>
+			 <view class="user_name oh1">小米51代言旗舰店</view>
+			 <view class="user_btn">+关注</view>
+			 <view class="user_btn user_btn1">已关注</view>
+		 </view>
+	 </view>
+</view>

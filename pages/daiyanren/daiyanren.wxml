@@ -1,0 +1,38 @@
+<!--pages/daiyanren/daiyanren.wxml-->
+<import src="/utils/htmlStatus/index.wxml" />
+<wxs src="../../utils/filter.wxs" module="filter" />
+<view class="container">
+  <template is="htmlStatus" data="{{...htmlStatus}}" />
+	<view class="goods_xx">
+		<view class="quan_goods">
+		  <image class="quan_goods_img" src="/static/images/goods1.png" mode="aspectFill"></image>
+		  <view class="quan_goods_msg">
+		    <view class="quan_goods_name oh1">苏泊尔IH家用大容量智能电饭锅</view>
+		    <view class="quan_goods_pri">
+		      <text class="pri1">¥668</text>
+		      <text class="pri2">¥1368</text>
+		    </view>
+		    <view class="quan_goods_btn">
+		      <view class="goods_btn1">库存:11000</view>
+		      <view  class="goods_btn2"><text>5200+</text>代言人</view>
+		    </view>
+		  </view>
+		</view>
+	</view>
+	<!-- 用户 -->
+	 <view class="ss_list">
+		 <view class="data_null" wx:if="{{data_list.length==0}}">
+		 			 <image src="../../static/images/data_null.png"></image>
+		 </view>
+		 <view wx:el class="li_box" wx:for="{{data_list}}" wx:for-item="item" bindtap="jump" data-url="/pages/details/details">
+				<view class="user_tx">
+					<image class="user_tx" src="../../static/images/tx.png"></image>
+					<image class="user_v" src="../../static/images/star_b.png"></image>
+				</view>
+				<view class="user_name">王力宏 <text>好友</text><text class="star_bq">明星</text></view>
+				<view class="user_btn">+关注</view>
+				<view class="user_btn user_btn1">已关注</view>
+		 </view>
+	 </view>
+	 
+</view>

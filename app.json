@@ -1,10 +1,15 @@
 {
   "pages": [
+    "pages/my_friends/my_friends",
+    "pages/index/index", 
+    "pages/star_list/star_list",
+    "pages/game_js/game_js",
+    "pages/daiyanren/daiyanren",
+    "pages/search/search" ,
     "pages/car/car",
     "pages/xiaoxi/xiaoxi",
     "pages/my/my",
     "pages/faxian/faxian",
-    "pages/index/index",
     "pages/details/details",
     "pages/list/list",
     "pages/position/position",

@@ -1,0 +1,157 @@
+/* pages/star_list/star_list.wxss */
+.container{
+	position: relative;
+}
+.h_bg{
+	width: 100vw;
+	height: 1329rpx;
+	position: relative;
+	z-index: 1;
+}
+.js_box{
+	width:694rpx;
+	/* height:1022rpx; */
+	border:8rpx solid rgba(255, 255, 255, 0.5);
+	border-radius:18rpx;
+	position: absolute;
+	top: 246rpx;
+	left: 28rpx;
+	right: 28rpx;
+	z-index: 3;
+	/* padding: 30rpx 28rpx; */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	box-sizing: border-box;
+}
+.js_box1{
+	width: 100%;
+	background: #Fff;
+	border-radius:16rpx;
+}
+.js_msg{
+	width: 100%;
+	height: 933rpx;
+	
+	box-sizing: border-box;
+	font-size:24rpx;
+	font-family:PingFang SC;
+	color:#666666;
+	line-height:36rpx;
+} 
+.show_type{
+	display: flex;
+	align-items: center;
+	height: 103rpx;
+	border-bottom: 1px solid #eee;
+	padding: 0 28rpx;
+		box-sizing: border-box;
+		margin-bottom: 10rpx;
+}
+.show_type_li{
+	font-size: 36rpx;
+	color: #333;
+	margin: 0 10rpx;
+	line-height: 100rpx;
+}
+.show_type_li.cur{
+	font-size: 42rpx;
+	border-bottom: 8rpx solid #FFE17B;
+}
+.star_ss{
+	width:310rpx;
+	height:54rpx;
+	border:1px solid rgba(191,191,191,1);
+	border-radius:27rpx;
+	padding: 0 15rpx;
+	display: flex;
+	align-items: center;
+}
+.star_ss input{
+	padding: 0 10rpx;
+	font-size: 30rpx;
+}
+.star_ss text{
+	font-size: 30rpx;
+}
+/* star_li */
+.star_li{
+	width: 100%;
+	padding: 38rpx 28rpx;
+	box-sizing: border-box;
+	border-bottom: 1px solid #eee;
+}
+.star_msg{
+	display: flex;
+	align-items: center;
+}
+.user_tx{
+	width:100rpx;
+	height:100rpx;
+	border-radius:50%;
+	position: relative;
+}
+.user_v{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 27rpx;
+	height: 28rpx;
+}
+.user_btn{
+	width:122rpx;
+	height:56rpx;
+	border:2rpx solid rgba(254,135,53,1);
+	border-radius:28rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #FE8735;
+	margin-left: 10rpx;
+}
+.user_btn1{
+	background:rgba(238,238,238,1);
+	border:2rpx solid rgba(238,238,238,1);
+	color: #BBBBBB;
+}
+.user_msg{
+	flex: 1;
+	margin-left: 15rpx;
+	font-size: 24rpx;
+}
+.user_msg image{
+	width: 26rpx;
+	height: 25rpx;
+}
+.user_msg .fwb{
+	font-size: 32rpx;
+}
+.star_dymsg{
+	width: 100%;
+	padding-top: 20rpx;
+	padding-left: 120rpx;
+}
+.dy_sp{
+	width:334rpx;
+	height:191rpx;
+	border-radius:10rpx;
+	position: relative;
+}
+.play_box{
+	background:rgba(0,0,0,.5);
+	position: absolute;	
+	border-radius:10rpx;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+.play_box image{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width:64rpx;
+	height:64rpx;
+	margin-left: -32rpx;
+	margin-top: -32rpx;
+}

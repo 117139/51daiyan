@@ -6,10 +6,10 @@
   <view class="header_box">
     <view class="index_box1">
       <image class="user_tx" src="/static/images/tx.jpg"></image>
-      <view class="sousuo_box">
+      <view class="sousuo_box" bindtap="jump" data-url="/pages/search/search">
         <text class="iconfont iconsousuo"></text> 搜索人名代言号/商品/品牌
       </view>
-      <view class="game_js">
+      <view class="game_js" bindtap="jump" data-url="/pages/game_js/game_js">
         <text class="iconfont iconic_help_px"></text>
         玩法介绍
       </view>
@@ -17,9 +17,9 @@
     <view class="index_box1 index_box2">
       <view class="cur">代言动态<text></text></view>
       <view>代言商城</view>
-      <view>明星</view>
-      <view>达人</view>
-      <view>好友</view>
+      <view  bindtap="jump" data-url="/pages/star_list/star_list?type=0">明星</view>
+      <view bindtap="jump" data-url="/pages/star_list/star_list?type=1">达人</view>
+      <view bindtap="jump" data-url="/pages/my_friends/my_friends">好友</view>
       <view>排行</view>
     </view>
   </view>

@@ -1,0 +1,43 @@
+<!--pages/my_friends/my_friends.wxml-->
+<import src="/utils/htmlStatus/index.wxml" />
+<wxs src="../../utils/filter.wxs" module="filter" />
+<view class="container">
+	<template is="htmlStatus" data="{{...htmlStatus}}" />
+	<view class="my_f_box">
+		<view class="box_tit">
+			<view class="td1">互赞、互评、投票、跟随购买</view>
+			<view class="td2" bindtap="paixun">互动频率 
+				<text wx:if="{{list_type=='0'}}" class="iconfont iconXSJ"></text>	
+				<text wx:else class="iconfont iconXSJ-copy"></text>	
+			</view>
+			<view class="td2" bindtap="paixun1">代言商品 
+				<text wx:if="{{list_type1=='0'}}" class="iconfont iconXSJ"></text>
+				<text wx:else class="iconfont iconXSJ-copy"></text>
+			</view>
+		</view>
+		<view class="box_tit box_li">
+			<view class="td1">
+				<image class="f_tx" src="../../static/images/tx.png"></image>
+				<text>李勇</text>
+			</view>
+			<view class="td2">55</view>
+			<view class="td2">1255件</view>
+		</view>
+		<view class="box_tit box_li">
+			<view class="td1">
+				<image class="f_tx" src="../../static/images/tx.png"></image>
+				<text>李勇</text>
+			</view>
+			<view class="td2">55</view>
+			<view class="td2">1255件</view>
+		</view>
+		<view class="box_tit box_li">
+			<view class="td1">
+				<image class="f_tx" src="../../static/images/tx.png"></image>
+				<text>李勇</text>
+			</view>
+			<view class="td2">55</view>
+			<view class="td2">1255件</view>
+		</view>
+	</view>
+</view>

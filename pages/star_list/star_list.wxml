@@ -1,0 +1,77 @@
+<!--pages/star_list/star_list.wxml-->
+<navigation-bar title="{{'明星达人秀'}}" bindback="handleBack" bindhome="handleHome" opacity="1">
+  <view class="page-content">
+    <view class="container">
+      <image class="h_bg" src="../../static/images/images/star_list_02.jpg"></image>
+
+      <view class="js_box">
+				<view class="js_box1">
+					<view class="show_type">
+						<view class="show_type_li {{s_type==0?'cur':''}}"  bindtap="ss_type" data-type="0">明星</view>
+						<view class="show_type_li {{s_type==1?'cur':''}}" bindtap="ss_type" data-type="1">达人</view>
+						<view class="flex_1"></view>
+						<view class="star_ss">
+							<input type="text" />
+							<text class="iconfont iconsousuo"></text>
+						</view>
+					</view>
+					<scroll-view class="js_msg" scroll-y bindscrolltolower="jiazai" lower-threshold="50">
+					 <view class="star_li">
+					 	<view class="star_msg">
+					 		<view class="user_tx">
+					 			<image class="user_tx" src="../../static/images/tx.png"></image>
+					 			<image class="user_v" src="../../static/images/star_b.png"></image>
+					 		</view>
+					 		<view class="user_msg">
+					 			<view class="fwb">张一鸣</view>
+					 			<view class="oh1"><image src="../../static/images/star_jj.png"></image>简介：一线明星，知名演员…</view>
+					 			<view><image src="../../static/images/dy_num.png"></image>代言数量：20</view>
+					 		</view>
+					 		<view class="user_btn">+关注</view>
+					 		<view class="user_btn user_btn1">已关注</view>
+					 	</view>
+					 </view>
+					 <view class="star_li">
+					 	<view class="star_msg">
+					 		<view class="user_tx">
+					 			<image class="user_tx" src="../../static/images/tx.png"></image>
+					 			<image class="user_v" src="../../static/images/star_b.png"></image>
+					 		</view>
+					 		<view class="user_msg">
+					 			<view class="fwb">张一鸣</view>
+					 			<view class="oh1"><image src="../../static/images/star_jj.png"></image>简介：一线明星，知名演员…</view>
+					 			<view><image src="../../static/images/dy_num.png"></image>代言数量：20</view>
+					 		</view>
+					 		<view class="user_btn">+关注</view>
+					 		<view class="user_btn user_btn1">已关注</view>
+					 	</view>
+					 </view>
+					 <view class="star_li">
+					 	<view class="star_msg">
+					 		<view class="user_tx">
+					 			<image class="user_tx" src="../../static/images/tx.png"></image>
+					 			<image class="user_v" src="../../static/images/star_b.png"></image>
+					 		</view>
+					 		<view class="user_msg">
+					 			<view class="fwb">张一鸣</view>
+					 			<view class="oh1"><image src="../../static/images/star_jj.png"></image>简介：一线明星，知名演员…</view>
+					 			<view><image src="../../static/images/dy_num.png"></image>代言数量：20</view>
+					 		</view>
+					 		<view class="user_btn">+关注</view>
+					 		<view class="user_btn user_btn1">已关注</view>
+					 	</view>
+						<view class="star_dymsg">
+							<view class="dy_sp">
+								<image class="dy_sp" src="../../static/images/images/goods15_02.jpg"  mode="aspectFill"></image>
+								<view class="play_box">
+									<image src="../../static/images/bofang.png"></image>
+								</view>
+							</view>
+						</view>
+					 </view>
+					</scroll-view>
+				</view>
+      </view>
+    </view>
+  </view>
+</navigation-bar>

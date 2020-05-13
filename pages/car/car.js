@@ -5,12 +5,14 @@ Page({
   data: {
     btnkg: 0,     //0  ok       1 off
     htmlReset: 0,
-    goods: [{ "num": 1 }, { "num": 1 },],
+    // goods: [{ "num": 1 }, { "num": 1 },],
+    goods: [],
     spimg: [],
-    goods_sele: [
-			{"num":1},
-			{"num":1},
-		],
+    // goods_sele: [
+    // 	{"num":1},
+    // 	{"num":1},
+    // ],
+		goods_sele: [],
     xuan: false,
     all: false,
     sum: '0.00'

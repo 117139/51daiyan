@@ -1,0 +1,53 @@
+/* pages/my_friends/my_friends.wxss */
+page,.container{
+	height: auto;
+	min-height: 100%;
+	background: #f5f5f5;
+}
+.my_f_box{
+	width: 100%;
+	background: #fff;
+}
+.my_f_box>view{
+	display: flex;
+	align-items: center;
+}
+.td1{
+	width: 50%;
+	font-size: 24rpx;
+	color: #999;
+}
+.td2{
+	width: 25%;
+	font-size: 28rpx;
+	color: #666;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.td2 text{
+	font-size: 10rpx;
+}
+.box_tit{
+	min-height: 80rpx;
+	padding: 20rpx 28rpx;
+	box-sizing: border-box;
+	border-bottom: 1px solid #eee;
+}
+.box_li .td1{
+	font-size: 30rpx;
+	color: #333;
+	display: flex;
+	align-items: center;
+}
+.f_tx{
+	width:82rpx;
+	height:82rpx;
+	border-radius:50%;
+	margin-right: 34rpx;
+}
+.box_li .td2{
+	color: #1E9526;
+	font-size: 30rpx;
+}

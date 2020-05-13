@@ -1,0 +1,17 @@
+{
+  "name": "41_51daiyan",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mp-navigation-bar": "0.0.11"
+  },
+  "devDependencies": {
+    "weui-miniprogram": "^1.0.3"
+  }
+}
