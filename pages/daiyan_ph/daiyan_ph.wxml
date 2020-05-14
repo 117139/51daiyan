@@ -16,6 +16,64 @@
 			<view class="{{ph_type1==1?'cur':''}}" bindtap="ph_fuc1" data-type="1">代言收益排行</view>
 			<view class="{{ph_type1==2?'cur':''}}" bindtap="ph_fuc1" data-type="2">公益之星排行</view>
 		</view>
+		<view class="dy_list">
+			<view class="dy_box">
+				<view class="dy_li">
+					<view class="pl_num">
+						<image class="pl_num" src="../../static/images/phicon_1.png"></image>
+					</view>
+					<view class="pl_tx">
+						<image class="pl_tx" src="../../static/images/tx.png"></image>
+					</view>
+					<view class="ph_name">张一鸣</view>
+					<view class="ph_num"><text>97</text>件</view>
+					<view class="ph_btn">去看看</view>
+				</view>
+				<view class="li_dy">代言说：喜欢运动的感觉，耐克just di it！</view>
+			</view>
+			<view class="dy_box">
+				<view class="dy_li">
+					<view class="pl_num">
+						<image class="pl_num" src="../../static/images/phicon_2.png"></image>
+					</view>
+					<view class="pl_tx">
+						<image class="pl_tx" src="../../static/images/tx.png"></image>
+					</view>
+					<view class="ph_name">张一鸣</view>
+					<view class="ph_num"><text>97</text>件</view>
+					<view class="ph_btn">去看看</view>
+				</view>
+				<view class="li_dy">代言说：喜欢运动的感觉，耐克just di it！</view>
+			</view>
+			<view class="dy_box">
+				<view class="dy_li">
+					<view class="pl_num">
+						<image class="pl_num" src="../../static/images/phicon_3.png"></image>
+					</view>
+					<view class="pl_tx">
+						<image class="pl_tx" src="../../static/images/tx.png"></image>
+					</view>
+					<view class="ph_name">张一鸣</view>
+					<view class="ph_num"><text>97</text>件</view>
+					<view class="ph_btn">去看看</view>
+				</view>
+				<view class="li_dy">代言说：喜欢运动的感觉，耐克just di it！</view>
+			</view>
+			<view class="dy_box">
+				<view class="dy_li">
+					<view class="pl_num">
+						4
+					</view>
+					<view class="pl_tx">
+						<image class="pl_tx" src="../../static/images/tx.png"></image>
+					</view>
+					<view class="ph_name">张一鸣</view>
+					<view class="ph_num"><text>97</text>件</view>
+					<view class="ph_btn">去看看</view>
+				</view>
+				<view class="li_dy">代言说：喜欢运动的感觉，耐克just di it！</view>
+			</view>
+		</view>
 	</view>
 </view>
 

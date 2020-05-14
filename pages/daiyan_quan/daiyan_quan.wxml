@@ -1,0 +1,15 @@
+<!--pages/daiyan_quan/daiyan_quan.wxml-->
+<import src="/utils/htmlStatus/index.wxml" />
+<wxs src="../../utils/filter.wxs" module="filter" />
+<view class="container">
+  <template is="htmlStatus" data="{{...htmlStatus}}" />
+  <view class="list">
+		<view class="li_box" wx:for="{{data_list}}" wx:for-item="item" bindtap="jump" data-url="/pages/daiyan_quan_xq/daiyan_quan_xq">
+				<view class="li_img">
+					<image class="li_img" src="../../static/images/tx.png"></image>
+				</view>
+				<text class="li_name">国潮</text>
+				<view class="li_js oh2">体验国潮文化的魅力体验国潮文化的魅力</view>
+		</view>
+	</view>
+</view>

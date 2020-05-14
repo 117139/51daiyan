@@ -1,12 +1,11 @@
-// pages/daiyan_ph/daiyan_ph.js
+// pages/daiyan_find/daiyan_find.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-		ph_type:0,
-		ph_type1:0,
+		data_list:[1,1,1,1]
   },
 
   /**
@@ -48,7 +47,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    wx.stopPullDownRefresh();
+
   },
 
   /**
@@ -63,19 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-	ph_fuc(e){
-		var that =this
-		 if(that.data.ph_type==e.currentTarget.dataset.type) return
-		that.setData({
-			ph_type:e.currentTarget.dataset.type
-		})
-	},
-	ph_fuc1(e){
-		var that =this
-		 if(that.data.ph_type1==e.currentTarget.dataset.type) return
-		that.setData({
-			ph_type1:e.currentTarget.dataset.type
-		})
-	}
+  }
 })

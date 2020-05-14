@@ -1,0 +1,172 @@
+/* pages/daiyan_find/daiyan_find.wxss */
+.container{
+	position: relative;
+	min-height: 100vh;
+	background: #f7b43b;
+	padding-top: 393rpx;
+	padding-bottom: 60rpx;
+}
+.h_bg{
+	width: 100vw;
+	height: 715rpx;
+	position: absolute;
+	z-index: 1;
+	top: 0;
+}
+.xx_box{
+	width: 100%;
+	position: relative;
+	z-index: 3;
+	padding: 0 28rpx;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.xx_box1{
+	width: 100%;
+	background:rgba(255,246,230,1);
+	border:6rpx solid rgba(250,138,84,1);
+	border-radius:18rpx;
+	padding: 99rpx 35rpx 35rpx;
+	box-sizing: border-box;
+	position: relative;
+}
+.hd_js{
+	position: absolute;
+	top: 23rpx;
+	left: 0;
+	width:156rpx;
+	height:52rpx;
+}
+.hd_v1{
+	font-size: 28rpx;
+	margin-bottom: 15rpx;
+	color: #000;
+}
+.hd_v2{
+	font-size: 28rpx;
+	color: #666;
+}
+.hd_jl{
+	margin-top: 20rpx;
+	display: flex;
+	align-items: center;
+}
+.hd_jl_tit{
+	font-size: 26rpx;
+	color: #FE5606;
+}
+.hd_jl_li{
+	width:248rpx;
+	height:137rpx;
+	background:rgba(254,86,6,1);
+	opacity:0.2;
+	border-radius:10rpx;
+	margin-left: 16rpx;
+}
+.hd_bg_tit{
+	width: 304rpx;
+	height: 57rpx;
+	position: relative;
+	z-index: 1;
+}
+view.hd_bg_tit{
+	
+	margin: 32rpx auto;
+}
+.hdtit_tit{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 57rpx;
+	z-index: 3;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 30rpx;
+	color: #fff;
+}
+.find_user{
+	width: 100%;
+	height:164rpx;
+	display: flex;
+	white-space: nowrap;
+}
+.find_user1{
+	height:164rpx;
+}
+.find_uimg{
+	display: inline-flex;
+	width:274rpx;
+	height:164rpx;
+	
+	border-radius:10rpx;
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+}
+view.find_uimg{
+	margin-right: 12rpx;
+}
+.find_zcc{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 5;
+	background: rgba(0,0,0,.3);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 28rpx;
+	color: #fff;
+}
+/* xx_box2 */
+.xx_box2{
+	padding-top: 36rpx;
+}
+.pp_v1{
+	display: flex;
+	align-items: center;
+}
+.pp_img{
+	width:72rpx;
+	height:72rpx;
+	border-radius:50%;
+}
+view.pp_img{
+	margin-right: 16rpx;
+}
+.pp_msg{
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+.pp_d1{
+	display: flex;
+	align-items: center;
+}
+.pp_name{
+	flex:1;
+	font-size: 30rpx;
+	color: #333;
+}
+.pp_to{
+	font-size: 24rpx;
+	color: #999;
+	display: flex;
+	align-items: center;
+}
+.pp_to text{
+	font-size: 24rpx;
+}
+.pp_d2{
+	font-size: 24rpx;
+	color: #999;
+}
+.pp_d2 text{
+	color: #FE6605;
+}

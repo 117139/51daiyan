@@ -1,4 +1,4 @@
-var imgip ='https://huayingworld.800123456.top/'
+var imgip ='http://www.wanbonet.com/suxin/images/'
 // filter.wxs
 var dateFormat = function(date) {
     var dates = date.split('/');

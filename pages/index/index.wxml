@@ -45,7 +45,7 @@
       </view>
     </view>
   </scroll-view>
-  <view class="find_star">
+  <view class="find_star" bindtap="jump" data-url="/pages/daiyan_find/daiyan_find">
     <view class="find_tit">
       <view>寻找代言人:</view>
       <text>（赏金任务）</text>

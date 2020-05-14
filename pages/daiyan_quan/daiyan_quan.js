@@ -1,19 +1,30 @@
-// pages/daiyan_ph/daiyan_ph.js
+// pages/daiyan_quan/daiyan_quan.js
+var htmlStatus = require('../../utils/htmlStatus/index.js')
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-		ph_type:0,
-		ph_type1:0,
+    type:'',
+    data_list:[1,1,1,1]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that =this
+    console.log(that.options)
+    that.setData({
+      type: that.options.type
+    })
+    if (that.options.name){
+      wx.setNavigationBarTitle({
+        title: that.options.name,
+      })
+    }
   },
 
   /**
@@ -48,7 +59,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    wx.stopPullDownRefresh();
+
   },
 
   /**
@@ -64,18 +75,14 @@ Page({
   onShareAppMessage: function () {
 
   },
-	ph_fuc(e){
-		var that =this
-		 if(that.data.ph_type==e.currentTarget.dataset.type) return
-		that.setData({
-			ph_type:e.currentTarget.dataset.type
-		})
-	},
-	ph_fuc1(e){
-		var that =this
-		 if(that.data.ph_type1==e.currentTarget.dataset.type) return
-		that.setData({
-			ph_type1:e.currentTarget.dataset.type
-		})
-	}
+  jump(e) {
+    console.log(e.currentTarget.dataset.type)
+    if (e.currentTarget.dataset.type == 2) {
+      wx.switchTab({
+        url: e.currentTarget.dataset.url
+      })
+    } else {
+      app.jump(e)
+    }
+  }
 })

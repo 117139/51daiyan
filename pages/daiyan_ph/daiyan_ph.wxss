@@ -64,3 +64,75 @@ page,.container{
 .list_tit_1 .cur{
 	color: #FE9B00;
 }
+.dy_list{
+	width: 100%;
+	background: #fff;
+}
+.dy_box{
+	width: 100%;
+	padding-bottom: 20rpx;
+	border-bottom: 1px solid #eee;
+}
+.dy_li{
+	width: 100%;
+	background: #fff;
+	display: flex;
+	align-items: center;
+	padding: 20rpx 28rpx;
+	box-sizing: border-box;
+}
+.pl_num{
+	width: 38rpx;
+	height: 54rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 30rpx;
+	color: #999;
+	font-weight:600;
+}
+view.pl_num{
+	margin-right: 26rpx;
+}
+.pl_tx{
+	width:72rpx;
+	height:72rpx;
+	border-radius:50%;
+}
+view.pl_tx{
+	margin-right: 26rpx;
+}
+.ph_name{
+	flex: 1;
+	font-size: 26rpx;
+	color: #333;
+}
+.ph_num{
+	font-size: 24rpx;
+	color: #FE9B00;
+}
+.ph_num text{
+	font-size: 36rpx;
+	color: #FE9B00;
+}
+.ph_btn{
+	margin-left: 20rpx;
+	width:132rpx;
+	height:63rpx;
+	background:rgba(255,162,89,1);
+	border-radius:10rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #fff;
+	font-size: 30rpx;
+}
+
+.li_dy{
+	padding-left: 84rpx;
+	padding-right: 28rpx;
+	box-sizing: border-box;
+	margin-top: 10rpx;
+	font-size: 24rpx;
+	color: #999;
+}
