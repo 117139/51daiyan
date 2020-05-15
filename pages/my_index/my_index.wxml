@@ -111,6 +111,18 @@
 			</view>
 		</view>
 		<!-- 代言商品 -->
-		<view wx:if="{{s_type==3}}" class="my_list">3</view>
+		<view wx:if="{{s_type==3}}" class="my_list">
+			<view class="sp_list">
+				<view class="sp_li" wx:for="{{data_list}}" wx:for-item="item">
+					<view class="sp_li_img">
+						<image class="sp_li_img" src="../../static/images/images/goods15_02.jpg" mode="aspectFill"></image>
+					</view>
+					<view class="sp_li_msg">
+						<view class="sp_li_name oh2">三只松鼠-巨型零食大礼包 内含30包休闲食品</view>
+						<view class="sp_li_time">2月10日</view>
+					</view>
+				</view>
+			</view>
+		</view>
 	</view>
 </view>

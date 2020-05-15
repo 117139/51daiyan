@@ -400,3 +400,7 @@ padding: 2rpx 15rpx;
 	font-size: 24rpx;
 	color: #999;
 }
+.sp_li_img1{
+	width:338rpx;
+	height:33r8px;
+}
