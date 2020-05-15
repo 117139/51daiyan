@@ -12,8 +12,12 @@
 			<view class="hd_v2">3.有代言人所得票数，决定代言人排位。</view>
 			<view class="hd_jl">
 				<view class="hd_jl_tit">奖励：</view>
-				<view class="hd_jl_li"></view>
-				<view class="hd_jl_li"></view>
+				<view class="hd_jl_li">
+					<image class="" src="{{filter.imgIP('hd_jl1.png')}}"></image>
+				</view>
+				<view class="hd_jl_li">
+					<image class="" src="{{filter.imgIP('hd_jl2.png')}}"></image>
+				</view>
 			</view>
 		</view>
 		
@@ -46,7 +50,68 @@
 					<view class="pp_d2">招募<text>60</text>人</view>
 				</view>
 			</view>
-			
+			<view class="pp_jjc">
+				<view class="pp_jjc_tit">奖金池</view>
+				<view class="pp_ph_list">
+					<view  class="pp_ph_li">
+						<view>一等奖</view>
+						<view>第1～10名</view>
+						<view>¥10000</view>
+					</view>
+					<view  class="pp_ph_li">
+						<view>二等奖</view>
+						<view>第11～25名</view>
+						<view>¥500</view>
+					</view>
+					<view  class="pp_ph_li">
+						<view>三等奖</view>
+						<view>第26～60名</view>
+						<view>¥300</view>
+					</view>
+				</view>
+			</view>
+			<view class="pp_tip">
+				<view class="tip_text">活动起止时间：2019年1月1日</view>
+				<view class="tip_btn">报名</view>
+			</view>
+		</view>
+		<view class="xx_box1 xx_box2">
+			<view class="pp_v1">
+				<view class="pp_img">
+					<image class="pp_img" src="../../static/images/tx.png"></image>
+				</view>
+				<view class="pp_msg">
+					<view class="pp_d1">
+						<view class="pp_name oh1">耐克代言人优选招募</view>
+						<view class="pp_to">活动详情<text class="iconfont iconnext3"></text></view>
+					</view>
+					<view class="pp_d2">招募<text>60</text>人</view>
+				</view>
+			</view>
+			<view class="pp_jjc">
+				<view class="pp_jjc_tit">奖金池</view>
+				<view class="pp_ph_list">
+					<view  class="pp_ph_li">
+						<view>一等奖</view>
+						<view>第1～10名</view>
+						<view>¥10000</view>
+					</view>
+					<view  class="pp_ph_li">
+						<view>二等奖</view>
+						<view>第11～25名</view>
+						<view>¥500</view>
+					</view>
+					<view  class="pp_ph_li">
+						<view>三等奖</view>
+						<view>第26～60名</view>
+						<view>¥300</view>
+					</view>
+				</view>
+			</view>
+			<view class="pp_tip">
+				<view class="tip_text">活动起止时间：2019年1月1日</view>
+				<view class="tip_btn">报名</view>
+			</view>
 		</view>
 	</view>
 </view>

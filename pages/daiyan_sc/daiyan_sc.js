@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+		s_type:0,
+		data_list:[1,1,1,1]
   },
 
   /**
@@ -47,7 +48,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+wx.stopPullDownRefresh();
   },
 
   /**
@@ -62,5 +63,13 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+	ss_type(e){
+		var that =this
+		if(that.data.s_type==e.currentTarget.dataset.type) return
+		console.log(e.currentTarget.dataset.type)
+		that.setData({
+			s_type:e.currentTarget.dataset.type
+		})
+	}
 })

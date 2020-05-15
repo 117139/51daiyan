@@ -1,7 +1,0 @@
-{
-  "navigationStyle": "custom",
-	"usingComponents": {
-    "navigation-bar": "mp-navigation-bar"
-  }
- 
-}

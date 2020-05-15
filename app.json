@@ -1,10 +1,12 @@
 {
   "pages": [
-    "pages/daiyan_find/daiyan_find",
+    "pages/my_index/my_index",
     "pages/index/index", 
+    "pages/goods_tj/goods_tj",
+    "pages/daiyan_find/daiyan_find",
+    "pages/daiyan_sc/daiyan_sc",
     "pages/daiyan_quan_xq/daiyan_quan_xq",
     "pages/daiyan_quan/daiyan_quan",
-    "pages/daiyan_sc/daiyan_sc",
     "pages/daiyan_ph/daiyan_ph",
     "pages/my_friends/my_friends",
     "pages/star_list/star_list",
@@ -79,9 +81,5 @@
     }
   },
   "usingComponents": {
-    "van-stepper": "vendor/vant/lib/stepper/index",
-    "van-submit-bar": "vendor/vant/lib/submit-bar/index",
-    "van-popup": "vendor/vant/lib/popup/index",
-    "van-action-sheet": "vendor/vant/lib/action-sheet/index"
   }
 }

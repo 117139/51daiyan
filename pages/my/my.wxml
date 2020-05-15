@@ -7,9 +7,9 @@
 				<image class="user_tx" src="../../static/images/tx.png"></image>
 				<image class="star_v" src="../../static/images/star_b.png"></image>
 			</view>
-			<view class="user_tx">
+			<!-- <view class="user_tx">
 				<image class="user_tx" src="../../static/images/tx.jpg"></image>
-			</view>
+			</view> -->
 			<view class="user_msg">
 				<view class="user_name"><text>范冰冰</text> <view class="daiyan_lv"><text class="iconfont iconxingzhuang60kaobei2"></text>代言星级 3</view></view>
 				<view class="user_id">代言ID: zy010</view>

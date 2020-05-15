@@ -16,11 +16,11 @@
     </view>
     <view class="index_box1 index_box2">
       <view class="cur">代言动态<text></text></view>
-      <view>代言商城</view>
+      <view bindtap="jump" data-url="/pages/daiyan_sc/daiyan_sc">代言商城</view>
       <view  bindtap="jump" data-url="/pages/star_list/star_list?type=0">明星</view>
       <view bindtap="jump" data-url="/pages/star_list/star_list?type=1">达人</view>
       <view bindtap="jump" data-url="/pages/my_friends/my_friends">好友</view>
-      <view>排行</view>
+      <view bindtap="jump" data-url="/pages/daiyan_ph/daiyan_ph">排行</view>
     </view>
   </view>
   <view class="index_box1 index_box3">
@@ -71,13 +71,13 @@
           <image class="goods_play" src="/static/images/goods_play.png"></image>
         </view>
         <view class="goods_li">
-          <image class="goods_img" src="/static/images/goods1.png" mode="aspectFill"></image>
+          <image class="goods_img" src="/static/images/goods.png" mode="aspectFill"></image>
           <image class="goods_play" src="/static/images/goods_play.png"></image>
         </view>
       </view>
       <!-- <image src="/static/images/goods_type1.png"></image> -->
     </view>
-    <view>
+    <view bindtap="jump" data-url="/pages/goods_tj/goods_tj">
       <view class="goodstype_name goodstype_name1">好货推荐<image src="/static/images/goods_type2.png"></image></view>
       <view class="goods_tip">发现更多人气代言好货</view>
       <view class="goods_list">
@@ -85,7 +85,7 @@
           <image class="goods_img" src="/static/images/goods.png" mode="aspectFill"></image>
         </view>
         <view class="goods_li">
-          <image class="goods_img" src="/static/images/goods1.png" mode="aspectFill"></image>
+          <image class="goods_img" src="/static/images/goods.png" mode="aspectFill"></image>
         </view>
       </view>
       <!-- <image src="/static/images/goods_type2.png"></image> -->
@@ -95,7 +95,7 @@
   <view class="quan_list">
     <view class="quan_li" wx:for="{{start_li}}" wx:for-index="idx" wx:for-item="item" bindtap="jump" data-url="{{item.url}}">
       <view class="quan_user_box">
-        <image class="quan_user_tx" src="/static/images/tx.png" mode="aspectFill"></image>
+        <image bindtap="jump" data-url="/pages/my_index/my_index" class="quan_user_tx" src="/static/images/tx.png" mode="aspectFill"></image>
         <view class="quan_user_msg">
           <view class="quan_user_name">倪小丫 <image src="/static/images/star_b.png"></image></view>
           <view class="quan_user_time"><text>10-14 18:03</text><text>演员</text></view>
@@ -105,16 +105,16 @@
       <view class="quan_msg">
         <view class="oh4  quan_msg_text">可能这辈子都戒不掉米饭了，吃好饭的用好锅，我为苏泊尔智能电饭锅代言。</view>
         <view wx:if="{{idx==2}}" class="quan_msg_img">
-          <image class="one" src="/static/images/goods1.png" mode="aspectFill"></image>
+          <image class="one" src="/static/images/goods.png" mode="aspectFill"></image>
         </view>
         <view wx:else class="quan_msg_img">
-          <image src="/static/images/goods1.png" mode="aspectFill"></image>
-          <image src="/static/images/goods1.png" mode="aspectFill"></image>
-          <image src="/static/images/goods1.png" mode="aspectFill"></image>
+          <image src="/static/images/goods.png" mode="aspectFill"></image>
+          <image src="/static/images/goods.png" mode="aspectFill"></image>
+          <image src="/static/images/goods.png" mode="aspectFill"></image>
         </view>
       </view>
       <view class="quan_goods">
-        <image class="quan_goods_img" src="/static/images/goods1.png" mode="aspectFill"></image>
+        <image class="quan_goods_img" src="/static/images/goods.png" mode="aspectFill"></image>
         <view class="quan_goods_msg">
           <view class="quan_goods_name oh1">苏泊尔IH家用大容量智能电饭锅</view>
           <view class="quan_goods_pri">

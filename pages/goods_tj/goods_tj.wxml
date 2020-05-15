@@ -1,0 +1,70 @@
+<!--pages/goods_tj/goods_tj.wxml-->
+<view class="container">
+	<view class="h_bg">
+		<image class="h_bg" src="../../static/images/images/goods_tj_02.jpg"></image>
+	</view>
+	<view class="h_main">
+		<view class="goods_box1">
+			<view class="goods_li1">
+				<view class="goods_img">
+					<image class="goods_img" src="../../static/images/goods.png"></image>
+					<view class="goods_dy_num"><text class="iconfont icondianzan2"></text>111代言</view>
+				</view>
+				<view class="goods_name1 oh1">兰蔻第二代小黑</view>
+				<view class="goods_pri1 ">¥858</view>
+			</view>
+			<view class="goods_li1">
+				<view class="goods_img">
+					<image class="goods_img" src="../../static/images/goods.png"></image>
+					<view class="goods_dy_num"><text class="iconfont icondianzan2"></text>111代言</view>
+				</view>
+				<view class="goods_name1 oh1">兰蔻第二代小黑</view>
+				<view class="goods_pri1 ">¥858</view>
+			</view>
+			<view class="goods_li1">
+				<view class="goods_img">
+					<image class="goods_img" src="../../static/images/goods.png"></image>
+					<view class="goods_dy_num"><text class="iconfont icondianzan2"></text>111代言</view>
+				</view>
+				<view class="goods_name1 oh1">兰蔻第二代小黑</view>
+				<view class="goods_pri1 ">¥858</view>
+			</view>
+		</view>
+		<!-- tab -->
+		<view class="list_tab">
+				<view bindtap="px_fuc" data-type="0">代言费
+					<view class="list_px"><text class="iconfont iconXSJ-copy {{dy_mon==0?'cur':''}}"></text><text class="iconfont iconXSJ {{dy_mon==1?'cur':''}}"></text></view>
+				</view>
+				<view bindtap="px_fuc" data-type="1">代言人数<view class="list_px"><text class="iconfont iconXSJ-copy {{dy_num==0?'cur':''}}"></text><text class="iconfont iconXSJ {{dy_num==1?'cur':''}}" ></text></view></view>
+				<view bindtap="px_fuc" data-type="2">价格<view class="list_px"><text class="iconfont iconXSJ-copy {{dy_pri==0?'cur':''}}"></text><text class="iconfont iconXSJ {{dy_pri==1?'cur':''}}" ></text></view></view>
+		</view>
+		<!-- goods_li -->
+		<view class="goods_list2">
+			<view class="goods_li2" wx:for="{{data_list}}" wx:for-item="item">
+				<view class="goods_li2_d1">
+					<view class="goods_img2">
+						<image class="goods_img2" src="../../static/images/goods.png"></image>
+					</view>
+					<view class="goods_msg">
+						<view class="goods_name2 oh1">苏泊尔IH家用大容量智能电饭锅</view>
+						<view class="goods_pri">
+							<view class="pri1">¥668</view>
+							<view class="pri2">代言费：¥30</view>
+						</view>
+						<view class="goods_btn1">
+							<view class="goods_dy_num2"><text class="iconfont icondianzan2"></text>5200代言人</view>
+							<view class="goods_to"  bindtap="jump" data-url="/pages/details/details?id=1">去看看</view>
+						</view>
+					</view>
+				</view>
+				<view class="goods_li2_d2">
+					<view class="dy_tx">
+						<image class="dy_tx" src="../../static/images/tx.png"></image>
+					</view>
+					<view class="dy_star">王力宏代言：</view>
+					<view class="dy_text oh1">穿上去特别舒服，打篮球更有感觉了感觉了感觉了感觉了</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>

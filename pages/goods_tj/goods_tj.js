@@ -1,12 +1,14 @@
-// pages/star_list/star_list.js
-const app = getApp()
+// pages/goods_tj/goods_tj.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+		dy_mon:0,
+		dy_num:0,
+		dy_pri:0,
+		data_list:[1,1,1,1,1]
   },
 
   /**
@@ -48,7 +50,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    wx.stopPullDownRefresh();
+
   },
 
   /**
@@ -64,9 +66,23 @@ Page({
   onShareAppMessage: function () {
 
   },
-  handleHome:function (){
-    wx.redirectTo({
-      url: '/pages/index/index',
-    })
-  }
+	px_fuc(e){
+		var that=this
+		var type=e.currentTarget.dataset.type
+		if(type==0){
+			that.setData({
+				dy_mon:!that.data.dy_mon
+			})
+		}
+		if(type==1){
+			that.setData({
+				dy_num:!that.data.dy_num
+			})
+		}
+		if(type==2){
+			that.setData({
+				dy_pri:!that.data.dy_pri
+			})
+		}
+	}
 })
