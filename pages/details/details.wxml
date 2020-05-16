@@ -3,200 +3,225 @@
 <wxs src="../../utils/filter.wxs" module="filter" />
 <view class="container">
   <template is="htmlStatus" data="{{...htmlStatus}}" />
-  <view class="xq_box1" style="background-image:url('/static/images/tx.jpg')">
-    <image class="xq_box1_bg" src="/static/images/tx.jpg"></image>
-    <view class="xq_box1_msg">
-    <view class="xq_add">
-      <view class="oh2" >
-        <image src="/static/images/dianpu.png"></image>
-        远市清城区八零后汽车服务中心</view>
-      <view class="oh2">
-      <image src="/static/images/dizhi.png"></image>
-      {{activity_location}}</view>
+  <view class="swiper_box">
+    <swiper class="swiper" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-active-color='#8e8e8e' circular="{{circular}}" bindchange="swiper_change">
+      <block wx:for="{{data_list}}" wx:for-index="idx" wx:for-item="item">
+        <swiper-item>
+          <!-- <image src="{{item}}" class="slide-image" width="355" height="150" data-curitem="{{item}}" bindtap="pveimg" /> -->
+          <image src="{{filter.imgIP('goods_02.jpg')}}" class="slide-image" mode="aspectFill" width="355" height="150" data-curitem="{{filter.imgIP('goods_02.jpg')}}" bindtap="pveimg" />
+        </swiper-item>
+      </block>
+
+    </swiper>
+    <view class="br_box">{{cur_swiper}}/{{data_list.length}}</view>
+  </view>
+  <view class="goods_msg">
+    <view class="goods_pri">
+      <view class="pri1">¥48</view>
+      <view class="pri2">代言费：¥5</view>
     </view>
-    <view class="tel_btn" bindtap="call" data-tel="18300000000" style="background-image:url('/static/images/4_03.jpg')">
-      <image src="/static/images/4_03.jpg"></image>
-    </view> 
+    <view class="goods_pri">
+      <view class="pri2">原价：¥66.6</view>
+    </view>
+    <view class="goods_name">黄金曼特宁精品咖啡/袋泡咖啡/耳挂咖啡6*10袋装</view>
+
+    <view class="goods_pri">
+      <view class="pri2">运费10元</view>
+      <view class="pri2">销量8280</view>
+      <view class="pri2">
+        <text class="iconfont icondizhi"></text> 北京</view>
+    </view>
+    <view class="goods_bz">
+      <view class="g_bz_1">
+        <text>服务保障</text> 该商品加入了代言人服务保障，官方已认证</view>
+      <view class="bz_li">
+        <view>
+          <text class="iconfont iconanquan"></text>已缴纳保证金</view>
+        <view>
+          <text class="iconfont iconanquan"></text>售后无忧</view>
+        <view>
+          <text class="iconfont iconanquan"></text>48小时发货</view>
+      </view>
     </view>
   </view>
-  <view class="xq_box2">
-    <view>
-      <view wx:if="{{ldata}}" bindtap="getLocation1">点击选择商户新位置</view>
-      <!-- <text wx:if="{{ldata}}" bindtap="again_getLocation">点击选择商户新位置</text> -->
-      <button wx:else open-type="openSetting" bindopensetting='handler'>点击选择商户新位置</button>
-    </view>
-    <view>
-       <view wx:if="{{ldata}}" bindtap="getLocation">启用导航</view>
-      <button wx:else open-type="openSetting" bindopensetting='handler'>启用导航</button>
+  <!-- msg -->
+  <view class="mt20 goods_xmsg">
+    <view class="v1">代言人</view>
+    <view class="v2">优先显示您的好友</view>
+    <view class="v3">
+      <text class="iconfont iconnext3"></text>
     </view>
   </view>
-  
-  <view class="xq_box3">
-    <view class="xq_title">
-      <image src="/static/images/4_06.jpg"></image>商品信息
+  <view class="goods_xmsg">
+    <view class="v1">优惠券</view>
+    <view class="v2">
+      <text class="yhq_box">领券</text>
     </view>
-    <view class="xq_li_msg"> 
-      <view class="xd"></view>
-      <view class="oh1 flex_1 c5099f7">商户编号：1000000000515904</view>
-    </view>
-    <view class="xq_li_msg"> 
-      <view class="xd"></view>
-      <view class="oh1 flex_1">银行经办人：（无）</view>
-    </view>
-    <view class="xq_li_msg"> 
-      <view class="xd"></view>
-      <view class="oh1 flex_1">入账行号：1000000000515904</view>
-    </view>
-    <view class="xq_li_msg"> 
-      <view class="xd"></view>
-      <view class="oh1 flex_1">银行卡号：1000000000515904</view>
-    </view>
-    <view class="xq_li_msg"> 
-      <view class="xd"></view>
-      <view class="oh1 flex_1">收单行号：1000000000515904</view>
-    </view>
-    <view class="xq_li_msg"> 
-      <view class="xd"></view>
-      <view class="oh1 flex_1">收单行：1000000000515904</view>
-    </view>
-    <view class="xq_li_msg"> 
-      <view class="xd"></view>
-      <view class="oh1 flex_1">银行卡号：1000000000515904</view>
-    </view>
-    <view class="xq_li_msg"> 
-      <view class="xd"></view>
-      <view class="oh1 flex_1">内手续费：0.498%扣率，19元封顶</view>
-    </view>
-    <view class="xq_li_msg"> 
-      <view class="xd"></view>
-      <view class="oh1 flex_1">外手续费：1.50%扣率</view>
-    </view>
-    <view class="xq_li_msg"> 
-      <view class="xd"></view>
-      <view class="oh1 flex_1">装机联系人：邹卫华</view>
-    </view>
-    <view class="xq_li_msg"> 
-      <view class="xd"></view>
-      <view class="oh1 flex_1">商户法人：邹卫华</view>
-    </view>
-    <view class="xq_li_msg"> 
-      <view class="xd"></view>
-      <view class="oh1 flex_1">商户属性：对公</view>
-    </view>
-    <view class="xq_li_msg"> 
-      <view class="xd"></view>
-      <view class="oh1 flex_1">法人身份证：14****************00</view>
-    </view>
-    <view class="xq_li_msg"> 
-      <view class="xd"></view>
-      <view class="oh1 flex_1">维护公司：广东清远分公司</view>
+    <view class="v3">
+      <text class="iconfont iconcaozuo"></text>
     </view>
   </view>
-  <view class="xq_box3">
-    <view class="xq_title">
-      <image src="/static/images/4_06.jpg"></image>商户资质
-    </view>
-    <view class="xq_li_msg"> 
-      <view class="xd"></view>
-      <view class="oh1 flex_1 c5099f7">有营业执照</view>
-      <view class="xq_li_xbox"></view>
-    </view>
-    <view class="xq_li_msg"> 
-      <view class="xd"></view>
-      <view class="oh1 flex_1">有协议</view>
-      <view class="xq_li_xbox cur"></view>
-    </view>
-    <view class="xq_li_msg"> 
-      <view class="xd"></view>
-      <view class="oh1 flex_1">有税务登记证</view>
-      <view class="xq_li_xbox"></view>
-    </view>
-    <view class="xq_li_msg"> 
-      <view class="xd"></view>
-      <view class="oh1 flex_1">有调查表</view>
-      <view class="xq_li_xbox"></view>
-    </view>
-    <view class="xq_li_msg"> 
-      <view class="xd"></view>
-      <view class="oh1 flex_1">有账号复印件</view>
-      <view class="xq_li_xbox"></view>
-    </view>
-    <view class="xq_li_msg"> 
-      <view class="xd"></view>
-      <view class="oh1 flex_1">有身份证复印件</view>
-      <view class="xq_li_xbox"></view>
-    </view>
-    <view class="xq_li_msg"> 
-      <view class="xd"></view>
-      <view class="oh1 flex_1">有租赁合同</view>
-      <view class="xq_li_xbox"></view>
-    </view>
-    <view class="xq_li_msg"> 
-      <view class="xd"></view>
-      <view class="oh1 flex_1">有转租赁合同</view>
-      <view class="xq_li_xbox"></view>
-    </view>
-    <view class="xq_li_msg"> 
-      <view class="xd"></view>
-      <view class="oh1 flex_1">有业务授权委托书</view>
-      <view class="xq_li_xbox"></view>
+  <view class="goods_xmsg">
+    <view class="v1">促 销</view>
+    <view class="v2">
+      <text class="yhq_box">满包邮</text>全店满118.00元包邮，偏远地区除外；</view>
+    <view class="v3">
+      <text class="iconfont iconcaozuo"></text>
     </view>
   </view>
-  <view class="xq_box3">
-    <view class="xq_title">
-      <image src="/static/images/4_06.jpg"></image>终端信息
+  <view class="goods_xmsg">
+    <view class="v1">配 送</view>
+    <view class="v2">
+      <text class="yhq_box">同城</text>北京市五环内下单可享受商家配送服务；</view>
+    <view class="v3">
+      <text class="iconfont iconcaozuo"></text>
     </view>
-    <view class="xq_li_msg"> 
-      <view class="xd"></view>
-      <view class="oh1 flex_1 c5099f7">终端号：1000000000515904</view>
+  </view>
+  <view class="mt20 goods_xmsg">
+    <view class="v1">已选择</view>
+    <view class="v2 v21">11g*6袋；1件</view>
+    <view class="v3">
+      <text class="iconfont iconnext3"></text>
     </view>
-    <view class="xq_li_msg"> 
-      <view class="xd"></view>
-      <view class="oh1 flex_1">机身固话：0489754654</view>
+  </view>
+  <!-- 评价 -->
+  <view class="pj_box mt20">
+    <view class="pj_box_tit">
+      <view class="p_tit_l">商品评价（233）</view>
+      <view class="p_tit_r">查看全部
+        <text class="iconfont iconnext3"></text>
+      </view>
     </view>
-    <view class="xq_li_msg"> 
-      <view class="xd"></view>
-      <view class="oh1 flex_1">机型编码：1000000000515904</view>
+    <view class="pj_bq">
+      <view>质量很好（111）</view>
+      <view>性价比高（62）</view>
+      <view>发货快（53）</view>
     </view>
-    <view class="xq_li_msg"> 
-      <view class="xd"></view>
-      <view class="oh1 flex_1">版本号：1000000000515904</view>
+    <view class="pj_li">
+      <view class="pj_d1">
+        <view class="user_tx">
+          <image class="user_tx" src="../../static/images/tx.png"></image>
+        </view> Y***I</view>
+      <view class="pj_d2">上次就买了，感觉太好喝了，这次又来光顾一下，这次又来光顾一下，这次又来光顾一下，这次又来光顾一下。</view>
     </view>
-    <view class="xq_li_msg"> 
-      <view class="xd"></view>
-      <view class="oh1 flex_1">机型：1000000000515904</view>
+  </view>
+  <!-- 代言人 -->
+  <view class="pj_box ">
+    <view class="pj_box_tit">
+      <view class="p_tit_l">代言人说（8）</view>
+      <view class="p_tit_r">查看全部
+        <text class="iconfont iconnext3"></text>
+      </view>
     </view>
-    <view class="xq_li_msg"> 
-      <view class="xd"></view>
-      <view class="oh1 flex_1">机身号：1000000000515904</view>
+    <scroll-view scroll-x class="dyr_text">
+      <view class="dyr_text1">
+        <view class="dyr_li" wx:for="{{data_list}}" wx:for-item="item">
+          <view class="dyr_msg">
+            <view class="pj_d1">
+              <view class="user_tx">
+                <image class="user_tx" src="../../static/images/tx.png"  mode="aspectFill"></image>
+              </view> Y***I</view>
+            <view class="dyr_d oh3"> 蛮好喝的，换了新包装，品质还以依旧刚刚的蛮好喝的，换了新包装，品质还以依旧刚刚的</view>
+          </view>
+
+          <view class="dyr_img">
+            <image class="dyr_img" src="{{filter.imgIP('goods_02.jpg')}}"></image>
+            <view class="dyr_imgnum"><text class="iconfont iconicontupian"></text> 4</view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <!-- 店铺 -->
+  <view class="dp_box">
+    <view class="dp_b1">
+      <view class="dp_logo">
+        <image src="{{filter.imgIP('goods_02.jpg')}}" mode="aspectFill"></image>
+      </view>
+      <view class="dp_msg">
+        <view class="dp_name oh2">弥翼咖啡 MIYI COFFEE ROSASTERS</view>
+        <view class="dp_lv">
+          <image src="{{filter.imgIP('dp_zuan.png')}}"></image>
+          <image src="{{filter.imgIP('dp_zuan.png')}}"></image>
+          <image src="{{filter.imgIP('dp_zuan.png')}}"></image>
+          <image src="{{filter.imgIP('dp_zuan.png')}}"></image>
+        </view>
+        <view class="dp_bq">
+          <text>代言 835</text>
+          <text>回头率  21%</text>
+          <text class="bq">高</text>
+        </view>
+
+      </view>
     </view>
-    <view class="xq_li_msg"> 
-      <view class="xd"></view>
-      <view class="oh1 flex_1">押金：0</view>
+    <view class="dp_cz">
+      <view>+ 关注店铺</view>
+      <view>进店逛逛</view>
     </view>
-    <view class="xq_li_msg"> 
-      <view class="xd"></view>
-      <view class="oh1 flex_1">通讯费：0</view>
+  </view>
+  <!-- 回头客 -->
+  <view class="htk">
+    <view class="pj_box_tit">
+      <image class="htk_img" src="{{filter.imgIP('htk.png')}}"></image>
+      <view class="p_tit_r">8人在说
+        <text class="iconfont iconnext3"></text>
+      </view>
     </view>
-    <view class="xq_li_msg"> 
-      <view class="xd"></view>
-      <view class="oh1 flex_1">键盘类型/底座类型：G101</view>
+    <view class="htk_text">喝过很多家的豆子，这家没得说，烘培的很新鲜，常备口粮。</view>
+    <view class="htk_msg">
+      <view class="htk_tx">
+        <image class="htk_tx" src="{{filter.imgIP('tx.png')}}"></image>
+      </view>
+      <view class="htk_name">张佳</view>
+      <view class="htk_num">买过14次</view>
     </view>
-    <view class="xq_li_msg"> 
-      <view class="xd"></view>
-      <view class="oh1 flex_1">键盘类型/底座类型编号：G101</view>
+  </view>
+  <!-- 本店回头客都在买 -->
+  <view class="htk mt20">
+    <view class="pj_box_tit">
+      <view  class="p_tit_l">本店回头客都在买</view>
+      <view class="p_tit_r">更多
+        <text class="iconfont iconnext3"></text>
+      </view>
     </view>
-    <view class="xq_li_msg"> 
-      <view class="xd"></view>
-      <view class="oh1 flex_1">键盘号：G101</view>
+    <view class="goods_list">
+      <view wx:if="{{idx<3}}" class="goods_li" wx:for="{{data_list}}" wx:for-index="idx" wx:for-item="item">
+        <view class="goods_img">
+          <image class="goods_img" src="{{filter.imgIP('goods_02.jpg')}}" mode="aspectFill"></image>
+        </view>
+        <view class="htk_goods_name oh2">FISHER 意式浓精品挂耳咖啡202020202020……</view>
+        <view class="htk_goods_pri">¥<text>60</text></view>
+      </view>
     </view>
-    <view class="xq_li_msg"> 
-      <view class="xd"></view>
-      <view class="oh1 flex_1">密钥号：G101</view>
+  </view>
+  <!-- 详情 -->
+  <view class="goods_xq mt20">
+    <view class="xq_tit">
+      <text>-</text>
+      商品详情
+      <text>-</text>
     </view>
-    <view class="xq_li_msg"> 
-      <view class="xd"></view>
-      <view class="oh1 flex_1">Set机人员：曾佑健</view>
+    <view class="xq_box">
+      <image src="{{filter.imgIP('goods_02.jpg')}}" mode="aspectFill" width="375" height="375" />
     </view>
+  </view>
+  <!-- 底部 -->
+  <view class="bottom_box">
+    <view class="kf_btn">
+      <text class="iconfont iconkefu"></text>
+      <text>客服</text>
+    </view>
+    <view class="sg"></view>
+    <view class="kf_btn">
+      <text class="iconfont iconhongxinicon"></text>
+      <text>收藏</text>
+    </view>
+    <view class="sg"></view>
+    <view class="kf_btn">
+      <text class="iconfont iconstore"></text>
+      <text>店铺</text>
+    </view>
+    <view class="buy_btn">加入购物车</view>
+    <view class="buy_btn buy_btn1">立即购买</view>
   </view>
 </view>

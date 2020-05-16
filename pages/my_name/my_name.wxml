@@ -1,0 +1,15 @@
+<!--pages/my_name/my_name.wxml-->
+<!-- <form class="w100" bindsubmit="formSubmit"> -->
+  <view class='container'>
+    <view class="set_name">
+      <view class="set_l">我的名字</view>
+      <view class="set_btn" bindtap="save_val">保存</view>
+    </view>
+    <view class="set_name">
+      <input class="set_int" placeholder="请填写您的姓名" confirm-type="保存" bindconfirm="save_val" bindinput="get_val" value="{{uname}}"></input>
+      <view class="set_btn" bindtap="reset_val">
+        <text class="iconfont iconguanbi1"></text>
+      </view>
+    </view>
+  </view>
+<!-- </form> -->

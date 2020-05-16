@@ -1,0 +1,37 @@
+/* pages/my_name/my_name.wxss */
+page{
+	overflow-y: auto!important;
+	background: #fff;
+}
+.container{
+	width: 750rpx;
+	min-height: 100vh;
+	
+	background: #fff;
+  padding: 0 28rpx;
+}
+.set_name{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  height: 95rpx;
+  border-bottom: 1px solid #eee;
+}
+.set_l{
+  font-size: 30rpx;
+  color: #333;
+}
+.set_btn{
+  font-size: 30rpx;
+  color: #FE8735;
+  
+}
+.set_int{
+  flex: 1;
+  font-size: 30rpx;
+}
+.set_btn text{
+  color: #BBBBBB;
+  font-size: 45rpx;
+}

@@ -63,7 +63,7 @@
 								</view>
 							</view>
 						</view>
-						<view class="quan_goods">
+						<view class="quan_goods" bindtap="jump" data-url="/pages/details/details">
 						  <image class="quan_goods_img" src="/static/images/goods.png" mode="aspectFill"></image>
 						  <view class="quan_goods_msg">
 						    <view class="quan_goods_name oh1">苏泊尔IH家用大容量智能电饭锅</view>
@@ -113,7 +113,7 @@
 		<!-- 代言商品 -->
 		<view wx:if="{{s_type==3}}" class="my_list">
 			<view class="sp_list">
-				<view class="sp_li" wx:for="{{data_list}}" wx:for-item="item">
+				<view class="sp_li" wx:for="{{data_list}}" wx:for-item="item" bindtap="jump" data-url="/pages/details/details">
 					<view class="sp_li_img">
 						<image class="sp_li_img" src="../../static/images/images/goods15_02.jpg" mode="aspectFill"></image>
 					</view>

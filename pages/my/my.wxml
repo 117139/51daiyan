@@ -1,4 +1,7 @@
 <!--pages/my/my.wxml-->
+
+<import src="/utils/htmlStatus/index.wxml" />
+<wxs src="../../utils/filter.wxs" module="filter" />
 <view class="container">
  
 	<view class="header_box">
@@ -14,7 +17,7 @@
 				<view class="user_name"><text>范冰冰</text> <view class="daiyan_lv"><text class="iconfont iconxingzhuang60kaobei2"></text>代言星级 3</view></view>
 				<view class="user_id">代言ID: zy010</view>
 			</view>
-			<view>
+			<view bindtap="jump" data-url="/pages/mymsg/mymsg">
 				<text class="iconfont iconshezhi"></text>
 			</view>
 		</view>
@@ -101,43 +104,48 @@
 			</view>
     </view>
     <view class="my_list">
-			<view class="fx_li mt20" bindtap="jump" data-url="">
-			  <image class="li_icon" src="/static/images/images/faxian_05.jpg"></image>
+			<view class="fx_li mt20" bindtap="jump" data-url="/pages/myaddress/myaddress">
+			  <image class="li_icon" src="{{filter.imgIP('ny_04.png')}}"></image>
+			  <view class="fx_tit">地址管理</view>
+			  <text class="iconfont iconnext3"></text>
+			</view>
+			<view class="fx_li " bindtap="jump" data-url="">
+			  <image class="li_icon" src="{{filter.imgIP('ny_04.png')}}"></image>
 			  <view class="fx_tit">我的代言</view>
 			  <text class="iconfont iconnext3"></text>
 			</view>
 			<view class="fx_li" bindtap="jump" data-url="">
-			  <image class="li_icon" src="/static/images/images/faxian_07.jpg"></image>
+			  <image class="li_icon" src="{{filter.imgIP('ny_08.png')}}"></image>
 			  <view class="fx_tit">我的关注</view>
 			  <text class="iconfont iconnext3"></text>
 			</view>
 			<view class="fx_li" bindtap="jump" data-url="">
-			  <image class="li_icon" src="/static/images/images/faxian_09.jpg"></image>
+			  <image class="li_icon" src="{{filter.imgIP('ny_10.png')}}"></image>
 			  <view class="fx_tit">我的收藏</view>
 			  <text class="iconfont iconnext3"></text>
 			</view>
 			<view class="fx_li" bindtap="jump" data-url="">
-			  <image class="li_icon" src="/static/images/images/faxian_11.jpg"></image>
+			  <image class="li_icon" src="{{filter.imgIP('ny_12.png')}}"></image>
 			  <view class="fx_tit">我的优惠券</view>
 			  <text class="iconfont iconnext3"></text>
 			</view>
 			<view class="fx_li" bindtap="jump" data-url="">
-			  <image class="li_icon" src="/static/images/images/faxian_13.jpg"></image>
+			  <image class="li_icon" src="{{filter.imgIP('ny_14.png')}}"></image>
 			  <view class="fx_tit">我的钱包</view>
 			  <text class="iconfont iconnext3"></text>
 			</view>
 			<view class="fx_li" bindtap="jump" data-url="">
-			  <image class="li_icon" src="/static/images/images/faxian_15.jpg"></image>
+			  <image class="li_icon" src="{{filter.imgIP('ny_16.png')}}"></image>
 			  <view class="fx_tit">我的代言豆</view>
 			  <text class="iconfont iconnext3"></text>
 			</view>
 			<view class="fx_li" bindtap="jump" data-url="">
-			  <image class="li_icon" src="/static/images/images/faxian_17.jpg"></image>
+			  <image class="li_icon" src="{{filter.imgIP('ny_18.png')}}"></image>
 			  <view class="fx_tit">关于51代言</view>
 			  <text class="iconfont iconnext3"></text>
 			</view>
 			<view class="fx_li" bindtap="jump" data-url="">
-			  <image class="li_icon" src="/static/images/images/faxian_17.jpg"></image>
+			  <image class="li_icon" src="{{filter.imgIP('ny_20.png')}}"></image>
 			  <view class="fx_tit">51认证申请</view>
 			  <text class="iconfont iconnext3"></text>
 			</view>

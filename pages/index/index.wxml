@@ -93,7 +93,7 @@
   </view>
   <!-- 代言圈 -->
   <view class="quan_list">
-    <view class="quan_li" wx:for="{{start_li}}" wx:for-index="idx" wx:for-item="item" bindtap="jump" data-url="{{item.url}}">
+    <view class="quan_li" wx:for="{{start_li}}" wx:for-index="idx" wx:for-item="item" bindtap="jump" data-url="/pages/details/details">
       <view class="quan_user_box">
         <image bindtap="jump" data-url="/pages/my_index/my_index" class="quan_user_tx" src="/static/images/tx.png" mode="aspectFill"></image>
         <view class="quan_user_msg">

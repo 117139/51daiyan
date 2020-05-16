@@ -1,0 +1,12 @@
+<!--pages/my_name/my_name.wxml-->
+<!-- <form class="w100" bindsubmit="formSubmit"> -->
+  <view class='container'>
+    <view class="set_name">
+      <view class="set_l">个人简介</view>
+      <view class="set_btn" bindtap="save_val">保存</view>
+    </view>
+    <view class="set_name">
+      <textarea placeholder="请填写您的个人简介" confirm-type="保存" bindconfirm="save_val" bindinput="get_val" value="{{uname}}"></textarea>
+    </view>
+  </view>
+<!-- </form> -->

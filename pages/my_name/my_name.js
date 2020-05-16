@@ -1,27 +1,19 @@
-// pages/details/details.js
-
-var htmlStatus = require('../../utils/htmlStatus/index.js')
-const app = getApp()
+// pages/my_name/my_name.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    indicatorDots: false,
-    autoplay: true,
-    circular: true,
-    interval: 3000,
-    duration: 1000,
-    data_list:[1,1,1,1],
-    cur_swiper:1
+    uname:'',
+    sname:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+
   },
 
   /**
@@ -35,9 +27,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    var that = this;
 
-    
   },
 
   /**
@@ -74,34 +64,30 @@ Page({
   onShareAppMessage: function () {
 
   },
-  swiper_change(e){
-    console.log(e.detail )
-    var num = e.detail.current+1
+  reset_val(){
     this.setData({
-      cur_swiper:num
+      uname:''
     })
   },
-  jump(e) {
-    console.log(e.currentTarget.dataset.type)
-    if (e.currentTarget.dataset.type == 2) {
-      wx.switchTab({
-        url: e.currentTarget.dataset.url
+  get_val(e){
+    console.log(e.detail )
+    this.setData({
+      sname: e.detail.value
+    })
+  },
+  save_val(){
+    if (!this.data.sname){
+      wx.showToast({
+        title: '请输入您的姓名',
       })
-    } else {
-      app.jump(e)
+      return
     }
-  },
-  call(e){
-    app.call(e)
-  },
-
-  pveimg(e) {
-    let that = this
-    if (e.currentTarget.dataset.curitem) {
-      app.pveimg(that.data.spimg, e.currentTarget.dataset.curitem, true)
-    } else {
-      app.pveimg(e.currentTarget.dataset.imgurl)
-    }
-
+    wx.showToast({
+      title: '保存',
+    })
+    setTimeout(function (){
+      wx.navigateBack()
+    },1000)
+    console.log(this.data.sname)
   }
 })

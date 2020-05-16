@@ -1,0 +1,30 @@
+<!--pages/my_name/my_name.wxml-->
+<!-- <form class="w100" bindsubmit="formSubmit"> -->
+  <view class='container'>
+    <view class="set_name">
+      <view class="set_l">我的学校</view>
+      <view class="set_btn" bindtap="save_val">保存</view>
+    </view>
+    <view class="set_name">
+      <view class="set_l">我的学校</view>
+      <input class="set_int" placeholder="请填写您的学校" bindinput="get_val" value="{{yname}}"></input>
+      
+    </view>
+    <view class="set_name">
+      <view class="set_l">我的院系</view>
+      <input class="set_int" placeholder="请填写您的院系"bindinput="get_val1" value="{{xname}}"></input>
+      
+    </view>
+    
+    <picker class="w100" mode="date" bindchange="bindTimeChange" value="{{index}}" >
+      <view class="set_name">
+        <text class="set_l">入学时间</text>
+        <view class="dis_flex aic msg_val">{{shengri}}      
+        </view>
+        <text class="iconfont iconnext3 c9"></text>
+      </view>
+      <input class="hidden" name="sex" type="text" value="{{sex[index].value}}" disabled/>
+      
+    </picker>
+  </view>
+<!-- </form> -->
