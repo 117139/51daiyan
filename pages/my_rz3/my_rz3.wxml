@@ -1,0 +1,13 @@
+<!--pages/my_rz1/my_rz1.wxml-->
+<form class="w100" bindsubmit="formSubmit">
+  <view class='container'>
+    <image class="rz_jd" src="../../static/images/rz_jd3_02.jpg"></image>
+    <view class="hx10"></view>
+    <view class="hx10"></view>
+    <view class="sh_type">  
+      <image class="rz_sh" src="../../static/images/rz_sh.png"></image>
+      <text>审核中</text>
+    </view>
+    <button class="definebtn" form-type="submit">确定</button>
+  </view>
+</form>

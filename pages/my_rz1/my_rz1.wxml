@@ -1,0 +1,64 @@
+<!--pages/my_rz1/my_rz1.wxml-->
+<form class="w100" bindsubmit="formSubmit">
+  <view class='container'>
+    <image class="rz_jd" src="../../static/images/rz_jd_02.jpg"></image>
+    <view class="hx10"></view>
+    <picker class="w100" bindchange="bindPickerChange" value="{{index}}" range="{{sf}}" range-key='name'>
+      <view class="msg_box">
+        <text class="msg_name">认证身份</text>
+        <view class="dis_flex aic msg_val">{{sf[index].name}}
+
+        </view>
+        <text class="iconfont iconnext3 c9"></text>
+      </view>
+      <input class="hidden" name="sf" type="text" value="{{sf[index].value}}" disabled/>
+
+    </picker>
+    <view class="hx10"></view>
+    <view class="sfrz_tit">请提交身份证信息，仅用于平台审核</view>
+    <view class="sf_sfz">
+      <view bindtap="scpic" data-type="1">
+        <image class="sfzimg" src="{{sfimg1?sfimg1:'../../static/images/rz_img_05.jpg'}}" mode="aspectFill"></image>
+        <input class="hidden" name="sfimg1" type="text" value="{{sfimg1}}" disabled/>
+        <text>身份证姓名面</text>
+      </view>
+      <view bindtap="scpic" data-type="2">
+        <image class="sfzimg" src="{{sfimg2?sfimg2:'../../static/images/rz_img_07.jpg'}}" mode="aspectFill"></image>
+        <input class="hidden" name="sfimg2" type="text" value="{{sfimg2}}" disabled/>
+        <text>身份证国徽面</text>
+      </view>
+    </view>
+    <!-- 身份证信息 -->
+    <view class="msg_box b0">
+      <text class="msg_name">身份证信息</text>
+      <view class="dis_flex aic msg_val"></view>
+
+    </view>
+    <view class="sf_box">
+      <view class="sfxx_box">
+        <text>姓名</text>
+        <input name="sfz_name" placeholder="请输入姓名"></input>
+      </view>
+      <view class="sfxx_box">
+        <text>身份证号</text>
+        <input name="sfz_id" placeholder="请输入身份证号"></input>
+      </view>
+      <view class="sfxx_box">
+        <text>有效期</text>
+        <view class="sf_time">
+          <picker class="yx_time" mode="date" bindchange="bindTimeChange" value="{{index}}">
+
+            <view  class="yx_time">{{yxtime1?yxtime1:'--'}}</view>
+            <input class="hidden" name="yxtime1" type="text" value="{{yxtime1}}" disabled/>
+          </picker>
+          <view>至</view>
+          <picker  class="yx_time" mode="date" bindchange="bindTimeChange2" value="{{index}}">
+            <view class="yx_time">{{yxtime2?yxtime2:'--'}}</view>
+            <input class="hidden" name="yxtime2" type="text" value="{{yxtime2}}" disabled/>
+          </picker>
+        </view>
+      </view>
+    </view>
+    <button class="definebtn" form-type="submit">保存并进行下一步</button>
+  </view>
+</form>

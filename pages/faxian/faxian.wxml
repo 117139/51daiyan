@@ -19,7 +19,7 @@
 		<view class="fx_tit">明星达人秀</view>
     <text class="iconfont iconnext3"></text>
   </view>
-  <view class="fx_li" bindtap="jump" data-url="">
+  <view class="fx_li" bindtap="jump" data-url="/pages/daiyan_quan/daiyan_quan">
     <image class="li_icon" src="/static/images/images/faxian_09.jpg"></image>
 		<view class="fx_tit">代言圈</view>
     <text class="iconfont iconnext3"></text>

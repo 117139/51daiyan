@@ -17,13 +17,16 @@
 			 <text>石说的达开旗舰店</text>
 			 <text class="iconfont iconnext3"></text>
 		 </view> 
-		<view class="goods1">
+		<view class="goods1" wx:for="{{item}}"
+		wx:for-index="idx1"
+		wx:for-item="item1" 
+		wx:key="idx1">
 			<!-- <view class="scbg" data-id="{{item.id}}" catchtap="cardel">
 				<text class="iconfont iconshanchu fz26"></text>
 			</view> -->
-			<view class="xuanze" data-selec="{{idx}}" catchtap="select">
-				<view class="xuanze1 {{goods_sele[idx].xuan==true? 'xuanze2':''}}">
-					<icon  wx:if="{{goods_sele[idx].xuan==true}}" type="success" size="12" color="#fe0042" />
+			<view class="xuanze" data-selec="{{idx}}" data-selec1="{{idx1}}" catchtap="select">
+				<view class="xuanze1 {{goods_sele[idx][idx1].xuan==true? 'xuanze2':''}}">
+					<icon  wx:if="{{goods_sele[idx][idx1].xuan==true}}" type="success" size="16" color="#F7B43B" />
 				</view>
 			</view>
 			<!-- <view class="goodsImg" wx:if="{{item.goods_pic}}"> -->
@@ -41,9 +44,9 @@
 					<text class="fz36 cf6377a fwb">￥{{'48'}}</text>
 				
 					<view class="vstepper steppera">
-						<view catchtap="onNum" data-idx="{{idx}}" data-ad="-" data-id="{{item.id}}" class="vantjian c9">-</view>
-						<input class="vanipt c6" disabled value="{{ goods_sele[idx].num }}"></input>
-						<view catchtap="onNum" data-idx="{{idx}}" data-ad="+" data-id="{{item.id}}" class="vantjia c9">+</view>
+						<view catchtap="onNum" data-idx="{{idx}}" data-idx1="{{idx1}}" data-ad="-" data-id="{{item.id}}" class="vantjian c9">-</view>
+						<input class="vanipt c6" disabled value="{{ goods_sele[idx][idx1].num }}"></input>
+						<view catchtap="onNum" data-idx="{{idx}}" data-idx1="{{idx1}}" data-ad="+" data-id="{{item.id}}" class="vantjia c9">+</view>
 					</view>
 				</view>
 			</view>
@@ -101,7 +104,7 @@
 	<view class="vbottom" wx:if="{{goods.length!==0}}">
 		<view class="selecAll" bindtap="selecAll">
 			<view class="xuanze1 all {{all==true? 'xuanze2':''}}">
-				<icon  wx:if="{{all==true}}" type="success" size="12" color="#fe0042" />
+				<icon  wx:if="{{all==true}}" type="success" size="16" color="#F7B43B" />
 			</view>
 			全选
 		</view>

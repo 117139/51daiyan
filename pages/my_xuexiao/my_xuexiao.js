@@ -92,19 +92,22 @@ Page({
   save_val() {
     if (!this.data.yname) {
       wx.showToast({
+        icon: 'none',
         title: '请输入您的学校名',
       })
       return
     }
     if (!this.data.xname) {
       wx.showToast({
+        icon: 'none',
         title: '请输入您的院系',
       })
       return
     }
     if (!this.data.shengri) {
       wx.showToast({
-        title: '请输入您的入学时间',
+        icon: 'none',
+        title: '请选择您的入学时间',
       })
       return
     }

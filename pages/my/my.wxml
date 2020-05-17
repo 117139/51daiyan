@@ -77,7 +77,7 @@
 			</view>
     </view>
     <view class="user_money mt20">
-			<view class="user_money_tit">
+			<view class="user_money_tit" bindtap="jump" data-url="/pages/OrderList/OrderList">
 				<view class="v1">
 					<text class="iconfont icondingdan"></text><view class="v1_tit">我的订单</view>
 				</view>
@@ -85,19 +85,19 @@
 			</view>
 			
 			<view class="inr_box">
-				<view class="yue_li">
+				<view class="yue_li"  bindtap="jump" data-url="/pages/OrderList/OrderList?type=1">
 					<image class="order_icon" src="../../static/images/my21.png"></image>
 					<view>待付款</view>
 				</view>
-				<view class="yue_li">
+				<view class="yue_li"  bindtap="jump" data-url="/pages/OrderList/OrderList?type=2">
 					<image class="order_icon" src="../../static/images/my20.png"></image>
 					<view>待收货</view>
 				</view>
-				<view class="yue_li">
+				<view class="yue_li" bindtap="jump" data-url="/pages/OrderList/OrderList?type=3">
 					<image class="order_icon" src="../../static/images/my22.png"></image>
 					<view>待代言</view>
 				</view>
-				<view class="yue_li">
+				<view class="yue_li" bindtap="jump" data-url="/pages/OrderList/OrderList?type=4">
 					<image class="order_icon" src="../../static/images/my23.png"></image>
 					<view>退换/售后</view>
 				</view>
@@ -109,12 +109,12 @@
 			  <view class="fx_tit">地址管理</view>
 			  <text class="iconfont iconnext3"></text>
 			</view>
-			<view class="fx_li " bindtap="jump" data-url="">
+			<view class="fx_li " bindtap="jump" data-url="/pages/my_daiyan/my_daiyan">
 			  <image class="li_icon" src="{{filter.imgIP('ny_04.png')}}"></image>
 			  <view class="fx_tit">我的代言</view>
 			  <text class="iconfont iconnext3"></text>
 			</view>
-			<view class="fx_li" bindtap="jump" data-url="">
+			<view class="fx_li" bindtap="jump" data-url="/pages/my_guanzhu/my_guanzhu">
 			  <image class="li_icon" src="{{filter.imgIP('ny_08.png')}}"></image>
 			  <view class="fx_tit">我的关注</view>
 			  <text class="iconfont iconnext3"></text>
@@ -144,7 +144,7 @@
 			  <view class="fx_tit">关于51代言</view>
 			  <text class="iconfont iconnext3"></text>
 			</view>
-			<view class="fx_li" bindtap="jump" data-url="">
+			<view class="fx_li" bindtap="jump" data-url="/pages/my_rz1/my_rz1">
 			  <image class="li_icon" src="{{filter.imgIP('ny_20.png')}}"></image>
 			  <view class="fx_tit">51认证申请</view>
 			  <text class="iconfont iconnext3"></text>

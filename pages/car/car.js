@@ -5,14 +5,21 @@ Page({
   data: {
     btnkg: 0,     //0  ok       1 off
     htmlReset: 0,
-    // goods: [{ "num": 1 }, { "num": 1 },],
-    goods: [],
+    goods: [
+      [{ "num": 1, xuan: false },
+        { "num": 1, xuan: false },],
+      [{ "num": 1, xuan: false },
+      { "num": 1, xuan: false },]
+    ],
+    // goods: [],
     spimg: [],
-    // goods_sele: [
-    // 	{"num":1},
-    // 	{"num":1},
-    // ],
-		goods_sele: [],
+    goods_sele: [
+      [{ "num": 1, xuan: false },
+        { "num": 1, xuan: false },],
+      [{ "num": 1, xuan: false },
+      { "num": 1, xuan: false },]
+    ],
+		// goods_sele: [],
     xuan: false,
     all: false,
     sum: '0.00'
@@ -49,23 +56,26 @@ Page({
     let that = this
     // console.log(e.currentTarget.dataset.selec)
     let sid = e.currentTarget.dataset.selec
+    let sid1 = e.currentTarget.dataset.selec1
     // console.log(this.data.goods_sele[sid].xuan)
-    if (that.data.goods_sele[sid].xuan == false) {
-      that.data.goods_sele[sid].xuan = true
+    if (that.data.goods_sele[sid][sid1].xuan == false) {
+      that.data.goods_sele[sid][sid1].xuan = true
       that.setData({
         goods_sele: that.data.goods_sele
       });
     } else {
-      that.data.goods_sele[sid].xuan = false
+      that.data.goods_sele[sid][sid1].xuan = false
       that.setData({
         goods_sele: that.data.goods_sele
       });
     }
     let qx = true
     for (let i in that.data.goods_sele) {
-      if (that.data.goods_sele[i].xuan == false) {
-        qx = false
-        break
+      for (let j in that.data.goods_sele[i]) {
+        if (that.data.goods_sele[i][j].xuan == false) {
+          qx = false
+          break
+        }
       }
     }
     console.log(qx)
@@ -79,8 +89,8 @@ Page({
         all: false
       })
     }
-    //计算总价
-    that.countpri()
+    // //计算总价
+    // that.countpri()
   },
   onChange(e) {
     console.log(e.currentTarget.dataset.selec)
@@ -106,13 +116,16 @@ Page({
     })
     // this.data.goods_sele[sid].xuan=true
     for (let i in this.data.goods_sele) {
-      this.data.goods_sele[i].xuan = kg
+
+      for (let j in this.data.goods_sele[i]) {
+        this.data.goods_sele[i][j].xuan = kg
+      }
     }
     this.setData({
       goods_sele: this.data.goods_sele
     });
     //计算总价
-    this.countpri()
+    // this.countpri()
   },
   /*计算价格*/
   countpri() {
@@ -166,18 +179,19 @@ Page({
     let ad = e.currentTarget.dataset.ad
     let id = e.currentTarget.dataset.id
     let thisidx = e.currentTarget.dataset.idx
+    let thisidx1 = e.currentTarget.dataset.idx1
 
-    if (that.data.goods_sele[thisidx].num < 2 && ad == '-') {
+    if (that.data.goods_sele[thisidx][thisidx1].num < 2 && ad == '-') {
       console.log('禁止')
       return false;
 
     }
 		if (ad == '-') {
-		  that.data.goods_sele[thisidx].num--
-		  that.data.goods[thisidx].num--
+      that.data.goods_sele[thisidx][thisidx1].num--
+      that.data.goods[thisidx][thisidx1].num--
 		} else {
-		  that.data.goods_sele[thisidx].num++
-		  that.data.goods[thisidx].num++
+      that.data.goods_sele[thisidx][thisidx1].num++
+      that.data.goods[thisidx][thisidx1].num++
 		}
 		that.setData({
 		  goods_sele: that.data.goods_sele,

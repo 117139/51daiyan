@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    tab_type:'0',
+    tab_type:'2',
     data_list:[1,1,1,1],
 		start_li:[
 		  {

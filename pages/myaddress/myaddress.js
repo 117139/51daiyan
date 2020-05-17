@@ -36,10 +36,16 @@ Page({
         id:4
       },
     ],
-    mridx:0
+    mridx:0,
+    form_type:0
   },
   onLoad: function (option) {
-  
+    var that =this
+    if(option.type){
+      that.setData({
+        form_type:option.type
+      })
+    }
   },
 	onShow(){
 
@@ -50,6 +56,25 @@ Page({
    */
   onPullDownRefresh: function () {
     wx.stopPullDownRefresh();
+  },
+  xz_add(e){
+    var that =this
+    if (that.data.form_type!=1){
+      return
+    }
+    console.log(e.currentTarget.dataset.idx)
+    var idx = e.currentTarget.dataset.idx
+    var pages = getCurrentPages();   //当前页面
+    var prevPage = pages[pages.length - 2];   //上一页面
+    prevPage.setData({
+      //直接给上一个页面赋值
+      addresschose: that.data.addresslist[idx],
+    });
+
+    wx.navigateBack({
+      //返回
+      delta: 1
+    })
   },
 	selecmr(e){
 		let that =this

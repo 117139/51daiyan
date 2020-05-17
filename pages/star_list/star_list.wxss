@@ -75,6 +75,7 @@
 	font-size: 30rpx;
 }
 /* star_li */
+
 .star_li{
 	width: 100%;
 	padding: 38rpx 28rpx;
@@ -122,6 +123,7 @@
 .user_msg image{
 	width: 26rpx;
 	height: 25rpx;
+  margin-right: 8rpx;
 }
 .user_msg .fwb{
 	font-size: 32rpx;

@@ -37,6 +37,7 @@
 .li_name{
 	font-size: 30rpx;
 	color: #000;
+  margin-bottom: 10rpx;
 }
 .li_js{
 	font-size: 22rpx;

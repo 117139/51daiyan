@@ -47,7 +47,14 @@
   <!-- msg -->
   <view class="mt20 goods_xmsg">
     <view class="v1">代言人</view>
-    <view class="v2">优先显示您的好友</view>
+    <view class="v2">
+      <view class="sj_list">
+        <image class="sj_li" src="/static/images/tx.png" mode="aspectFill"></image>
+        <image class="sj_li" src="/static/images/tx.png" mode="aspectFill"></image>
+        <image class="sj_li" src="/static/images/tx.png" mode="aspectFill"></image>
+        <image class="sj_li" src="/static/images/tx.png" mode="aspectFill"></image>
+      </view>
+    优先显示您的好友</view>
     <view class="v3">
       <text class="iconfont iconnext3"></text>
     </view>
@@ -77,9 +84,9 @@
       <text class="iconfont iconcaozuo"></text>
     </view>
   </view>
-  <view class="mt20 goods_xmsg">
+  <view class="mt20 goods_xmsg"  bindtap="sheetshow">
     <view class="v1">已选择</view>
-    <view class="v2 v21">11g*6袋；1件</view>
+    <view class="v2 v21">{{guige[type1[0]].value1}},{{cnum}}件</view>
     <view class="v3">
       <text class="iconfont iconnext3"></text>
     </view>
@@ -202,9 +209,48 @@
       <text>-</text>
     </view>
     <view class="xq_box">
-      <image src="{{filter.imgIP('goods_02.jpg')}}" mode="aspectFill" width="375" height="375" />
+      <image src="{{filter.imgIP('goods_02.jpg')}}" mode="aspectFill" style="width:750rpx;height:750rpx;" />
     </view>
   </view>
+  <!-- tk -->
+  <van-popup custom-class="popopBox" show="{{ sheetshow }}" position="bottom" bind:close="onClose" >
+		<view class="popopBox1">
+			<view class="goodsimg">
+				<image src="{{filter.imgIP('goods_02.jpg')}}" data-src="{{filter.imgIP('goods_02.jpg')}}" mode="aspectFill" bindtap="previewImage"></image>
+			</view>
+			<view class="goodstkjg">
+				<view class="closebtn" bindtap="onClose">
+					<image src="/static/images/closebtn_03.jpg"></image>
+				</view>
+				<view class="goods_pri_h">￥{{guige[type1[0]].pri}}</view>
+				<view class="kucun">库存{{guige[type1[0]].kucun}}件</view>
+				<view class="tkname oh2">已选择：{{guige[type1[0]].value1}}</view>
+				<!-- <view class="tkname oh2">YI-DONG SPORT 屹动专业运动鞋 专业为中小学生运动打造的运动鞋</view> -->
+			</view>
+		</view>
+		<block >
+			<view class="tkguigetit">类型</view>
+			<view class="guigeBox">
+				<text class="guigeOne {{idx1==type1[0]?'cur':''}}" 
+									wx:for="{{guige}}"
+									wx:for-index="idx1"
+									wx:for-item="item1" 
+									wx:key="idx1"
+									data-gg="{{'0'}}"
+									data-gg1="{{idx1}}"
+									bindtap="selegg">{{item1.value1}}</text>
+			</view>
+		</block>
+		<view class="countnum">
+			<text>购买数量</text>
+			<van-stepper custom-class="steppera" input-class="vanipt" plus-class="vantjia" minus-class="vantjian" value="{{ cnum }}"
+			 data-selec="{{idx}}" bind:input="onChange" bind:change="onChange" />
+		</view>
+		<view class="czbtnG">
+			<view class="jrgwc" bindtap="addwgc">加入购物车</view>
+			<view class="buybtn" bindtap="nowbuy">立即购买</view>
+		</view>
+	</van-popup>
   <!-- 底部 -->
   <view class="bottom_box">
     <view class="kf_btn">
@@ -221,7 +267,7 @@
       <text class="iconfont iconstore"></text>
       <text>店铺</text>
     </view>
-    <view class="buy_btn">加入购物车</view>
-    <view class="buy_btn buy_btn1">立即购买</view>
+    <view class="buy_btn"  bindtap="sheetshow">加入购物车</view>
+    <view class="buy_btn buy_btn1"  bindtap="sheetshow">立即购买</view>
   </view>
 </view>

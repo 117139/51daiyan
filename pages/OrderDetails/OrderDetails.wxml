@@ -1,0 +1,119 @@
+<!--logs.wxml-->
+<!-- <import src="/utils/pageState/index.wxml" /> -->
+<wxs src="../../utils/filter.wxs" module="filter" />
+<!-- <template is="pageState" data="{{...pageState}}" /> -->
+<view wx:if="{{htmlReset==1}}" class="chongshi" bindtap='cload'>重试</view>
+<view class="container">
+<view class="order_box1">
+  <image src="/static/images/order_bg_02.jpg"></image>
+  <!-- <view class="order_tit">
+    <view class="type_img">
+      <image src="/static/images/ot_fukuan.png"></image>
+    </view>
+    <view class="ot_msg">
+      <view class="d1">待付款</view>
+      <view class="d2">等待付款中</view>
+    </view>
+  </view> -->
+  <!-- <view class="order_tit">
+    <view class="type_img">
+      <image src="/static/images/ot_shouhuo.png"></image>
+    </view>
+    <view class="ot_msg">
+      <view class="d1">待收货</view>
+      <view class="d2">请及时确认收货</view>
+    </view>
+  </view> -->
+  <!-- <view class="order_tit">
+    <view class="type_img">
+      <image src="/static/images/ot_daiyan.png"></image>
+    </view>
+    <view class="ot_msg">
+      <view class="d1">待代言</view>
+      <view class="d2">已收货期待您的代言</view>
+    </view>
+  </view> -->
+  <view class="order_tit">
+    <view class="type_img" style="width:56rpx;">
+      <image src="/static/images/ot_pingjia.png"></image>
+    </view>
+    <view class="ot_msg">
+      <view class="d1">待评价</view>
+      <view class="d2">期待您的评价</view>
+    </view>
+  </view>
+</view>
+  <view class="address">
+    <view class="add_r">
+			<image src="/static/images/address23.png"></image> 
+		</view>
+		<view class="add_l">
+			<view class="al_1">{{'昵称'}} <text class="l_tel">{{'18300000000'}}</text></view>
+			<view class="al_2">{{'河北省  保定市  莲花区  未来石4号楼2101室'}} </view>
+		</view>
+		
+	</view>
+	<view class="orderbder">
+		<image src="/static/images/orderborder.png"></image>
+	</view>
+	<view class="goodsBox contbox">
+      <view class="goods" wx:for="{{goods}}" wx:for-index="idx" wx:for-item="item" wx:key="idx" data-tab="{{idx}}" bindtap="jump" data-url="/pages/OrderDetails/OrderDetails?shop_id=1">
+        <view class="dianpu_tit">
+          <image class="dp_logo" src="../../static/images/tx.png"></image>
+          <text>石说的达开旗舰店</text>
+          <!-- <text class="iconfont iconnext3"></text> -->
+        </view>
+        <view class="goods1" wx:for="{{goods}}" wx:for-index="idx1" wx:for-item="item1">
+          <view class="goodsImg">
+            <image class="goodsImg" src="../../static/images/goods.png" mode="aspectFill"></image>
+          </view>
+          <view class="goodsinr">
+            <!-- <view class="goodsname fz30 c30 oh1">{{item.goods_name}}</view> -->
+            <view class="goodsname fz30 c30 oh1">{{'黄金曼特宁精品咖啡/袋泡咖啡/耳挂 咖啡6*10袋装'}}</view>
+            <view class="goodspri">{{'已选择：苏门答腊黄金曼特宁深度烘培'}}</view>
+            <view class="goodspri1">
+              <!-- <text class="fz36 cf6377a fwb">￥{{filter.moneyFormat('48')}}</text> -->
+              <text class="fz36 cf6377a fwb">￥{{'48'}}</text>
+
+
+            </view>
+          </view>
+        </view>
+        <view class="o_xj">
+          <view></view>
+          <view>共3件，合记
+            <text>¥144</text>
+          </view>
+
+        </view>
+        
+      </view>
+    </view>
+    
+	<view class="ordermsg" wx:show="{{order_status!==''}}">
+		<view class="msgtit">
+			订单信息
+		</view>
+		
+		<view class="msginr">
+			<!-- <view hidden='{{order_status===0}}' class="orderewm">
+				<canvas class='canvas' style="width:{{qrcodeWidth}}px; height:{{qrcodeWidth}}px;" canvas-id='canvas' bindlongtap=''></canvas>
+			</view> -->
+			<view class="ordermsg_r">
+				<view class="omsgp">订单编号：{{'21763816468492'}}</view>
+				<view class="omsgp">创建时间：{{'2020-02-10  11:56:40'}}</view>
+				
+			
+			</view>
+      
+		</view>
+		<view class="o_cz">
+      <!-- <view>评价</view> -->
+      <view>我要代言</view>
+      <view>确认收货</view>
+      <view>付款</view>
+      <view class="qx">取消订单</view>
+    </view>
+	</view>
+
+</view>

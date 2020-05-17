@@ -4,7 +4,7 @@
 <view class="container log-list">
   <view class="addressOne" wx:for="{{addresslist}}" wx:for-index="idx"          
           wx:for-item="item" 
-          wx:key="idx">
+          wx:key="idx" bindtap="xz_add" data-idx="{{idx}}">
 		<view class="addp1">
 			<text class="mr20">{{item.user_name}}</text>
 			<text>{{item.phone}}</text>

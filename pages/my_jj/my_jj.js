@@ -78,7 +78,8 @@ Page({
   save_val(){
     if (!this.data.sname){
       wx.showToast({
-        title: '请输入您的姓名',
+        icon: 'none',
+        title: '请输入您的个人简介',
       })
       return
     }

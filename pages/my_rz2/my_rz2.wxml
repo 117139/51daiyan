@@ -1,0 +1,39 @@
+<!--pages/my_rz1/my_rz1.wxml-->
+<form class="w100" bindsubmit="formSubmit">
+  <view class='container'>
+    <image class="rz_jd" src="../../static/images/rz_jd2_02.jpg"></image>
+
+    <view class="hx10"></view>
+    <view class="hx10"></view>
+  
+    <!-- 身份证信息 -->
+    <view class="msg_box b0">
+      <text class="msg_name">填写信息</text>
+      <view class="dis_flex aic msg_val"></view>
+
+    </view>
+    <view class="sf_box">
+      <view class="sfxx_box">
+        <text>姓名</text>
+        <input name="sfz_name" placeholder="请输入姓名"></input>
+      </view>
+      <view class="sfxx_box">
+        <text>微博账号</text>
+        <input name="wb_id" placeholder="请输入微博账号"></input>
+      </view>
+      <view class="sfxx_box">
+        <text>抖音账号</text>
+        <input name="dy_id" placeholder="请输入抖音账号"></input>
+      </view>
+      <view class="sfxx_box">
+        <text>快手账号</text>
+        <input name="ks_id" placeholder="请输入快手账号"></input>
+      </view>
+      <view class="sfxx_box">
+        <text>手机号码</text>
+        <input name="tel" type="number" placeholder="请输入手机号码"></input>
+      </view>
+    </view>
+    <button class="definebtn" form-type="submit">保存并进行下一步</button>
+  </view>
+</form>

@@ -1,0 +1,119 @@
+/* pages/my_daiyan/my_daiyan.wxss */
+.container{
+	width: 100%;
+	min-height: 100vh;
+	background: #f5f6f8;
+  position: relative;
+  padding: 0rpx 28rpx 28rpx;
+	box-sizing: border-box;
+}
+
+
+.goods_list2{
+	margin-top: 20rpx;
+	width: 100%;
+}
+.goods_li2{
+	width: 100%;
+	border-radius: 12rpx;
+	background: #fff;
+	padding: 20rpx 24rpx 0;
+	box-sizing: border-box;
+	margin-bottom: 20rpx;
+}
+.goods_li2_d1{
+	width: 100%;
+	display: flex;
+	align-items: center;
+	margin-bottom: 20rpx;
+}
+.goods_img2{
+	width: 196rpx;
+	height: 196rpx;
+	border-radius: 12rpx;
+	
+}
+.goods_msg{
+	height: 196rpx;
+	margin-left: 20rpx;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.goods_pri{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.pri1{
+	font-size: 30rpx;
+	color: #C3AA76;
+}
+.pri2{
+	font-size: 24rpx;
+	color: #999;
+}
+.goods_btn1{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.goods_dy_num2{
+	font-size: 24rpx;
+	color: #bbb;
+}
+.goods_dy_num2 text{
+	font-size: 24rpx;
+	color: #bbb;
+}
+.goods_to{
+	width:152rpx;
+	height:66rpx;
+	background:#FE8735;
+	border-radius:33rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 30rpx;
+	color: #fff;
+}
+.goods_li2_d2{
+	width: 100%;
+	height:58rpx;
+	background:rgba(250,251,253,1);
+	border-radius:10rpx;
+	display: flex;
+	align-items: center;
+	padding: 0 13rpx;
+	box-sizing: border-box;
+}
+.dy_tx{
+	width:38rpx;
+	height:38rpx;
+	border-radius:50%;
+}
+.dy_star{
+	font-size: 24rpx;
+	color: #5E73A1;
+	margin-left: 15rpx;
+}
+.dy_text{
+	flex: 1;
+	font-size: 24rpx;
+	color: #bbb;
+}
+.sc_box{
+  border-top: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 70rpx;
+  font-size: 28rpx;
+  color: #fe8735;
+  flex-direction: row-reverse
+}
+.sc_box text{
+  font-size: 28rpx;
+  color: #fe8735;
+}
