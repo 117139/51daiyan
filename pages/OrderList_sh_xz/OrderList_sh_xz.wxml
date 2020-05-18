@@ -1,0 +1,61 @@
+<!--logs.wxml-->
+<!-- <import src="/utils/pageState/index.wxml" /> -->
+<wxs src="../../utils/filter.wxs" module="filter" />
+<!-- <template is="pageState" data="{{...pageState}}" /> -->
+<view wx:if="{{htmlReset==1}}" class="chongshi" bindtap='cload'>重试</view>
+<view class="container" wx:if="{{htmlReset==0}}">
+  
+  <view class="goodsBox w100" wx:if="{{type==idx0}}" wx:for="{{datalist}}" wx:for-index="idx0" wx:for-item="item0" wx:key="idx0">
+    <view class="zanwu" wx:if="{{goods[idx0].length==0}}">暂无内容</view>
+    <view class="goodsBox contbox">
+      <view class="goods">
+        
+        
+          <view class="goods1">
+           
+            <view class="goodsImg">
+              <image class="goodsImg" src="../../static/images/goods.png" mode="aspectFill"></image>
+            </view>
+            <view class="goodsinr">
+              <!-- <view class="goodsname fz30 c30 oh1">{{item.goods_name}}</view> -->
+              <view class="goodsname fz30 c30 oh1">{{'黄金曼特宁精品咖啡/袋泡咖啡/耳挂 咖啡6*10袋装'}}</view>
+
+              <view class="goodspri1">
+                <text class="fz24 c6 ">数量：3</text>
+              </view>
+            </view>
+
+          </view>
+
+
+      </view>
+    </view>
+  </view>
+  <view class="fw_list">
+		<view class="fuwu_li" bindtap="jump" data-url="/pages/OrderList_sh_tk/OrderList_sh_tk">
+		  <image src="../../static/images/fuwu1.png"></image>
+			<view class="fw_msg">
+				<view class="d1">我要退款(无需退货)</view>
+				<view>没收到货,或与卖家协商同意不用退货只退款</view>
+			</view>
+			<text class="iconfont iconnext3"></text>
+		</view>
+		<view class="fuwu_li" bindtap="jump" data-url="/pages/OrderList_sh_tk/OrderList_sh_tk">
+		  <image src="../../static/images/fuwu2.png"></image>
+			<view class="fw_msg">
+				<view class="d1">我要退货退款</view>
+				<view>已收到货,需要退换收到货物</view>
+			</view>
+			<text class="iconfont iconnext3"></text>
+		</view>
+		<view class="fuwu_li">
+		  <image src="../../static/images/fuwu3.png"></image>
+			<view class="fw_msg">
+				<view class="d1">换货</view>
+				<view>商品存在质量问题，联系卖家协商换货</view>
+			</view>
+			<text class="iconfont iconnext3"></text>
+		</view>
+	</view>
+
+</view>

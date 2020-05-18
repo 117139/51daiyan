@@ -8,5 +8,49 @@
 		</view>
 	</view>
 	<!-- 提现金额 -->
-	<view class="tx_mon_box"></view>
+	<view class="tx_mon_box">
+		<view class="tx_mon_box_tit">提现金额</view>
+		<view class="tx_int"><text>￥</text><input type="number" placeholder="0.00" bindinput="get_val" value="{{uname}}" /></view>
+	</view>
+	<view class="tx_mon_box">
+		<view class="tx_mon_box_tit">提现方式</view>
+		<view class="tx_type {{tx_type==0? 'cur':''}}" data-type="0" bindtap="txtype_fuc">
+			<view class="tx_type1"><image src="../../static/images/images/tx_bg_05.jpg"></image> 微信提现</view>
+			<icon  wx:if="{{tx_type==0}}" type="success" size="18" color="#F7B43B" />
+			<view wx:else class="tx_type2">
+				
+			</view>
+		</view>
+		<view class="tx_type {{tx_type==1? 'cur':''}}" data-type="1" bindtap="txtype_fuc">
+			<view  class="tx_type1"><image src="../../static/images/images/tx_bg_09.jpg"></image> 银行卡</view>
+			
+			<icon  wx:if="{{tx_type==1}}" type="success" size="18" color="#F7B43B" />
+			<view wx:else class="tx_type2">
+			</view>
+		</view>
+	</view>
+	
+	<view class="tx_mon_box" wx:if="{{tx_type==1}}">
+		<view class="tx_mon_box_tit">
+			<text>提现账号</text>
+			<view bindtap="jump" data-url="/pages/my_tx_add/my_tx_add"><text class="iconfont icon-tainjia" ></text> <text>添加银行卡</text></view>
+		</view>
+		<view class="crad_id {{tx_crad==0? 'cur':''}}" data-type="0" bindtap="txcrad_fuc">
+			<image src="../../static/images/cradbg.png"></image>
+			<text  class="flex_1">中国建设银行  ********753</text>
+			<icon  wx:if="{{tx_crad==0}}" type="success" size="18" color="#F7B43B" />
+			<view wx:else class="tx_type2">
+				
+			</view>
+		</view>
+		<view class="crad_id {{tx_crad==1? 'cur':''}}" data-type="1" bindtap="txcrad_fuc">
+			<image src="../../static/images/cradbg.png"></image>
+			<text class="flex_1">中国建设银行  ********753</text>
+			<icon  wx:if="{{tx_crad==1}}" type="success" size="18" color="#F7B43B" />
+			<view wx:else class="tx_type2">
+				
+			</view>
+		</view>
+	</view>
+	<view class="sq_tx" bindtap="tx_sub">申请提现</view>
 </view>

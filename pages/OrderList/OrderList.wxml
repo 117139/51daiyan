@@ -32,11 +32,12 @@
           </view>
           <view class="goodsinr">
             <!-- <view class="goodsname fz30 c30 oh1">{{item.goods_name}}</view> -->
-            <view class="goodsname fz30 c30 oh1">{{'黄金曼特宁精品咖啡/袋泡咖啡/耳挂 咖啡6*10袋装'}}</view>
+            <view class="goodsname fz30 c30">{{'黄金曼特宁精品咖啡/袋泡咖啡/耳挂 咖啡6*10袋装'}}</view>
             <view class="goodspri">{{'已选择：苏门答腊黄金曼特宁深度烘培'}}</view>
             <view class="goodspri1">
               <!-- <text class="fz36 cf6377a fwb">￥{{filter.moneyFormat('48')}}</text> -->
               <text class="fz36 cf6377a fwb">￥{{'48'}}</text>
+              <text class="fz36 c9">x1</text>
 
 
             </view>

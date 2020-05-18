@@ -1,0 +1,123 @@
+<!--pages/details/details.wxml-->
+<import src="/utils/htmlStatus/index.wxml" />
+<wxs src="../../utils/filter.wxs" module="filter" />
+<view class="container">
+  <template is="htmlStatus" data="{{...htmlStatus}}" />
+  
+  <!-- 评价 -->
+  <view class="pj_box">
+    
+    <view class="pj_bq">
+      <view>全部</view>
+      <view>有图（111）</view>
+      <view>质量很好（111）</view>
+      <view>性价比高（62）</view>
+      <view>发货快（53）</view>
+    </view>
+    <view class="pj_li" wx:for="{{data_list}}" wx:for-index="idx" wx:for-item="item">
+      <view class="pj_d1">
+        <view class="pj_ren">
+          <view class="user_tx">
+            <image class="user_tx" src="../../static/images/tx.png"></image>
+          </view> 
+          Y***I
+        </view>
+        <view  class="pj_time">17小时前</view>
+      </view>
+      <view class="pj_d2">上次就买了，感觉太好喝了，这次又来光顾一下，这次又来光顾一下，这次又来光顾一下，这次又来光顾一下。</view>
+      <view wx:if="{{idx==2}}" class="quan_msg_img">
+          <image class="one" src="/static/images/goods.png" mode="aspectFill"></image>
+        </view>
+        <view wx:else class="quan_msg_img">
+          <image src="/static/images/goods.png" mode="aspectFill"></image>
+          <image src="/static/images/goods.png" mode="aspectFill"></image>
+          <image src="/static/images/goods.png" mode="aspectFill"></image>
+        </view>
+      <view class="quan_li_cz">
+       
+        <view class="cz_li" catchtap="zan" data-id="idx"><text class="iconfont iconzan"></text>1566</view>
+      </view>
+    </view>
+  </view>
+ 
+  <!-- tk -->
+  <van-popup custom-class="popopBox" show="{{ sheetshow1 }}" position="bottom" bind:close="onClose" >
+    <view class="dy_box">
+        <view class="tk_dyr_li" wx:for="{{data_list}}" wx:for-index="idx" wx:for-item="item"  data-type="{{idx}}" bindtap="txtype_fuc">
+          <view class="dis_flex aic flex_1">
+            <view class="tk_user_tx">
+              <image class="tk_user_tx" src="../../static/images/tx.png"  mode="aspectFill"></image>
+              <image wx:if="{{idx==1}}" class="tk_user_v" src="../../static/images/star_b.png"></image>
+              <image wx:if="{{idx==2}}" class="tk_user_v" src="../../static/images/star_d.png"></image>
+            </view>
+            <view class="tk_user_name">kimi</view>
+            <view wx:if="{{idx==0}}" class="hy_bq">好友</view>
+            <view wx:if="{{idx==1}}" class="hy_bq hy_bq1 ">明星</view>
+            <view wx:if="{{idx==2}}" class="hy_bq hy_bq2">达人</view>
+          </view>
+          <icon  wx:if="{{dyr_type==idx}}" type="success" size="18" color="#F7B43B" />
+          <view wx:else class="tx_type2">
+            
+          </view>
+        </view>
+        <view class="dy_btn" bindtap="xz_dyr">作为代言人</view>
+    </view>
+  </van-popup>
+  <van-popup custom-class="popopBox" show="{{ sheetshow }}" position="bottom" bind:close="onClose" >
+		<view class="popopBox1">
+			<view class="goodsimg">
+				<image src="{{filter.imgIP('goods_02.jpg')}}" data-src="{{filter.imgIP('goods_02.jpg')}}" mode="aspectFill" bindtap="previewImage"></image>
+			</view>
+			<view class="goodstkjg">
+				<view class="closebtn" bindtap="onClose">
+					<image src="/static/images/closebtn_03.jpg"></image>
+				</view>
+				<view class="goods_pri_h">￥{{guige[type1[0]].pri}}</view>
+				<view class="kucun">库存{{guige[type1[0]].kucun}}件</view>
+				<view class="tkname oh2">已选择：{{guige[type1[0]].value1}}</view>
+				<!-- <view class="tkname oh2">YI-DONG SPORT 屹动专业运动鞋 专业为中小学生运动打造的运动鞋</view> -->
+			</view>
+		</view>
+		<block >
+			<view class="tkguigetit">类型</view>
+			<view class="guigeBox">
+				<text class="guigeOne {{idx1==type1[0]?'cur':''}}" 
+									wx:for="{{guige}}"
+									wx:for-index="idx1"
+									wx:for-item="item1" 
+									wx:key="idx1"
+									data-gg="{{'0'}}"
+									data-gg1="{{idx1}}"
+									bindtap="selegg">{{item1.value1}}</text>
+			</view>
+		</block>
+		<view class="countnum">
+			<text>购买数量</text>
+			<van-stepper custom-class="steppera" input-class="vanipt" plus-class="vantjia" minus-class="vantjian" value="{{ cnum }}"
+			 data-selec="{{idx}}" bind:input="onChange" bind:change="onChange" />
+		</view>
+		<view class="czbtnG">
+			<view class="jrgwc" bindtap="addwgc">加入购物车</view>
+			<view class="buybtn" bindtap="nowbuy">立即购买</view>
+		</view>
+	</van-popup>
+  <!-- 底部 -->
+  <view class="bottom_box">
+    <view class="kf_btn">
+      <text class="iconfont iconkefu"></text>
+      <text>客服</text>
+    </view>
+    <view class="sg"></view>
+    <view class="kf_btn">
+      <text class="iconfont iconhongxinicon"></text>
+      <text>收藏</text>
+    </view>
+    <view class="sg"></view>
+    <view class="kf_btn">
+      <text class="iconfont iconstore"></text>
+      <text>店铺</text>
+    </view>
+    <view class="buy_btn"  bindtap="sheetshow">加入购物车</view>
+    <view class="buy_btn buy_btn1"  bindtap="sheetshow">立即购买</view>
+  </view>
+</view>

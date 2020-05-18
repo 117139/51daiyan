@@ -1,0 +1,64 @@
+<!--pages/index/index.wxml-->
+<import src="/utils/htmlStatus/index.wxml" />
+<wxs src="../../utils/filter.wxs" module="filter" />
+<view class="container">
+  <template is="htmlStatus" data="{{...htmlStatus}}" />
+
+  <!-- 代言圈 -->
+  <view class="quan_list">
+    <view class="quan_li" wx:for="{{start_li}}" wx:for-index="idx" wx:for-item="item" bindtap="jump" data-url="/pages/details/details">
+      <view class="quan_user_box">
+        <image bindtap="jump" data-url="/pages/my_index/my_index" class="quan_user_tx" src="/static/images/tx.png" mode="aspectFill"></image>
+        <view class="quan_user_msg">
+          <view class="quan_user_name">倪小丫 <image src="/static/images/star_b.png"></image></view>
+          <view class="quan_user_time"><text>10-14 18:03</text><text>演员</text></view>
+        </view>
+        <!-- <view class="quan_user_btn">为我投票</view> -->
+      </view>
+      <view class="quan_msg">
+        <view class="oh4  quan_msg_text">可能这辈子都戒不掉米饭了，吃好饭的用好锅，我为苏泊尔智能电饭锅代言。</view>
+        <view wx:if="{{idx==2}}" class="quan_msg_img">
+          <image class="one" src="/static/images/goods.png" mode="aspectFill"></image>
+        </view>
+        <view wx:else class="quan_msg_img">
+          <image src="/static/images/goods.png" mode="aspectFill"></image>
+          <image src="/static/images/goods.png" mode="aspectFill"></image>
+          <image src="/static/images/goods.png" mode="aspectFill"></image>
+        </view>
+      </view>
+      <view class="quan_goods">
+        <image class="quan_goods_img" src="/static/images/goods.png" mode="aspectFill"></image>
+        <view class="quan_goods_msg">
+          <view class="quan_goods_name oh1">苏泊尔IH家用大容量智能电饭锅</view>
+          <view class="quan_goods_pri">
+            <text class="pri1">¥668</text>
+            <text class="pri2">¥1368</text>
+          </view>
+          <view class="quan_goods_btn">
+            <view class="goods_btn1">库存:11000</view>
+            <view  class="goods_btn2"><text>5200+</text>代言人</view>
+          </view>
+        </view>
+      </view>
+      <view class="quan_li_cz">
+        <!-- <text class="iconfont iconcaozuo" catchtap=""></text>
+        <view class="cz_li">
+          <view>
+            <text class="iconfont iconhongxinicon"></text>赞
+          </view>
+          |
+          <view>
+           <text class="iconfont iconpinglun"></text>评论
+          </view>
+        </view> -->
+        <view class="cz_li">跟随购买：6321</view>
+        <view class="cz_li"><text class="iconfont iconpinglun"></text>1566</view>
+        <view class="cz_li" catchtap="zan" data-id="idx"><text class="iconfont iconzan"></text>1566</view>
+      </view>
+    </view>
+  </view>
+  <!-- <view class="zxkf_btn">
+		<button open-type="contact" bindcontact="kffuc"></button>
+		<image src="../../static/images/zxkf.png"></image>
+	</view> -->
+</view>

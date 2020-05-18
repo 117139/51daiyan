@@ -1,0 +1,54 @@
+<!--pages/goods_tj/goods_tj.wxml-->
+<view class="container">
+	<view class="h_bg">
+		<image class="h_bg" src="../../static/images/images/youxuan_02.jpg"></image>
+	</view>
+  <view class='dis_flex ju_a w100 pb40 pt20 bgfff tab_box'>
+    <block wx:for="{{datalist}}" wx:for-index="idx" wx:for-item="item" wx:key="idx">
+      <view class="{{type==idx?'typecur':''}}" data-type="{{idx}}" bindtap='bindcur'>{{item}}</view>
+    </block>
+
+  </view>
+	<view class="h_main">
+		
+		<!-- tab -->
+		<!-- <view class="list_tab">
+				<view bindtap="px_fuc" data-type="0">代言费
+					<view class="list_px"><text class="iconfont iconXSJ-copy {{dy_mon==0?'cur':''}}"></text><text class="iconfont iconXSJ {{dy_mon==1?'cur':''}}"></text></view>
+				</view>
+				<view bindtap="px_fuc" data-type="1">代言人数<view class="list_px"><text class="iconfont iconXSJ-copy {{dy_num==0?'cur':''}}"></text><text class="iconfont iconXSJ {{dy_num==1?'cur':''}}" ></text></view></view>
+				<view bindtap="px_fuc" data-type="2">价格<view class="list_px"><text class="iconfont iconXSJ-copy {{dy_pri==0?'cur':''}}"></text><text class="iconfont iconXSJ {{dy_pri==1?'cur':''}}" ></text></view></view>
+		</view> -->
+		<!-- goods_li -->
+		<view class="goods_list2">
+			<view class="goods_li2" wx:for="{{data_list}}" wx:for-item="item" bindtap="jump" data-url="/pages/details/details">
+				<view class="goods_li2_d1">
+					<view class="goods_img2">
+						<image class="goods_img2" src="../../static/images/goods.png"></image>
+					</view>
+					<view class="goods_msg">
+						<view class="goods_name2 ">
+							<view class="flex_1 oh1">苏泊尔IH家用大容量智能电饭锅</view>
+							<view class="yx_icon">严选</view>
+						</view>
+						<view class="goods_pri">
+							<view class="pri1">¥668</view>
+							
+						</view>
+						<view class="goods_btn1">
+							<view class="sj_list"  bindtap="jump" data-url="/pages/daiyanren/daiyanren">
+							  <image class="sj_li" src="/static/images/tx.png" mode="aspectFill"></image>
+							  <image class="sj_li" src="/static/images/tx.png" mode="aspectFill"></image>
+							  <image class="sj_li" src="/static/images/tx.png" mode="aspectFill"></image>
+							  <image class="sj_li" src="/static/images/tx.png" mode="aspectFill"></image>
+							  <image class="sj_li" src="/static/images/tx.png" mode="aspectFill"></image>
+							</view>
+							<view class="goods_dy_num2">代言费：<text>¥30</text></view>
+						</view>
+					</view>
+				</view>
+				
+			</view>
+		</view>
+	</view>
+</view>

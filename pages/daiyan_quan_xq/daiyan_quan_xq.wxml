@@ -109,7 +109,7 @@
 							<view class="pri1">¥668</view>
 							<view class="pri2">代言费：¥30</view>
 						</view>
-						<view class="goods_dyr">
+						<view class="goods_dyr"  bindtap="jump" data-url="/pages/daiyanren/daiyanren">
 							<text class="dyr_tit">代言人</text>
               <view class="sj_list">
                 <image class="sj_li" src="/static/images/tx.png" mode="aspectFill"></image>

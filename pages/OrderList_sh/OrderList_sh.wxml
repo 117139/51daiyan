@@ -1,0 +1,68 @@
+<!--logs.wxml-->
+<!-- <import src="/utils/pageState/index.wxml" /> -->
+<wxs src="../../utils/filter.wxs" module="filter" />
+<!-- <template is="pageState" data="{{...pageState}}" /> -->
+<view wx:if="{{htmlReset==1}}" class="chongshi" bindtap='cload'>重试</view>
+<view class="container" wx:if="{{htmlReset==0}}">
+  <!-- <view class="hengxian"></view> -->
+  <view class='dis_flex ju_a w100 pb40 pt20 bgfff tab_box'>
+    <block wx:for="{{datalist}}" wx:for-index="idx" wx:for-item="item" wx:key="idx">
+      <view class="{{type==idx?'typecur':'c9'}}" data-type="{{idx}}" bindtap='bindcur'>{{item}}</view>
+    </block>
+
+  </view>
+
+  <view class="goodsBox w100" wx:if="{{type==idx0}}" wx:for="{{datalist}}" wx:for-index="idx0" wx:for-item="item0" wx:key="idx0">
+    <view class="zanwu" wx:if="{{goods[idx0].length==0}}">暂无内容</view>
+    <view class="goodsBox contbox">
+      <view class="goods" wx:for="{{goods}}" wx:for-index="idx" wx:for-item="item" wx:key="idx" data-tab="{{idx}}" bindtap="jump" data-url="{{'/pages/OrderDetails/OrderDetails?shop_id=1&type='+type}}">
+        <view class="dianpu_tit">
+          <image class="dp_logo" src="../../static/images/tx.png"></image>
+          <text>石说的达开旗舰店</text>
+          <!-- <text class="iconfont iconnext3"></text> -->
+        </view>
+        <block wx:for="{{goods}}" wx:for-index="idx1" wx:for-item="item1">
+          <view class="goods1">
+            <!-- <view wx:if="{{type==4}}" class="xuanze" data-selec="{{idx}}" data-selec1="{{idx1}}" catchtap="select">
+            <view class="xuanze1 {{goods_sele[idx][idx1].xuan==true? 'xuanze2':''}}">
+              <icon wx:if="{{goods_sele[idx][idx1].xuan==true}}" type="success" size="14" color="#F7B43B" />
+            </view>
+          </view> -->
+            <view class="goodsImg">
+              <image class="goodsImg" src="../../static/images/goods.png" mode="aspectFill"></image>
+            </view>
+            <view class="goodsinr">
+              <!-- <view class="goodsname fz30 c30 oh1">{{item.goods_name}}</view> -->
+              <view class="goodsname fz30 c30 oh1">{{'黄金曼特宁精品咖啡/袋泡咖啡/耳挂 咖啡6*10袋装'}}</view>
+
+              <view class="goodspri1">
+                <text class="fz24 c6 ">数量：3</text>
+              </view>
+            </view>
+
+          </view>
+
+          <view class="o_cz">
+            <view wx:if="{{type==0}}" bindtap="jump" data-url="/pages/OrderList_sh_tk/OrderList_sh_tk">申请售后</view>
+            <view wx:if="{{type==1}}">取消售后</view>
+          </view>
+        </block>
+
+      </view>
+    </view>
+  </view>
+  <view class="vbottom" wx:if="{{type==4}}">
+    <view class="selecAll" bindtap="selecAll">
+      <view class="xuanze1 all {{all==true? 'xuanze2':''}}">
+        <icon wx:if="{{all==true}}" type="success" size="14" color="#F7B43B" />
+      </view>
+      全选
+    </view>
+    <view class="heji flex_1">
+      <!-- <view><text class="fz26">合计:</text>￥{{sum}}</view>
+			<view class="fz22 c9">不含运费</view> -->
+    </view>
+    <view class="jiesuan" bindtap="openOrder">合并代言</view>
+  </view>
+
+</view>

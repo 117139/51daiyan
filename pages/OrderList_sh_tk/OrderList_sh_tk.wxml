@@ -1,0 +1,82 @@
+<!--logs.wxml-->
+<!-- <import src="/utils/pageState/index.wxml" /> -->
+<wxs src="../../utils/filter.wxs" module="filter" />
+<!-- <template is="pageState" data="{{...pageState}}" /> -->
+<view wx:if="{{htmlReset==1}}" class="chongshi" bindtap='cload'>重试</view>
+<view class="container" wx:if="{{htmlReset==0}}">
+
+	<view class="goodsBox w100" >
+		<view class="zanwu" wx:if="{{goods[idx0].length==0}}">暂无内容</view>
+		<view class="goodsBox contbox">
+			<view class="goods">
+
+
+				<view class="goods1">
+
+					<view class="goodsImg">
+						<image class="goodsImg" src="../../static/images/goods.png" mode="aspectFill"></image>
+					</view>
+					<view class="goodsinr">
+						<!-- <view class="goodsname fz30 c30 oh1">{{item.goods_name}}</view> -->
+						<view class="goodsname fz30 c30 oh1">{{'黄金曼特宁精品咖啡/袋泡咖啡/耳挂 咖啡6*10袋装'}}</view>
+
+						<view class="goodspri1">
+							<text class="fz24 cf6377a ">￥48</text>
+							<text class="fz24 c6 ">数量：3</text>
+						</view>
+					</view>
+
+				</view>
+
+
+			</view>
+		</view>
+	</view>
+	<view class="fw_list">
+		<picker class="w100" bindchange="bindPickerChange" value="{{index}}" range="{{zhaungtai}}" range-key='name'>
+			<view class="fuwu_li">
+				<view class="d1">货物状态</view>
+				<view class="fw_msg">
+					{{zhaungtai[index].name}}
+				</view>
+				<text class="iconfont iconnext3"></text>
+			</view>
+		</picker>
+		<!-- <picker class="w100" bindchange="bindPickerChange" value="{{index1}}" range="{{yuanyin}}" range-key='name'>
+			<view class="fuwu_li">
+				<view class="d1">退款原因</view>
+
+				<view class="fw_msg">
+					{{yuanyin[index].name}}
+				</view>
+				<text class="iconfont iconnext3"></text>
+			</view>
+		</picker> -->
+		<view class="fuwu_li">
+			<view class="d1">具体原因:</view>
+			<view class="fw_msg">
+				
+			</view>
+		</view>
+		<view class="tk_text">
+			<textarea placeholder="请描述申请售后服务的具体原因" bindinput="get_val" value="{{yname}}" maxlength="500"></textarea>
+      <view>{{yname.length}}/500</view>
+		</view>
+	</view>
+	<view class="fw_list">
+		<view class="imgbox mb20">
+		  <view class="addimg1" wx:for="{{imgb}}" wx:for-index="idx" wx:for-item="item" wx:key="idx" data-idx="{{idx}}" bindtap="imgdel">
+		    <!-- <image src="{{filter.imgIP(item)}}" data-src="{{filter.imgIP(item)}}" mode="aspectFill"></image> -->
+		    <image src="{{item}}" data-src="{{item}}" mode="aspectFill"></image>
+		  </view>
+		
+		  <view wx:if="{{imgb.length<9}}" class="addimg" bindtap="scpic">
+		
+		    <image src="../../static/images/upimg1.jpg"></image>
+		  </view>
+		</view>
+    <view class="zp_tip">为了帮您更好的解决问题，请务必上传照片凭证</view>
+	</view>
+    <view class="order_tip">提交服务单后,售后专员可能与您电话沟通，请保证手机通畅</view>
+	 <view class="sq_tx" bindtap="save_val">提交</view>
+</view>

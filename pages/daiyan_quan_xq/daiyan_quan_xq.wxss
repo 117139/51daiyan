@@ -312,6 +312,7 @@
 	justify-content: center;
 	color: #FE8735;
 	margin-left: 10rpx;
+  font-size: 30rpx;
 }
 .user_btn1{
 	background:rgba(238,238,238,1);
@@ -536,6 +537,7 @@
 }
 .dyr_tit{
   flex: none;
+  font-size: 30rpx;
 }
 .goods_kc{
   flex: none;
@@ -549,4 +551,7 @@
   font-size: 24rpx;
   color: #fff;
   margin-left: 20rpx;
+}
+.goods_name2{
+  font-size: 30rpx;
 }

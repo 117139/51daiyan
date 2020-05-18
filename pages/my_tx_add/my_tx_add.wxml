@@ -1,0 +1,22 @@
+<!--pages/my_name/my_name.wxml-->
+<!-- <form class="w100" bindsubmit="formSubmit"> -->
+  <view class='container'>
+    
+    <view class="set_name">
+      <view class="set_l">开户银行</view>
+      <input class="set_int" placeholder="请填写开户银行" bindinput="get_val" value="{{yname}}"></input>
+      
+    </view>
+    <view class="set_name">
+      <view class="set_l">持卡人姓名</view>
+      <input class="set_int" placeholder="请填写持卡人姓名"bindinput="get_val1" value="{{xname}}"></input>
+      
+    </view>
+    <view class="set_name">
+      <view class="set_l">卡号</view>
+      <input class="set_int" placeholder="请填写卡号"bindinput="get_val2" value="{{crad_id}}"></input>
+      
+    </view>
+    <view class="sq_tx" bindtap="save_val">申请提现</view>
+  </view>
+<!-- </form> -->
