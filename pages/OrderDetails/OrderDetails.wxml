@@ -6,7 +6,7 @@
 <view class="container">
 <view class="order_box1">
   <image src="/static/images/order_bg_02.jpg"></image>
-  <!-- <view class="order_tit">
+  <view wx:if="{{h_type==1||h_type==0}}" class="order_tit">
     <view class="type_img">
       <image src="/static/images/ot_fukuan.png"></image>
     </view>
@@ -14,8 +14,8 @@
       <view class="d1">待付款</view>
       <view class="d2">等待付款中</view>
     </view>
-  </view> -->
-  <!-- <view class="order_tit">
+  </view>
+  <view wx:if="{{h_type==2}}" class="order_tit">
     <view class="type_img">
       <image src="/static/images/ot_shouhuo.png"></image>
     </view>
@@ -23,23 +23,23 @@
       <view class="d1">待收货</view>
       <view class="d2">请及时确认收货</view>
     </view>
-  </view> -->
-  <!-- <view class="order_tit">
-    <view class="type_img">
-      <image src="/static/images/ot_daiyan.png"></image>
-    </view>
-    <view class="ot_msg">
-      <view class="d1">待代言</view>
-      <view class="d2">已收货期待您的代言</view>
-    </view>
-  </view> -->
-  <view class="order_tit">
+  </view>
+  <view  wx:if="{{h_type==3}}" class="order_tit">
     <view class="type_img" style="width:56rpx;">
       <image src="/static/images/ot_pingjia.png"></image>
     </view>
     <view class="ot_msg">
       <view class="d1">待评价</view>
       <view class="d2">期待您的评价</view>
+    </view>
+  </view>
+  <view  wx:if="{{h_type==4}}" class="order_tit">
+    <view class="type_img">
+      <image src="/static/images/ot_daiyan.png"></image>
+    </view>
+    <view class="ot_msg">
+      <view class="d1">待代言</view>
+      <view class="d2">已收货期待您的代言</view>
     </view>
   </view>
 </view>
@@ -108,11 +108,11 @@
       
 		</view>
 		<view class="o_cz">
-      <!-- <view>评价</view> -->
-      <view>我要代言</view>
-      <view>确认收货</view>
-      <view>付款</view>
-      <view class="qx">取消订单</view>
+        <view wx:if="{{h_type==3}}">评价</view>
+        <view  wx:if="{{h_type==4}}">我要代言</view>
+        <view  wx:if="{{h_type==2}}">确认收货</view>
+        <view  wx:if="{{h_type==0||h_type==1}}">付款</view>
+        <view  wx:if="{{h_type==0||h_type==1}}" class="qx">取消订单</view>
     </view>
 	</view>
 

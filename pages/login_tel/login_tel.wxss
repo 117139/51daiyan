@@ -1,0 +1,64 @@
+/* pages/login1/login1.wxss */
+.container{
+	padding: 0 28px;
+}
+.header{
+	width: 100%;
+	height: 300rpx;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.header image{
+	width: 250rpx;
+	height: 180rpx;
+}
+.srkbox{
+	width: 100%;
+	line-height: 50rpx;
+	border-bottom: 1px solid #dbdbdb;
+	display: flex;
+}
+.srkbox input{
+	flex: 1;
+	min-width: 0;
+	padding-left: 15px;
+	box-sizing: border-box;
+	font-size: 28rpx;
+}
+
+.mb60{
+	margin-bottom: 60rpx;
+}
+.tjbtn{
+	width:560rpx;
+	height:80rpx;
+	background:linear-gradient(0deg,rgba(252,132,26,1),rgba(247,183,51,1));
+	border-radius:40rpx;
+	color: #fff;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 30rpx;
+	color: #fff;
+	margin: 0 auto;
+}
+.tjbtn button{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	opacity: 0;
+}
+.denglu{
+	margin-top: 30rpx;
+	margin-left: 50rpx;
+	font-size: 28rpx;
+	color: #010101;
+}
+.getcode{
+	font-size: 28rpx;
+	color: #C5C5C5;
+}

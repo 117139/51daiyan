@@ -1,0 +1,21 @@
+/* pages/my_tx/my_tx.wxss */
+.tixian_box{
+	width: 100%;
+	height:287rpx;
+	position: relative;
+	
+}
+.money_yue{
+	position: absolute;
+	top: 85rpx;
+	left: 28rpx;
+	color: #fff;
+	font-size: 30rpx;
+}
+
+.money_yue text{
+	font-size: 60rpx;
+}
+.money_yue .d1{
+	margin-bottom: 20rpx;
+}

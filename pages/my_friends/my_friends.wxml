@@ -17,7 +17,10 @@
 		</view>
 		<view class="box_tit box_li">
 			<view class="td1">
-				<image class="f_tx" src="../../static/images/tx.png"></image>
+				<view class="user_tx">
+					<image class="user_tx" src="../../static/images/tx.png"></image>
+					<image class="user_v" src="../../static/images/star_b.png"></image>
+				</view>
 				<text>李勇</text>
 			</view>
 			<view class="td2">55</view>
@@ -25,7 +28,10 @@
 		</view>
 		<view class="box_tit box_li">
 			<view class="td1">
-				<image class="f_tx" src="../../static/images/tx.png"></image>
+				<view class="user_tx">
+					<image class="user_tx" src="../../static/images/tx.png"></image>
+					<image class="user_v" src="../../static/images/star_b.png"></image>
+				</view>
 				<text>李勇</text>
 			</view>
 			<view class="td2">55</view>
@@ -33,7 +39,10 @@
 		</view>
 		<view class="box_tit box_li">
 			<view class="td1">
-				<image class="f_tx" src="../../static/images/tx.png"></image>
+				<view class="user_tx">
+					<image class="user_tx" src="../../static/images/tx.png"></image>
+					<image class="user_v" src="../../static/images/star_b.png"></image>
+				</view>
 				<text>李勇</text>
 			</view>
 			<view class="td2">55</view>

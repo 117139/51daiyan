@@ -24,17 +24,17 @@
 		<view class="fx_tit">代言圈</view>
     <text class="iconfont iconnext3"></text>
   </view>
-  <view class="fx_li mt20" bindtap="jump" data-url="">
+  <view class="fx_li mt20" bindtap="jump" data-url="/pages/my_friends/my_friends">
     <image class="li_icon" src="/static/images/images/faxian_11.jpg"></image>
 		<view class="fx_tit">我的好友</view>
     <text class="iconfont iconnext3"></text>
   </view>
-  <view class="fx_li" bindtap="jump" data-url="">
+  <view class="fx_li"  bindtap="jump" data-url="/pages/my_guanzhu/my_guanzhu">
     <image class="li_icon" src="/static/images/images/faxian_13.jpg"></image>
 		<view class="fx_tit">我的关注</view>
     <text class="iconfont iconnext3"></text>
   </view>
-  <view class="fx_li" bindtap="jump" data-url="">
+  <view class="fx_li" bindtap="jump" data-url="/pages/my_fans/my_fans">
     <image class="li_icon" src="/static/images/images/faxian_15.jpg"></image>
 		<view class="fx_tit">我的粉丝</view>
     <text class="iconfont iconnext3"></text>

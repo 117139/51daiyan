@@ -7,6 +7,7 @@ let qrcode;
 const qrcodeWidth = rpx2px(210)
 Page({
   data: {
+    h_type:"",
 		btnkg:0,
 		htmlkg:0,
 		Odata:'',
@@ -26,6 +27,12 @@ Page({
 		qrcodeWidth: qrcodeWidth,
   },
   onLoad: function (option) {
+    var that =this
+    if(option.type){
+      that.setData({
+        h_type:option.type
+      })
+    }
 		// wx.setNavigationBarTitle({
 		// 	title:'加载中...'
 		// })

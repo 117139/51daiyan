@@ -41,11 +41,21 @@ page,.container{
 	display: flex;
 	align-items: center;
 }
-.f_tx{
+.user_tx{
 	width:82rpx;
 	height:82rpx;
 	border-radius:50%;
-	margin-right: 34rpx;
+	position: relative;
+}
+.user_v{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width:27rpx;
+	height:28rpx;
+}
+view.user_tx{
+  margin-right: 10rpx;
 }
 .box_li .td2{
 	color: #1E9526;

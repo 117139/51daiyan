@@ -119,12 +119,12 @@
 			  <view class="fx_tit">我的关注</view>
 			  <text class="iconfont iconnext3"></text>
 			</view>
-			<view class="fx_li" bindtap="jump" data-url="">
+			<view class="fx_li" bindtap="jump" data-url="/pages/my_shoucang/my_shoucang">
 			  <image class="li_icon" src="{{filter.imgIP('ny_10.png')}}"></image>
 			  <view class="fx_tit">我的收藏</view>
 			  <text class="iconfont iconnext3"></text>
 			</view>
-			<view class="fx_li" bindtap="jump" data-url="">
+			<view class="fx_li" bindtap="jump" data-url="/pages/my_yhq/my_yhq">
 			  <image class="li_icon" src="{{filter.imgIP('ny_12.png')}}"></image>
 			  <view class="fx_tit">我的优惠券</view>
 			  <text class="iconfont iconnext3"></text>

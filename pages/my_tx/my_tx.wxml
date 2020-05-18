@@ -1,0 +1,12 @@
+<!--pages/my_tx/my_tx.wxml-->
+<view class="container">
+	<view class="tixian_box">
+		<image  class="tixian_box" src="../../static/images/tx_bg_02.jpg"></image>
+		<view class="money_yue">
+			<view class="d1">¥<text>1000.00</text></view>
+			<view class="d2">可提现金额</view>
+		</view>
+	</view>
+	<!-- 提现金额 -->
+	<view class="tx_mon_box"></view>
+</view>

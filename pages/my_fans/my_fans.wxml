@@ -3,7 +3,7 @@
 <wxs src="../../utils/filter.wxs" module="filter" />
 <view class="container">
   <template is="htmlStatus" data="{{...htmlStatus}}" />
-	<view class="top_box">
+	<!-- <view class="top_box">
 		<view class="search_type">
 			<view class="{{ss_cur==0?'cur':''}}" bindtap="ss_type" data-type="0">全部</view>
 			<view class="{{ss_cur==1?'cur':''}}" bindtap="ss_type" data-type="1">店铺</view>
@@ -12,9 +12,9 @@
 			<view class="{{ss_cur==4?'cur':''}}" bindtap="ss_type" data-type="4">代言圈</view>
 			<view class="{{ss_cur==5?'cur':''}}" bindtap="ss_type" data-type="5">其他</view>
 		</view>
-	</view>
+	</view> -->
 	<!-- 用户 -->
-	 <view class="ss_list"  wx:if="{{ss_cur==1}}">
+	 <view class="ss_list">
 		 <view class="data_null" wx:if="{{data_list.length==0}}">
 		 			 <image src="../../static/images/data_null1.png"></image>
 		 </view>
@@ -28,18 +28,5 @@
 				<view class="user_btn user_btn1">已关注</view>
 		 </view>
 	 </view>
-	 <!-- 品牌 -->
-	 <view class="ss_list"  wx:else>
-		 <view class="data_null" wx:if="{{data_list.length==0}}">
-		 			 <image src="../../static/images/data_null1.png"></image>
-		 </view>
-		 <view wx:if="{{data_list.length>0}}" class="li_box" wx:for="{{data_list}}" wx:for-item="item" bindtap="jump" data-url="/pages/details/details">
-			 <view class="user_tx">
-			 	<image class="user_tx" src="../../static/images/tx.jpg"></image>
-			 </view>
-			 <view class="user_name oh1">小米51代言旗舰店</view>
-			 <view class="user_btn">+关注</view>
-			 <view class="user_btn user_btn1">已关注</view>
-		 </view>
-	 </view>
+	 
 </view>

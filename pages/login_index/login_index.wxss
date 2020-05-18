@@ -1,0 +1,34 @@
+/* pages/login_index/login_index.wxss */
+.login_bg{
+	width: 649rpx;
+	height: 353rpx;
+	margin: 100rpx auto;
+}
+.login_wx{
+	width:560rpx;
+	height:80rpx;
+	background:linear-gradient(0deg,rgba(252,132,26,1),rgba(247,183,51,1));
+	border-radius:40rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #fff;
+	font-size: 30rpx;
+}
+.login_tel{
+	margin-top: 50rpx;
+	text-align: center;
+	font-size: 28rpx;
+	color: #666;
+}
+.login_tip{
+	position: fixed;
+	bottom: 100rpx;
+	text-align: center;
+	font-size: 30rpx;
+	color: #999;
+}
+.login_tip text{
+	color: #F8AE2E;
+	font-size: 28rpx;
+}
