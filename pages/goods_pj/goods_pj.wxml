@@ -1,0 +1,36 @@
+<!--logs.wxml-->
+<!-- <import src="/utils/pageState/index.wxml" /> -->
+<wxs src="../../utils/filter.wxs" module="filter" />
+<!-- <template is="pageState" data="{{...pageState}}" /> -->
+<view wx:if="{{htmlReset==1}}" class="chongshi" bindtap='cload'>重试</view>
+<view class="container" wx:if="{{htmlReset==0}}">
+	<view class="fw_list">
+		
+		<view class="fuwu_li">
+			<view class="d1">发表评价:</view>
+			<view class="fw_msg">
+				
+			</view>
+		</view>
+		<view class="tk_text">
+			<textarea placeholder="请填写您的评价..." bindinput="get_val" value="{{yname}}" maxlength="500"></textarea>
+      
+		</view>
+	</view>
+	<view class="fw_list">
+		<view class="imgbox mb20">
+		  <view class="addimg1" wx:for="{{imgb}}" wx:for-index="idx" wx:for-item="item" wx:key="idx" data-idx="{{idx}}" bindtap="imgdel">
+		    <!-- <image src="{{filter.imgIP(item)}}" data-src="{{filter.imgIP(item)}}" mode="aspectFill"></image> -->
+		    <image src="{{item}}" data-src="{{item}}" mode="aspectFill"></image>
+		  </view>
+		
+		  <view wx:if="{{imgb.length<9}}" class="addimg" bindtap="scpic">
+		
+		    <image src="../../static/images/upimg1.jpg"></image>
+		  </view>
+		</view>
+    
+	</view>
+   
+	 <view class="sq_tx" bindtap="save_val">发表</view>
+</view>

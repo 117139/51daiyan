@@ -163,14 +163,14 @@
     </view>
     <view class="dp_cz">
       <view>+ 关注店铺</view>
-      <view>进店逛逛</view>
+      <view bindtap="jump" data-url="/pages/dp_index/dp_index">进店逛逛</view>
     </view>
   </view>
   <!-- 回头客 -->
-  <view class="htk">
+  <view class="htk" >
     <view class="pj_box_tit">
       <image class="htk_img" src="{{filter.imgIP('htk.png')}}"></image>
-      <view class="p_tit_r">8人在说
+      <view class="p_tit_r"  data-url="/pages/details_pl/details_pl" bindtap="jump">8人在说
         <text class="iconfont iconnext3"></text>
       </view>
     </view>

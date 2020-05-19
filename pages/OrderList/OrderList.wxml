@@ -51,7 +51,7 @@
 
         </view>
         <view class="o_cz">
-          <view wx:if="{{type==3}}">评价</view>
+          <view wx:if="{{type==3}}" bindtap="jump" data-url="/pages/goods_pj/goods_pj">评价</view>
           <view  wx:if="{{type==0||type==4}}">我要代言</view>
           <view  wx:if="{{type==0||type==2}}">确认收货</view>
           <view  wx:if="{{type==0||type==1}}">付款</view>
@@ -73,5 +73,5 @@
 		</view>
 		<view class="jiesuan" bindtap="openOrder">合并代言</view>
 	</view>
-
+  
 </view>

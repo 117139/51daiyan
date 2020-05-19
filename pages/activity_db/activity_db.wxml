@@ -1,0 +1,117 @@
+<!--pages/activity/activity.wxml-->
+<import src="/utils/htmlStatus/index.wxml" />
+<wxs src="../../utils/filter.wxs" module="filter" />
+<view class="container">
+  <view class="avtivity_box">
+    <image class="avtivity_box" src="/static/images/hd_banner.jpg"></image>
+    <view class="hd_time">活动截止时间：2019/11/01-2019/11/03</view>
+  </view>
+  <view class="avtivity_time">
+    <image class="avtivity_time" src="/static/images/hd_bg2.jpg"></image>
+    <view class="avtivity_time_djs">
+      活动倒计时：
+      <text>{{hd_time.day}}</text> 天
+      <text>{{hd_time.hh}}</text> 小时
+      <text>{{hd_time.mm}}</text> 分
+      <text>{{hd_time.min}}</text> 秒
+    </view>
+  </view>
+  <view class="hd_db_img">
+    <image class="hd_db_img" src="/static/images/hd_db_img.jpg"></image>
+  </view>
+  <view class="hd_db_bg">
+    <image class="hd_db_bg" src="/static/images/hd_db_bg.jpg"></image>
+    <view class="hd_db_dp">
+      <view class="d1">
+        <view>人人都是代言人</view>
+        <view>我的优惠券<text class="iconfont iconnext3 fz14 cf"></text></view>
+      </view>
+      <view class="dp_msg">
+        <image src="/static/images/dp_logo.jpg"></image>
+        <view bindtap="jump" data-url="/pages/daiyan_fabu/daiyan_fabu">我要代言</view>
+        <text>参与投票可获得优惠券</text>
+      </view>
+    </view>
+  </view>
+  <view class="hd_jd">晋级50强 2019/11/18-2019/11/25</view>
+ 
+  <view class="db_main">
+    <view class="list_tit {{ph_type==1?'cur':''}}">
+      <view class="ph_fri">
+        <image class="ph_fri " src="{{ph_type==0?'../../static/images/daiyan_ph1.png':'../../static/images/daiyan_ph.png'}}"></image>
+        <view class="pl_li" bindtap="ph_fuc" data-type="0">为TA投票</view>
+      </view>
+      <view class="pl_li1" bindtap="ph_fuc" data-type="1">活动介绍</view>
+    </view>
+    <view class="dy_list" wx:if="{{ph_type=='0'}}">
+      <view class="dy_box">
+        <view class="dy_li">
+          <view class="pl_num">
+            <image class="pl_num" src="../../static/images/phicon_1.png"></image>
+          </view>
+          <view class="pl_tx">
+            <image class="pl_tx" src="../../static/images/tx.png"></image>
+          </view>
+          <view class="ph_name">张一鸣</view>
+          <view class="ph_num">
+            <text>2200</text>人气值</view>
+          <!-- <view class="ph_btn">投票</view> -->
+          <view class="ph_btn ph_btn1">已投票</view>
+        </view>
+        <view class="li_dy">代言说：喜欢运动的感觉，耐克just di it！</view>
+      </view>
+      <view class="dy_box">
+        <view class="dy_li">
+          <view class="pl_num">
+            <image class="pl_num" src="../../static/images/phicon_2.png"></image>
+          </view>
+          <view class="pl_tx">
+            <image class="pl_tx" src="../../static/images/tx.png"></image>
+          </view>
+          <view class="ph_name">张一鸣</view>
+          <view class="ph_num">
+            <text>2200</text>人气值</view>
+          <view class="ph_btn">投票</view>
+        </view>
+        <view class="li_dy">代言说：喜欢运动的感觉，耐克just di it！</view>
+      </view>
+      <view class="dy_box">
+        <view class="dy_li">
+          <view class="pl_num">
+            <image class="pl_num" src="../../static/images/phicon_3.png"></image>
+          </view>
+          <view class="pl_tx">
+            <image class="pl_tx" src="../../static/images/tx.png"></image>
+          </view>
+          <view class="ph_name">张一鸣</view>
+          <view class="ph_num">
+            <text>2200</text>人气值</view>
+          <view class="ph_btn">投票</view>
+        </view>
+        <view class="li_dy">代言说：喜欢运动的感觉，耐克just di it！</view>
+      </view>
+      <view class="dy_box">
+        <view class="dy_li">
+          <view class="pl_num">
+            4
+          </view>
+          <view class="pl_tx">
+            <image class="pl_tx" src="../../static/images/tx.png"></image>
+          </view>
+          <view class="ph_name">张一鸣</view>
+          <view class="ph_num">
+            <text>2200</text>人气值</view>
+          <view class="ph_btn">投票</view>
+        </view>
+        <view class="li_dy">代言说：喜欢运动的感觉，耐克just di it！</view>
+      </view>
+    </view>
+    <view class="dy_list" wx:if="{{ph_type=='1'}}">
+      <view class="hd_js">
+        <view class="dyr_tit">耐克优选代言人：</view>
+      <view class="dyr_msg">选出最会玩，最有影响力的代言人，人人都可参与的代言人活动。自拍短视频上传，并拉动朋友参与优选投票。你就有机会成为该品牌的优选代言人，并获得现金激励。</view>
+      <video src="https://gss3.baidu.com/6LZ0ej3k1Qd3ote6lo7D0j9wehsv/tieba-smallvideo-transcode-cae/2902246_e631577dd461c49ccf6939da69bce1d2_0_cae.mp4"></video>
+      </view>
+    </view>
+  </view>
+</view>

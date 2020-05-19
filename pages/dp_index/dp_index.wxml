@@ -1,0 +1,108 @@
+<!--pages/goods_tj/goods_tj.wxml-->
+<import src="/utils/htmlStatus/index.wxml" />
+<wxs src="../../utils/filter.wxs" module="filter" />
+<view class="container">
+  <view class="dp_box">
+    <view class="dp_b1">
+      <view class="dp_logo">
+        <image src="{{filter.imgIP('goods_02.jpg')}}" mode="aspectFill"></image>
+      </view>
+      <view class="dp_msg">
+        <view class="dp_name oh2">弥翼咖啡 MIYI COFFEE ROSASTERS</view>
+        <view class="dp_lv">
+          <image src="{{filter.imgIP('dp_zuan.png')}}"></image>
+          <image src="{{filter.imgIP('dp_zuan.png')}}"></image>
+          <image src="{{filter.imgIP('dp_zuan.png')}}"></image>
+          <image src="{{filter.imgIP('dp_zuan.png')}}"></image>
+        </view>
+        <view class="dp_bq">
+          <text>代言 835</text>
+          <text class="flex_1">粉丝数</text>
+          <view class="guanzhu_btn">关注</view>
+        </view>
+
+      </view>
+    </view>
+  </view>
+  <view class="dp_type">
+    <view class=" {{s_type==0?'cur':''}}"  bindtap="ss_type" data-type="0">商品</view>
+    <view class=" {{s_type==1?'cur':''}}"  bindtap="ss_type" data-type="1">卖家代言</view>
+  </view>
+	<view class="h_main">
+		
+		<!-- tab -->
+		<!-- <view class="list_tab">
+				<view bindtap="px_fuc" data-type="0">代言费
+					<view class="list_px"><text class="iconfont iconXSJ-copy {{dy_mon==0?'cur':''}}"></text><text class="iconfont iconXSJ {{dy_mon==1?'cur':''}}"></text></view>
+				</view>
+				<view bindtap="px_fuc" data-type="1">代言人数<view class="list_px"><text class="iconfont iconXSJ-copy {{dy_num==0?'cur':''}}"></text><text class="iconfont iconXSJ {{dy_num==1?'cur':''}}" ></text></view></view>
+				<view bindtap="px_fuc" data-type="2">价格<view class="list_px"><text class="iconfont iconXSJ-copy {{dy_pri==0?'cur':''}}"></text><text class="iconfont iconXSJ {{dy_pri==1?'cur':''}}" ></text></view></view>
+		</view> -->
+		<!-- goods_li -->
+		<view wx:if="{{s_type==0}}" class="goods_list">
+			<view class="goods_li" bindtap="jump" data-url="/pages/details/details">
+				<image class="goods_img" src="../../static/images/images/goods15_02.jpg"  mode="aspectFill"></image>
+				<view class="goods_msg">
+					<view class="oh1">奶油碧根果 整箱</view>
+					<view class="goods_pri">
+						<text>￥27</text>
+						<text class="pr2">￥37</text>
+					</view>
+				</view>
+			</view>
+			<view class="goods_li">
+				<image class="goods_img" src="../../static/images/images/goods15_02.jpg"  mode="aspectFill"></image>
+				<view class="goods_msg">
+					<view class="oh1">奶油碧根果 整箱</view>
+					<view class="goods_pri">
+						<text>￥27</text>
+						<text class="pr2">￥37</text>
+					</view>
+				</view>
+			</view>
+			<view class="goods_li">
+				<image class="goods_img" src="../../static/images/images/goods15_02.jpg"  mode="aspectFill"></image>
+				<view class="goods_msg">
+					<view class="oh1">奶油碧根果 整箱</view>
+					<view class="goods_pri">
+						<text>￥27</text>
+						<text class="pr2">￥37</text>
+					</view>
+				</view>
+			</view>
+			<view class="goods_li">
+				<image class="goods_img" src="../../static/images/images/goods15_02.jpg"  mode="aspectFill"></image>
+				<view class="goods_msg">
+					<view class="oh2">奶油碧根果奶油碧根果奶油碧根果 整箱</view>
+					<view class="goods_pri">
+						<text>￥27</text>
+						<text class="pr2">￥37</text>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view wx:if="{{s_type==1}}" class="my_list">
+			<view class="sp_list">
+				<view class="sp_li" wx:for="{{data_list}}" wx:for-index="idx" wx:for-item="item">
+					<view class="sp_li_img">
+						<image class="sp_li_img" src="../../static/images/images/goods15_02.jpg" mode="aspectFill"></image>
+						<view class="sp_li_img_cz">
+							<image src="../../static/images/goods_play.png"></image>
+						</view>
+					</view>
+					<view class="sp_li_msg">
+						<view class="sp_li_name oh2">三只松鼠-巨型零食大礼包 内含30包休闲食品</view>
+						<view class="sp_li_time">
+              <view class="user_tximg">
+                <image src="../../static/images/tx.png"></image>
+                王力宏
+              </view>
+              <view wx:if="{{idx==2}}"><text class="iconfont iconhongxinicon"></text> 390</view>
+              <view wx:else class="yzan"><text class="iconfont iconhongxinicon1"></text> 390</view>
+            </view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>

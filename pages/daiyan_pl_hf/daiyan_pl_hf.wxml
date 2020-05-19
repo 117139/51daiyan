@@ -1,0 +1,66 @@
+<!--pages/details/details.wxml-->
+<import src="/utils/htmlStatus/index.wxml" />
+<wxs src="../../utils/filter.wxs" module="filter" />
+<view class="container">
+  <template is="htmlStatus" data="{{...htmlStatus}}" />
+  
+  <!-- 评价 -->
+  <view class="pj_box">
+    <view class="pl_tit_box">
+      <view>评论(1956)</view>
+      <picker class="" bindchange="bindPickerChange" value="{{index}}" range="{{sex}}" range-key='name'>
+      <view class="pl_px">按{{sex[index].name}}<text class="iconfont iconpaixu"></text></view>
+      </picker>
+    </view>
+    <view class="pj_li" wx:for="{{data_list}}" wx:for-index="idx" wx:for-item="item">
+      <view class="pj_d1">
+        <view class="pj_ren">
+          <view class="user_tx">
+            <image class="user_tx" src="../../static/images/tx.png"></image>
+          </view> 
+          Y***I
+        </view>
+        
+      </view>
+      <view class="pj_d2">上次就买了，感觉太好喝了，这次又来光顾一下，这次又来光顾一下，这次又来光顾一下，这次又来光顾一下。</view>
+      <!-- <view class="xpl_box">
+        <view class="xpl_li">
+          <view class="xpl_name">飘雪</view>
+          <view class="xpl_inr oh3">这个新包装的味道比之前好喝么？</view>
+        </view>
+        <view class="xpl_li">
+          <view class="xpl_name">飘雪</view>
+          <view class="xpl_inr oh3">这个新包装的味道比之前好喝么？</view>
+        </view>
+        <view class="xpl_li xpl_li_more" bindtap="jump" bindtap="">共11条回复<text class="iconfont iconnext3"></text></view>
+      </view> -->
+      <view class="quan_li_cz">
+        <view  class="pj_time">17小时前 
+        <!-- <text class="huifu_btn">回复</text> -->
+        </view>
+        <view class="cz_li" catchtap="zan" data-id="idx"><text class="iconfont iconzan"></text>1566</view>
+      </view>
+    </view>
+  </view>
+  
+  
+  <!-- 底部 -->
+  <!-- <view class="bottom_box">
+    <image class="edit_icon" src="/static/images/edit_icon.png"></image>
+    <view class="kf_btn">
+      <text class="iconfont iconbuy"></text>
+      <text>4565</text>
+    </view>
+    <view class="sg"></view>
+    <view class="kf_btn">
+      <text class="iconfont iconpinglun"></text>
+      <text>1600</text>
+    </view>
+    <view class="sg"></view>
+    <view class="kf_btn">
+      <text class="iconfont iconzan"></text>
+      <text>3600</text>
+    </view>
+   
+  </view> -->
+</view>

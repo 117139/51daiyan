@@ -1,0 +1,141 @@
+<!--pages/activity/activity.wxml-->
+<import src="/utils/htmlStatus/index.wxml" />
+<wxs src="../../utils/filter.wxs" module="filter" />
+<view class="container">
+  <view class="avtivity_box">
+    <image  class="avtivity_box" src="/static/images/hd_banner.jpg"></image>
+    <view class="hd_time">活动截止时间：2019/11/01-2019/11/03</view>
+  </view>
+  <view class="avtivity_time">
+    <image  class="avtivity_time" src="/static/images/hd_bg2.jpg"></image>
+    <view class="avtivity_time_djs">
+      活动倒计时：
+      <text>{{hd_time.day}}</text>
+      天
+      <text>{{hd_time.hh}}</text>
+      小时
+      <text>{{hd_time.mm}}</text>
+      分
+      <text>{{hd_time.min}}</text>
+      秒
+    </view>
+  </view>
+  <view class="hd_jl">
+    <view>
+      <image src="/static/images/hdxq_jl2.png"></image>
+      <view class="j_lv">二等奖 <text>300人</text></view>
+      <view class="j_mon">¥500/人</view>
+    </view>
+    <view>
+      <image src="/static/images/hdxq_jl1.png"></image>
+      <view class="j_lv">一等奖 <text>300人</text></view>
+      <view class="j_mon">¥1000/人</view>
+    </view>
+    <view>
+      <image src="/static/images/hdxq_jl3.png"></image>
+      <view class="j_lv">三等奖 <text>300人</text></view>
+      <view class="j_mon">¥300/人</view>
+    </view>
+  </view>
+  <!-- 活动商品 -->
+  <view class="box_tit">参选商品</view>
+  <view class="goods_list">
+    <view class="goods_li">
+      <image class="goods_img" src="/static/images/images/goods15_02.jpg"></image>
+      <view class="goods_msg">
+        <view class="goods_name oh1">耐克跑鞋</view>
+        <view class="goods_pri">
+          <view class="pri1 ">¥456</view>
+          <view class="pri2">代言费<text>¥26</text></view>
+        </view>
+        <view class="goods_btn">我要代言</view>
+      </view>
+    </view>
+    <view class="goods_li">
+      <image class="goods_img" src="/static/images/images/goods15_02.jpg"></image>
+      <view class="goods_msg">
+        <view class="goods_name oh1">耐克跑鞋</view>
+        <view class="goods_pri">
+          <view class="pri1 ">¥456</view>
+          <view class="pri2">代言费<text>¥26</text></view>
+        </view>
+        <view class="goods_btn">我要代言</view>
+      </view>
+    </view>
+    <view class="goods_li">
+      <image class="goods_img" src="/static/images/images/goods15_02.jpg"></image>
+      <view class="goods_msg">
+        <view class="goods_name oh1">耐克跑鞋</view>
+        <view class="goods_pri">
+          <view class="pri1 ">¥456</view>
+          <view class="pri2">代言费<text>¥26</text></view>
+        </view>
+        <view class="goods_btn">我要代言</view>
+      </view>
+    </view>
+  </view>
+  <view class="hd_tip">提示！活动开始前完成购买代言，即刻开始拉票！</view>
+  <view class="hd_db">
+    <view>本期优选代言人排行榜</view>
+    <view class="jump_btn" bindtap="jump" data-url="/pages/activity_db/activity_db">进入打榜页<text class="iconfont iconnext3"></text></view>
+  </view>
+  <view class="dy_list">
+    <view class="dy_box">
+      <view class="dy_li">
+        <view class="pl_num">
+          <image class="pl_num" src="../../static/images/phicon_1.png"></image>
+        </view>
+        <view class="pl_tx">
+          <image class="pl_tx" src="../../static/images/tx.png"></image>
+        </view>
+        <view class="ph_name">张一鸣</view>
+        <view class="ph_num"><text>2200</text>人气值</view>
+        <!-- <view class="ph_btn">投票</view> -->
+        <view class="ph_btn ph_btn1">已投票</view>
+      </view>
+      <view class="li_dy">代言说：喜欢运动的感觉，耐克just di it！</view>
+    </view>
+    <view class="dy_box">
+      <view class="dy_li">
+        <view class="pl_num">
+          <image class="pl_num" src="../../static/images/phicon_2.png"></image>
+        </view>
+        <view class="pl_tx">
+          <image class="pl_tx" src="../../static/images/tx.png"></image>
+        </view>
+        <view class="ph_name">张一鸣</view>
+        <view class="ph_num"><text>2200</text>人气值</view>
+        <view class="ph_btn">投票</view>
+      </view>
+      <view class="li_dy">代言说：喜欢运动的感觉，耐克just di it！</view>
+    </view>
+    <view class="dy_box">
+      <view class="dy_li">
+        <view class="pl_num">
+          <image class="pl_num" src="../../static/images/phicon_3.png"></image>
+        </view>
+        <view class="pl_tx">
+          <image class="pl_tx" src="../../static/images/tx.png"></image>
+        </view>
+        <view class="ph_name">张一鸣</view>
+        <view class="ph_num"><text>2200</text>人气值</view>
+        <view class="ph_btn">投票</view>
+      </view>
+      <view class="li_dy">代言说：喜欢运动的感觉，耐克just di it！</view>
+    </view>
+    <view class="dy_box">
+      <view class="dy_li">
+        <view class="pl_num">
+          4
+        </view>
+        <view class="pl_tx">
+          <image class="pl_tx" src="../../static/images/tx.png"></image>
+        </view>
+        <view class="ph_name">张一鸣</view>
+        <view class="ph_num"><text>2200</text>人气值</view>
+        <view class="ph_btn">投票</view>
+      </view>
+      <view class="li_dy">代言说：喜欢运动的感觉，耐克just di it！</view>
+    </view>
+  </view>
+</view>

@@ -164,6 +164,10 @@ Page({
   onShareAppMessage: function () {
 
   },
+  
+
+
+
   getdata(){
     ///api/homeIndex
     var that = this

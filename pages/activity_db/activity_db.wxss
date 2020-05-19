@@ -1,0 +1,275 @@
+/* pages/activity/activity.wxss */
+.container{
+	width: 100%;
+	min-height: 100vh;
+	background: #fff;
+  padding-bottom: 50rpx;
+  position: relative;
+}
+.avtivity_box{
+  position: relative;
+  width: 100%;
+  height: 336rpx;
+}
+.hd_time{
+  width: 100%;
+  position: absolute;
+  bottom: 36rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: #fff;
+}
+.avtivity_time{
+  width:750rpx;
+  height:110rpx;
+  position: relative;
+}
+.avtivity_time_djs{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: #fff;
+  font-size: 30rpx;
+}
+.avtivity_time_djs text{
+  width:46rpx;
+  height:60rpx;
+  background:rgba(255,255,255,1);
+  border:1px solid rgba(191,191,191,1);
+  border-radius:10rpx;
+  color: #333;
+  margin: 0 10rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.hd_jd{
+  width:750rpx;
+  height:80rpx;
+  
+  display: flex;
+  align-items: center;
+  padding: 0 28rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  color: #999999;
+}
+/* 代言人list */
+.dy_list{
+	width: 100%;
+	background: #fff;
+  box-shadow:0px 4px 30rpx 0px rgba(119,119,119,0.3);
+  border-radius:0 0 10rpx 10rpx;
+}
+.dy_box{
+	width: 100%;
+	padding-bottom: 20rpx;
+	border-bottom: 1px solid #eee;
+}
+.dy_li{
+	width: 100%;
+	background: #fff;
+	display: flex;
+	align-items: center;
+	padding: 20rpx 28rpx;
+	box-sizing: border-box;
+}
+.pl_num{
+	width: 38rpx;
+	height: 54rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 30rpx;
+	color: #999;
+	font-weight:600;
+}
+view.pl_num{
+	margin-right: 26rpx;
+}
+.pl_tx{
+	width:72rpx;
+	height:72rpx;
+	border-radius:50%;
+}
+view.pl_tx{
+	margin-right: 26rpx;
+}
+.ph_name{
+	flex: 1;
+	font-size: 26rpx;
+	color: #333;
+}
+.ph_num{
+  display: flex;
+  flex-direction: column;
+	font-size: 24rpx;
+	color: #BBBBBB;
+}
+.ph_num text{
+	font-size: 36rpx;
+  line-height: 36rpx;
+	color: #FE9B00;
+}
+.ph_btn{
+	margin-left: 20rpx;
+	width:132rpx;
+	height:63rpx;
+	background:rgba(255,162,89,1);
+	border-radius:10rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #fff;
+	font-size: 30rpx;
+}
+.ph_btn1{
+  background:#D2D2D2;
+}
+.li_dy{
+	padding-left: 84rpx;
+	padding-right: 28rpx;
+	box-sizing: border-box;
+	margin-top: 10rpx;
+	font-size: 24rpx;
+	color: #999;
+}
+
+.list{
+	width: 100%;
+	background:rgba(255,255,255,1);
+	border-radius:10rpx;
+	overflow: hidden;
+}
+.list_tit{
+	width: 100%;
+	background:rgba(255,76,0,.5);
+	height: 85rpx;
+	display: flex;
+  box-shadow:0px 4px 30rpx 0px rgba(119,119,119,0.3);
+  border-radius:10rpx 10rpx 0 0;
+}
+.list_tit.cur{
+	background:rgba(255,76,0,1);
+}
+.ph_fri{
+	width:367rpx;
+	height:85rpx;
+	position: relative;
+}
+.pl_li{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 30rpx;
+	color: #fff;
+}
+
+.pl_li1{
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 30rpx;
+	color: #fff;
+}
+.db_main{
+  width: 100%;
+  padding: 0 28rpx;
+  box-sizing: border-box;
+}
+
+/* daiyantit */
+.hd_db_img{
+  width: 100%;
+  height: 171rpx;
+}
+.hd_db_bg{
+  width: 694rpx;
+  height: 404rpx;
+  margin: 20rpx auto;
+  box-shadow:0px 4rpx 30rpx 0px rgba(119,119,119,0.3);
+  position: relative;
+}
+image.hd_db_bg{
+  margin: 0;
+}
+.hd_db_dp{
+  position: absolute;
+  top: 20rpx;
+  left: 20rpx;
+  right: 20rpx;
+
+}
+.hd_db_dp .d1{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+  font-size: 24rpx;
+}
+.hd_db_dp .d1 view:first-child{
+  font-size: 28rpx;
+}
+.dp_msg{
+  margin-top: 20rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.dp_msg image{
+  width:147rpx;
+  height:147rpx;
+  border-radius:18rpx;
+  margin-bottom: 20rpx;
+}
+.dp_msg view{
+  width:255rpx;
+  height:77rpx;
+  background:rgba(255,76,0,1);
+  border-radius:39rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30rpx;
+  color: #fff;
+  margin-bottom: 20rpx;
+}
+
+.dp_msg text{
+ font-size: 24rpx;
+ color: #fff;
+}
+.hd_js{
+  width: 100%;
+  padding: 35rpx;
+  box-sizing: border-box;
+
+}
+.dyr_tit{
+  font-size: 28rpx;
+  color: #333;
+}
+.dyr_msg{
+  font-size: 28rpx;
+  color: #999;
+  margin: 20rpx auto;
+}
+.hd_js video{
+  width:621rpx;
+  height:350rpx;
+  border-radius:10rpx;
+}

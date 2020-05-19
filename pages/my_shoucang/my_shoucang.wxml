@@ -8,7 +8,7 @@
 						<image class="goods_img2" src="../../static/images/goods.png"></image>
 					</view>
 					<view class="goods_msg">
-						<view class="goods_name2 oh1">苏泊尔IH家用大容量智能电饭锅</view>
+						<view class="goods_name2 fz30 oh1">苏泊尔IH家用大容量智能电饭锅</view>
 						<view class="goods_pri">
 							<view class="pri1">¥668</view>
 							<view class="pri2">代言费：¥30</view>

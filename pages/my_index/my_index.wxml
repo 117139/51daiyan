@@ -1,11 +1,12 @@
 <!--pages/my_index/my_index.wxml-->
+<wxs src="../../utils/filter.wxs" module="filter" />
 <view class="container">
-	<image class="h_bg" src="../../static/images/images/my_indexbg_02.jpg"></image>
+	<image class="h_bg" src="{{filter.imgIP('/images/my_indexbg_02.jpg')}}"></image>
 	<view class="h_main">
 		<view class="my_index">
 			<view class="user_tx">
-				<image class="user_tx" src="../../static/images/tx.png"></image>
-				<image class="star_v" src="../../static/images/star_b.png"></image>
+				<image class="user_tx" src="{{filter.imgIP('tx.png')}}"></image>
+				<image class="star_v" src="{{filter.imgIP('star_b.png')}}"></image>
 			</view>
 			<view class="user_msg">
 				<view class="user_name"><text>范冰冰</text> </view>
