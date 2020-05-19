@@ -2,7 +2,7 @@
 <import src="/utils/htmlStatus/index.wxml" />
 <wxs src="../../utils/filter.wxs" module="filter" />
 <view class="container">
-	<image class="h_bg" src="../../static/images/images/find_dy_02.jpg"></image>
+	<image class="h_bg" src="{{filter.imgIP('/images/find_dy_02.jpg')}}"></image>
 	<view class="xx_box">
 		<view class="xx_box1">
 			<image class="hd_js" src="../../static/images/hd_js.png"></image>

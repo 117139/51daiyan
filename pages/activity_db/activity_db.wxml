@@ -3,7 +3,7 @@
 <wxs src="../../utils/filter.wxs" module="filter" />
 <view class="container">
   <view class="avtivity_box">
-    <image class="avtivity_box" src="/static/images/hd_banner.jpg"></image>
+    <image class="avtivity_box" src="{{filter.imgIP('hd_banner.jpg')}}"></image>
     <view class="hd_time">活动截止时间：2019/11/01-2019/11/03</view>
   </view>
   <view class="avtivity_time">

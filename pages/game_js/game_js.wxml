@@ -1,8 +1,9 @@
 <!--pages/game_js/game_js.wxml-->
+<wxs src="../../utils/filter.wxs" module="filter" />
 <view class="container">
-	<image class="h_bg" src="../../static/images/images/game_jsbg_02.jpg"></image>
+	<image class="h_bg" src="{{filter.imgIP('/images/game_jsbg_02.jpg')}}"></image>
 	<view class="js_box">
-		<image class="js_tit" src="../../static/images/game_js6.png"></image>
+		<image class="js_tit" src="{{filter.imgIP('game_js6.png')}}"></image>
 		<scroll-view class="js_msg" scroll-y>
 			<view>1.真实购买，即可申请成为该商品的代言人(可自主決定是否代言该商品)，代言该商品后，表明您同意您所代言的商品对其他人可见。</view>  
 			<view>2.一经代言，该商品因代言人的影响力引起的二次销售，将给代言人支付代言费。(退换货周期内不可提现，过了退换货时间，商品确认成交后，代言费可及时提现至代言人微信钱包绑定银行卡)。</view> 

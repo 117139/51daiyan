@@ -101,7 +101,7 @@
     <view class="imgbox mb20">
       <view class="addimg1" wx:if="{{sp_url}}" bindtap="chooseVideo">
         <!-- <image src="{{filter.imgIP(item)}}" data-src="{{filter.imgIP(item)}}" mode="aspectFill"></image> -->
-        <image src="{{'/static/images/download.jpg'}}" data-src="{{'/static/images/download.jpg'}}" mode="aspectFill"></image>
+        <image src="{{filter.imgIP('download.jpg')}}" data-src="{{filter.imgIP('download.jpg')}}" mode="aspectFill"></image>
       </view>
 
       <view wx:else class="addimg" bindtap="chooseVideo">
@@ -115,7 +115,7 @@
   <view class="fw_list" wx:if="{{type==2}}">
     <view class="haibao" bindtap="getPosterHandle">生成海报</view>
     <view class="haibao_box">
-      <image class="haibao_box" src="{{haibao}}"></image>
+      <image class="haibao_box" src="{{filter.imgIP(haibao)}}"></image>
     </view>
   </view>
   <view class="fw_list">

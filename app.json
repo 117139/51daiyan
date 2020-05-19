@@ -1,10 +1,10 @@
 {
   "pages": [
+    "pages/daiyan_fabu_ok/daiyan_fabu_ok",
     "pages/my/my",
+    "pages/daiyan_fabu/daiyan_fabu",
     "pages/daiyan_pl/daiyan_pl",
     "pages/daiyan_pl_hf/daiyan_pl_hf",
-    "pages/daiyan_fabu/daiyan_fabu",
-    "pages/daiyan_fabu_ok/daiyan_fabu_ok",
     "pages/activity_db/activity_db",
     "pages/activity/activity",
     "pages/dp_index/dp_index",

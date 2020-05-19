@@ -1,6 +1,7 @@
 <!--pages/daiyan_fabu_ok/daiyan_fabu_ok.wxml-->
+<wxs src="../../utils/filter.wxs" module="filter" />
 <view class="container">
-  <image class="ok_bg" src="/static/images/fabu_ok.jpg"></image>
+  <image class="ok_bg" src="{{filter.imgIP('fabu_ok.jpg')}}"></image>
   <view class="okcz">
     <view class="btn1">保存图片并分享</view>
     <view class="btn2" bindtap="goindex">回到首页</view>

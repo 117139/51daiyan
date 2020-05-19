@@ -30,7 +30,7 @@ Page({
 		yname:'',
 		imgb:[],
     sp_url:'',
-    haibao:'/static/images/haibao.png',
+    haibao:'haibao.png',
 
     goods_sele: [
       [{ "num": 1, xuan:false},
