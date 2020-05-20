@@ -4,7 +4,7 @@
 <!-- <template is="pageState" data="{{...pageState}}" /> -->
 <view wx:if="{{htmlReset==1}}" class="chongshi" bindtap='cload'>重试</view>
 <view class="container" wx:if="{{htmlReset==0}}">
-  <view class="hb_canvas" style="position: fixed; top: -199999rpx;">
+  <!-- <view class="hb_canvas" style="position: fixed; top: -199999rpx;">
     <image class="hb_bg draw_canvas" src="/static/images/hbbg.jpg"></image>
     <image class="hb_xcxm draw_canvas" src="/static/images/xcxm.png"></image>
     <view class="user_msg draw_canvas">
@@ -27,9 +27,13 @@
       </view>
     </view>
   </view>
-  <canvas canvas-id="canvas1" class="share__canvas" style="width: {{width}}px; height: {{height}}px; position: fixed; top: -199999rpx;"></canvas>
+   -->
+   
+   <!-- <canvas canvas-id="canvas1" class="share__canvas" style="width: {{width}}px; height: {{height}}px; "></canvas> -->
+  <wxml-to-canvas class="widget"></wxml-to-canvas>
+  <image src="{{src}}" style="width: 375px; height: 667px;position:fixed;top:-9999999px;"></image>
   <view class="goodsBox w100">
-    <view class="quan_goods">
+    <view class="quan_goods" bindtap="jump" data-url="/pages/details/details">
       <image class="quan_goods_img" src="/static/images/goods.png" mode="aspectFill"></image>
       <view class="quan_goods_msg">
         <view class="quan_goods_name oh1">苏泊尔IH家用大容量智能电饭锅</view>
@@ -44,7 +48,7 @@
         </view>
       </view>
     </view>
-    <view class="quan_goods">
+    <view class="quan_goods" bindtap="jump" data-url="/pages/details/details">
       <image class="quan_goods_img" src="/static/images/goods.png" mode="aspectFill"></image>
       <view class="quan_goods_msg">
         <view class="quan_goods_name oh1">苏泊尔IH家用大容量智能电饭锅</view>
@@ -113,9 +117,13 @@
 
   </view>
   <view class="fw_list" wx:if="{{type==2}}">
-    <view class="haibao" bindtap="getPosterHandle">生成海报</view>
-    <view class="haibao_box">
-      <image class="haibao_box" src="{{filter.imgIP(haibao)}}"></image>
+    <!-- <view class="haibao" bindtap="getPosterHandle">生成海报</view> -->
+    <view class="haibao" bindtap="renderToCanvas">生成海报</view>
+    <!-- <view class="haibao" bindtap="extraImage">下载海报</view> -->
+    <!-- <view class="haibao" bindtap="ctxc">生成海报</view> -->
+    <view  class="haibao_box">
+      <!-- <image class="haibao_box" src="{{filter.imgIP(haibao)}}"></image> -->
+      <image wx:if="{{src}}" class="haibao_box" src="{{src}}"></image>
     </view>
   </view>
   <view class="fw_list">

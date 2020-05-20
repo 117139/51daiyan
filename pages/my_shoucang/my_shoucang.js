@@ -1,4 +1,5 @@
 // pages/my_daiyan/my_daiyan.js
+const app = getApp()
 Page({
 
   /**
@@ -65,6 +66,9 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  jump(e) {
+    app.jump(e)
   },
   px_fuc(e) {
     var that = this

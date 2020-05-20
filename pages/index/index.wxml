@@ -5,7 +5,7 @@
   <template is="htmlStatus" data="{{...htmlStatus}}" />
   <view class="header_box">
     <view class="index_box1">
-      <image class="user_tx" src="/static/images/tx.jpg"></image>
+      <image class="user_tx" src="{{filter.imgIP('tx.png')}}"></image>
       <view class="sousuo_box" bindtap="jump" data-url="/pages/search/search">
         <text class="iconfont iconsousuo"></text> 搜索人名代言号/商品/品牌
       </view>
@@ -33,9 +33,9 @@
   </view>
   <scroll-view class="start_list" scroll-x>
     <view class="start_list1">
-      <view class="start_li" wx:for="{{start_li}}" wx:for-item="item" bindtap="jump" data-url="{{item.url}}">
+      <view class="start_li" wx:for="{{start_li}}" wx:for-item="item" bindtap="jump" data-url="/pages/my_index/my_index">
         <view class="star_tx">
-          <image src="/static/images/tx.jpg" mode="aspectFill"></image>
+          <image src="{{filter.imgIP('tx.png')}}" mode="aspectFill"></image>
           <view>
             <image src="/static/images/star_b.png"></image>
           </view>
@@ -52,27 +52,27 @@
     </view>
     <view class="find_sj">
       <view class="sj_list">
-        <image class="sj_li" src="/static/images/tx.png" mode="aspectFill"></image>
-        <image class="sj_li" src="/static/images/tx.png" mode="aspectFill"></image>
-        <image class="sj_li" src="/static/images/tx.png" mode="aspectFill"></image>
-        <image class="sj_li" src="/static/images/tx.png" mode="aspectFill"></image>
-        <image class="sj_li" src="/static/images/tx.png" mode="aspectFill"></image>
+        <image class="sj_li" src="{{filter.imgIP('tx.png')}}" mode="aspectFill"></image>
+        <image class="sj_li" src="{{filter.imgIP('tx.png')}}" mode="aspectFill"></image>
+        <image class="sj_li" src="{{filter.imgIP('tx.png')}}" mode="aspectFill"></image>
+        <image class="sj_li" src="{{filter.imgIP('tx.png')}}" mode="aspectFill"></image>
+        <image class="sj_li" src="{{filter.imgIP('tx.png')}}" mode="aspectFill"></image>
       </view>
       <text class="iconfont iconnext3"></text>
     </view>
   </view>
   <view class="goods_index">
-    <view>
+    <view  bindtap="jump" data-url="/pages/xvideo/xvideo">
       <view class="goodstype_name">代言人短视频 <image src="/static/images/goods_type1.png"></image></view>
       <view class="goods_tip">已为您更新10个视频</view>
       <view class="goods_list">
         <view class="goods_li">
-          <image class="goods_img" src="/static/images/goods.png" mode="aspectFill"></image>
-          <image class="goods_play" src="/static/images/goods_play.png"></image>
+          <image class="goods_img" src="{{filter.imgIP('goods.png')}}" mode="aspectFill"></image>
+          <image class="goods_play" src="{{filter.imgIP('goods_play.png')}}"></image>
         </view>
         <view class="goods_li">
-          <image class="goods_img" src="/static/images/goods.png" mode="aspectFill"></image>
-          <image class="goods_play" src="/static/images/goods_play.png"></image>
+          <image class="goods_img" src="{{filter.imgIP('goods.png')}}" mode="aspectFill"></image>
+          <image class="goods_play" src="{{filter.imgIP('goods_play.png')}}"></image>
         </view>
       </view>
       <!-- <image src="/static/images/goods_type1.png"></image> -->
@@ -82,10 +82,10 @@
       <view class="goods_tip">发现更多人气代言好货</view>
       <view class="goods_list">
         <view class="goods_li">
-          <image class="goods_img" src="/static/images/goods.png" mode="aspectFill"></image>
+          <image class="goods_img" src="{{filter.imgIP('goods.png')}}" mode="aspectFill"></image>
         </view>
         <view class="goods_li">
-          <image class="goods_img" src="/static/images/goods.png" mode="aspectFill"></image>
+          <image class="goods_img" src="{{filter.imgIP('goods.png')}}" mode="aspectFill"></image>
         </view>
       </view>
       <!-- <image src="/static/images/goods_type2.png"></image> -->
@@ -95,7 +95,7 @@
   <view class="quan_list">
     <view class="quan_li" wx:for="{{start_li}}" wx:for-index="idx" wx:for-item="item" bindtap="jump" data-url="/pages/details/details">
       <view class="quan_user_box">
-        <image bindtap="jump" data-url="/pages/my_index/my_index" class="quan_user_tx" src="/static/images/tx.png" mode="aspectFill"></image>
+        <image bindtap="jump" data-url="/pages/my_index/my_index" class="quan_user_tx" src="{{filter.imgIP('tx.png')}}" mode="aspectFill"></image>
         <view class="quan_user_msg">
           <view class="quan_user_name">倪小丫 <image src="/static/images/star_b.png"></image></view>
           <view class="quan_user_time"><text>10-14 18:03</text><text>演员</text></view>
@@ -105,16 +105,16 @@
       <view class="quan_msg">
         <view class="oh4  quan_msg_text">可能这辈子都戒不掉米饭了，吃好饭的用好锅，我为苏泊尔智能电饭锅代言。</view>
         <view wx:if="{{idx==2}}" class="quan_msg_img">
-          <image class="one" src="/static/images/goods.png" mode="aspectFill"></image>
+          <image class="one" src="{{filter.imgIP('goods.png')}}" mode="aspectFill"></image>
         </view>
         <view wx:else class="quan_msg_img">
-          <image src="/static/images/goods.png" mode="aspectFill"></image>
-          <image src="/static/images/goods.png" mode="aspectFill"></image>
-          <image src="/static/images/goods.png" mode="aspectFill"></image>
+          <image src="{{filter.imgIP('goods.png')}}" mode="aspectFill"></image>
+          <image src="{{filter.imgIP('goods.png')}}" mode="aspectFill"></image>
+          <image src="{{filter.imgIP('goods.png')}}" mode="aspectFill"></image>
         </view>
       </view>
       <view class="quan_goods">
-        <image class="quan_goods_img" src="/static/images/goods.png" mode="aspectFill"></image>
+        <image class="quan_goods_img" src="{{filter.imgIP('goods.png')}}" mode="aspectFill"></image>
         <view class="quan_goods_msg">
           <view class="quan_goods_name oh1">苏泊尔IH家用大容量智能电饭锅</view>
           <view class="quan_goods_pri">

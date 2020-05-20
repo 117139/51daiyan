@@ -1,4 +1,5 @@
 // pages/daiyan_ph/daiyan_ph.js
+const app = getApp()
 Page({
 
   /**
@@ -77,5 +78,15 @@ Page({
 		that.setData({
 			ph_type1:e.currentTarget.dataset.type
 		})
-	}
+  },
+  jump(e) {
+    console.log(e.currentTarget.dataset.type)
+    if (e.currentTarget.dataset.type == 2) {
+      wx.switchTab({
+        url: e.currentTarget.dataset.url
+      })
+    } else {
+      app.jump(e)
+    }
+  }
 })

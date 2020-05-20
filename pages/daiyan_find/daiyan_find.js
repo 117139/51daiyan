@@ -1,4 +1,5 @@
 // pages/daiyan_find/daiyan_find.js
+const app = getApp()
 Page({
 
   /**
@@ -62,5 +63,15 @@ wx.stopPullDownRefresh();
    */
   onShareAppMessage: function () {
 
+  },
+  jump(e) {
+    console.log(e.currentTarget.dataset.type)
+    if (e.currentTarget.dataset.type == 2) {
+      wx.switchTab({
+        url: e.currentTarget.dataset.url
+      })
+    } else {
+      app.jump(e)
+    }
   }
 })

@@ -1,0 +1,33 @@
+<!--pages/lts/lts.wxml-->
+
+<wxs src="../../utils/filter.wxs" module="filter" />
+<view class="container">
+  <view id="chatBox" class="main boxsiz clearfix">
+    <block wx:for="{{data_list}}" wx:for-index="idx" wx:for-item="item">
+      <view wx:if="{{idx==0}}" class="msg_time">12:06</view>
+      <view >
+        <view class="dis_flex msg_li {{item.send==myid?'msg_li1':''}}">
+          <view wx:if="{{item.send==myid}}" class="msg_tx">
+            <image src="{{filter.imgIP('tx.png')}}" mode="aspectFill"></image>
+          </view>
+          <view wx:else class="msg_tx p_img_view">
+            <image src="{{filter.imgIP('tx.png')}}" mode="aspectFill"></image>
+          </view>
+          <view class="flex_1 msg_d1">
+
+            <view class="msg_name {{item.send==myid?'msg_name1':''}}">昵称</view>
+            <view class="msg_box {{item.send==myid?'msg_box1':''}}" >{{item.msg}}</view>
+          </view>
+        </view>
+      </view>
+    </block>
+
+
+
+
+  </view>
+  <view class="lt_bottom">
+    <input placeholder="请输入" confirm-type="send"  bindconfirm="save_val" bindinput="get_val" value="{{sname}}" cursor-spacing="140"></input>
+    <view class="save_btn" bindtap="save_val">发送</view>
+  </view>
+</view>

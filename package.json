@@ -9,7 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "mp-navigation-bar": "0.0.11"
+    "mp-navigation-bar": "0.0.11",
+    "wxml-to-canvas": "^1.1.1"
   },
   "devDependencies": {
     "weui-miniprogram": "^1.0.3"

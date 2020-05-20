@@ -4,7 +4,7 @@
 <view class="container">
   <template is="htmlStatus" data="{{...htmlStatus}}" />
 	<view class="goods_xx">
-		<view class="quan_goods">
+		<view class="quan_goods" bindtap="jump" data-url="/pages/details/details">
 		  <image class="quan_goods_img" src="/static/images/goods1.png" mode="aspectFill"></image>
 		  <view class="quan_goods_msg">
 		    <view class="quan_goods_name oh1">苏泊尔IH家用大容量智能电饭锅</view>
@@ -25,7 +25,7 @@
 		 			 <image src="../../static/images/data_null.png"></image>
 		 </view>
 		 <view wx:el class="li_box" wx:for="{{data_list}}" wx:for-item="item" bindtap="jump" data-url="/pages/details/details">
-				<view class="user_tx">
+				<view class="user_tx"  bindtap="jump" data-url="/pages/my_index/my_index">
 					<image class="user_tx" src="../../static/images/tx.png"></image>
 					<image class="user_v" src="../../static/images/star_b.png"></image>
 				</view>

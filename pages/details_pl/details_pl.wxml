@@ -103,9 +103,9 @@
 	</van-popup>
   <!-- 底部 -->
   <view class="bottom_box">
-    <view class="kf_btn">
+    <view class="kf_btn" bindtap="jump" data-url="/pages/lts/lts">
       <text class="iconfont iconkefu"></text>
-      <text>客服</text>
+      <text >客服</text>
     </view>
     <view class="sg"></view>
     <view class="kf_btn">
@@ -115,7 +115,7 @@
     <view class="sg"></view>
     <view class="kf_btn">
       <text class="iconfont iconstore"></text>
-      <text>店铺</text>
+      <text  bindtap="jump" data-url="/pages/dp_index/dp_index">店铺</text>
     </view>
     <view class="buy_btn"  bindtap="sheetshow">加入购物车</view>
     <view class="buy_btn buy_btn1"  bindtap="sheetshow">立即购买</view>

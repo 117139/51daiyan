@@ -85,7 +85,7 @@
 		<!-- 视频 -->
 		<view wx:if="{{s_type==1}}" class="my_list">
 			<view class="sp_list">
-				<view class="sp_li" wx:for="{{data_list}}" wx:for-item="item">
+				<view class="sp_li" wx:for="{{data_list}}" wx:for-item="item" bindtap="jump" data-url="/pages/xvideo/xvideo">
 					<view class="sp_li_img">
 						<image class="sp_li_img" src="../../static/images/images/goods15_02.jpg" mode="aspectFill"></image>
 						<view class="sp_li_img_cz">

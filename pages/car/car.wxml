@@ -69,7 +69,7 @@
 					</view>
 				</view>
 			</view>
-			<view class="goods_li">
+			<view class="goods_li"  bindtap="jump" data-url="/pages/details/details">
 				<image class="goods_img" src="../../static/images/images/goods15_02.jpg"  mode="aspectFill"></image>
 				<view class="goods_msg">
 					<view class="oh1">奶油碧根果 整箱</view>
@@ -79,7 +79,7 @@
 					</view>
 				</view>
 			</view>
-			<view class="goods_li">
+			<view class="goods_li" bindtap="jump" data-url="/pages/details/details">
 				<image class="goods_img" src="../../static/images/images/goods15_02.jpg"  mode="aspectFill"></image>
 				<view class="goods_msg">
 					<view class="oh1">奶油碧根果 整箱</view>
@@ -89,7 +89,7 @@
 					</view>
 				</view>
 			</view>
-			<view class="goods_li">
+			<view class="goods_li" bindtap="jump" data-url="/pages/details/details">
 				<image class="goods_img" src="../../static/images/images/goods15_02.jpg"  mode="aspectFill"></image>
 				<view class="goods_msg">
 					<view>奶油碧根果 整箱</view>

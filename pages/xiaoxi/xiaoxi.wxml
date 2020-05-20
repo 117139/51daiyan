@@ -3,8 +3,8 @@
 <wxs src="../../utils/filter.wxs" module="filter" />
 <view class="container">
   <template is="htmlStatus" data="{{...htmlStatus}}" />
-	<view class="xx_li" wx:for="{{data_list}}" wx:for-item="item" bindtap="jump" data-url="">
-		<view class="user_tx">
+	<view class="xx_li" wx:for="{{data_list}}" wx:for-item="item" bindtap="jump" data-url="/pages/lts/lts">
+		<view class="user_tx" >
 			<image class="user_tx" src="../../static/images/tx.png"></image>
 			<text></text>
 		</view>

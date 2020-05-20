@@ -17,7 +17,7 @@
 		</view>
 		<view class="box_tit box_li">
 			<view class="td1">
-				<view class="user_tx">
+				<view class="user_tx" bindtap="jump" data-url="/pages/my_index/my_index">
 					<image class="user_tx" src="../../static/images/tx.png"></image>
 					<image class="user_v" src="../../static/images/star_b.png"></image>
 				</view>

@@ -59,7 +59,7 @@
       <text class="iconfont iconnext3"></text>
     </view>
   </view>
-  <view class="goods_xmsg">
+  <view class="goods_xmsg" bindtap="jump" data-url="/pages/my_yhq/my_yhq">
     <view class="v1">优惠券</view>
     <view class="v2">
       <text class="yhq_box">领券</text>
@@ -76,7 +76,7 @@
       <text class="iconfont iconcaozuo"></text>
     </view>
   </view>
-  <view class="goods_xmsg">
+  <view class="goods_xmsg"  bindtap="jump" data-url="/pages/myaddress/myaddress?type=1">
     <view class="v1">配 送</view>
     <view class="v2">
       <text class="yhq_box">同城</text>北京市五环内下单可享受商家配送服务；</view>
@@ -192,7 +192,7 @@
       </view>
     </view>
     <view class="goods_list">
-      <view wx:if="{{idx<3}}" class="goods_li" wx:for="{{data_list}}" wx:for-index="idx" wx:for-item="item">
+      <view wx:if="{{idx<3}}" class="goods_li" wx:for="{{data_list}}" wx:for-index="idx" wx:for-item="item" bindtap="jump" data-url="/pages/details/details">
         <view class="goods_img">
           <image class="goods_img" src="{{filter.imgIP('goods_02.jpg')}}" mode="aspectFill"></image>
         </view>
@@ -275,9 +275,9 @@
 	</van-popup>
   <!-- 底部 -->
   <view class="bottom_box">
-    <view class="kf_btn">
+    <view class="kf_btn" bindtap="jump" data-url="/pages/lts/lts">
       <text class="iconfont iconkefu"></text>
-      <text>客服</text>
+      <text >客服</text>
     </view>
     <view class="sg"></view>
     <view class="kf_btn">
@@ -287,7 +287,7 @@
     <view class="sg"></view>
     <view class="kf_btn">
       <text class="iconfont iconstore"></text>
-      <text>店铺</text>
+      <text  bindtap="jump" data-url="/pages/dp_index/dp_index">店铺</text>
     </view>
     <view class="buy_btn"  bindtap="sheetshow">加入购物车</view>
     <view class="buy_btn buy_btn1"  bindtap="sheetshow">立即购买</view>

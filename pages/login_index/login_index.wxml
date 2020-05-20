@@ -1,6 +1,7 @@
 <!--pages/login_index/login_index.wxml-->
+<wxs src="../../utils/filter.wxs" module="filter" />
 <view class="container">
-	<image class="login_bg" src="../../static/images/loginbg.png"></image>
+	<image class="login_bg" src="{{filter.imgIP('loginbg.png')}}"></image>
 	<view class="login_wx">微信用户一键登录</view>
 	<view  class="login_tel" bindtap="jump" data-url="/pages/login_tel/login_tel">手机号码登陆/注册</view>
 	<view class="login_tip">登陆代表您已同意<text>51代言用户服务协议、隐私协议</text></view>

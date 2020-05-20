@@ -1,4 +1,5 @@
 // pages/goods_tj/goods_tj.js
+const app = getApp()
 Page({
 
   /**

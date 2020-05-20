@@ -22,7 +22,7 @@
 					<view class="pl_num">
 						<image class="pl_num" src="../../static/images/phicon_1.png"></image>
 					</view>
-					<view class="pl_tx">
+					<view class="pl_tx"  bindtap="jump" data-url="/pages/my_index/my_index">
 						<image class="pl_tx" src="../../static/images/tx.png"></image>
 					</view>
 					<view class="ph_name">张一鸣</view>
@@ -36,7 +36,7 @@
 					<view class="pl_num">
 						<image class="pl_num" src="../../static/images/phicon_2.png"></image>
 					</view>
-					<view class="pl_tx">
+					<view class="pl_tx" bindtap="jump" data-url="/pages/my_index/my_index">
 						<image class="pl_tx" src="../../static/images/tx.png"></image>
 					</view>
 					<view class="ph_name">张一鸣</view>
@@ -50,7 +50,7 @@
 					<view class="pl_num">
 						<image class="pl_num" src="../../static/images/phicon_3.png"></image>
 					</view>
-					<view class="pl_tx">
+					<view class="pl_tx" bindtap="jump" data-url="/pages/my_index/my_index">
 						<image class="pl_tx" src="../../static/images/tx.png"></image>
 					</view>
 					<view class="ph_name">张一鸣</view>
@@ -64,7 +64,7 @@
 					<view class="pl_num">
 						4
 					</view>
-					<view class="pl_tx">
+					<view class="pl_tx" bindtap="jump" data-url="/pages/my_index/my_index">
 						<image class="pl_tx" src="../../static/images/tx.png"></image>
 					</view>
 					<view class="ph_name">张一鸣</view>

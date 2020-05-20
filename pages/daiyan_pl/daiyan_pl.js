@@ -102,10 +102,35 @@ Page({
   },
   shuru(){
     var that =this
-    console.log(that.data.shuru_type)
     that.setData({
       shuru_type:true
     })
+    console.log(that.data.shuru_type)
+  },
+  shuru_guanbi(){
+    var that = this
+    that.setData({
+      shuru_type: false
+    })
+    console.log(that.data.shuru_type)
+  },
+  save_pl(e) {
+    var that = this
+    that.setData({
+      shuru_type: false
+    })
+    if (!e.detail.value){
+      wx.showToast({
+        icon: 'none',
+        title: '请输入评论内容',
+      })
+      return
+    }
+    wx.showToast({
+      icon:'none',
+      title: e.detail.value,
+    })
+    console.log(e.detail.value)
   },
   bindPickerChange: function (e) {
 

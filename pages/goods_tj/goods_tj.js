@@ -1,4 +1,5 @@
 // pages/goods_tj/goods_tj.js
+const app = getApp()
 Page({
 
   /**
@@ -84,5 +85,15 @@ Page({
 				dy_pri:!that.data.dy_pri
 			})
 		}
-	}
+  },
+  jump(e) {
+    console.log(e.currentTarget.dataset.type)
+    if (e.currentTarget.dataset.type == 2) {
+      wx.switchTab({
+        url: e.currentTarget.dataset.url
+      })
+    } else {
+      app.jump(e)
+    }
+  },
 })

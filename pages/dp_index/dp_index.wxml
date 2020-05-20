@@ -41,7 +41,7 @@
 		<!-- goods_li -->
 		<view wx:if="{{s_type==0}}" class="goods_list">
 			<view class="goods_li" bindtap="jump" data-url="/pages/details/details">
-				<image class="goods_img" src="../../static/images/images/goods15_02.jpg"  mode="aspectFill"></image>
+				<image class="goods_img" src="{{filter.imgIP('/images/goods15_02.jpg')}}"  mode="aspectFill"></image>
 				<view class="goods_msg">
 					<view class="oh1">奶油碧根果 整箱</view>
 					<view class="goods_pri">
@@ -50,8 +50,8 @@
 					</view>
 				</view>
 			</view>
-			<view class="goods_li">
-				<image class="goods_img" src="../../static/images/images/goods15_02.jpg"  mode="aspectFill"></image>
+			<view class="goods_li"  bindtap="jump" data-url="/pages/details/details">
+				<image class="goods_img" src="{{filter.imgIP('/images/goods15_02.jpg')}}"  mode="aspectFill"></image>
 				<view class="goods_msg">
 					<view class="oh1">奶油碧根果 整箱</view>
 					<view class="goods_pri">
@@ -60,8 +60,8 @@
 					</view>
 				</view>
 			</view>
-			<view class="goods_li">
-				<image class="goods_img" src="../../static/images/images/goods15_02.jpg"  mode="aspectFill"></image>
+			<view class="goods_li"  bindtap="jump" data-url="/pages/details/details">
+				<image class="goods_img" src="{{filter.imgIP('/images/goods15_02.jpg')}}"  mode="aspectFill"></image>
 				<view class="goods_msg">
 					<view class="oh1">奶油碧根果 整箱</view>
 					<view class="goods_pri">
@@ -70,8 +70,8 @@
 					</view>
 				</view>
 			</view>
-			<view class="goods_li">
-				<image class="goods_img" src="../../static/images/images/goods15_02.jpg"  mode="aspectFill"></image>
+			<view class="goods_li"  bindtap="jump" data-url="/pages/details/details">
+				<image class="goods_img" src="{{filter.imgIP('/images/goods15_02.jpg')}}"  mode="aspectFill"></image>
 				<view class="goods_msg">
 					<view class="oh2">奶油碧根果奶油碧根果奶油碧根果 整箱</view>
 					<view class="goods_pri">
@@ -82,10 +82,10 @@
 			</view>
 		</view>
 		<view wx:if="{{s_type==1}}" class="my_list">
-			<view class="sp_list">
-				<view class="sp_li" wx:for="{{data_list}}" wx:for-index="idx" wx:for-item="item">
+			<view class="sp_list" >
+				<view class="sp_li" wx:for="{{data_list}}" wx:for-index="idx" wx:for-item="item"  bindtap="jump" data-url="/pages/details/details">
 					<view class="sp_li_img">
-						<image class="sp_li_img" src="../../static/images/images/goods15_02.jpg" mode="aspectFill"></image>
+						<image class="sp_li_img" src="{{filter.imgIP('/images/goods15_02.jpg')}}" mode="aspectFill"></image>
 						<view class="sp_li_img_cz">
 							<image src="../../static/images/goods_play.png"></image>
 						</view>

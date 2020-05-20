@@ -14,11 +14,11 @@
 		</view>
 	</view>
 	<!-- 用户 -->
-	 <view class="ss_list"  wx:if="{{ss_cur==1}}">
+	 <view class="ss_list"  wx:if="{{ss_cur!=1}}">
 		 <view class="data_null" wx:if="{{data_list.length==0}}">
 		 			 <image src="../../static/images/data_null1.png"></image>
 		 </view>
-		 <view  wx:if="{{data_list.length>0}}" class="li_box" wx:for="{{data_list}}" wx:for-item="item" bindtap="jump" data-url="/pages/details/details">
+		 <view  wx:if="{{data_list.length>0}}" class="li_box" wx:for="{{data_list}}" wx:for-item="item" bindtap="jump" data-url="/pages/my_index/my_index">
 				<view class="user_tx">
 					<image class="user_tx" src="../../static/images/tx.png"></image>
 					<image class="user_v" src="../../static/images/star_b.png"></image>
@@ -33,7 +33,7 @@
 		 <view class="data_null" wx:if="{{data_list.length==0}}">
 		 			 <image src="../../static/images/data_null1.png"></image>
 		 </view>
-		 <view wx:if="{{data_list.length>0}}" class="li_box" wx:for="{{data_list}}" wx:for-item="item" bindtap="jump" data-url="/pages/details/details">
+		 <view wx:if="{{data_list.length>0}}" class="li_box" wx:for="{{data_list}}" wx:for-item="item" bindtap="jump" data-url="/pages/dp_index/dp_index">
 			 <view class="user_tx">
 			 	<image class="user_tx" src="../../static/images/tx.jpg"></image>
 			 </view>

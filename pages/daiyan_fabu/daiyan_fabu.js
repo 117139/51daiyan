@@ -1,7 +1,7 @@
 //logs.js
 // var pageState = require('../../utils/pageState/index.js')
 const app = getApp()
-import Wxml2Canvas from '../../canvasJS/index';
+const { wxml, style } = require('./demo.js')
 Page({
   data: {
 		btnkg:0,
@@ -11,6 +11,7 @@ Page({
       '视频代言',
       '海报代言'
     ],
+    src: '',
     type: 0,
 		pages:[1,1,1,1,1],
 		zhaungtai:[
@@ -56,14 +57,15 @@ Page({
 		// wx.setNavigationBarTitle({
 		// 	title: '订单列表'
 		// })
+    var that =this
 		if(option.type){
-			this.setData({
+			that.setData({
 				type:option.type
 			})
 		}
+    that.widget = that.selectComponent('.widget')
 		
-		
-		
+    
   },
 	onShow(){
 		var pages=1
@@ -78,9 +80,56 @@ Page({
 				btnkg:0
 			})
 		}
+    
 		console.log('我显示了')
 		// this.getOrderList('onshow')
 	},
+  renderToCanvas() {
+    // var that=this
+    wx.showLoading({
+      title: '正在生成中'
+    })
+    const p1 = this.widget.renderToCanvas({ wxml, style })
+    p1.then((res) => {
+      console.log('container', res.layoutBox)
+      this.container = res
+      wx.hideLoading()
+      this.extraImage()
+      
+    })
+  },
+  extraImage() {
+    console.log('xiazai')
+    const p2 = this.widget.canvasToTempFilePath()
+    p2.then(res => {
+      wx.showLoading({
+        title: '正在保存'
+      })
+      wx.saveImageToPhotosAlbum({
+        filePath: res.tempFilePath,
+        success(res1) {
+          console.log(res1)
+          wx.hideLoading()
+        },
+        fail(err){
+          wx.hideLoading()
+          wx.showToast({
+            icon:'none',
+            title: '保存失败',
+          })
+          console.log(err)
+        },
+        complete(err){
+          wx.hideLoading()
+        }
+      })
+      this.setData({
+        src: res.tempFilePath,
+        width: 750,
+        height: 1334
+      })
+    })
+  },
 	cload(){
 		var pages=1
 		var goods=[1,1,]

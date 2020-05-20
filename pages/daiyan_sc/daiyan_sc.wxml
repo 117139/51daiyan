@@ -11,7 +11,7 @@
 		<view class="yhq_box">
 			<view class="yhp_tit">
 				<view class="yhq_t_l">共享优惠券</view>
-				<view class="yhq_t_r">更多<text class="iconfont iconnext3"></text></view>
+				<view class="yhq_t_r"  bindtap="jump" data-url="/pages/my_yhq/my_yhq">更多<text class="iconfont iconnext3"></text></view>
 			</view>
 			<view class="yhq_li">
 				<image class="yhq_li" src="../../static/images/images/yhq_09.jpg"></image>
@@ -27,10 +27,10 @@
 		<view class="yhq_box">
 			<view class="yhp_tit">
 				<view class="yhq_t_l">好友的代言商品</view>
-				<view class="yhq_t_r">更多<text class="iconfont iconnext3"></text></view>
+				<view class="yhq_t_r" bindtap="jump" data-url="/pages/my_daiyan/my_daiyan">更多<text class="iconfont iconnext3"></text></view>
 			</view>
 			<view class="hy_goods">
-				<view class="hy_goods_li">
+				<view class="hy_goods_li"  bindtap="jump" data-url="/pages/details/details">
 					<view class="hy_goods_img">
 						<image class="hy_goods_img" src="../../static/images/goods.png"></image>
 					</view>
@@ -45,7 +45,7 @@
 							<view class="sy_mon">￥30</view>
 					</view>
 				</view>
-				<view class="hy_goods_li">
+				<view class="hy_goods_li"  bindtap="jump" data-url="/pages/details/details">
 					<view class="hy_goods_img">
 						<image class="hy_goods_img" src="../../static/images/goods.png"></image>
 					</view>
@@ -60,7 +60,7 @@
 							<view class="sy_mon">￥30</view>
 					</view>
 				</view>
-				<view class="hy_goods_li">
+				<view class="hy_goods_li"  bindtap="jump" data-url="/pages/details/details" >
 					<view class="hy_goods_img">
 						<image class="hy_goods_img" src="../../static/images/goods.png"></image>
 					</view>

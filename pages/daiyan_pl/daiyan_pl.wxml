@@ -42,9 +42,14 @@
       </view>
     </view>
   </view>
+  <view wx:if="{{shuru_type}}" class="sr_view">
+    <textarea class="shuru_box"  auto-focus="true" focus="true" cursor-spacing='140'
+      bindconfirm="save_pl"  bindblur="shuru_guanbi" placeholder="请发表您的评论…"></textarea>
+    <view class="syzzc" bindtap="shuru_guanbi"></view>
+  </view>
   
-  <textarea class="shuru_box" wx:if="{{shuru_type}}" cursor-spacing="150"></textarea>
   <!-- 底部 -->
+  <!-- <view wx:else class="bottom_box"> -->
   <view class="bottom_box">
     <image bindtap="shuru" class="edit_icon" src="/static/images/edit_icon.png"></image>
     <view class="kf_btn">

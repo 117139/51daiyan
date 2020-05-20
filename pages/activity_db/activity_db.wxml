@@ -27,7 +27,7 @@
         <view>我的优惠券<text class="iconfont iconnext3 fz14 cf"></text></view>
       </view>
       <view class="dp_msg">
-        <image src="/static/images/dp_logo.jpg"></image>
+        <image src="{{filter.imgIP('dp_logo.jpg')}}"></image>
         <view bindtap="jump" data-url="/pages/daiyan_fabu/daiyan_fabu">我要代言</view>
         <text>参与投票可获得优惠券</text>
       </view>

@@ -135,7 +135,7 @@
 
 .sp_list{
 	width: 100%;
-	padding: 28rpx;
+	padding: 0 28rpx 20rpx;
 	box-sizing: border-box;
 	display: flex;
 	flex-wrap: wrap;

@@ -5,7 +5,7 @@
 	</view>
 	<view class="h_main">
 		<view class="goods_box1">
-			<view class="goods_li1">
+			<view class="goods_li1"  bindtap="jump" data-url="/pages/details/details">
 				<view class="goods_img">
 					<image class="goods_img" src="../../static/images/goods.png"></image>
 					<view class="goods_dy_num"><text class="iconfont icondianzan2"></text>111代言</view>
@@ -13,7 +13,7 @@
 				<view class="goods_name1 oh1">兰蔻第二代小黑</view>
 				<view class="goods_pri1 ">¥858</view>
 			</view>
-			<view class="goods_li1">
+			<view class="goods_li1"  bindtap="jump" data-url="/pages/details/details">
 				<view class="goods_img">
 					<image class="goods_img" src="../../static/images/goods.png"></image>
 					<view class="goods_dy_num"><text class="iconfont icondianzan2"></text>111代言</view>
@@ -21,7 +21,7 @@
 				<view class="goods_name1 oh1">兰蔻第二代小黑</view>
 				<view class="goods_pri1 ">¥858</view>
 			</view>
-			<view class="goods_li1">
+			<view class="goods_li1"  bindtap="jump" data-url="/pages/details/details">
 				<view class="goods_img">
 					<image class="goods_img" src="../../static/images/goods.png"></image>
 					<view class="goods_dy_num"><text class="iconfont icondianzan2"></text>111代言</view>
@@ -40,13 +40,13 @@
 		</view>
 		<!-- goods_li -->
 		<view class="goods_list2">
-			<view class="goods_li2" wx:for="{{data_list}}" wx:for-item="item">
+			<view class="goods_li2" wx:for="{{data_list}}" wx:for-item="item"  bindtap="jump" data-url="/pages/details/details">
 				<view class="goods_li2_d1">
 					<view class="goods_img2">
 						<image class="goods_img2" src="../../static/images/goods.png"></image>
 					</view>
 					<view class="goods_msg">
-						<view class="goods_name2 oh1">苏泊尔IH家用大容量智能电饭锅</view>
+						<view class="goods_name2 oh1 fz30">苏泊尔IH家用大容量智能电饭锅</view>
 						<view class="goods_pri">
 							<view class="pri1">¥668</view>
 							<view class="pri2">代言费：¥30</view>

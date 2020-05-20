@@ -549,6 +549,11 @@ view.haibao_box{
 
 
 /* hb_canvas */
+.widget{
+  position: fixed; 
+ top: -999999px;
+  /* top: 1px; */
+}
 .hb_canvas{
   width: 750rpx;
   height: 1334rpx;

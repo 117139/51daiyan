@@ -1,4 +1,5 @@
 // pages/daiyan_sc/daiyan_sc.js
+const app = getApp()
 Page({
 
   /**
@@ -63,6 +64,9 @@ wx.stopPullDownRefresh();
    */
   onShareAppMessage: function () {
 
+  },
+  jump(e) {
+    app.jump(e)
   },
 	ss_type(e){
 		var that =this

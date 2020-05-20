@@ -243,7 +243,8 @@
 }
 .goods_index>view{
   flex: 1;
-  padding: 15rpx;
+  padding: 15rpx 28rpx;
+  box-sizing: border-box;
 }
 .goods_index>view+view{
   border-left:1rpx solid #eee;

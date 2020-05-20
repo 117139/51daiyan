@@ -315,6 +315,13 @@ Page({
 				paykg:false
 			})
 		}
+    setTimeout(function (){
+      wx.hideLoading()
+      wx.navigateTo({
+        url: '/pages/OrderList/OrderList',
+      })
+    },1000)
+    return
 		// wx.hideLoading()
 		// that.setData({
 		// 	paykg:true
