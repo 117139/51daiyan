@@ -1,0 +1,8 @@
+/* pages/about/about.wxss */
+.about_box{
+  width: 100%;
+  padding: 20rpx 28rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  color: #333;
+}

@@ -12,7 +12,7 @@
 				<view class="user_name"><text>范冰冰</text> </view>
 				<view class="daiyan_lv"><text class="iconfont iconxingzhuang60kaobei2"></text>代言星级 3</view>
 			</view>
-			<view class="gz_btn gz_btn1">私信</view>
+			<view class="gz_btn gz_btn1" bindtap="jump" data-url="/pages/lts/lts">私信</view>
 			<view class="gz_btn">+关注</view>
 		</view>
 		<view class="dy_id">

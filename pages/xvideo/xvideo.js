@@ -101,7 +101,7 @@ Page({
 
     /* 根据当前视图视频id拿到对应的视频列表下标 */
     let videoIndex = videoList.findIndex(v => v.id == id)
-
+    console.log('104:--------'+videoIndex)
     /* 滑动到倒数第二个视频 加载视频列表 */
     if (videoIndex == (videoList.length - 2)) {
       let newList = [...this.data.videoList, ...list2]

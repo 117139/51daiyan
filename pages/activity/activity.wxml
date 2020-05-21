@@ -73,6 +73,17 @@
         <view class="goods_btn" catchtap="jump" data-url="/pages/daiyan_fabu/daiyan_fabu">我要代言</view>
       </view>
     </view>
+    <view class="goods_li" bindtap="jump" data-url="/pages/details/details">
+      <image class="goods_img" src="{{filter.imgIP('/images/goods15_02.jpg')}}"></image>
+      <view class="goods_msg">
+        <view class="goods_name oh1">耐克跑鞋</view>
+        <view class="goods_pri">
+          <view class="pri1 ">¥456</view>
+          <view class="pri2">代言费<text>¥26</text></view>
+        </view>
+        <view class="goods_btn" catchtap="jump" data-url="/pages/daiyan_fabu/daiyan_fabu">我要代言</view>
+      </view>
+    </view>
   </view>
   <view class="hd_tip">提示！活动开始前完成购买代言，即刻开始拉票！</view>
   <view class="hd_db">

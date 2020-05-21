@@ -27,7 +27,7 @@
     <text class="iconfont iconyiping"></text>
     <view>您还有12件商品未代言，快来代言吧～</view>
   </view>
-  <view class="index_box1 index_box4">
+  <view class="index_box1 index_box4" bindtap="jump" data-url="/pages/star_list/star_list?type=0">
     <view>明星达人代言人推荐：</view>
     <text>各种玩法尽在明星达人代言秀</text>
   </view>

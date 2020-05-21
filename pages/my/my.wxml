@@ -129,17 +129,17 @@
 			  <view class="fx_tit">我的优惠券</view>
 			  <text class="iconfont iconnext3"></text>
 			</view>
-			<view class="fx_li" bindtap="jump" data-url="">
+			<view class="fx_li" data-url="/pages/my_qianbao/my_qianbao" bindtap="jump">
 			  <image class="li_icon" src="{{filter.imgIP('ny_14.png')}}"></image>
 			  <view class="fx_tit">我的钱包</view>
 			  <text class="iconfont iconnext3"></text>
 			</view>
-			<view class="fx_li" bindtap="jump" data-url="">
+			<!-- <view class="fx_li" bindtap="jump" data-url="">
 			  <image class="li_icon" src="{{filter.imgIP('ny_16.png')}}"></image>
 			  <view class="fx_tit">我的代言豆</view>
 			  <text class="iconfont iconnext3"></text>
-			</view>
-			<view class="fx_li" bindtap="jump" data-url="">
+			</view> -->
+			<view class="fx_li" bindtap="jump" data-url="/pages/about/about">
 			  <image class="li_icon" src="{{filter.imgIP('ny_18.png')}}"></image>
 			  <view class="fx_tit">关于51代言</view>
 			  <text class="iconfont iconnext3"></text>

@@ -1,6 +1,8 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/my_qianbao/my_qianbao",
+    "pages/about/about",
     "pages/daiyan_fabu/daiyan_fabu",
     "pages/xvideo/xvideo",
     "pages/my_rz3/my_rz3",

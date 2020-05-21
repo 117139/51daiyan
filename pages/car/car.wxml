@@ -11,8 +11,8 @@
 		wx:for-item="item" 
 		wx:key="idx"
 		data-tab="{{idx}}"
-		 bindtap="jump" data-url="/pages/goodsDetails/goodsDetails?shop_id=1">
-     <view class="dianpu_tit">
+		 >
+     <view class="dianpu_tit" bindtap="jump" data-url="/pages/dp_index/dp_index?shop_id=1">
 			 <image class="dp_logo" src="../../static/images/tx.png"></image>
 			 <text>石说的达开旗舰店</text>
 			 <text class="iconfont iconnext3"></text>
@@ -20,7 +20,7 @@
 		<view class="goods1" wx:for="{{item}}"
 		wx:for-index="idx1"
 		wx:for-item="item1" 
-		wx:key="idx1">
+		wx:key="idx1" bindtap="jump" data-url="/pages/details/details?shop_id=1">
 			<!-- <view class="scbg" data-id="{{item.id}}" catchtap="cardel">
 				<text class="iconfont iconshanchu fz26"></text>
 			</view> -->

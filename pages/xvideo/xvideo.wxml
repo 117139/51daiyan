@@ -21,7 +21,7 @@
         <cover-view class="flex flex-alignItems name">
             <cover-view class="name-child hide1">寻味</cover-view>
             <cover-image src="{{filter.imgIP('dizhi.png')}}" class="v_address" ></cover-image>
-            <cover-view class="fz22 ">深圳南山小院</cover-view>
+            <cover-view class="fz22 ">{{videoParam.site}}</cover-view>
         </cover-view>
     </cover-view>
 </cover-view>
@@ -30,8 +30,8 @@
 <cover-view class="tag" bindtap="jump" data-url="/pages/details/details">
    <cover-image src="{{filter.imgIP('goods.png')}}" class="v_goods_img" ></cover-image>
    <cover-view class="goods_msg">
-      <cover-view class="oh2">【情人节礼物】娇兰帝黄金复原面部精华液原面部精华液</cover-view>
-      <cover-view class="goods_Pri1"><cover-view class="pri1">¥668</cover-view><cover-view class="pri2">销量191</cover-view></cover-view>
+      <cover-view class="oh2">{{videoParam.description}}</cover-view>
+      <cover-view class="goods_Pri1"><cover-view class="pri1">¥{{videoParam.topic}}</cover-view><cover-view class="pri2">销量191</cover-view></cover-view>
    </cover-view>
 </cover-view>
 
@@ -48,7 +48,7 @@
   <cover-view class="dianzan_cion">
     <cover-image src="{{filter.imgIP('dianzan.png')}}" class="dianzan_image"></cover-image>
   </cover-view>
-  <cover-view class="dianzan_num">2</cover-view>
+  <cover-view class="dianzan_num">{{videoParam.likeCount}}</cover-view>
 </view>
 <view class="fullBtn fullBtn2"  bindtap="jump" data-url="/pages/details/details">
   <cover-image src="{{filter.imgIP('v_goods.png')}}" class="head"></cover-image>

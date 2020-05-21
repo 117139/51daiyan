@@ -245,7 +245,7 @@ padding: 2rpx 15rpx;
 	flex: 1;
 }
 .dt_li{
-	margin-bottom: 18rpx;
+	margin-bottom: 32rpx;
 }
 .dt_li_d1_img{
 	width:238rpx;
