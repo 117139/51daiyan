@@ -104,12 +104,12 @@
 			</view>
     </view>
     <view class="my_list">
-			<view class="fx_li" bindtap="jump" data-url="/pages/my_rz1/my_rz1">
+			<view class="fx_li  mt20" bindtap="jump" data-url="/pages/my_rz1/my_rz1">
 			  <image class="li_icon" src="{{filter.imgIP('ny_20.png')}}"></image>
 			  <view class="fx_tit">51认证申请</view>
 			  <text class="iconfont iconnext3"></text>
 			</view>
-			<view class="fx_li mt20" bindtap="jump" data-url="/pages/myaddress/myaddress">
+			<view class="fx_li" bindtap="jump" data-url="/pages/myaddress/myaddress">
 			  <image class="li_icon" src="{{filter.imgIP('ny_14.png')}}"></image>
 			  <view class="fx_tit">地址管理</view>
 			  <text class="iconfont iconnext3"></text>
