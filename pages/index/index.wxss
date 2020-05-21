@@ -14,7 +14,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5rpx 29rpx;
+  padding: 15rpx 29rpx 5rpx;
   box-sizing: border-box;
 }
 
@@ -85,10 +85,12 @@
   font-size: 22rpx;
   color: #f9b234;
   justify-content: flex-start;
+  padding: 10rpx 28rpx;
   align-items: center;
 }
 .index_box3 text{
   margin-right: 20rpx;
+  font-size: 24rpx;
 }
 .index_box4{
   height:82rpx;
@@ -243,7 +245,7 @@
 }
 .goods_index>view{
   flex: 1;
-  padding: 15rpx 28rpx;
+  padding: 15rpx 18rpx;
   box-sizing: border-box;
 }
 .goods_index>view+view{
@@ -273,7 +275,7 @@
   margin-top: 30rpx;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   padding-bottom: 10rpx;
 }
 .goods_li{
@@ -303,7 +305,7 @@
 .quan_li{
   width: 100%;
   background: #fff;
-  padding: 23rpx 28rpx;
+  padding: 23rpx 28rpx 0;
   box-sizing: border-box;
 }
 .quan_li+.quan_li{
@@ -331,6 +333,9 @@
   background:rgba(254,58,53,1);
   border-radius:10rpx;
   margin-left: 20rpx;
+}
+.quan_user_btn1{
+  background: #ddd;
 }
 .quan_user_msg{
   flex: 1;
@@ -360,14 +365,14 @@
   width: 100%;
   padding-left:96rpx;
   box-sizing: border-box; 
-  margin-top: 30rpx;
+  margin-top: 16rpx;
   font-size: 30rpx;
   color: #333;
 
 }
 .quan_msg_text{
   line-height: 40rpx;
-  margin-bottom: 30rpx;
+  margin-bottom: 20rpx;
 }
 .quan_msg_img image{
   width:196rpx;
@@ -380,13 +385,12 @@
   margin-right: 0;
 }
 .quan_msg_img image.one{
-  min-width:352rpx;
-  max-width: 482rpx;
-  height:482rpx;
+  max-width: 100%;
+  
   border-radius:10px;
 }
 .quan_goods{
-  margin-top: 30rpx;
+  margin-top: 16rpx;
   width: 100%;
   height:238rpx;
   background:rgba(255,255,255,1);

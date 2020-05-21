@@ -13,8 +13,53 @@
 				<text >李勇</text>
 				<text class="time">17:30</text>
 			</view>
-			<view class="to_msg oh2">
+			<view class="to_msg oh1">
 				你不是想买相机么？我代言了个好相机，你看看
+			</view>
+		</view>
+	</view>
+	<view class="xx_li" bindtap="jump" data-url="/pages/xiaoxi_list/xiaoxi_list?type=0">
+		<view class="user_tx" >
+			<image class="user_tx" src="../../static/images/xtxx.png"></image>
+			<text></text>
+		</view>
+		<view class="xx_msg">
+			<view class="to_name">
+				<text >系统消息</text>
+				<text class="time">17:30</text>
+			</view>
+			<view class="to_msg oh1">
+				您参与的【华为优选代言人活动】即将开始，敬请关注。
+			</view>
+		</view>
+	</view>
+	<!-- <view class="xx_li" bindtap="jump" data-url="/pages/lts/lts">
+		<view class="user_tx" >
+			<image class="user_tx" src="../../static/images/wlxx.png"></image>
+			<text></text>
+		</view>
+		<view class="xx_msg">
+			<view class="to_name">
+				<text >物流信息</text>
+				<text class="time">17:30</text>
+			</view>
+			<view class="to_msg oh1">
+				您参与的【华为优选代言人活动】即将开始，敬请关注。
+			</view>
+		</view>
+	</view> -->
+	<view class="xx_li" bindtap="jump" data-url="/pages/xiaoxi_list/xiaoxi_list?type=1">
+		<view class="user_tx" >
+			<image class="user_tx" src="../../static/images/dyxx.png"></image>
+			<text></text>
+		</view>
+		<view class="xx_msg">
+			<view class="to_name">
+				<text >代言收益</text>
+				<text class="time">17:30</text>
+			</view>
+			<view class="to_msg oh1">
+				您代言钱包进账3元，余额变为¥235。
 			</view>
 		</view>
 	</view>

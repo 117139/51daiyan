@@ -5,7 +5,7 @@
 		<view class="fx_tit">寻找代言人</view>
 		<view class="fx_r_img">
 			<image src="../../static/images/tx.png"></image>
-			<text></text>
+			<!-- <text></text> -->
 		</view>
     <text class="iconfont iconnext3"></text>
   </view>

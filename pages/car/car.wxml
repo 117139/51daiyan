@@ -1,4 +1,5 @@
 <!--pages/car/car.wxml-->
+<wxs src="../../utils/filter.wxs" module="filter" />
 <view wx:if="{{htmlReset==1}}" class="chongshi" bindtap='cload'>重试</view>
 <view class="container" wx:if="{{htmlReset==0}}">
 	<view class="zanwu_box" wx:if="{{goods.length==0}}">
@@ -12,11 +13,11 @@
 		wx:key="idx"
 		data-tab="{{idx}}"
 		 >
-     <view class="dianpu_tit" bindtap="jump" data-url="/pages/dp_index/dp_index?shop_id=1">
+     <!-- <view class="dianpu_tit" bindtap="jump" data-url="/pages/dp_index/dp_index?shop_id=1">
 			 <image class="dp_logo" src="../../static/images/tx.png"></image>
 			 <text>石说的达开旗舰店</text>
 			 <text class="iconfont iconnext3"></text>
-		 </view> 
+		 </view>  -->
 		<view class="goods1" wx:for="{{item}}"
 		wx:for-index="idx1"
 		wx:for-item="item1" 
@@ -33,15 +34,20 @@
 			<view class="goodsImg">
 				<!-- <image src="{{filter.getgimg(item.order_cart.goods_img)}}"></image> -->
 				<!-- <image src="{{filter.getgimg(item.goods_pic)}}"></image> -->
-				<image class="goodsImg" src="../../static/images/goods.png"  mode="aspectFill"></image>
+				<image class="goodsImg" src="{{filter.imgIP('goods.png')}}"  mode="aspectFill"></image>
 			</view>
 			<view class="goodsinr">
 				<!-- <view class="goodsname fz30 c30 oh1">{{item.goods_name}}</view> -->
 				<view class="goodsname fz30 c30 oh1">{{'黄金曼特宁精品咖啡/袋泡咖啡/耳挂 咖啡6*10袋装'}}</view>
-				<view class="goodspri">{{'已选择：苏门答腊黄金曼特宁深度烘培'}}</view>
+				<!-- <view class="goodspri">{{'已选择：苏门答腊黄金曼特宁深度烘培'}}</view> -->
 				<view class="goodspri1">
 					<!-- <text class="fz36 cf6377a fwb">￥{{filter.moneyFormat('48')}}</text> -->
 					<text class="fz36 cf6377a fwb">￥{{'48'}}</text>
+				
+				</view>
+        <view class="goodspri1">
+					
+					<text class="fz36 cf6377a fwb"></text>
 				
 					<view class="vstepper steppera">
 						<view catchtap="onNum" data-idx="{{idx}}" data-idx1="{{idx1}}" data-ad="-" data-id="{{item.id}}" class="vantjian c9">-</view>
@@ -60,7 +66,7 @@
 		</view>
 		<view class="goods_list">
 			<view class="goods_li" bindtap="jump" data-url="/pages/details/details">
-				<image class="goods_img" src="../../static/images/images/goods15_02.jpg"  mode="aspectFill"></image>
+				<image class="goods_img" src="{{filter.imgIP('/images/goods15_02.jpg')}}"  mode="aspectFill"></image>
 				<view class="goods_msg">
 					<view class="oh1">奶油碧根果 整箱</view>
 					<view class="goods_pri">
@@ -70,7 +76,7 @@
 				</view>
 			</view>
 			<view class="goods_li"  bindtap="jump" data-url="/pages/details/details">
-				<image class="goods_img" src="../../static/images/images/goods15_02.jpg"  mode="aspectFill"></image>
+				<image class="goods_img" src="{{filter.imgIP('/images/goods15_02.jpg')}}"  mode="aspectFill"></image>
 				<view class="goods_msg">
 					<view class="oh1">奶油碧根果 整箱</view>
 					<view class="goods_pri">
@@ -80,7 +86,7 @@
 				</view>
 			</view>
 			<view class="goods_li" bindtap="jump" data-url="/pages/details/details">
-				<image class="goods_img" src="../../static/images/images/goods15_02.jpg"  mode="aspectFill"></image>
+				<image class="goods_img" src="{{filter.imgIP('/images/goods15_02.jpg')}}"  mode="aspectFill"></image>
 				<view class="goods_msg">
 					<view class="oh1">奶油碧根果 整箱</view>
 					<view class="goods_pri">
@@ -90,7 +96,7 @@
 				</view>
 			</view>
 			<view class="goods_li" bindtap="jump" data-url="/pages/details/details">
-				<image class="goods_img" src="../../static/images/images/goods15_02.jpg"  mode="aspectFill"></image>
+				<image class="goods_img" src="{{filter.imgIP('/images/goods15_02.jpg')}}"  mode="aspectFill"></image>
 				<view class="goods_msg">
 					<view>奶油碧根果 整箱</view>
 					<view class="goods_pri">

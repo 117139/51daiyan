@@ -132,7 +132,6 @@ view.pl_tx{
 	padding-left: 84rpx;
 	padding-right: 28rpx;
 	box-sizing: border-box;
-	margin-top: 10rpx;
 	font-size: 24rpx;
 	color: #999;
 }

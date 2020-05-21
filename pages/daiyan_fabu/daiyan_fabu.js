@@ -14,20 +14,16 @@ Page({
     src: '',
     type: 0,
 		pages:[1,1,1,1,1],
-		zhaungtai:[
-		  { name: '没收到货,或与卖家协商同意不用退货', value: '1' },
-      { name: '已收到货,需要退货退款', value: '2' },
-		  { name: '已收到货,需要换货', value: '2' },
+    data_list:[
+		  1,
+      1,
+      1,
+      1,
+      1,
+		  1,
 		],
-		index:0,
-		yuanyin:[
-		  { name: '发错了', value: '1' },
-		  { name: '商品损坏', value: '2' },
-		  { name: '不想要了', value: '3' },
-		  { name: '商品与页面描述不符', value: '4' },
-		  { name: '商品降价', value: '5' },
-		],
-		index1:0,
+		open_type:2,
+    
 		yname:'',
 		imgb:[],
     sp_url:'',
@@ -84,6 +80,11 @@ Page({
 		console.log('我显示了')
 		// this.getOrderList('onshow')
 	},
+  open_more(){
+    this.setData({
+      open_type:10000
+    })
+  },
   renderToCanvas() {
     // var that=this
     wx.showLoading({
@@ -110,6 +111,11 @@ Page({
         success(res1) {
           console.log(res1)
           wx.hideLoading()
+          setTimeout(function (){
+            wx.showToast({
+              title: '保存成功',
+            })
+          },1000)
         },
         fail(err){
           wx.hideLoading()

@@ -1,4 +1,5 @@
-// pages/daiyan_find/daiyan_find.js
+// pages/xiaoxi/xiaoxi.js
+var htmlStatus = require('../../utils/htmlStatus/index.js')
 const app = getApp()
 Page({
 
@@ -6,25 +7,30 @@ Page({
    * 页面的初始数据
    */
   data: {
-		data_list:[1,1,1,1],
-    pinpai: [
-      {
-        bm: 1
-      },
-      {
-        bm: 1
-      },
-      {
-        bm: 1
-      },
-    ]
+		data_list:[
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+    ],
+    msg:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    if (options.type==1){
+      this.setData({
+        msg:'您代言钱包进账3元，余额变为¥235。'
+      })
+    }else{
+      this.setData({
+        msg: '您参与的【华为优选代言人活动】即将开始，敬请关注。'
+      })
+    }
   },
 
   /**
@@ -59,7 +65,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-wx.stopPullDownRefresh();
+    wx.stopPullDownRefresh();
   },
 
   /**
@@ -74,14 +80,6 @@ wx.stopPullDownRefresh();
    */
   onShareAppMessage: function () {
 
-  },
-  bm_fuc(e){
-    var idx = e.currentTarget.dataset.idx
-    var newdata = this.data.pinpai
-    newdata[idx].bm = 2
-    this.setData({
-      pinpai: newdata
-    })
   },
   jump(e) {
     console.log(e.currentTarget.dataset.type)

@@ -115,8 +115,12 @@
 }
 
 
-
-
+.van-overlay{
+  pointer-events: auto;
+}
+view{
+  box-sizing: border-box;
+}
 
 /*多余显示省略号*/
 .hide1 {

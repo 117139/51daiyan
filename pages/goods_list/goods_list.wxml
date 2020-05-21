@@ -1,0 +1,52 @@
+<!--pages/goods_tj/goods_tj.wxml-->
+<import src="/utils/htmlStatus/index.wxml" />
+<wxs src="../../utils/filter.wxs" module="filter" />
+<view class="container">
+  
+	<view class="h_main">
+	
+		<view class="goods_list">
+			<view class="goods_li" bindtap="jump" data-url="/pages/details/details">
+				<image class="goods_img" src="{{filter.imgIP('/images/goods15_02.jpg')}}"  mode="aspectFill"></image>
+				<view class="goods_msg">
+					<view class="oh1">奶油碧根果 整箱</view>
+					<view class="goods_pri">
+						<text>￥27</text>
+						<text class="pr2">￥37</text>
+					</view>
+				</view>
+			</view>
+			<view class="goods_li"  bindtap="jump" data-url="/pages/details/details">
+				<image class="goods_img" src="{{filter.imgIP('/images/goods15_02.jpg')}}"  mode="aspectFill"></image>
+				<view class="goods_msg">
+					<view class="oh1">奶油碧根果 整箱</view>
+					<view class="goods_pri">
+						<text>￥27</text>
+						<text class="pr2">￥37</text>
+					</view>
+				</view>
+			</view>
+			<view class="goods_li"  bindtap="jump" data-url="/pages/details/details">
+				<image class="goods_img" src="{{filter.imgIP('/images/goods15_02.jpg')}}"  mode="aspectFill"></image>
+				<view class="goods_msg">
+					<view class="oh1">奶油碧根果 整箱</view>
+					<view class="goods_pri">
+						<text>￥27</text>
+						<text class="pr2">￥37</text>
+					</view>
+				</view>
+			</view>
+			<view class="goods_li"  bindtap="jump" data-url="/pages/details/details">
+				<image class="goods_img" src="{{filter.imgIP('/images/goods15_02.jpg')}}"  mode="aspectFill"></image>
+				<view class="goods_msg">
+					<view class="oh2">奶油碧根果奶油碧根果奶油碧根果 整箱</view>
+					<view class="goods_pri">
+						<text>￥27</text>
+						<text class="pr2">￥37</text>
+					</view>
+				</view>
+			</view>
+		</view>
+		
+	</view>
+</view>

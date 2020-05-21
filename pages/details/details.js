@@ -16,6 +16,12 @@ Page({
     data_list:[
       { value1: '苏门答腊黄金曼特宁深度烘培' },
       { value1: '耳挂咖啡' },
+      { value1: '耳挂咖啡1' },
+      { value1: '耳挂咖啡1' },
+      { value1: '耳挂咖啡1' },
+      { value1: '耳挂咖啡1' },
+      { value1: '耳挂咖啡1' },
+      { value1: '耳挂咖啡1' },
       { value1:'耳挂咖啡1'},
     ],
     
@@ -335,12 +341,8 @@ Page({
   },
 
   pveimg(e) {
-    let that = this
-    if (e.currentTarget.dataset.curitem) {
-      app.pveimg(that.data.spimg, e.currentTarget.dataset.curitem, true)
-    } else {
-      app.pveimg(e.currentTarget.dataset.imgurl)
-    }
-
-  }
+    var curr = e.currentTarget.dataset.src
+    var urls = e.currentTarget.dataset.array
+    app.pveimg(curr, urls)
+  },
 })

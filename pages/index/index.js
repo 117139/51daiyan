@@ -16,43 +16,43 @@ Page({
         name: '未达标商户',
         img: '/static/images/1_03.jpg',
         url: '/pages/list/list',
-        type: '1'
+        tp_type: '1'
       },
       {
         name: '达标商户',
         img: '/static/images/1_05.jpg',
         url: '/pages/list/list',
-        type: '2'
+        tp_type: '1'
       },
       {
         name: '巡机单',
         img: '/static/images/1_09.jpg',
         url: '/pages/list/list',
-        type: '2'
+        tp_type: '1'
       },
       {
         name: '已巡机',
         img: '/static/images/1_10.jpg',
         url: '/pages/list/list',
-        type: '3'
+        tp_type: '1'
       },
       {
         name: '装机单',
         img: '/static/images/1_13.jpg',
         url: '/pages/list/list',
-        type: '4'
+        tp_type: '1'
       },
       {
         name: '已装机',
         img: '/static/images/1_14.jpg',
         url: '/pages/list/list',
-        type: '5'
+        tp_type: '1'
       },
       {
         name: '维护单',
         img: '/static/images/1_17.jpg',
         url: '/pages/list/list',
-        type: '6'
+        tp_type: '1'
       },
       {
         name: '已维护',
@@ -167,7 +167,14 @@ Page({
   
 
 
-
+  toupiao(e){
+    var idx = e.currentTarget.dataset.idx
+    var newdata=this.data.start_li
+    newdata[idx].tp_type=2
+    this.setData({
+      start_li: newdata
+    })
+  },
   getdata(){
     ///api/homeIndex
     var that = this
@@ -230,6 +237,11 @@ Page({
     } else {
       app.jump(e)
     }
+  },
+  pveimg(e) {
+    var curr = e.currentTarget.dataset.src
+    var urls = e.currentTarget.dataset.array
+    app.pveimg(curr, urls)
   },
 	kffuc(e){
 		console.log(e)

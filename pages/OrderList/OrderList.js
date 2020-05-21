@@ -15,7 +15,10 @@ Page({
 		],
 		pages:[1,1,1,1,1],
 		type:0,
-		goods:[1,1],
+		goods:[
+      [1, 1],
+      [1, 1],
+    ],
 		shopNum:[],
 		sum:0,
 		otype:-2,
@@ -23,10 +26,10 @@ Page({
 
 
     goods_sele: [
-      [{ "num": 1, xuan:false},
-        { "num": 1, xuan:false },],
-      [{ "num": 1, xuan:false },
-        { "num": 1, xuan:false },]
+      [{ "num": 1, xuan:false,id:1},
+        { "num": 1, xuan: false, id: 2 },],
+      [{ "num": 1, xuan: false, id: 3 },
+        { "num": 1, xuan: false, id: 4 },]
     ],
     // goods_sele: [],
     xuan: false,
@@ -87,6 +90,37 @@ Page({
    */
   onPullDownRefresh: function () {
     wx.stopPullDownRefresh();
+  },
+  jump_fabu(){
+    let that = this
+    let xuanG = that.data.goods_sele
+    let idG = ''
+    var xzarr = []
+    for (let i=0;i<xuanG.length;i++) {
+      for (let j = 0; j < xuanG[i].length; j++){
+        if (xuanG[i][j].xuan) {
+          if (idG == '') {
+            idG = xuanG[i][j].id
+
+          } else {
+            idG += ',' + xuanG[i][j].id
+          }
+          xzarr.push(that.data.goods[i])
+        }
+      }
+
+      // console.log(idG)
+    }
+    xzarr = JSON.stringify(xzarr)
+    console.log(xzarr)
+    console.log(idG)
+    if (idG !== '') {
+      wx.navigateTo({
+        url: '/pages/daiyan_fabu/daiyan_fabu',
+      })
+      // app.openOrder(idG, xzarr, 1)
+    }
+    
   },
 	bindcur(e){
 		var that =this

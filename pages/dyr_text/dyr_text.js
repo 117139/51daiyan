@@ -227,6 +227,11 @@ Page({
       app.jump(e)
     }
   },
+  pveimg(e) {
+    var curr = e.currentTarget.dataset.src
+    var urls = e.currentTarget.dataset.array
+    app.pveimg(curr, urls)
+  },
 	kffuc(e){
 		console.log(e)
 	}

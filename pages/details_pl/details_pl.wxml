@@ -1,18 +1,18 @@
 <!--pages/details/details.wxml-->
 <import src="/utils/htmlStatus/index.wxml" />
 <wxs src="../../utils/filter.wxs" module="filter" />
-<view class="container">
+<view class="{{sheetshow?'container-ban':'container'}}">
   <template is="htmlStatus" data="{{...htmlStatus}}" />
   
   <!-- 评价 -->
   <view class="pj_box">
     
     <view class="pj_bq">
-      <view>全部</view>
-      <view>有图（111）</view>
-      <view>质量很好（111）</view>
-      <view>性价比高（62）</view>
-      <view>发货快（53）</view>
+      <view class="{{pl_type==0?'cur':''}}" data-idx="0" bindtap="qh_pl">全部</view>
+      <view class="{{pl_type==1?'cur':''}}" data-idx="1" bindtap="qh_pl">有图（111）</view>
+      <view class="{{pl_type==2?'cur':''}}" data-idx="2" bindtap="qh_pl">质量很好（111）</view>
+      <view class="{{pl_type==3?'cur':''}}" data-idx="3" bindtap="qh_pl">性价比高（62）</view>
+      <view class="{{pl_type==4?'cur':''}}" data-idx="4" bindtap="qh_pl">发货快（53）</view>
     </view>
     <view class="pj_li" wx:for="{{data_list}}" wx:for-index="idx" wx:for-item="item">
       <view class="pj_d1">
@@ -26,12 +26,12 @@
       </view>
       <view class="pj_d2">上次就买了，感觉太好喝了，这次又来光顾一下，这次又来光顾一下，这次又来光顾一下，这次又来光顾一下。</view>
       <view wx:if="{{idx==2}}" class="quan_msg_img">
-          <image class="one" src="/static/images/goods.png" mode="aspectFill"></image>
+          <image class="one" src="{{filter.imgIP('goods.png')}}" mode="aspectFill" data-src="{{filter.imgIP('goods.png')}}" catchtap="pveimg"></image>
         </view>
         <view wx:else class="quan_msg_img">
-          <image src="/static/images/goods.png" mode="aspectFill"></image>
-          <image src="/static/images/goods.png" mode="aspectFill"></image>
-          <image src="/static/images/goods.png" mode="aspectFill"></image>
+          <image src="{{filter.imgIP('goods.png')}}" mode="aspectFill"  data-src="{{filter.imgIP('goods.png')}}" catchtap="pveimg"></image>
+          <image src="{{filter.imgIP('goods.png')}}" mode="aspectFill" data-src="{{filter.imgIP('goods.png')}}" catchtap="pveimg"></image>
+          <image src="{{filter.imgIP('goods.png')}}" mode="aspectFill" data-src="{{filter.imgIP('goods.png')}}" catchtap="pveimg"></image>
         </view>
       <view class="quan_li_cz">
        
@@ -40,30 +40,8 @@
     </view>
   </view>
  
-  <!-- tk -->
-  <van-popup custom-class="popopBox" show="{{ sheetshow1 }}" position="bottom" bind:close="onClose" >
-    <view class="dy_box">
-        <view class="tk_dyr_li" wx:for="{{data_list}}" wx:for-index="idx" wx:for-item="item"  data-type="{{idx}}" bindtap="txtype_fuc">
-          <view class="dis_flex aic flex_1">
-            <view class="tk_user_tx">
-              <image class="tk_user_tx" src="../../static/images/tx.png"  mode="aspectFill"></image>
-              <image wx:if="{{idx==1}}" class="tk_user_v" src="../../static/images/star_b.png"></image>
-              <image wx:if="{{idx==2}}" class="tk_user_v" src="../../static/images/star_d.png"></image>
-            </view>
-            <view class="tk_user_name">kimi</view>
-            <view wx:if="{{idx==0}}" class="hy_bq">好友</view>
-            <view wx:if="{{idx==1}}" class="hy_bq hy_bq1 ">明星</view>
-            <view wx:if="{{idx==2}}" class="hy_bq hy_bq2">达人</view>
-          </view>
-          <icon  wx:if="{{dyr_type==idx}}" type="success" size="18" color="#F7B43B" />
-          <view wx:else class="tx_type2">
-            
-          </view>
-        </view>
-        <view class="dy_btn" bindtap="xz_dyr">作为代言人</view>
-    </view>
-  </van-popup>
-  <van-popup custom-class="popopBox" show="{{ sheetshow }}" position="bottom" bind:close="onClose" >
+
+  <van-popup custom-class="popopBox" show="{{ sheetshow }}" lock-scroll="{{true}}" position="bottom" bind:close="onClose" >
 		<view class="popopBox1">
 			<view class="goodsimg">
 				<image src="{{filter.imgIP('goods_02.jpg')}}" data-src="{{filter.imgIP('goods_02.jpg')}}" mode="aspectFill" bindtap="previewImage"></image>

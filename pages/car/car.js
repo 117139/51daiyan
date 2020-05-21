@@ -7,17 +7,13 @@ Page({
     htmlReset: 0,
     goods: [
       [{ "num": 1, xuan: false },
-        { "num": 1, xuan: false },],
-      [{ "num": 1, xuan: false },
-      { "num": 1, xuan: false },]
+        { "num": 1, xuan: false },]
     ],
     // goods: [],
     spimg: [],
     goods_sele: [
       [{ "num": 1, xuan: false },
         { "num": 1, xuan: false },],
-      [{ "num": 1, xuan: false },
-      { "num": 1, xuan: false },]
     ],
 		// goods_sele: [],
     xuan: false,

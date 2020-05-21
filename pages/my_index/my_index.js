@@ -7,7 +7,8 @@ Page({
    */
   data: {
 		s_type:0,
-		data_list:[1,1,1,1,1,1,1]
+		data_list:[1,1,1,1,1,1,1],
+    gz_type:false
   },
 
   /**
@@ -65,6 +66,12 @@ wx.stopPullDownRefresh();
   onShareAppMessage: function () {
 
   },
+  guanzhu(){
+    var that =this
+    that.setData({
+      gz_type: !that.data.gz_type
+    })
+  },
 	ss_type:function (e){
 		var that =this
 	  if(that.data.s_type==e.currentTarget.dataset.type) return
@@ -73,6 +80,11 @@ wx.stopPullDownRefresh();
 	  	s_type:e.currentTarget.dataset.type
 	  })
 	},
+  pveimg(e) {
+    var curr = e.currentTarget.dataset.src
+    var urls = e.currentTarget.dataset.array
+    app.pveimg(curr, urls)
+  },
   jump(e) {
     console.log(e.currentTarget.dataset.type)
     if (e.currentTarget.dataset.type == 2) {

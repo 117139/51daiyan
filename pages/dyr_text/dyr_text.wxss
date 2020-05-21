@@ -302,7 +302,7 @@
 .quan_li{
   width: 100%;
   background: #fff;
-  padding: 23rpx 28rpx;
+  padding: 23rpx 28rpx 0;
   box-sizing: border-box;
 }
 .quan_li+.quan_li{
@@ -359,14 +359,14 @@
   width: 100%;
   padding-left:96rpx;
   box-sizing: border-box; 
-  margin-top: 30rpx;
+  margin-top: 16rpx;
   font-size: 30rpx;
   color: #333;
 
 }
 .quan_msg_text{
   line-height: 40rpx;
-  margin-bottom: 30rpx;
+  margin-bottom: 16rpx;
 }
 .quan_msg_img image{
   width:196rpx;
@@ -379,9 +379,8 @@
   margin-right: 0;
 }
 .quan_msg_img image.one{
-  min-width:352rpx;
-  max-width: 482rpx;
-  height:482rpx;
+  /* min-width:352rpx; */
+  max-width: 100%;
   border-radius:10px;
 }
 .quan_goods{

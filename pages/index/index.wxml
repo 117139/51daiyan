@@ -93,27 +93,28 @@
   </view>
   <!-- 代言圈 -->
   <view class="quan_list">
-    <view class="quan_li" wx:for="{{start_li}}" wx:for-index="idx" wx:for-item="item" bindtap="jump" data-url="/pages/details/details">
+    <view class="quan_li" wx:for="{{start_li}}" wx:for-index="idx" wx:for-item="item">
       <view class="quan_user_box">
         <image bindtap="jump" data-url="/pages/my_index/my_index" class="quan_user_tx" src="{{filter.imgIP('tx.png')}}" mode="aspectFill"></image>
         <view class="quan_user_msg">
           <view class="quan_user_name">倪小丫 <image src="/static/images/star_b.png"></image></view>
           <view class="quan_user_time"><text>10-14 18:03</text><text>演员</text></view>
         </view>
-        <view class="quan_user_btn">为我投票</view>
+        <view wx:if="{{item.tp_type==1}}" class="quan_user_btn" catchtap="toupiao" data-idx="{{idx}}">为我投票</view>
+        <view wx:else class="quan_user_btn quan_user_btn1" >已投票</view>
       </view>
       <view class="quan_msg">
         <view class="oh4  quan_msg_text">可能这辈子都戒不掉米饭了，吃好饭的用好锅，我为苏泊尔智能电饭锅代言。</view>
         <view wx:if="{{idx==2}}" class="quan_msg_img">
-          <image class="one" src="{{filter.imgIP('goods.png')}}" mode="aspectFill"></image>
+          <image class="one" src="{{filter.imgIP('goods.png')}}" mode="aspectFill" data-src="{{filter.imgIP('goods.png')}}" catchtap="pveimg"></image>
         </view>
         <view wx:else class="quan_msg_img">
-          <image src="{{filter.imgIP('goods.png')}}" mode="aspectFill"></image>
-          <image src="{{filter.imgIP('goods.png')}}" mode="aspectFill"></image>
-          <image src="{{filter.imgIP('goods.png')}}" mode="aspectFill"></image>
+          <image src="{{filter.imgIP('goods.png')}}" mode="aspectFill" data-src="{{filter.imgIP('goods.png')}}" catchtap="pveimg"></image>
+          <image src="{{filter.imgIP('goods1.png')}}" mode="aspectFill" data-src="{{filter.imgIP('goods1.png')}}" catchtap="pveimg"></image>
+          <image src="{{filter.imgIP('goods.png')}}" mode="aspectFill" data-src="{{filter.imgIP('goods.png')}}" catchtap="pveimg"></image>
         </view>
       </view>
-      <view class="quan_goods">
+      <view class="quan_goods"  bindtap="jump" data-url="/pages/details/details">
         <image class="quan_goods_img" src="{{filter.imgIP('goods.png')}}" mode="aspectFill"></image>
         <view class="quan_goods_msg">
           <view class="quan_goods_name oh1">苏泊尔IH家用大容量智能电饭锅</view>

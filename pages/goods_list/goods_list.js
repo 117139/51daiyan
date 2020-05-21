@@ -1,4 +1,4 @@
-// pages/daiyan_find/daiyan_find.js
+// pages/goods_tj/goods_tj.js
 const app = getApp()
 Page({
 
@@ -6,18 +6,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-		data_list:[1,1,1,1],
-    pinpai: [
-      {
-        bm: 1
-      },
-      {
-        bm: 1
-      },
-      {
-        bm: 1
-      },
-    ]
+		dy_mon:0,
+		dy_num:0,
+		dy_pri:0,
+
+
+    s_type: 0,
+		data_list:[1,1,1,1,1]
   },
 
   /**
@@ -59,7 +54,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-wx.stopPullDownRefresh();
+    wx.stopPullDownRefresh();
   },
 
   /**
@@ -75,14 +70,33 @@ wx.stopPullDownRefresh();
   onShareAppMessage: function () {
 
   },
-  bm_fuc(e){
-    var idx = e.currentTarget.dataset.idx
-    var newdata = this.data.pinpai
-    newdata[idx].bm = 2
-    this.setData({
-      pinpai: newdata
+  ss_type: function (e) {
+    var that = this
+    if (that.data.s_type == e.currentTarget.dataset.type) return
+    console.log(e.currentTarget.dataset.type)
+    that.setData({
+      s_type: e.currentTarget.dataset.type
     })
   },
+	px_fuc(e){
+		var that=this
+		var type=e.currentTarget.dataset.type
+		if(type==0){
+			that.setData({
+				dy_mon:!that.data.dy_mon
+			})
+		}
+		if(type==1){
+			that.setData({
+				dy_num:!that.data.dy_num
+			})
+		}
+		if(type==2){
+			that.setData({
+				dy_pri:!that.data.dy_pri
+			})
+		}
+	},
   jump(e) {
     console.log(e.currentTarget.dataset.type)
     if (e.currentTarget.dataset.type == 2) {
@@ -92,5 +106,5 @@ wx.stopPullDownRefresh();
     } else {
       app.jump(e)
     }
-  }
+  },
 })

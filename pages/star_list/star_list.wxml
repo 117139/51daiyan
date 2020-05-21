@@ -1,4 +1,5 @@
 <!--pages/star_list/star_list.wxml-->
+<wxs src="../../utils/filter.wxs" module="filter" />
 <navigation-bar title="{{'明星达人秀'}}" bindback="handleBack" bindhome="handleHome" opacity="1">
   <view class="page-content">
     <view class="container">
@@ -23,11 +24,11 @@
 					 			<image class="user_v" src="../../static/images/star_b.png"></image>
 					 		</view>
 					 		<view class="user_msg">
-					 			<view class="fwb">张一鸣</view>
-					 			<view class="oh1"><image src="../../static/images/star_jj.png"></image>简介：一线明星，知名演员…</view>
+					 			<view class="fwb mb10">张一鸣</view>
+					 			<view class="oh1 mb10"><image src="../../static/images/star_jj.png"></image>简介：一线明星，知名演员…</view>
 					 			<view><image src="../../static/images/dy_num.png"></image>代言数量：20</view>
 					 		</view>
-					 		<view class="user_btn">+关注</view>
+					 		<!-- <view class="user_btn">+关注</view> -->
 					 		<view class="user_btn user_btn1">已关注</view>
 					 	</view>
 					 </view>
@@ -38,12 +39,12 @@
 					 			<image class="user_v" src="../../static/images/star_b.png"></image>
 					 		</view>
 					 		<view class="user_msg">
-					 			<view class="fwb">张一鸣</view>
-					 			<view class="oh1"><image src="../../static/images/star_jj.png"></image>简介：一线明星，知名演员…</view>
+					 			<view class="fwb mb10">张一鸣</view>
+					 			<view class="oh1 mb10"><image src="../../static/images/star_jj.png"></image>简介：一线明星，知名演员…</view>
 					 			<view><image src="../../static/images/dy_num.png"></image>代言数量：20</view>
 					 		</view>
 					 		<view class="user_btn">+关注</view>
-					 		<view class="user_btn user_btn1">已关注</view>
+					 		<!-- <view class="user_btn user_btn1">已关注</view> -->
 					 	</view>
 					 </view>
 					 <view class="star_li">
@@ -53,16 +54,16 @@
 					 			<image class="user_v" src="../../static/images/star_b.png"></image>
 					 		</view>
 					 		<view class="user_msg">
-					 			<view class="fwb">张一鸣</view>
-					 			<view class="oh1"><image src="../../static/images/star_jj.png"></image>简介：一线明星，知名演员…</view>
+					 			<view class="fwb mb10">张一鸣</view>
+					 			<view class="oh1 mb10"><image src="../../static/images/star_jj.png"></image>简介：一线明星，知名演员…</view>
 					 			<view><image src="../../static/images/dy_num.png"></image>代言数量：20</view>
 					 		</view>
 					 		<view class="user_btn">+关注</view>
-					 		<view class="user_btn user_btn1">已关注</view>
+					 		<!-- <view class="user_btn user_btn1">已关注</view> -->
 					 	</view>
 						<view class="star_dymsg">
 							<view class="dy_sp">
-								<image class="dy_sp" src="../../static/images/images/goods15_02.jpg"  mode="aspectFill"></image>
+								<image class="dy_sp" src="{{filter.imgIP('/images/goods15_02.jpg')}}"  mode="aspectFill"></image>
 								<view class="play_box">
 									<image src="../../static/images/bofang.png"></image>
 								</view>

@@ -1,7 +1,7 @@
 //app.js
 App({
-	IPurl: 'https://huayingworld.800123456.top/',
-	IPurl1:'https://huayingworld.800123456.top/',
+  IPurl: 'http://39.105.211.150:801/a',
+  IPurl1:'http://39.105.211.150:801/',
 	onLaunch: function() {
 		let that=this
 		wx.removeStorageSync('userInfo')

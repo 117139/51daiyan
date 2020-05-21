@@ -1,0 +1,52 @@
+/* pages/xiaoxi/xiaoxi.wxss */
+.container{ 
+	width: 100%;
+  min-height: 100vh;
+	background: #f5f5f5;
+}
+.xx_li{
+	width: 100%;
+	background: #FFF;
+	padding: 20rpx 22rpx;
+	box-sizing: border-box;
+	border-bottom: 1px solid #eee;
+	display: flex;
+	align-items: center;
+}
+.user_tx{
+	width:82rpx;
+	height:82rpx;
+	border-radius:50%;
+	position: relative;
+	margin-right: 20rpx;
+}
+.user_tx text{
+	width:14rpx;
+	height:14rpx;
+	background:rgba(254,58,53,1);
+	border-radius:50%;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.xx_msg{
+	flex: 1;
+}
+.to_name{
+	width: 100%;
+	display: flex;
+	align-items: center;
+	margin-bottom: 10rpx;
+	font-size: 30rpx;
+	color: #333;
+	justify-content: space-between;
+}
+.to_name .time{
+	font-size: 24rpx;
+	color: #999;
+}
+.to_msg{
+	color: #333;
+	font-size: 30rpx;
+  margin-bottom: 15rpx;
+}

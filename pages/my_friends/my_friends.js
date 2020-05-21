@@ -71,6 +71,7 @@ Page({
   onShareAppMessage: function () {
 
   },
+  
 	paixun1(){
 		var that =this
 		that.setData({

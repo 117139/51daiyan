@@ -26,17 +26,18 @@
             <view class="quan_user_name">倪小丫 <image src="/static/images/star_b.png"></image></view>
             <view class="quan_user_time"><text>10-14 18:03</text><text>演员</text></view>
           </view>
-          <view class="quan_user_btn">为我投票</view>
+          <view wx:if="{{item.tp_type==1}}" class="quan_user_btn" catchtap="toupiao" data-idx="{{idx}}">为我投票</view>
+        <view wx:else class="quan_user_btn quan_user_btn1" >已投票</view>
         </view>
         <view class="quan_msg">
           <view class="oh4  quan_msg_text">可能这辈子都戒不掉米饭了，吃好饭的用好锅，我为苏泊尔智能电饭锅代言。</view>
           <view wx:if="{{idx==2}}" class="quan_msg_img">
-            <image class="one" src="/static/images/goods1.png" mode="aspectFill"></image>
+            <image class="one" src="/static/images/goods1.png" mode="aspectFill"  data-src="{{filter.imgIP('goods.png')}}" catchtap="pveimg"></image>
           </view>
           <view wx:else class="quan_msg_img">
-            <image src="/static/images/goods1.png" mode="aspectFill"></image>
-            <image src="/static/images/goods1.png" mode="aspectFill"></image>
-            <image src="/static/images/goods1.png" mode="aspectFill"></image>
+            <image src="/static/images/goods.png" mode="aspectFill" data-src="{{filter.imgIP('goods.png')}}" catchtap="pveimg"></image>
+            <image src="/static/images/goods1.png" mode="aspectFill" data-src="{{filter.imgIP('goods1.png')}}" catchtap="pveimg"></image>
+            <image src="/static/images/goods.png" mode="aspectFill" data-src="{{filter.imgIP('goods.png')}}" catchtap="pveimg"></image>
           </view>
         </view>
         <view class="quan_goods" bindtap="jump" data-url="/pages/details/details">
@@ -65,7 +66,7 @@
             </view>
           </view> -->
           <view class="cz_li">跟随购买：6321</view>
-          <view class="cz_li"><text class="iconfont iconpinglun"></text>1566</view>
+          <view class="cz_li" catchtap="jump" data-url="/pages/daiyan_pl/daiyan_pl"><text class="iconfont iconpinglun"></text>1566</view>
           <view class="cz_li" catchtap="zan" data-id="idx"><text class="iconfont iconzan"></text>1566</view>
         </view>
       </view>
@@ -79,12 +80,12 @@
 					 			<image class="user_v" src="../../static/images/star_b.png"></image>
 					 		</view>
 					 		<view class="user_msg">
-					 			<view class="fwb">张一鸣</view>
-					 			<view class="oh1"><image src="../../static/images/star_jj.png"></image>简介：一线明星，知名演员…</view>
-					 			<view><image src="../../static/images/dy_num.png"></image>代言数量：20</view>
+					 			<view class="fwb mb10">张一鸣</view>
+					 			<view class="oh1 mb10"><image src="../../static/images/star_jj.png"></image>简介：一线明星，知名演员…</view>
+					 			<view class=""><image src="../../static/images/dy_num.png"></image>代言数量：20</view>
 					 		</view>
-					 		<view class="user_btn">+关注</view>
-					 		<view class="user_btn user_btn1">已关注</view>
+					 		<view  wx:if="{{item.tp_type==1}}" data-idx="{{idx}}" catchtap="toupiao" class="user_btn">+关注</view>
+					 		<view wx:else class="user_btn user_btn1">已关注</view>
 					 	</view>
 					 </view>
   </view>

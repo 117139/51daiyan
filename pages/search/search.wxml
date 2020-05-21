@@ -34,7 +34,7 @@
 		 </view>
 	 </view>
 	 <!-- 商品 -->
-	 <view class="ss_list" wx:if="{{ss_cur==1}}">
+	 <view class="ss_list ss_list1" wx:if="{{ss_cur==1}}">
 		 <view class="data_null" wx:if="{{data_list.length==0}}">
 		 			 <image src="../../static/images/data_null.png"></image>
 		 </view>

@@ -9,93 +9,93 @@ Page({
   data: {
     tab_type:'0',
     data_list:[1,1,1,1],
-		start_li:[
-		  {
-		    name: '未达标商户',
-		    img: '/static/images/1_03.jpg',
-		    url: '/pages/list/list',
-		    type: '1'
-		  },
-		  {
-		    name: '达标商户',
-		    img: '/static/images/1_05.jpg',
-		    url: '/pages/list/list',
-		    type: '2'
-		  },
-		  {
-		    name: '巡机单',
-		    img: '/static/images/1_09.jpg',
-		    url: '/pages/list/list',
-		    type: '2'
-		  },
-		  {
-		    name: '已巡机',
-		    img: '/static/images/1_10.jpg',
-		    url: '/pages/list/list',
-		    type: '3'
-		  },
-		  {
-		    name: '装机单',
-		    img: '/static/images/1_13.jpg',
-		    url: '/pages/list/list',
-		    type: '4'
-		  },
-		  {
-		    name: '已装机',
-		    img: '/static/images/1_14.jpg',
-		    url: '/pages/list/list',
-		    type: '5'
-		  },
-		  {
-		    name: '维护单',
-		    img: '/static/images/1_17.jpg',
-		    url: '/pages/list/list',
-		    type: '6'
-		  },
-		  {
-		    name: '已维护',
-		    img: '/static/images/1_18.jpg',
-		    url: '/pages/list/list',
-		    type: '7'
-		  },
-		  {
-		    name: '换机单',
-		    img: '/static/images/2_09.jpg',
-		    url: '/pages/list/list',
-		    type: '8'
-		  },
-		  {
-		    name: '已换机',
-		    img: '/static/images/2_10.jpg',
-		    url: '/pages/list/list',
-		    type: '9'
-		  },
-		  {
-		    name: '撤机单',
-		    img: '/static/images/2_13.jpg',
-		    url: '/pages/list/list',
-		    type: '10'
-		  },
-		  {
-		    name: '已撤机',
-		    img: '/static/images/2_14.jpg',
-		    url: '/pages/list/list',
-		    type: '11'
-		  },
-		  {
-		    name: '终端交易查询',
-		    img: '/static/images/2_17.jpg',
-		    url: '/pages/list/list',
-		    type: '12'
-		  },
-		  {
-		    name: '应收列表',
-		    img: '/static/images/2_18.jpg',
-		    url: '/pages/list/list',
-		    type: '13'
-		  },
-		  
-		],
+    start_li: [
+      {
+        name: '未达标商户',
+        img: '/static/images/1_03.jpg',
+        url: '/pages/list/list',
+        tp_type: '1'
+      },
+      {
+        name: '达标商户',
+        img: '/static/images/1_05.jpg',
+        url: '/pages/list/list',
+        tp_type: '1'
+      },
+      {
+        name: '巡机单',
+        img: '/static/images/1_09.jpg',
+        url: '/pages/list/list',
+        tp_type: '1'
+      },
+      {
+        name: '已巡机',
+        img: '/static/images/1_10.jpg',
+        url: '/pages/list/list',
+        tp_type: '1'
+      },
+      {
+        name: '装机单',
+        img: '/static/images/1_13.jpg',
+        url: '/pages/list/list',
+        tp_type: '1'
+      },
+      {
+        name: '已装机',
+        img: '/static/images/1_14.jpg',
+        url: '/pages/list/list',
+        tp_type: '1'
+      },
+      {
+        name: '维护单',
+        img: '/static/images/1_17.jpg',
+        url: '/pages/list/list',
+        tp_type: '1'
+      },
+      {
+        name: '已维护',
+        img: '/static/images/1_18.jpg',
+        url: '/pages/list/list',
+        tp_type: '1'
+      },
+      {
+        name: '换机单',
+        img: '/static/images/2_09.jpg',
+        url: '/pages/list/list',
+        tp_type: '1'
+      },
+      {
+        name: '已换机',
+        img: '/static/images/2_10.jpg',
+        url: '/pages/list/list',
+        tp_type: '1'
+      },
+      {
+        name: '撤机单',
+        img: '/static/images/2_13.jpg',
+        url: '/pages/list/list',
+        tp_type: '1'
+      },
+      {
+        name: '已撤机',
+        img: '/static/images/2_14.jpg',
+        url: '/pages/list/list',
+        tp_type: '1'
+      },
+      {
+        name: '终端交易查询',
+        img: '/static/images/2_17.jpg',
+        url: '/pages/list/list',
+        tp_type: '1'
+      },
+      {
+        name: '应收列表',
+        img: '/static/images/2_18.jpg',
+        url: '/pages/list/list',
+        tp_type: '1'
+      },
+
+    ],
 		indicatorDots: true,
   },
 
@@ -163,6 +163,14 @@ wx.stopPullDownRefresh();
   onShareAppMessage: function () {
 
   },
+  toupiao(e) {
+    var idx = e.currentTarget.dataset.idx
+    var newdata = this.data.start_li
+    newdata[idx].tp_type = 2
+    this.setData({
+      start_li: newdata
+    })
+  },
 	tab_fuc(e){
 		var that =this
 		if(that.data.tab_type==e.currentTarget.dataset.type) return
@@ -171,6 +179,11 @@ wx.stopPullDownRefresh();
 			tab_type:e.currentTarget.dataset.type
 		})
 	},
+  pveimg(e) {
+    var curr = e.currentTarget.dataset.src
+    var urls = e.currentTarget.dataset.array
+    app.pveimg(curr, urls)
+  },
   jump(e) {
     console.log(e.currentTarget.dataset.type)
     if (e.currentTarget.dataset.type == 2) {

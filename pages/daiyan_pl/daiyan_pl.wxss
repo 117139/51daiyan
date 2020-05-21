@@ -160,8 +160,8 @@ line-height: 36rpx;
 .pj_box{
   /* background: #fff; */
   width: 100%;
-  padding: 0 28rpx;
-  border-bottom: 1px solid #eee;
+  padding: 20rpx 28rpx;
+  /* border-bottom: 1px solid #eee; */
 }
 .pj_box_tit{
   padding: 0 28rpx;
@@ -209,7 +209,7 @@ line-height: 36rpx;
 .pj_li{
   background: #fff;
   width: 100%;
-  padding: 20rpx 28rpx;
+  padding: 20rpx 28rpx 0;
   box-sizing: border-box;
   border-bottom: 1px solid #eee;
 }
@@ -886,8 +886,8 @@ button {
 }
 .quan_li_cz{
   width: 100%;
-  margin-top: 15rpx;
-  height: 70rpx;
+  /* margin-top: 15rpx; */
+  height: 60rpx;
   display: flex;
   padding-left: 65rpx;
   box-sizing: border-box;

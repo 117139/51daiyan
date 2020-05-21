@@ -8,11 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    indicatorDots: false,
-    autoplay: true,
-    circular: true,
-    interval: 3000,
-    duration: 1000,
+    pl_type:0,
     data_list:[
       { value1: '苏门答腊黄金曼特宁深度烘培' },
       { value1: '耳挂咖啡' },
@@ -24,7 +20,7 @@ Page({
 
 
     sheetshow: false,         //规格弹框控制
-    sheetshow1: false,
+    
     dyr_type:0,
     showcan: false,
     goods_total_limit: '',  //商品阶梯
@@ -96,6 +92,12 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  qh_pl(e){
+    console.log(e.currentTarget.dataset.idx)
+    this.setData({
+      pl_type: e.currentTarget.dataset.idx
+    })
   },
   swiper_change(e){
     console.log(e.detail )
@@ -335,12 +337,8 @@ Page({
   },
 
   pveimg(e) {
-    let that = this
-    if (e.currentTarget.dataset.curitem) {
-      app.pveimg(that.data.spimg, e.currentTarget.dataset.curitem, true)
-    } else {
-      app.pveimg(e.currentTarget.dataset.imgurl)
-    }
-
-  }
+    var curr = e.currentTarget.dataset.src
+    var urls = e.currentTarget.dataset.array
+    app.pveimg(curr, urls)
+  },
 })

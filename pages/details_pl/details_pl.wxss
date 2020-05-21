@@ -9,21 +9,7 @@ image{
 	/* width: 100%;
 	height: 100%; */
 }
-.swiper_box{
-  width: 750rpx;
-	height:750rpx;
-  position: relative;
-}
-.swiper{	
-	width: 100%;
-	height:750rpx;
-  position: relative;
-  z-index: 99;
-}
-.swiper image{
-	width: 100%;
-	height:750rpx;
-}
+
 .br_box{
   z-index: 100;
   position: absolute;
@@ -160,7 +146,8 @@ line-height: 36rpx;
 .pj_box{
   /* background: #fff; */
   width: 100%;
-  padding: 0 28rpx;
+  /* padding-top: 20rpx; */
+  /* padding: 0 28rpx; */
   border-bottom: 1px solid #eee;
 }
 .pj_box_tit{
@@ -187,7 +174,7 @@ line-height: 36rpx;
   color: #bbb;
 }
 .pj_bq{
-  padding: 0 10rpx;
+  padding: 20rpx 10rpx 10rpx;
   box-sizing: border-box;
   width: 100%;
   margin-bottom: 20rpx;
@@ -198,18 +185,21 @@ line-height: 36rpx;
   align-items: center;
   justify-content: center;
   height:60rpx;
-  background:rgba(250,233,234,1);
-  border-radius:30rpx;
+  color:#F75559;
+  border:1px solid rgba(247,85,89,1);
+  border-radius:14rpx;
   padding: 0 23rpx;
   box-sizing: border-box;
   font-size: 24rpx;
-  color: #333;
   margin: 10rpx 18rpx;
+}
+.pj_bq view.cur{
+  background:rgba(250,233,234,1);
 }
 .pj_li{
   background: #fff;
   width: 100%;
-  padding: 20rpx 28rpx;
+  padding: 20rpx 28rpx 0;
   box-sizing: border-box;
   border-bottom: 1px solid #eee;
 }
@@ -865,7 +855,7 @@ button {
   color: #999
 }
 .quan_msg_img{
-  margin: 20rpx 0;
+  margin: 20rpx 0 0;
 }
 .quan_msg_img image{
   width:196rpx;
@@ -878,15 +868,16 @@ button {
   margin-right: 0;
 }
 .quan_msg_img image.one{
-  width:410rpx;
-  max-width: 410rpx;
-  height:410rpx;
-  border-radius:10px;
+  
+  max-width: 100%;
+  height:auto;
+  border-radius:10rpx;
 }
 .quan_li_cz{
   width: 100%;
-  margin-top: 15rpx;
-  height: 70rpx;
+  /* margin-top: 15rpx; */
+  height: 60rpx;
+  padding-bottom: 4rpx;
   display: flex;
   /* flex-direction: row-reverse; */
   justify-content: flex-end;
@@ -908,4 +899,16 @@ button {
   font-size: 30rpx;
   color: #999;
   margin-right: 10rpx;
+}
+
+::-webkit-scrollbar
+{
+width: 0;
+height: 0;
+color: transparent;
+}
+
+.container-ban{
+  height: 100vh;
+  overflow: hidden;
 }

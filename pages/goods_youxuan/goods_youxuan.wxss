@@ -215,7 +215,7 @@
 .goods_name2{
 	
 	font-size: 30rpx;
-	color: #FF4242;
+	color: #000;
 	display: flex;
 	align-items: center;
 	
@@ -229,14 +229,14 @@
 	box-sizing: border-box;
 	border-radius:4rpx;
 	font-size: 24rpx;
-	color: #000;
+	color: #FF4242;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 .sj_list{
   width: 154rpx;
-  height:56rpx;
+  height:40rpx;
   display: flex;
   flex-direction: row-reverse;
   position: relative;
@@ -244,8 +244,8 @@
 }
 
 .sj_li{
-  width:56rpx;
-  height:56rpx;
+  width:40rpx;
+  height:40rpx;
   background:rgba(255,255,255,1);
   box-shadow:0px 3rpx 10rpx 0px rgba(119,119,119,0.2);
   border-radius:50%;

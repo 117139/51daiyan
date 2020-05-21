@@ -1,6 +1,8 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/goods_list/goods_list",
+    "pages/xiaoxi_list/xiaoxi_list",
     "pages/my_qianbao/my_qianbao",
     "pages/about/about",
     "pages/daiyan_fabu/daiyan_fabu",

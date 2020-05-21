@@ -13,7 +13,8 @@
 				<view class="daiyan_lv"><text class="iconfont iconxingzhuang60kaobei2"></text>代言星级 3</view>
 			</view>
 			<view class="gz_btn gz_btn1" bindtap="jump" data-url="/pages/lts/lts">私信</view>
-			<view class="gz_btn">+关注</view>
+			<view wx:if="{{gz_type}}" class="gz_btn" bindtap="guanzhu">已关注</view>
+			<view wx:else class="gz_btn" bindtap="guanzhu">+关注</view>
 		</view>
 		<view class="dy_id">
 			<text>代言号：spzy010</text>
@@ -55,7 +56,7 @@
 				<view class="time_box">
 					<view class="dt_li" wx:for="{{data_list}}" wx:for-item="item1">
 						<view class="dt_li_d1">
-							<image class="dt_li_d1_img" src="../../static/images/goods.png"></image>
+							<image class="dt_li_d1_img" src="../../static/images/goods.png"  data-src="{{filter.imgIP('goods.png')}}" catchtap="pveimg"></image>
 							<view class="d1_msg">
 								<view class="dt_text oh3">我在参选优选代言人活动，请为我投上宝贵的一票,谢谢大家！</view>
 								<view class="dt_cz">
@@ -65,7 +66,7 @@
 							</view>
 						</view>
 						<view class="quan_goods" bindtap="jump" data-url="/pages/details/details">
-						  <image class="quan_goods_img" src="/static/images/goods.png" mode="aspectFill"></image>
+						  <image class="quan_goods_img" src="/static/images/goods.png" mode="aspectFill"  data-src="{{filter.imgIP('goods.png')}}" catchtap="pveimg"></image>
 						  <view class="quan_goods_msg">
 						    <view class="quan_goods_name oh1">苏泊尔IH家用大容量智能电饭锅</view>
 						    <view class="quan_goods_pri">
@@ -87,7 +88,7 @@
 			<view class="sp_list">
 				<view class="sp_li" wx:for="{{data_list}}" wx:for-item="item" bindtap="jump" data-url="/pages/xvideo/xvideo">
 					<view class="sp_li_img">
-						<image class="sp_li_img" src="../../static/images/images/goods15_02.jpg" mode="aspectFill"></image>
+						<image class="sp_li_img" src="{{filter.imgIP('/images/goods15_02.jpg')}}" mode="aspectFill"></image>
 						<view class="sp_li_img_cz">
 							<image src="../../static/images/goods_play.png"></image>
 						</view>
@@ -102,21 +103,21 @@
 		<!-- 相册 -->
 		<view wx:if="{{s_type==2}}" class="my_list">
 			<view class="my_li_xc" wx:for="{{data_list}}" wx:for-item="item">
-				<image class="my_li_xc_img" src="../../static/images/goods.png" mode="aspectFill"></image>
-				<view class="xc_gb"><text class="iconfont iconguanbi"></text></view>
+				<image class="my_li_xc_img" src="{{filter.imgIP('/images/goods15_02.jpg')}}" mode="aspectFill"  data-src="{{filter.imgIP('/images/goods15_02.jpg')}}" catchtap="pveimg"></image>
+				<!-- <view class="xc_gb"><text class="iconfont iconguanbi"></text></view> -->
 				<view class="like_num"><text class="iconfont iconhongxinicon"></text>393</view>
 			</view>
-			<view class="b_box">
+			<!-- <view class="b_box">
 				<view>管理</view>
 				<view>上传</view>
-			</view>
+			</view> -->
 		</view>
 		<!-- 代言商品 -->
 		<view wx:if="{{s_type==3}}" class="my_list">
 			<view class="sp_list">
 				<view class="sp_li" wx:for="{{data_list}}" wx:for-item="item" bindtap="jump" data-url="/pages/details/details">
 					<view class="sp_li_img">
-						<image class="sp_li_img" src="../../static/images/images/goods15_02.jpg" mode="aspectFill"></image>
+						<image class="sp_li_img" src="{{filter.imgIP('/images/goods15_02.jpg')}}" mode="aspectFill"></image>
 					</view>
 					<view class="sp_li_msg">
 						<view class="sp_li_name oh2">三只松鼠-巨型零食大礼包 内含30包休闲食品</view>

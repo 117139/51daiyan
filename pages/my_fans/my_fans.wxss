@@ -79,6 +79,9 @@
 	padding: 20rpx 0;
 	align-items: center;
 }
+.li_box+.li_box{
+  border-top: 1px solid #eee;
+}
 .user_tx{
 	width:82rpx;
 	height:82rpx;

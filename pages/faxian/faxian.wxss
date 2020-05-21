@@ -30,8 +30,9 @@
 	position: relative;
 }
 .fx_r_img image{
-	width: 63rpx;
-	height: 63rpx;
+	width: 67rpx;
+	height: 67rpx;
+  display: block;
 }
 .fx_r_img text{
 	position: absolute;

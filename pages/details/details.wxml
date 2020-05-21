@@ -1,14 +1,14 @@
 <!--pages/details/details.wxml-->
 <import src="/utils/htmlStatus/index.wxml" />
 <wxs src="../../utils/filter.wxs" module="filter" />
-<view class="container">
+<view class="{{sheetshow1||sheetshow?'container-ban':'container'}}">
   <template is="htmlStatus" data="{{...htmlStatus}}" />
   <view class="swiper_box">
     <swiper class="swiper" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-active-color='#8e8e8e' circular="{{circular}}" bindchange="swiper_change">
       <block wx:for="{{data_list}}" wx:for-index="idx" wx:for-item="item">
         <swiper-item>
           <!-- <image src="{{item}}" class="slide-image" width="355" height="150" data-curitem="{{item}}" bindtap="pveimg" /> -->
-          <image src="{{filter.imgIP('goods_02.jpg')}}" class="slide-image" mode="aspectFill" width="355" height="150" data-curitem="{{filter.imgIP('goods_02.jpg')}}" bindtap="pveimg" />
+          <image src="{{filter.imgIP('goods_02.jpg')}}" class="slide-image" mode="aspectFill" width="355" height="150" data-src="{{filter.imgIP('goods_02.jpg')}}" catchtap="pveimg" />
         </swiper-item>
       </block>
 
@@ -126,13 +126,13 @@
           <view class="dyr_msg">
             <view class="pj_d1">
               <view class="user_tx">
-                <image class="user_tx" src="../../static/images/tx.png"  mode="aspectFill"></image>
+                <image class="user_tx" src="{{filter.imgIP('tx.png')}}" mode="aspectFill"></image>
               </view> Y***I</view>
             <view class="dyr_d oh3"> 蛮好喝的，换了新包装，品质还以依旧刚刚的蛮好喝的，换了新包装，品质还以依旧刚刚的</view>
           </view>
 
           <view class="dyr_img">
-            <image class="dyr_img" src="{{filter.imgIP('goods_02.jpg')}}"></image>
+            <image class="dyr_img" src="{{filter.imgIP('goods_02.jpg')}}"  mode="aspectFill" data-src="{{filter.imgIP('goods_02.jpg')}}" catchtap="pveimg"></image>
             <view class="dyr_imgnum"><text class="iconfont iconicontupian"></text> 4</view>
           </view>
         </view>
@@ -156,7 +156,7 @@
         <view class="dp_bq">
           <text>代言 835</text>
           <text>回头率  21%</text>
-          <text class="bq">高</text>
+          <!-- <text class="bq">高</text> -->
         </view>
 
       </view>
@@ -187,7 +187,7 @@
   <view class="htk mt20">
     <view class="pj_box_tit">
       <view  class="p_tit_l">本店回头客都在买</view>
-      <view class="p_tit_r">更多
+      <view class="p_tit_r" bindtap="jump" data-url="/pages/goods_list/goods_list">更多
         <text class="iconfont iconnext3"></text>
       </view>
     </view>
@@ -209,13 +209,14 @@
       <text>-</text>
     </view>
     <view class="xq_box">
-      <image src="{{filter.imgIP('goods_02.jpg')}}" mode="aspectFill" style="width:750rpx;height:750rpx;" />
+      <image src="{{filter.imgIP('goods_02.jpg')}}" mode="aspectFill" style="width:750rpx;height:750rpx;display:block;" />
     </view>
   </view>
   <!-- tk -->
   <van-popup custom-class="popopBox" show="{{ sheetshow1 }}" position="bottom" bind:close="onClose" >
     <view class="dy_box">
-        <view class="tk_dyr_li" wx:for="{{data_list}}" wx:for-index="idx" wx:for-item="item"  data-type="{{idx}}" bindtap="txtype_fuc">
+        <scroll-view class="w100 dyr_scroll" style="height:600rpx;" scroll-y>
+          <view class="tk_dyr_li" wx:for="{{data_list}}" wx:for-index="idx" wx:for-item="item"  data-type="{{idx}}" bindtap="txtype_fuc">
           <view class="dis_flex aic flex_1">
             <view class="tk_user_tx">
               <image class="tk_user_tx" src="../../static/images/tx.png"  mode="aspectFill"></image>
@@ -232,10 +233,12 @@
             
           </view>
         </view>
+        </scroll-view>
         <view class="dy_btn" bindtap="xz_dyr">作为代言人</view>
     </view>
+    <view class="b_view_o"></view>
   </van-popup>
-  <van-popup custom-class="popopBox" show="{{ sheetshow }}" position="bottom" bind:close="onClose" >
+  <van-popup custom-class="popopBox" show="{{ sheetshow }}" lock-scroll="{{true}}" position="bottom" bind:close="onClose" >
 		<view class="popopBox1">
 			<view class="goodsimg">
 				<image src="{{filter.imgIP('goods_02.jpg')}}" data-src="{{filter.imgIP('goods_02.jpg')}}" mode="aspectFill" bindtap="previewImage"></image>
@@ -268,6 +271,7 @@
 			<van-stepper custom-class="steppera" input-class="vanipt" plus-class="vantjia" minus-class="vantjian" value="{{ cnum }}"
 			 data-selec="{{idx}}" bind:input="onChange" bind:change="onChange" />
 		</view>
+    <view class="b_view_o"></view>
 		<view class="czbtnG">
 			<view class="jrgwc" bindtap="addwgc">加入购物车</view>
 			<view class="buybtn" bindtap="nowbuy">立即购买</view>

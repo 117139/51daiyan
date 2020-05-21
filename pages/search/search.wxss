@@ -30,7 +30,7 @@
 	align-items: center;
 	padding: 0 20rpx;
 	box-sizing: border-box;
-	margin-bottom: 13rpx;
+	/* margin-bottom: 13rpx; */
 }
 .top_search text{
 	color: #BBBBBB;
@@ -172,7 +172,7 @@
 }
 .goods_dy text{
 	font-size: 24rpx;
-	margin-right: 10rpx;
+	margin-left: 10rpx;
 }
 .goods_zan{
 	flex: none;
@@ -188,35 +188,41 @@
   margin-left: 20rpx;
 }
 .sj_list{
-  display: flex;
-  flex-direction: row-reverse;
+  flex: 1;
+  height:52rpx;
+  position: relative;
 }
 .sj_li{
-  width:62rpx;
-  height:62rpx;
+  width:52rpx;
+  height:52rpx;
   background:rgba(255,255,255,1);
   box-shadow:0px 3rpx 10rpx 0px rgba(119,119,119,0.2);
   border-radius:50%;
-  position: relative;
+  position: absolute;
+  top: 0;
+  right: 0;
   z-index: 10;
 }
 .sj_li:nth-child(2){
-  position: relative;
-  left: 20rpx;
+  position: absolute;
+  right: 35rpx;
   z-index: 9;
 }
 .sj_li:nth-child(3){
-  position: relative;
-  left: 40rpx;
+  position: absolute;
+  right: 70rpx;
   z-index: 8;
 }
 .sj_li:nth-child(4){
-  position: relative;
-  left: 60rpx;
+  position: absolute;
+  right: 105rpx;
   z-index: 7;
 }
 .sj_li:nth-child(5){
-  position: relative;
-  left: 80rpx;
+  position: absolute;
+  right: 140rpx;
   z-index: 6;
+}
+.ss_list1{
+  padding: 0 48rpx;
 }

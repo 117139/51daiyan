@@ -16,11 +16,10 @@
     <view class="zanwu" wx:if="{{goods[idx0].length==0}}">暂无内容</view>
     <view class="goodsBox contbox">
       <view class="goods" wx:for="{{goods}}" wx:for-index="idx" wx:for-item="item" wx:key="idx" data-tab="{{idx}}" bindtap="jump" data-url="{{'/pages/OrderDetails/OrderDetails?shop_id=1&type='+type}}">
-        <view class="dianpu_tit">
+        <!-- <view class="dianpu_tit">
           <image class="dp_logo" src="../../static/images/tx.png"></image>
           <text>石说的达开旗舰店</text>
-          <!-- <text class="iconfont iconnext3"></text> -->
-        </view>
+        </view> -->
         <block wx:for="{{goods}}" wx:for-index="idx1" wx:for-item="item1">
           <view class="goods1">
             <!-- <view wx:if="{{type==4}}" class="xuanze" data-selec="{{idx}}" data-selec1="{{idx1}}" catchtap="select">

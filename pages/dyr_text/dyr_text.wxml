@@ -6,7 +6,7 @@
 
   <!-- 代言圈 -->
   <view class="quan_list">
-    <view class="quan_li" wx:for="{{start_li}}" wx:for-index="idx" wx:for-item="item" bindtap="jump" data-url="/pages/details/details">
+    <view class="quan_li" wx:for="{{start_li}}" wx:for-index="idx" wx:for-item="item">
       <view class="quan_user_box">
         <image bindtap="jump" data-url="/pages/my_index/my_index" class="quan_user_tx" src="/static/images/tx.png" mode="aspectFill"></image>
         <view class="quan_user_msg">
@@ -21,13 +21,13 @@
           <image class="one" src="/static/images/goods.png" mode="aspectFill"></image>
         </view>
         <view wx:else class="quan_msg_img">
-          <image src="/static/images/goods.png" mode="aspectFill"></image>
-          <image src="/static/images/goods.png" mode="aspectFill"></image>
-          <image src="/static/images/goods.png" mode="aspectFill"></image>
+          <image src="{{filter.imgIP('goods.png')}}"  mode="aspectFill" data-src="{{filter.imgIP('goods.png')}}" catchtap="pveimg"></image>
+          <image src="{{filter.imgIP('goods.png')}}"  mode="aspectFill" data-src="{{filter.imgIP('goods.png')}}" catchtap="pveimg"></image>
+          <image src="{{filter.imgIP('goods.png')}}"  mode="aspectFill" data-src="{{filter.imgIP('goods.png')}}" catchtap="pveimg"></image>
         </view>
       </view>
-      <view class="quan_goods">
-        <image class="quan_goods_img" src="/static/images/goods.png" mode="aspectFill"></image>
+      <view class="quan_goods"  bindtap="jump" data-url="/pages/details/details">
+        <image class="quan_goods_img" src="{{filter.imgIP('goods.png')}}" mode="aspectFill"></image>
         <view class="quan_goods_msg">
           <view class="quan_goods_name oh1">苏泊尔IH家用大容量智能电饭锅</view>
           <view class="quan_goods_pri">

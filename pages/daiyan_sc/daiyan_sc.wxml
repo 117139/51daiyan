@@ -1,4 +1,5 @@
 <!--pages/daiyan_sc/daiyan_sc.wxml-->
+<wxs src="../../utils/filter.wxs" module="filter" />
 <view class="container">
 	<view class="dy_sc_bg">
 		<image class="dy_sc_bg" src="../../static/images/images/dy_sc1_02.jpg"></image>
@@ -14,11 +15,19 @@
 				<view class="yhq_t_r"  bindtap="jump" data-url="/pages/my_yhq/my_yhq">更多<text class="iconfont iconnext3"></text></view>
 			</view>
 			<view class="yhq_li">
-				<image class="yhq_li" src="../../static/images/images/yhq_09.jpg"></image>
+				<!-- <image class="yhq_li" src="../../static/images/images/yhq_09.jpg"></image> -->
+        <view class="yhq_li_img">
+          <image class="yhq_li_img" src="../../static/images/yhq_bg_03.png"  mode="aspectFill"></image>
+          <view class="yhq_pri">
+            <view class="d1"><text>¥10元</text> 代金券</view>
+            <view class="d2">2020.02.14-2020.02.18</view>
+          </view>
+          
+        </view>
 			</view>
 			<view class="yhq_user">
 				<view class="user_tximg">
-					<image class="user_tximg" src="../../static/images/tx.png"></image>
+					<image class="user_tximg" src="{{filter.imgIP('tx.png')}}"></image>
 				</view>
 				<view class="user_form">来自好友<text>张鸣</text>的共享</view>
 			</view>
@@ -32,11 +41,11 @@
 			<view class="hy_goods">
 				<view class="hy_goods_li"  bindtap="jump" data-url="/pages/details/details">
 					<view class="hy_goods_img">
-						<image class="hy_goods_img" src="../../static/images/goods.png"></image>
+						<image class="hy_goods_img" src="{{filter.imgIP('goods.png')}}"></image>
 					</view>
 					<view class="goods_pri">
 						<view class="goods_tximg">
-							<image class="goods_tximg" src="../../static/images/tx.png"></image>
+							<image class="goods_tximg" src="{{filter.imgIP('tx.png')}}"></image>
 						</view>
 						<view class="goods_mon">￥688</view>
 					</view>
@@ -47,11 +56,11 @@
 				</view>
 				<view class="hy_goods_li"  bindtap="jump" data-url="/pages/details/details">
 					<view class="hy_goods_img">
-						<image class="hy_goods_img" src="../../static/images/goods.png"></image>
+						<image class="hy_goods_img" src="{{filter.imgIP('goods.png')}}"></image>
 					</view>
 					<view class="goods_pri">
 						<view class="goods_tximg">
-							<image class="goods_tximg" src="../../static/images/tx.png"></image>
+							<image class="goods_tximg" src="{{filter.imgIP('tx.png')}}"></image>
 						</view>
 						<view class="goods_mon">￥688</view>
 					</view>
@@ -60,13 +69,13 @@
 							<view class="sy_mon">￥30</view>
 					</view>
 				</view>
-				<view class="hy_goods_li"  bindtap="jump" data-url="/pages/details/details" >
+				<view class="hy_goods_li"  bindtap="jump" data-url="/pages/details/details">
 					<view class="hy_goods_img">
-						<image class="hy_goods_img" src="../../static/images/goods.png"></image>
+						<image class="hy_goods_img" src="{{filter.imgIP('goods.png')}}"></image>
 					</view>
 					<view class="goods_pri">
 						<view class="goods_tximg">
-							<image class="goods_tximg" src="../../static/images/tx.png"></image>
+							<image class="goods_tximg" src="{{filter.imgIP('tx.png')}}"></image>
 						</view>
 						<view class="goods_mon">￥688</view>
 					</view>
@@ -89,13 +98,13 @@
 			<view class="b_li_box">
 				<view class="b_li"  wx:for="{{data_list}}" wx:for-item="item" bindtap="jump" data-url="/pages/details/details">
 					<view class="li_img">
-						<image class="li_img" src="../../static/images/images/goods15_02.jpg"></image>
+						<image class="li_img" src="{{filter.imgIP('/images/goods15_02.jpg')}}"></image>
 					</view>
 					<view class="li_msg">
 						<view class="li_name oh1">意式浓精品挂耳咖啡新款</view>
 						<view class="goods_pri">
 							<view class="goods_tximg">
-								<image class="goods_tximg" src="../../static/images/tx.png"></image>
+								<image class="goods_tximg" src="{{filter.imgIP('tx.png')}}"></image>
 							</view>
 							<view class="goods_mon">￥688</view>
 						</view>

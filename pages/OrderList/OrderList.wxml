@@ -16,12 +16,11 @@
     <view class="zanwu" wx:if="{{goods[idx0].length==0}}">暂无内容</view>
     <view class="goodsBox contbox">
       <view class="goods" wx:for="{{goods}}" wx:for-index="idx" wx:for-item="item" wx:key="idx" data-tab="{{idx}}">
-        <view class="dianpu_tit"  bindtap="jump" data-url="{{'/pages/dp_index/dp_index?shop_id=1&type='+type}}">
+        <!-- <view class="dianpu_tit"  bindtap="jump" data-url="{{'/pages/dp_index/dp_index?shop_id=1&type='+type}}">
           <image class="dp_logo" src="../../static/images/tx.png"></image>
           <text>石说的达开旗舰店</text>
-          <!-- <text class="iconfont iconnext3"></text> -->
-        </view>
-        <view class="goods1" wx:for="{{goods}}" wx:for-index="idx1" wx:for-item="item1"  bindtap="jump" data-url="{{'/pages/OrderDetails/OrderDetails?shop_id=1&type='+type}}">
+        </view> -->
+        <view class="goods1" wx:for="{{item}}" wx:for-index="idx1" wx:for-item="item1"  bindtap="jump" data-url="{{'/pages/OrderDetails/OrderDetails?shop_id=1&type='+type}}">
         <view wx:if="{{type==4}}" class="xuanze" data-selec="{{idx}}" data-selec1="{{idx1}}" catchtap="select">
           <view class="xuanze1 {{goods_sele[idx][idx1].xuan==true? 'xuanze2':''}}">
             <icon  wx:if="{{goods_sele[idx][idx1].xuan==true}}" type="success" size="14" color="#F7B43B" />
@@ -71,7 +70,7 @@
 			<!-- <view><text class="fz26">合计:</text>￥{{sum}}</view>
 			<view class="fz22 c9">不含运费</view> -->
 		</view>
-		<view class="jiesuan" bindtap="openOrder">合并代言</view>
+		<view class="jiesuan" catchtap="jump_fabu" >合并代言</view>
 	</view>
   
 </view>

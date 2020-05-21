@@ -91,60 +91,21 @@
     <view class="jump_btn" bindtap="jump" data-url="/pages/activity_db/activity_db">进入打榜页<text class="iconfont iconnext3"></text></view>
   </view>
   <view class="dy_list">
-    <view class="dy_box">
+    <view class="dy_box" wx:for="{{start_li}}" wx:for-index="idx" wx:for-item="item">
       <view class="dy_li">
         <view class="pl_num">
-          <image class="pl_num" src="../../static/images/phicon_1.png"></image>
+          <image wx:if="{{idx==0}}" class="pl_num" src="../../static/images/phicon_1.png"></image>
+          <image wx:if="{{idx==1}}" class="pl_num" src="../../static/images/phicon_2.png"></image>
+          <image wx:if="{{idx==2}}" class="pl_num" src="../../static/images/phicon_3.png"></image>
+          <text wx:if="{{idx>2}}">{{idx+1}}</text>
         </view>
-        <view class="pl_tx">
+        <view class="pl_tx" bindtap="jump" data-url="/pages/my_index/my_index">
           <image class="pl_tx" src="{{filter.imgIP('tx.png')}}" mode="aspectFill"></image>
         </view>
         <view class="ph_name">张一鸣</view>
         <view class="ph_num"><text>2200</text>人气值</view>
-        <!-- <view class="ph_btn">投票</view> -->
-        <view class="ph_btn ph_btn1">已投票</view>
-      </view>
-      <view class="li_dy">代言说：喜欢运动的感觉，耐克just di it！</view>
-    </view>
-    <view class="dy_box">
-      <view class="dy_li">
-        <view class="pl_num">
-          <image class="pl_num" src="../../static/images/phicon_2.png"></image>
-        </view>
-        <view class="pl_tx">
-          <image class="pl_tx" src="{{filter.imgIP('tx.png')}}" mode="aspectFill"></image>
-        </view>
-        <view class="ph_name">张一鸣</view>
-        <view class="ph_num"><text>2200</text>人气值</view>
-        <view class="ph_btn">投票</view>
-      </view>
-      <view class="li_dy">代言说：喜欢运动的感觉，耐克just di it！</view>
-    </view>
-    <view class="dy_box">
-      <view class="dy_li">
-        <view class="pl_num">
-          <image class="pl_num" src="../../static/images/phicon_3.png"></image>
-        </view>
-        <view class="pl_tx">
-          <image class="pl_tx" src="{{filter.imgIP('tx.png')}}" mode="aspectFill"></image>
-        </view>
-        <view class="ph_name">张一鸣</view>
-        <view class="ph_num"><text>2200</text>人气值</view>
-        <view class="ph_btn">投票</view>
-      </view>
-      <view class="li_dy">代言说：喜欢运动的感觉，耐克just di it！</view>
-    </view>
-    <view class="dy_box">
-      <view class="dy_li">
-        <view class="pl_num">
-          4
-        </view>
-        <view class="pl_tx">
-          <image class="pl_tx" src="{{filter.imgIP('tx.png')}}" mode="aspectFill"></image>
-        </view>
-        <view class="ph_name">张一鸣</view>
-        <view class="ph_num"><text>2200</text>人气值</view>
-        <view class="ph_btn">投票</view>
+        <view wx:if="{{item.tp_type==1}}" catchtap="toupiao" data-idx="{{idx}}" class="ph_btn">投票</view>
+        <view  wx:else class="ph_btn ph_btn1">已投票</view>
       </view>
       <view class="li_dy">代言说：喜欢运动的感觉，耐克just di it！</view>
     </view>

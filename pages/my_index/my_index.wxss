@@ -53,7 +53,7 @@
 	font-size: 32rpx;
 }
 .daiyan_lv{
-	width: 142rpx;
+	width: 165rpx;
 padding: 2rpx 15rpx;
 	height:32rpx;
 	background:rgba(255,255,255,1);
@@ -131,7 +131,7 @@ padding: 2rpx 15rpx;
 	margin-bottom: 15rpx;
 }
 .my_tab{
-	margin-top: 40rpx;
+	margin-top: 30rpx;
 	height: 90rpx;
 	display: flex;
 	align-items: center;
@@ -158,9 +158,9 @@ padding: 2rpx 15rpx;
 	padding-bottom: 100rpx;
 }
 .my_li_xc{
-	width:248rpx;
-	height:330rpx;
-	margin-right: 4rpx;
+	width:33%;
+	height:248rpx;
+	margin-right: .45%;
 	margin-bottom: 4rpx;
 	position: relative;
 	font-size: 0;
@@ -172,7 +172,7 @@ padding: 2rpx 15rpx;
 	position: absolute;
 	top: 0;
 	width:248rpx;
-	height:330rpx;
+	height:248rpx;
 	z-index: 1;
 }
 .xc_gb{
@@ -204,11 +204,13 @@ padding: 2rpx 15rpx;
 	margin-right: 10rpx;
 }
 .b_box{
+  width: 100%;
 	position: fixed;
 	bottom: 0;
 	height:98rpx;
 	padding: 0 28rpx;
 	background:rgba(245,245,245,1);
+  z-index: 99;
 }
 .b_box{
 	display: flex;
@@ -349,14 +351,14 @@ padding: 2rpx 15rpx;
 	flex-wrap: wrap;
 }
 .sp_li{
-	width:342rpx;
+	width:338rpx;
 	height:480rpx;
 	background:rgba(255,255,255,1);
 	box-shadow:0px 3rpx 20rpx 0px rgba(119,119,119,0.3);
 	border-radius:10rpx;
 	overflow: hidden;
-	margin-right: 10rpx;
-	margin-bottom: 10rpx;
+	margin-right: 18rpx;
+	margin-bottom: 23rpx;
 }
 .sp_li:nth-child(2n){
 	margin-right: 0;

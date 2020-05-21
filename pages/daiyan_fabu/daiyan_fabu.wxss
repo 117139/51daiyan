@@ -33,7 +33,7 @@ page{
 
 .goodsBox{
 	width: 100%;
-  padding: 20rpx 28rpx;
+  padding: 20rpx 28rpx 0;
   box-sizing: border-box;
   background: #fff;
   border-bottom: 20rpx solid #f5f5f5;

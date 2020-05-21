@@ -1,0 +1,21 @@
+<!--pages/xiaoxi/xiaoxi.wxml-->
+<import src="/utils/htmlStatus/index.wxml" />
+<wxs src="../../utils/filter.wxs" module="filter" />
+<view class="container">
+  <template is="htmlStatus" data="{{...htmlStatus}}" />
+	<view class="xx_li" wx:for="{{data_list}}" wx:for-item="item" bindtap="jump" data-url="/pages/lts/lts">
+		<view class="user_tx" >
+			<image class="user_tx" src="../../static/images/xtxx.png"></image>
+		</view>
+		<view class="xx_msg">
+		
+			<view class="to_msg">
+				{{msg}}
+			</view>
+      <view class="to_name">
+				<!-- <text >李勇</text> -->
+				<text class="time">2020-02-20 17:30</text>
+			</view>
+		</view>
+	</view>
+</view>
