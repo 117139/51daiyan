@@ -15,9 +15,14 @@
 .h_main{
 	width: 100%;
 	position: relative;
-	padding:33rpx 0;
+	/* padding:33rpx 0; */
 	box-sizing: border-box;
 	z-index: 4;
+}
+.my_index_box1{
+  width: 100%;
+	height: 422rpx;
+  padding-top: 33rpx;
 }
 .my_index{
 	display: flex;
@@ -131,7 +136,6 @@ padding: 2rpx 15rpx;
 	margin-bottom: 15rpx;
 }
 .my_tab{
-	margin-top: 30rpx;
 	height: 90rpx;
 	display: flex;
 	align-items: center;
@@ -158,21 +162,21 @@ padding: 2rpx 15rpx;
 	padding-bottom: 100rpx;
 }
 .my_li_xc{
-	width:33%;
-	height:248rpx;
-	margin-right: .45%;
-	margin-bottom: 4rpx;
+	width:338rpx;
+	height:338rpx;
+	margin-right: 18rpx;
+	margin-bottom: 23rpx;
 	position: relative;
 	font-size: 0;
 }
-.my_li_xc:nth-child(3n){
+.my_li_xc:nth-child(2n){
 	margin-right: 0;
 }
 .my_li_xc_img{
 	position: absolute;
 	top: 0;
-	width:248rpx;
-	height:248rpx;
+	width:338rpx;
+	height:338rpx;
 	z-index: 1;
 }
 .xc_gb{
@@ -352,7 +356,7 @@ padding: 2rpx 15rpx;
 }
 .sp_li{
 	width:338rpx;
-	height:480rpx;
+	/* height:480rpx; */
 	background:rgba(255,255,255,1);
 	box-shadow:0px 3rpx 20rpx 0px rgba(119,119,119,0.3);
 	border-radius:10rpx;
@@ -364,8 +368,8 @@ padding: 2rpx 15rpx;
 	margin-right: 0;
 }
 .sp_li_img{
-	width:342rpx;
-	height: 342rpx;
+	width:338rpx;
+	height: 338rpx;
 	position: relative;
 }
 .sp_li_img_cz{

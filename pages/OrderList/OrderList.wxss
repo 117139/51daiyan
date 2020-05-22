@@ -177,7 +177,7 @@ page{
 .dianpu_tit{
 	display: flex;
 	align-items: center;
-	padding: 28rpx 28rpx 0;
+	padding: 20rpx 28rpx ;
 	box-sizing: border-box;
 	font-size: 26rpx;
 	color: #333;
@@ -205,8 +205,10 @@ page{
 	display: flex;
 	align-items: center;
 	/* border-bottom: 1px solid #ddd; */
+  border-top: 1px solid #eee;
 	position: relative;
 }
+
 .scbg{
 	position: absolute;
 	top: 20rpx;

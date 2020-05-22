@@ -109,7 +109,7 @@
 		</view>
 		<view class="o_cz">
         <view wx:if="{{h_type==3}}" catchtap="jump" data-url="/pages/goods_pj/goods_pj">评价</view>
-        <view  wx:if="{{h_type==4}}"  bindtap="jump" data-url="/pages/daiyan_fabu/daiyan_fabu">我要代言</view>
+        <!-- <view  wx:if="{{h_type==4}}"  bindtap="jump" data-url="/pages/daiyan_fabu/daiyan_fabu">我要代言</view> -->
         <view  wx:if="{{h_type==2}}">确认收货</view>
         <view  wx:if="{{h_type==0||h_type==1}}">付款</view>
         <view  wx:if="{{h_type==0||h_type==1}}" class="qx">取消订单</view>

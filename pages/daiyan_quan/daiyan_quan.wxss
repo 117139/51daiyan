@@ -3,7 +3,7 @@
 	width: 100%;
 	min-height: 100vh;
 	background: #f5f5f5;
-	padding: 28rpx;
+	padding: 100rpx 28rpx 28rpx;
 	box-sizing: border-box;
 }
 .list{
@@ -42,4 +42,34 @@
 .li_js{
 	font-size: 22rpx;
 	color: #999;
+}
+
+
+.index_box1{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #F7AC39;
+  padding: 15rpx 29rpx;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+}
+
+
+.sousuo_box{
+  flex: 1;
+  height:55rpx;
+  background:rgba(255,255,255,1);
+  border-radius:28px;
+  font-size: 24rpx;
+  color: #BBBBBB;
+  box-sizing: border-box;
+  padding: 0 20rpx;
+  display: flex;
+  align-items: center;
+}
+.sousuo_box text{
+  margin-right: 20rpx;
 }

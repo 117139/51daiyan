@@ -3,10 +3,10 @@
 <wxs src="../../utils/filter.wxs" module="filter" />
 <view class="{{sheetshow?'container-ban':'container'}}">
   <template is="htmlStatus" data="{{...htmlStatus}}" />
-  
+
   <!-- 评价 -->
   <view class="pj_box">
-    
+
     <view class="pj_bq">
       <view class="{{pl_type==0?'cur':''}}" data-idx="0" bindtap="qh_pl">全部</view>
       <view class="{{pl_type==1?'cur':''}}" data-idx="1" bindtap="qh_pl">有图（111）</view>
@@ -18,72 +18,65 @@
       <view class="pj_d1">
         <view class="pj_ren">
           <view class="user_tx">
-            <image class="user_tx" src="../../static/images/tx.png"></image>
-          </view> 
+            <image class="user_tx" src="{{filter.imgIP('tx.png')}}"></image>
+          </view>
           Y***I
         </view>
-        <view  class="pj_time">17小时前</view>
+        <view class="pj_time">17小时前</view>
       </view>
       <view class="pj_d2">上次就买了，感觉太好喝了，这次又来光顾一下，这次又来光顾一下，这次又来光顾一下，这次又来光顾一下。</view>
-      <view wx:if="{{idx==2}}" class="quan_msg_img">
-          <image class="one" src="{{filter.imgIP('goods.png')}}" mode="aspectFill" data-src="{{filter.imgIP('goods.png')}}" catchtap="pveimg"></image>
-        </view>
-        <view wx:else class="quan_msg_img">
-          <image src="{{filter.imgIP('goods.png')}}" mode="aspectFill"  data-src="{{filter.imgIP('goods.png')}}" catchtap="pveimg"></image>
-          <image src="{{filter.imgIP('goods.png')}}" mode="aspectFill" data-src="{{filter.imgIP('goods.png')}}" catchtap="pveimg"></image>
-          <image src="{{filter.imgIP('goods.png')}}" mode="aspectFill" data-src="{{filter.imgIP('goods.png')}}" catchtap="pveimg"></image>
-        </view>
+      <view wx:if="{{idx==2&&idx!=3}}" class="quan_msg_img">
+        <image class="one" src="{{filter.imgIP('goods.png')}}" mode="aspectFill" data-src="{{filter.imgIP('goods.png')}}" catchtap="pveimg"></image>
+      </view>
+      <view wx:if="{{idx!=2&&idx!=3}}" class="quan_msg_img">
+        <image src="{{filter.imgIP('goods.png')}}" mode="aspectFill" data-src="{{filter.imgIP('goods.png')}}" catchtap="pveimg"></image>
+        <image src="{{filter.imgIP('goods.png')}}" mode="aspectFill" data-src="{{filter.imgIP('goods.png')}}" catchtap="pveimg"></image>
+        <image src="{{filter.imgIP('goods.png')}}" mode="aspectFill" data-src="{{filter.imgIP('goods.png')}}" catchtap="pveimg"></image>
+      </view>
       <view class="quan_li_cz">
-       
-        <view class="cz_li" catchtap="zan" data-id="idx"><text class="iconfont iconzan"></text>1566</view>
+
+        <view class="cz_li" catchtap="zan" data-id="idx">
+          <text class="iconfont iconzan"></text>1566</view>
       </view>
     </view>
   </view>
- 
 
-  <van-popup custom-class="popopBox" show="{{ sheetshow }}" lock-scroll="{{true}}" position="bottom" bind:close="onClose" >
-		<view class="popopBox1">
-			<view class="goodsimg">
-				<image src="{{filter.imgIP('goods_02.jpg')}}" data-src="{{filter.imgIP('goods_02.jpg')}}" mode="aspectFill" bindtap="previewImage"></image>
-			</view>
-			<view class="goodstkjg">
-				<view class="closebtn" bindtap="onClose">
-					<image src="/static/images/closebtn_03.jpg"></image>
-				</view>
-				<view class="goods_pri_h">￥{{guige[type1[0]].pri}}</view>
-				<view class="kucun">库存{{guige[type1[0]].kucun}}件</view>
-				<view class="tkname oh2">已选择：{{guige[type1[0]].value1}}</view>
-				<!-- <view class="tkname oh2">YI-DONG SPORT 屹动专业运动鞋 专业为中小学生运动打造的运动鞋</view> -->
-			</view>
-		</view>
-		<block >
-			<view class="tkguigetit">类型</view>
-			<view class="guigeBox">
-				<text class="guigeOne {{idx1==type1[0]?'cur':''}}" 
-									wx:for="{{guige}}"
-									wx:for-index="idx1"
-									wx:for-item="item1" 
-									wx:key="idx1"
-									data-gg="{{'0'}}"
-									data-gg1="{{idx1}}"
-									bindtap="selegg">{{item1.value1}}</text>
-			</view>
-		</block>
-		<view class="countnum">
-			<text>购买数量</text>
-			<van-stepper custom-class="steppera" input-class="vanipt" plus-class="vantjia" minus-class="vantjian" value="{{ cnum }}"
-			 data-selec="{{idx}}" bind:input="onChange" bind:change="onChange" />
-		</view>
-		<view class="czbtnG">
-			<view class="jrgwc" bindtap="addwgc">加入购物车</view>
-			<view class="buybtn" bindtap="nowbuy">立即购买</view>
-		</view>
-	</van-popup>
+
+  <van-popup custom-class="popopBox" show="{{ sheetshow }}" lock-scroll="{{true}}" position="bottom" bind:close="onClose">
+    <view class="popopBox1">
+      <view class="goodsimg">
+        <image src="{{filter.imgIP('goods_02.jpg')}}" data-src="{{filter.imgIP('goods_02.jpg')}}" mode="aspectFill" bindtap="previewImage"></image>
+      </view>
+      <view class="goodstkjg">
+        <view class="closebtn" bindtap="onClose">
+          <image src="/static/images/closebtn_03.jpg"></image>
+        </view>
+        <view class="goods_pri_h">￥{{guige[type1[0]].pri}}</view>
+        <view class="kucun">库存{{guige[type1[0]].kucun}}件</view>
+        <view class="tkname oh2">已选择：{{guige[type1[0]].value1}}</view>
+        <!-- <view class="tkname oh2">YI-DONG SPORT 屹动专业运动鞋 专业为中小学生运动打造的运动鞋</view> -->
+      </view>
+    </view>
+    <block>
+      <view class="tkguigetit">类型</view>
+      <view class="guigeBox">
+        <text class="guigeOne {{idx1==type1[0]?'cur':''}}" wx:for="{{guige}}" wx:for-index="idx1" wx:for-item="item1" wx:key="idx1" data-gg="{{'0'}}" data-gg1="{{idx1}}" bindtap="selegg">{{item1.value1}}</text>
+      </view>
+    </block>
+    <view class="countnum">
+      <text>购买数量</text>
+      <van-stepper custom-class="steppera" input-class="vanipt" plus-class="vantjia" minus-class="vantjian" value="{{ cnum }}" data-selec="{{idx}}" bind:input="onChange" bind:change="onChange" />
+    </view>
+    <view class="czbtnG">
+      <view class="jrgwc" bindtap="addwgc">加入购物车</view>
+      <view class="buybtn" bindtap="nowbuy">立即购买</view>
+    </view>
+  </van-popup>
   <!-- 底部 -->
   <view class="bottom_box">
     <view class="kf_btn" bindtap="jump" data-url="/pages/lts/lts">
       <text class="iconfont iconkefu"></text>
-      <text >客服</text>
+      <text>客服</text>
     </view>
     <view class="sg"></view>
     <view class="kf_btn">
@@ -93,9 +86,9 @@
     <view class="sg"></view>
     <view class="kf_btn">
       <text class="iconfont iconstore"></text>
-      <text  bindtap="jump" data-url="/pages/dp_index/dp_index">店铺</text>
+      <text bindtap="jump" data-url="/pages/dp_index/dp_index">店铺</text>
     </view>
-    <view class="buy_btn"  bindtap="sheetshow">加入购物车</view>
-    <view class="buy_btn buy_btn1"  bindtap="sheetshow">立即购买</view>
+    <view class="buy_btn" bindtap="sheetshow">加入购物车</view>
+    <view class="buy_btn buy_btn1" bindtap="sheetshow">立即购买</view>
   </view>
 </view>

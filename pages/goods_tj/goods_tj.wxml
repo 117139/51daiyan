@@ -53,7 +53,7 @@
 						</view>
 						<view class="goods_btn1">
 							<view class="goods_dy_num2"><text class="iconfont icondianzan2"></text>5200代言人</view>
-							<view class="goods_to"  bindtap="jump" data-url="/pages/details/details?id=1">去看看</view>
+							<view class="goods_to"  >去看看</view>
 						</view>
 					</view>
 				</view>

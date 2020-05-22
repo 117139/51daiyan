@@ -20,7 +20,7 @@ Page({
         name: '达标商户',
         img: '/static/images/1_05.jpg',
         url: '/pages/list/list',
-        tp_type: '1'
+        tp_type: '2'
       },
       {
         name: '巡机单',

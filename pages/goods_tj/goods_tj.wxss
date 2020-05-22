@@ -97,7 +97,7 @@
 .list_px .iconfont{
 	
 	font-size: 10rpx;
-	margin: 4rpx 10rpx;
+	margin: 2rpx 10rpx;
 }
 .list_px .cur{
 	color: #FE8735;

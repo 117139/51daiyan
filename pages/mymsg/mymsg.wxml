@@ -8,7 +8,7 @@
     <view class="msg_box" bindtap="jump" data-url="/pages/my_name/my_name">
       <text class="msg_name">姓名</text>
        <view class="dis_flex aic msg_val">{{'昵称'}}</view>
-        <text class="iconfont iconnext3 c9"></text>
+        <text class="iconfont iconnext3 c9 fz30"></text>
     </view>
     <view class="msg_box">
       <text class="msg_name">代言号</text>
@@ -18,12 +18,12 @@
     <view class="msg_box" bindtap="jump" data-url="/pages/my_jj/my_jj">
       <text class="msg_name">简介</text>
        <view class="dis_flex aic msg_val">{{'我就是我不一样的烟火'}}</view>
-        <text class="iconfont iconnext3 c9"></text>
+        <text class="iconfont iconnext3 c9  fz30"></text>
     </view>
     <view class="msg_box" bindtap="jump" data-url="/pages/my_xuexiao/my_xuexiao">
       <text class="msg_name">学校</text>
        <view class="dis_flex aic msg_val">{{'中国政法大学'}}</view>
-        <text class="iconfont iconnext3 c9"></text>
+        <text class="iconfont iconnext3 c9 fz30"></text>
     </view>
     <picker class="w100" bindchange="bindPickerChange" value="{{index}}" range="{{sex}}" range-key='name'>
       <view class="msg_box">
@@ -31,7 +31,7 @@
         <view class="dis_flex aic msg_val">{{sex[index].name}}
           
         </view>
-        <text class="iconfont iconnext3 c9"></text>
+        <text class="iconfont iconnext3 c9 fz30"></text>
       </view>
       <input class="hidden" name="sex" type="text" value="{{sex[index].value}}" disabled/>
       
@@ -42,7 +42,7 @@
         <view class="dis_flex aic msg_val">{{shengri}}
           
         </view>
-        <text class="iconfont iconnext3 c9"></text>
+        <text class="iconfont iconnext3 c9 fz30"></text>
       </view>
       <input class="hidden" name="sex" type="text" value="{{sex[index].value}}" disabled/>
       
@@ -55,7 +55,7 @@
         <view class="dis_flex aic msg_val">{{region[0]}} {{region[1]}} {{region[2]}}
          
         </view>
-        <text class="iconfont iconnext3 c9"></text>
+        <text class="iconfont iconnext3 c9 fz30"></text>
       </view>
 
       <input class="hidden" name="address" type="text" value="{{region[0]}} {{region[1]}} {{region[2]}}" disabled/>

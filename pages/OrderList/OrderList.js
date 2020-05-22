@@ -16,8 +16,10 @@ Page({
 		pages:[1,1,1,1,1],
 		type:0,
 		goods:[
-      [1, 1],
-      [1, 1],
+      [{ "num": 1, xuan: false, id: 1 },
+        { "num": 1, xuan: false, id: 2 },],
+      [{ "num": 1, xuan: false, id: 3 },
+      { "num": 1, xuan: false, id: 4 },]
     ],
 		shopNum:[],
 		sum:0,
@@ -57,7 +59,12 @@ Page({
   },
 	onShow(){
 		var pages=1
-		var goods=[ 1,1 ]
+		var goods=[ 
+      [{ "num": 1, xuan: false, id: 1 },
+        { "num": 1, xuan: false, id: 2 },],
+      [{ "num": 1, xuan: false, id: 3 },
+      { "num": 1, xuan: false, id: 4 },]
+     ]
 		this.data.goods=goods
 		this.setData({
 			pages:pages,

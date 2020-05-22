@@ -19,9 +19,9 @@
     <picker class="w100" mode="date" bindchange="bindTimeChange" value="{{index}}" >
       <view class="set_name">
         <text class="set_l">入学时间</text>
-        <view class="dis_flex aic msg_val">{{shengri}}      
+        <view class="dis_flex aic msg_val fz30">{{shengri}}      
         </view>
-        <text class="iconfont iconnext3 c9"></text>
+        <text class="iconfont iconnext3 c9 fz30"></text>
       </view>
       <input class="hidden" name="sex" type="text" value="{{sex[index].value}}" disabled/>
       

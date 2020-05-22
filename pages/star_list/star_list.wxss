@@ -120,12 +120,13 @@
 }
 .user_msg{
 	flex: 1;
+  height: 100rpx;
 	margin-left: 20rpx;
 	font-size: 24rpx;
 }
 .user_msg image{
-	width: 26rpx;
-	height: 25rpx;
+	width: 22rpx;
+	height: 21rpx;
   margin-right: 8rpx;
 }
 .user_msg .fwb{

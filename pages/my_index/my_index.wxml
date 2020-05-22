@@ -3,46 +3,48 @@
 <view class="container">
 	<image class="h_bg" src="{{filter.imgIP('/images/my_indexbg_02.jpg')}}"></image>
 	<view class="h_main">
-		<view class="my_index">
-			<view class="user_tx">
-				<image class="user_tx" src="{{filter.imgIP('tx.png')}}"></image>
-				<image class="star_v" src="{{filter.imgIP('star_b.png')}}"></image>
-			</view>
-			<view class="user_msg">
-				<view class="user_name"><text>范冰冰</text> </view>
-				<view class="daiyan_lv"><text class="iconfont iconxingzhuang60kaobei2"></text>代言星级 3</view>
-			</view>
-			<view class="gz_btn gz_btn1" bindtap="jump" data-url="/pages/lts/lts">私信</view>
-			<view wx:if="{{gz_type}}" class="gz_btn" bindtap="guanzhu">已关注</view>
-			<view wx:else class="gz_btn" bindtap="guanzhu">+关注</view>
-		</view>
-		<view class="dy_id">
-			<text>代言号：spzy010</text>
-			<text>粉丝：233</text>
-		</view>
-		<view class="dy_bq">
-			<view><text class="iconfont iconnv"></text> 27岁</view>
-			<view>中国政法大学</view>
-			<view>北京朝阳</view>
-		</view>
-		<view class="inr_box">
-			<view class="yue_li">
-				<view class="zhishu"><text>1135</text>件</view>
-				<view>代言商品</view>
-			</view>
-			<view class="yue_li">
-				<view class="zhishu"><text>1135</text>件</view>
-				<view>跟随购买</view>
-			</view>
-			<view class="yue_li">
-				<view class="zhishu"><text>1135</text>件</view>
-				<view>超过好友</view>
-			</view>
-			<view class="yue_li">
-				<view class="zhishu"><text>1135</text>件</view>
-				<view>公益指数</view>
-			</view>
-		</view>
+		<view class="my_index_box1">
+      <view class="my_index">
+        <view class="user_tx">
+          <image class="user_tx" src="{{filter.imgIP('tx.png')}}"></image>
+          <image class="star_v" src="{{filter.imgIP('star_b.png')}}"></image>
+        </view>
+        <view class="user_msg">
+          <view class="user_name"><text>范冰冰</text> </view>
+          <view class="daiyan_lv"><text class="iconfont iconxingzhuang60kaobei2"></text>代言星级 3</view>
+        </view>
+        <view class="gz_btn gz_btn1" bindtap="jump" data-url="/pages/lts/lts">私信</view>
+        <view wx:if="{{gz_type}}" class="gz_btn" bindtap="guanzhu">已关注</view>
+        <view wx:else class="gz_btn" bindtap="guanzhu">+关注</view>
+      </view>
+      <view class="dy_id">
+        <text>代言号：spzy010</text>
+        <text>粉丝：233</text>
+      </view>
+      <view class="dy_bq">
+        <view><text class="iconfont iconnv"></text> 27岁</view>
+        <view>中国政法大学</view>
+        <view>北京朝阳</view>
+      </view>
+      <view class="inr_box">
+        <view class="yue_li">
+          <view class="zhishu"><text>1135</text>件</view>
+          <view>代言商品</view>
+        </view>
+        <view class="yue_li">
+          <view class="zhishu"><text>1135</text>件</view>
+          <view>跟随购买</view>
+        </view>
+        <view class="yue_li">
+          <view class="zhishu"><text>1135</text>件</view>
+          <view>超过好友</view>
+        </view>
+        <view class="yue_li">
+          <view class="zhishu"><text>1135</text>件</view>
+          <view>公益指数</view>
+        </view>
+      </view>
+    </view>
 		<view class="my_tab">
 			<view class="{{s_type==0?'cur':''}}"  bindtap="ss_type" data-type="0">动态</view>
 			<view class="{{s_type==1?'cur':''}}"  bindtap="ss_type" data-type="1">视频</view>
@@ -93,7 +95,7 @@
 							<image src="../../static/images/goods_play.png"></image>
 						</view>
 					</view>
-					<view class="sp_li_msg">
+					<view class="sp_li_msg" style="display: none;">
 						<view class="sp_li_name oh2">三只松鼠-巨型零食大礼包 内含30包休闲食品</view>
 						<view class="sp_li_time">2月10日</view>
 					</view>
@@ -102,10 +104,12 @@
 		</view>
 		<!-- 相册 -->
 		<view wx:if="{{s_type==2}}" class="my_list">
-			<view class="my_li_xc" wx:for="{{data_list}}" wx:for-item="item">
-				<image class="my_li_xc_img" src="{{filter.imgIP('/images/goods15_02.jpg')}}" mode="aspectFill"  data-src="{{filter.imgIP('/images/goods15_02.jpg')}}" catchtap="pveimg"></image>
-				<!-- <view class="xc_gb"><text class="iconfont iconguanbi"></text></view> -->
-				<view class="like_num"><text class="iconfont iconhongxinicon"></text>393</view>
+      <view class="sp_list">
+        <view class="my_li_xc" wx:for="{{data_list}}" wx:for-item="item">
+          <image class="my_li_xc_img" src="{{filter.imgIP('/images/goods15_02.jpg')}}" mode="aspectFill"  data-src="{{filter.imgIP('/images/goods15_02.jpg')}}" catchtap="pveimg"></image>
+          <!-- <view class="xc_gb"><text class="iconfont iconguanbi"></text></view> -->
+          <view class="like_num"><text class="iconfont iconhongxinicon"></text>393</view>
+        </view>
 			</view>
 			<!-- <view class="b_box">
 				<view>管理</view>

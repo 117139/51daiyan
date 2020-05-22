@@ -214,12 +214,12 @@
   </view>
   <!-- tk -->
   <van-popup custom-class="popopBox" show="{{ sheetshow1 }}" position="bottom" bind:close="onClose" >
-    <view class="dy_box">
-        <scroll-view class="w100 dyr_scroll" style="height:600rpx;" scroll-y>
+    <view class="dy_box" style="padding: 0 5rpx 20rpx;height:600rpx;overflow: hidden">
+        <scroll-view class=" dyr_scroll" style="height:600rpx;" scroll-y>
           <view class="tk_dyr_li" wx:for="{{data_list}}" wx:for-index="idx" wx:for-item="item"  data-type="{{idx}}" bindtap="txtype_fuc">
           <view class="dis_flex aic flex_1">
             <view class="tk_user_tx">
-              <image class="tk_user_tx" src="../../static/images/tx.png"  mode="aspectFill"></image>
+              <image class="tk_user_tx" src="{{filter.imgIP('tx.png')}}"  mode="aspectFill"></image>
               <image wx:if="{{idx==1}}" class="tk_user_v" src="../../static/images/star_b.png"></image>
               <image wx:if="{{idx==2}}" class="tk_user_v" src="../../static/images/star_d.png"></image>
             </view>

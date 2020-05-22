@@ -52,7 +52,7 @@
           </view>
         </view> -->
         <view class="cz_li">跟随购买：6321</view>
-        <view class="cz_li"><text class="iconfont iconpinglun"></text>1566</view>
+        <view class="cz_li" catchtap="jump" data-url="/pages/daiyan_pl/daiyan_pl"><text class="iconfont iconpinglun"></text>1566</view>
         <view class="cz_li" catchtap="zan" data-id="idx"><text class="iconfont iconzan"></text>1566</view>
       </view>
     </view>

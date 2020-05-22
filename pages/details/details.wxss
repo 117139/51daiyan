@@ -39,7 +39,7 @@ line-height: 36rpx;
 }
 .goods_msg{
   width: 100%;
-  padding: 28rpx 0;
+  padding: 28rpx 0 15rpx;
   background: #fff;
 }
 .goods_pri{
@@ -516,7 +516,7 @@ padding: 0 10rpx;
   color: #333;
 }
 .kf_btn text{
-  font-size: 22rpx;
+  font-size: 28rpx;
   margin-bottom: 5rpx;
 }
 .sg{
@@ -569,7 +569,7 @@ padding: 0 10rpx;
 }
 .popopBox{
 	width: 100%;
-	padding: 20rpx 28rpx 0;
+	padding: 20rpx 28rpx 20rpx;
 	box-sizing: border-box;
 	display: flex;
 	flex-direction: column;
@@ -784,7 +784,7 @@ button {
 }
 /* 选择代言人 */
 .dy_box{
-  width: 100%;
+  width: 694rpx;
   padding:0 0 20rpx;
   box-sizing: border-box;
 }
@@ -836,9 +836,9 @@ button {
 }
 .dy_btn{
   position: fixed;
-  bottom: 0;
-  left: 0;
-  width:750rpx;
+  bottom: 20rpx;
+  left: 28rpx;
+  right: 28rpx;
   height:98rpx;
   background:rgba(244,116,22,1);
   display: flex;

@@ -174,7 +174,7 @@ line-height: 36rpx;
   color: #bbb;
 }
 .pj_bq{
-  padding: 20rpx 10rpx 10rpx;
+  padding: 20rpx 10rpx 20rpx;
   box-sizing: border-box;
   width: 100%;
   margin-bottom: 20rpx;
@@ -870,7 +870,6 @@ button {
 .quan_msg_img image.one{
   
   max-width: 100%;
-  height:auto;
   border-radius:10rpx;
 }
 .quan_li_cz{

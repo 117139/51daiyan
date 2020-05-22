@@ -12,7 +12,7 @@
 	border-bottom-right-radius: 40rpx;
 	padding: 20rpx 28rpx;
 	box-sizing: border-box;
-	margin-bottom: 180rpx;
+	margin-bottom: 200rpx;
 	position: relative;
 }
 .user_box{

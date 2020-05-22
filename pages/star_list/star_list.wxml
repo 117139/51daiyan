@@ -24,8 +24,8 @@
 					 			<image class="user_v" src="../../static/images/star_b.png"></image>
 					 		</view>
 					 		<view class="user_msg">
-					 			<view class="fwb mb10">张一鸣</view>
-					 			<view class="oh1 mb10"><image src="../../static/images/star_jj.png"></image>简介：一线明星，知名演员…</view>
+					 			<view class="fwb">张一鸣</view>
+					 			<view class="oh1 fz22"><image src="../../static/images/star_jj.png"></image>简介：一线明星，知名演员…</view>
 					 			<view><image src="../../static/images/dy_num.png"></image>代言数量：20</view>
 					 		</view>
 					 		<!-- <view class="user_btn">+关注</view> -->
@@ -39,8 +39,8 @@
 					 			<image class="user_v" src="../../static/images/star_b.png"></image>
 					 		</view>
 					 		<view class="user_msg">
-					 			<view class="fwb mb10">张一鸣</view>
-					 			<view class="oh1 mb10"><image src="../../static/images/star_jj.png"></image>简介：一线明星，知名演员…</view>
+					 			<view class="fwb">张一鸣</view>
+					 			<view class="oh1 fz22"><image src="../../static/images/star_jj.png"></image>简介：一线明星，知名演员…</view>
 					 			<view><image src="../../static/images/dy_num.png"></image>代言数量：20</view>
 					 		</view>
 					 		<view class="user_btn">+关注</view>
@@ -54,8 +54,8 @@
 					 			<image class="user_v" src="../../static/images/star_b.png"></image>
 					 		</view>
 					 		<view class="user_msg">
-					 			<view class="fwb mb10">张一鸣</view>
-					 			<view class="oh1 mb10"><image src="../../static/images/star_jj.png"></image>简介：一线明星，知名演员…</view>
+					 			<view class="fwb">张一鸣</view>
+					 			<view class="oh1 fz22"><image src="../../static/images/star_jj.png"></image>简介：一线明星，知名演员…</view>
 					 			<view><image src="../../static/images/dy_num.png"></image>代言数量：20</view>
 					 		</view>
 					 		<view class="user_btn">+关注</view>

@@ -11,7 +11,7 @@
 	<view wx:if="{{tab_type==0}}">
     <view class="daiyan_msg">
       <view class="dy_logo">
-        <image class="dy_logo" src="../../static/images/tx.png"></image>
+        <image class="dy_logo" src="{{filter.imgIP('tx.png')}}"></image>
       </view>
       <view class="dy_msg">
         <view class="pd_name">体育</view>
@@ -21,7 +21,7 @@
     <view class="quan_list">
       <view class="quan_li" wx:for="{{start_li}}" wx:for-index="idx" wx:for-item="item" >
         <view class="quan_user_box">
-          <image class="quan_user_tx" bindtap="jump" data-url="/pages/my_index/my_index" src="/static/images/tx.png" mode="aspectFill"></image>
+          <image class="quan_user_tx" bindtap="jump" data-url="/pages/my_index/my_index" src="{{filter.imgIP('tx.png')}}" mode="aspectFill"></image>
           <view class="quan_user_msg">
             <view class="quan_user_name">倪小丫 <image src="/static/images/star_b.png"></image></view>
             <view class="quan_user_time"><text>10-14 18:03</text><text>演员</text></view>
@@ -35,13 +35,13 @@
             <image class="one" src="/static/images/goods1.png" mode="aspectFill"  data-src="{{filter.imgIP('goods.png')}}" catchtap="pveimg"></image>
           </view>
           <view wx:else class="quan_msg_img">
-            <image src="/static/images/goods.png" mode="aspectFill" data-src="{{filter.imgIP('goods.png')}}" catchtap="pveimg"></image>
-            <image src="/static/images/goods1.png" mode="aspectFill" data-src="{{filter.imgIP('goods1.png')}}" catchtap="pveimg"></image>
-            <image src="/static/images/goods.png" mode="aspectFill" data-src="{{filter.imgIP('goods.png')}}" catchtap="pveimg"></image>
+            <image src="{{filter.imgIP('goods.png')}}" mode="aspectFill" data-src="{{filter.imgIP('goods.png')}}" catchtap="pveimg"></image>
+            <image src="{{filter.imgIP('goods1.png')}}" mode="aspectFill" data-src="{{filter.imgIP('goods1.png')}}" catchtap="pveimg"></image>
+            <image src="{{filter.imgIP('goods.png')}}" mode="aspectFill" data-src="{{filter.imgIP('goods.png')}}" catchtap="pveimg"></image>
           </view>
         </view>
         <view class="quan_goods" bindtap="jump" data-url="/pages/details/details">
-          <image class="quan_goods_img" src="/static/images/goods1.png" mode="aspectFill"></image>
+          <image class="quan_goods_img" src="{{filter.imgIP('goods1.png')}}" mode="aspectFill"></image>
           <view class="quan_goods_msg">
             <view class="quan_goods_name oh1">苏泊尔IH家用大容量智能电饭锅</view>
             <view class="quan_goods_pri">
@@ -76,12 +76,12 @@
     <view class="star_li" wx:for="{{start_li}}" wx:for-index="idx" wx:for-item="item">
 					 	<view class="star_msg">
 					 		<view class="user_tx" bindtap="jump" data-url="/pages/my_index/my_index">
-					 			<image class="user_tx" src="../../static/images/tx.png"></image>
+					 			<image class="user_tx" src="{{filter.imgIP('tx.png')}}"></image>
 					 			<image class="user_v" src="../../static/images/star_b.png"></image>
 					 		</view>
 					 		<view class="user_msg">
-					 			<view class="fwb mb10">张一鸣</view>
-					 			<view class="oh1 mb10"><image src="../../static/images/star_jj.png"></image>简介：一线明星，知名演员…</view>
+					 			<view class="fwb ">张一鸣</view>
+					 			<view class="oh1 fz22"><image src="../../static/images/star_jj.png"></image>简介：一线明星，知名演员…</view>
 					 			<view class=""><image src="../../static/images/dy_num.png"></image>代言数量：20</view>
 					 		</view>
 					 		<view  wx:if="{{item.tp_type==1}}" data-idx="{{idx}}" catchtap="toupiao" class="user_btn">+关注</view>
@@ -108,7 +108,7 @@
 						<view class="goods_name2 oh1">苏泊尔IH家用大容量智能电饭锅</view>
 						<view class="goods_pri">
 							<view class="pri1">¥668</view>
-							<view class="pri2">代言费：¥30</view>
+							<view class="pri2">¥30</view>
 						</view>
 						<view class="goods_dyr"  bindtap="jump" data-url="/pages/daiyanren/daiyanren">
 							<text class="dyr_tit">代言人</text>

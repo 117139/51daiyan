@@ -16,32 +16,38 @@
     <view class="zanwu" wx:if="{{goods[idx0].length==0}}">暂无内容</view>
     <view class="goodsBox contbox">
       <view class="goods" wx:for="{{goods}}" wx:for-index="idx" wx:for-item="item" wx:key="idx" data-tab="{{idx}}">
-        <!-- <view class="dianpu_tit"  bindtap="jump" data-url="{{'/pages/dp_index/dp_index?shop_id=1&type='+type}}">
+        <view class="dianpu_tit" bindtap="jump" data-url="{{'/pages/dp_index/dp_index?shop_id=1&type='+type}}">
           <image class="dp_logo" src="../../static/images/tx.png"></image>
           <text>石说的达开旗舰店</text>
-        </view> -->
-        <view class="goods1" wx:for="{{item}}" wx:for-index="idx1" wx:for-item="item1"  bindtap="jump" data-url="{{'/pages/OrderDetails/OrderDetails?shop_id=1&type='+type}}">
-        <view wx:if="{{type==4}}" class="xuanze" data-selec="{{idx}}" data-selec1="{{idx1}}" catchtap="select">
-          <view class="xuanze1 {{goods_sele[idx][idx1].xuan==true? 'xuanze2':''}}">
-            <icon  wx:if="{{goods_sele[idx][idx1].xuan==true}}" type="success" size="14" color="#F7B43B" />
-          </view>
         </view>
-          <view class="goodsImg">
-            <image class="goodsImg" src="../../static/images/goods.png" mode="aspectFill"></image>
-          </view>
-          <view class="goodsinr">
-            <!-- <view class="goodsname fz30 c30 oh1">{{item.goods_name}}</view> -->
-            <view class="goodsname fz30 c30">{{'黄金曼特宁精品咖啡/袋泡咖啡/耳挂 咖啡6*10袋装'}}</view>
-            <view class="goodspri">{{'已选择：苏门答腊黄金曼特宁深度烘培'}}</view>
-            <view class="goodspri1">
-              <!-- <text class="fz36 cf6377a fwb">￥{{filter.moneyFormat('48')}}</text> -->
-              <text class="fz36 cf6377a fwb">￥{{'48'}}</text>
-              <text class="fz36 c9">x1</text>
+        <block wx:for="{{item}}" wx:for-index="idx1" wx:for-item="item1">
+          <view class="goods1" bindtap="jump" data-url="{{'/pages/OrderDetails/OrderDetails?shop_id=1&type='+type}}">
+            <view wx:if="{{type==4}}" class="xuanze" data-selec="{{idx}}" data-selec1="{{idx1}}" catchtap="select">
+              <view class="xuanze1 {{goods_sele[idx][idx1].xuan==true? 'xuanze2':''}}">
+                <icon wx:if="{{goods_sele[idx][idx1].xuan==true}}" type="success" size="14" color="#F7B43B" />
+              </view>
+            </view>
+            <view class="goodsImg">
+              <image class="goodsImg" src="../../static/images/goods.png" mode="aspectFill"></image>
+            </view>
+            <view class="goodsinr">
+              <!-- <view class="goodsname fz30 c30 oh1">{{item.goods_name}}</view> -->
+              <view class="goodsname fz30 c30">{{'黄金曼特宁精品咖啡/袋泡咖啡/耳挂 咖啡6*10袋装'}}</view>
+              <view class="goodspri">{{'已选择：苏门答腊黄金曼特宁深度烘培'}}</view>
+              <view class="goodspri1">
+                <!-- <text class="fz36 cf6377a fwb">￥{{filter.moneyFormat('48')}}</text> -->
+                <text class="fz36 cf6377a fwb">￥{{'48'}}</text>
+                <text class="fz36 c9">x1</text>
 
 
+              </view>
             </view>
           </view>
-        </view>
+          <view wx:if="{{type==4}}" class="o_cz">
+            <view  catchtap="jump" data-url="/pages/daiyan_fabu/daiyan_fabu">我要代言</view>
+          </view>
+        </block>
+
         <view class="o_xj">
           <view></view>
           <view>共3件，小记
@@ -51,26 +57,26 @@
         </view>
         <view class="o_cz">
           <view wx:if="{{type==3}}" catchtap="jump" data-url="/pages/goods_pj/goods_pj">评价</view>
-          <view  wx:if="{{type==0||type==4}}"  catchtap="jump" data-url="/pages/daiyan_fabu/daiyan_fabu">我要代言</view>
-          <view  wx:if="{{type==0||type==2}}">确认收货</view>
-          <view  wx:if="{{type==0||type==1}}">付款</view>
-          <view  wx:if="{{type==0||type==1}}" class="qx">取消订单</view>
+          <!-- <view wx:if="{{type==0||type==4}}" catchtap="jump" data-url="/pages/daiyan_fabu/daiyan_fabu">我要代言</view> -->
+          <view wx:if="{{type==0||type==2}}">确认收货</view>
+          <view wx:if="{{type==0||type==1}}">付款</view>
+          <view wx:if="{{type==0||type==1}}" class="qx">取消订单</view>
         </view>
       </view>
     </view>
   </view>
   <view class="vbottom" wx:if="{{type==4}}">
-		<view class="selecAll" bindtap="selecAll">
-			<view class="xuanze1 all {{all==true? 'xuanze2':''}}">
-				<icon  wx:if="{{all==true}}" type="success" size="14" color="#F7B43B" />
-			</view>
-			全选
-		</view>
-		<view class="heji flex_1">
-			<!-- <view><text class="fz26">合计:</text>￥{{sum}}</view>
+    <view class="selecAll" bindtap="selecAll">
+      <view class="xuanze1 all {{all==true? 'xuanze2':''}}">
+        <icon wx:if="{{all==true}}" type="success" size="14" color="#F7B43B" />
+      </view>
+      全选
+    </view>
+    <view class="heji flex_1">
+      <!-- <view><text class="fz26">合计:</text>￥{{sum}}</view>
 			<view class="fz22 c9">不含运费</view> -->
-		</view>
-		<view class="jiesuan" catchtap="jump_fabu" >合并代言</view>
-	</view>
-  
+    </view>
+    <view class="jiesuan" catchtap="jump_fabu">合并代言</view>
+  </view>
+
 </view>

@@ -338,7 +338,9 @@ text{
 	align-items: center;
 	border-top: 1px solid #eee;
 }
-
+.bt0{
+  border-top: 0;
+}
 .fuwu_li text{
 	font-size: 24rpx;
 	color: #666;
@@ -432,7 +434,8 @@ text{
   padding-bottom: 20rpx;
 }
 .order_tip{
-  margin-top: 30rpx;
+  margin-top: 50rpx;
+  margin-bottom: 20rpx;
   font-size: 24rpx;
   color: #666;
 }

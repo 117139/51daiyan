@@ -324,6 +324,7 @@
 }
 .user_msg{
 	flex: 1;
+  height: 100rpx;
 	margin-left: 15rpx;
 	font-size: 24rpx;
 }
@@ -447,6 +448,8 @@
 .pri2{
 	font-size: 24rpx;
 	color: #999;
+  text-decoration: line-through;
+
 }
 .goods_btn1{
 	display: flex;
