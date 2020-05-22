@@ -42,7 +42,8 @@
   </view>
 
 
-  <van-popup custom-class="popopBox" show="{{ sheetshow }}" lock-scroll="{{true}}" position="bottom" bind:close="onClose">
+  <van-popup custom-class="popopBox" show="{{ sheetshow }}" 
+  lock-scroll="{{true}}" safe-area-inset-bottom="{{true}}" position="bottom" bind:close="onClose">
     <view class="popopBox1">
       <view class="goodsimg">
         <image src="{{filter.imgIP('goods_02.jpg')}}" data-src="{{filter.imgIP('goods_02.jpg')}}" mode="aspectFill" bindtap="previewImage"></image>
@@ -88,7 +89,7 @@
       <text class="iconfont iconstore"></text>
       <text bindtap="jump" data-url="/pages/dp_index/dp_index">店铺</text>
     </view>
-    <view class="buy_btn" bindtap="sheetshow">加入购物车</view>
-    <view class="buy_btn buy_btn1" bindtap="sheetshow">立即购买</view>
+    <view class="buy_btn fz30" bindtap="sheetshow">加入购物车</view>
+    <view class="buy_btn buy_btn1 fz30" bindtap="sheetshow">立即购买</view>
   </view>
 </view>

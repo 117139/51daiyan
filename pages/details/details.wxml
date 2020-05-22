@@ -213,7 +213,7 @@
     </view>
   </view>
   <!-- tk -->
-  <van-popup custom-class="popopBox" show="{{ sheetshow1 }}" position="bottom" bind:close="onClose" >
+  <van-popup custom-class="popopBox" show="{{ sheetshow1 }}" safe-area-inset-bottom="{{true}}" position="bottom" bind:close="onClose" >
     <view class="dy_box" style="padding: 0 5rpx 20rpx;height:600rpx;overflow: hidden">
         <scroll-view class=" dyr_scroll" style="height:600rpx;" scroll-y>
           <view class="tk_dyr_li" wx:for="{{data_list}}" wx:for-index="idx" wx:for-item="item"  data-type="{{idx}}" bindtap="txtype_fuc">
@@ -238,7 +238,7 @@
     </view>
     <view class="b_view_o"></view>
   </van-popup>
-  <van-popup custom-class="popopBox" show="{{ sheetshow }}" lock-scroll="{{true}}" position="bottom" bind:close="onClose" >
+  <van-popup custom-class="popopBox" show="{{ sheetshow }}"  safe-area-inset-bottom="{{true}}" lock-scroll="{{true}}" position="bottom" bind:close="onClose" >
 		<view class="popopBox1">
 			<view class="goodsimg">
 				<image src="{{filter.imgIP('goods_02.jpg')}}" data-src="{{filter.imgIP('goods_02.jpg')}}" mode="aspectFill" bindtap="previewImage"></image>
