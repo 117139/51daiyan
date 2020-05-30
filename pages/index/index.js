@@ -1,5 +1,6 @@
 // pages/index/index.js
 var htmlStatus = require('../../utils/htmlStatus/index.js')
+var http = require('../../utils/httputils.js'); //请求
 const app = getApp()
 Page({
 
@@ -11,93 +12,10 @@ Page({
     homeSeek: '',
     homeTeacher: '',
     homeVideo: '',
-    start_li:[
-      {
-        name: '未达标商户',
-        img: '/static/images/1_03.jpg',
-        url: '/pages/list/list',
-        tp_type: '1'
-      },
-      {
-        name: '达标商户',
-        img: '/static/images/1_05.jpg',
-        url: '/pages/list/list',
-        tp_type: '1'
-      },
-      {
-        name: '巡机单',
-        img: '/static/images/1_09.jpg',
-        url: '/pages/list/list',
-        tp_type: '1'
-      },
-      {
-        name: '已巡机',
-        img: '/static/images/1_10.jpg',
-        url: '/pages/list/list',
-        tp_type: '1'
-      },
-      {
-        name: '装机单',
-        img: '/static/images/1_13.jpg',
-        url: '/pages/list/list',
-        tp_type: '1'
-      },
-      {
-        name: '已装机',
-        img: '/static/images/1_14.jpg',
-        url: '/pages/list/list',
-        tp_type: '1'
-      },
-      {
-        name: '维护单',
-        img: '/static/images/1_17.jpg',
-        url: '/pages/list/list',
-        tp_type: '1'
-      },
-      {
-        name: '已维护',
-        img: '/static/images/1_18.jpg',
-        url: '/pages/list/list',
-        type: '7'
-      },
-      {
-        name: '换机单',
-        img: '/static/images/2_09.jpg',
-        url: '/pages/list/list',
-        type: '8'
-      },
-      {
-        name: '已换机',
-        img: '/static/images/2_10.jpg',
-        url: '/pages/list/list',
-        type: '9'
-      },
-      {
-        name: '撤机单',
-        img: '/static/images/2_13.jpg',
-        url: '/pages/list/list',
-        type: '10'
-      },
-      {
-        name: '已撤机',
-        img: '/static/images/2_14.jpg',
-        url: '/pages/list/list',
-        type: '11'
-      },
-      {
-        name: '终端交易查询',
-        img: '/static/images/2_17.jpg',
-        url: '/pages/list/list',
-        type: '12'
-      },
-      {
-        name: '应收列表',
-        img: '/static/images/2_18.jpg',
-        url: '/pages/list/list',
-        type: '13'
-      },
-      
-    ],
+    star_list: [],
+    finddyr: [],
+    data_list: [1, 1, 1, ],
+    loginmsg: '',
     indicatorDots: true,
     autoplay: true,
     interval: 3000,
@@ -108,74 +26,238 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    var that =this
-    // that.getdata()
+  onLoad: function(options) {
+    var that = this
+    var userInfo = wx.getStorageSync('userInfo')
+    console.log(userInfo)
+    that.setData({
+      userInfo: userInfo
+    })
+    var loginmsg = wx.getStorageSync('loginmsg')
+    if (loginmsg) {
+      that.setData({
+        loginmsg: loginmsg
+      })
+    }
+    
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
-	retry() {
-    this.getdata()
+  retry() {
+    this.getstarlist()
+    this.getdyr_list()
+    // this.getdata()
   },
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-
+  onShow: function() {
+    var that = this
+    var userInfo = wx.getStorageSync('userInfo')
+    console.log(userInfo)
+    that.setData({
+      userInfo: userInfo
+    })
+    var loginmsg = wx.getStorageSync('loginmsg')
+    if (loginmsg) {
+      that.setData({
+        loginmsg: loginmsg
+      })
+    }
+    that.retry()
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
-    wx.stopPullDownRefresh();
-    // this.getdata()
+  onPullDownRefresh: function() {
+    this.retry()
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   },
-  
+  guanzhu(e) {
+    console.log(e.currentTarget.dataset)
+    var datas = e.currentTarget.dataset
+    var jkurl = '/f/myinfo/atten/save'
 
+    var prams = {}
+    http.request(jkurl, prams,
+      function(res) {
+        if (res.data.code == 100) {
 
-  toupiao(e){
+          wx.showToast({
+            icon: 'none',
+            title: '操作成功'
+          })
+
+        } else {
+          if (res.data.message) {
+            wx.showToast({
+              icon: 'none',
+              title: res.data.message
+            })
+          } else {
+            wx.showToast({
+              icon: 'none',
+              title: '加载失败'
+            })
+          }
+        }
+      },
+      function(err) {
+        if (err.data.message) {
+          wx.showToast({
+            icon: 'none',
+            title: err.data.message
+          })
+        } else {
+          wx.showToast({
+            icon: 'none',
+            title: '加载失败'
+          })
+        }
+      })
+  },
+  guanzhu_qx(e) {
+    wx.showModal({
+      title: '提示',
+      content: '是否取消关注',
+      success(res) {
+        if (res.confirm) {
+          console.log('用户点击确定')
+          console.log(e.currentTarget.dataset)
+          var datas = e.currentTarget.dataset
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+  },
+  getstarlist() {
+    var that = this
+    var jkurl = '/f/news/celebrity/list'
+
+    var prams = {}
+    http.postRequest(jkurl, prams,
+      function(res) {
+        if (res.data.code == 100) {
+
+          console.log('获取成功')
+          that.setData({
+            star_list: res.data.info
+          })
+
+        } else {
+          if (res.data.message) {
+            wx.showToast({
+              icon: 'none',
+              title: res.data.message
+            })
+          } else {
+            wx.showToast({
+              icon: 'none',
+              title: '加载失败'
+            })
+          }
+        }
+      },
+      function(err) {
+        if (err.data.message) {
+          wx.showToast({
+            icon: 'none',
+            title: err.data.message
+          })
+        } else {
+          wx.showToast({
+            icon: 'none',
+            title: '加载失败'
+          })
+        }
+      })
+  },
+  getdyr_list() {
+    ///f/detection/person/list
+    var that = this
+    var jkurl = '/f/detection/person/list'
+
+    var prams = {}
+    http.postRequest(jkurl, prams,
+      function(res) {
+        if (res.data.code == 100) {
+
+          console.log('获取成功')
+          that.setData({
+            finddyr: res.data.info ? res.data.info : []
+          })
+
+        } else {
+          if (res.data.message) {
+            wx.showToast({
+              icon: 'none',
+              title: res.data.message
+            })
+          } else {
+            wx.showToast({
+              icon: 'none',
+              title: '加载失败'
+            })
+          }
+        }
+      },
+      function(err) {
+        if (err.data.message) {
+          wx.showToast({
+            icon: 'none',
+            title: err.data.message
+          })
+        } else {
+          wx.showToast({
+            icon: 'none',
+            title: '加载失败'
+          })
+        }
+      })
+  },
+  toupiao(e) {
     var idx = e.currentTarget.dataset.idx
-    var newdata=this.data.start_li
-    newdata[idx].tp_type=2
+    var newdata = this.data.start_li
+    newdata[idx].tp_type = 2
     this.setData({
       start_li: newdata
     })
   },
-  getdata(){
+  getdata() {
     ///api/homeIndex
     var that = this
     const htmlStatus1 = htmlStatus.default(that)
@@ -192,7 +274,7 @@ Page({
         wx.stopPullDownRefresh();
         htmlStatus1.finish()
         console.log(res.data)
-        if (res.data.code == 1) {  //数据为空
+        if (res.data.code == 1) { //数据为空
 
           that.setData({
             banner: res.data.data.homeBanner,
@@ -225,12 +307,12 @@ Page({
       }
     })
   },
-  zan(e){
+  zan(e) {
     console.log(e.currentTarget.dataset.id)
   },
-  jump(e){
+  jump(e) {
     console.log(e.currentTarget.dataset.type)
-    if (e.currentTarget.dataset.type==2){
+    if (e.currentTarget.dataset.type == 2) {
       wx.switchTab({
         url: e.currentTarget.dataset.url
       })
@@ -243,7 +325,7 @@ Page({
     var urls = e.currentTarget.dataset.array
     app.pveimg(curr, urls)
   },
-	kffuc(e){
-		console.log(e)
-	}
+  kffuc(e) {
+    console.log(e)
+  }
 })

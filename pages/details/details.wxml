@@ -17,13 +17,13 @@
   </view>
   <view class="goods_msg">
     <view class="goods_pri">
-      <view class="pri1">¥48</view>
-      <view class="pri2">代言费：¥5</view>
+      <view class="pri1">¥{{goods.perferentialPrice}}</view>
+      <view class="pri2">代言费：¥{{goods.endorsementFee}}</view>
     </view>
     <view class="goods_pri">
-      <view class="pri2">原价：¥66.6</view>
+      <view class="pri2">原价：¥{{goods.price}}</view>
     </view>
-    <view class="goods_name">黄金曼特宁精品咖啡/袋泡咖啡/耳挂咖啡6*10袋装</view>
+    <view class="goods_name">{{goods.name}}</view>
 
     <view class="goods_pri">
       <view class="pri2">运费10元</view>

@@ -2,7 +2,7 @@
 <!-- <import src="/utils/pageState/index.wxml" />
 <template is="pageState" data="{{...pageState}}" /> -->
 <view class="container log-list">
-  <view class="addressOne" wx:for="{{addresslist}}" wx:for-index="idx"          
+  <view class="addressOne" wx:for="{{data_list}}" wx:for-index="idx"          
           wx:for-item="item" 
           wx:key="idx" bindtap="xz_add" data-idx="{{idx}}">
 		<view class="addp1">

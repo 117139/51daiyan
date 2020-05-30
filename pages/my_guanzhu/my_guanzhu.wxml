@@ -3,57 +3,90 @@
 <wxs src="../../utils/filter.wxs" module="filter" />
 <view class="container">
   <template is="htmlStatus" data="{{...htmlStatus}}" />
-	<view class="top_box">
-		<view class="search_type">
-			<view class="{{ss_cur==0?'cur':''}}" bindtap="ss_type" data-type="0">全部</view>
-			<view class="{{ss_cur==1?'cur':''}}" bindtap="ss_type" data-type="1">店铺</view>
-			<view class="{{ss_cur==2?'cur':''}}" bindtap="ss_type" data-type="2">明星</view>
-			<view class="{{ss_cur==3?'cur':''}}" bindtap="ss_type" data-type="3">达人</view>
-			<view class="{{ss_cur==4?'cur':''}}" bindtap="ss_type" data-type="4">代言圈</view>
-			<view class="{{ss_cur==5?'cur':''}}" bindtap="ss_type" data-type="5">其他</view>
-		</view>
-	</view>
-	 <!-- 品牌 -->
-	 <view class="ss_list" wx:if="{{ss_cur==1}}" >
-		 <view class="data_null" wx:if="{{data_list.length==0}}">
-		 			 <image src="../../static/images/data_null1.png"></image>
-		 </view>
-		 <view wx:if="{{data_list.length>0}}" class="li_box" wx:for="{{data_list}}" wx:for-index="idx" wx:for-item="item" >
-			 <view class="user_tx" bindtap="jump" data-url="/pages/dp_index/dp_index">
-			 	<image class="user_tx" src="../../static/images/tx.jpg"></image>
-			 </view>
-			 <view class="user_name oh1">小米51代言旗舰店</view>
-			 <view  wx:if="{{item.tp_type==1}}"  catchtap="toupiao" data-idx="{{idx}}" class="user_btn">+关注</view>
-				<view wx:else class="user_btn user_btn1">已关注</view>
-		 </view>
-	 </view>
-	 <!-- 代言圈 -->
-	 <view class="ss_list" wx:elif="{{ss_cur==4}}" >
+  <view class="top_box">
+    <view class="search_type">
+      <view class="{{ss_cur==0?'cur':''}}" bindtap="ss_type" data-type="0">全部</view>
+      <view class="{{ss_cur==1?'cur':''}}" bindtap="ss_type" data-type="1">店铺</view>
+      <view class="{{ss_cur==2?'cur':''}}" bindtap="ss_type" data-type="2">明星</view>
+      <view class="{{ss_cur==3?'cur':''}}" bindtap="ss_type" data-type="3">达人</view>
+      <view class="{{ss_cur==5?'cur':''}}" bindtap="ss_type" data-type="5">代言圈</view>
+      <view class="{{ss_cur==4?'cur':''}}" bindtap="ss_type" data-type="4">其他</view>
+    </view>
+  </view>
+
+  <view class="ss_list">
+    <view class="data_null" wx:if="{{data_list.length==0}}">
+      <image src="../../static/images/data_null1.png"></image>
+    </view>
+    <block wx:if="{{data_list.length>0}}" wx:for="{{data_list}}" wx:for-index="idx" wx:for-item="item">
+      <!-- 品牌 -->
+      <view class="li_box" wx:if="{{item.type==1}}">
+        <view class="user_tx" bindtap="jump" data-url="/pages/dp_index/dp_index?id={{item.userId}}">
+          <image class="user_tx" src="{{filter.getgimg(item.followAvatar)}}"></image>
+        </view>
+        <view class="user_name oh1">{{item.followName}}</view>
+        <view wx:if="{{item.tp_type==1}}" bindtap="guanzhu" data-id="{{item.userId}}" 
+        data-name="{{item.followName}}" data-tx="{{item.followAvatar}}" data-type="{{ss_cur}}" class="user_btn">+关注</view>
+        <view wx:else class="user_btn user_btn1" data-id="{{item.userId}}" bindtap="guanzhu_qx">已关注</view>
+      </view>
+      <!-- 用户 -->
+      <view wx:if="{{item.type==2||item.type==3}}" class="li_box">
+        <view class="user_tx" bindtap="jump" data-url="/pages/my_index/my_index?id={{item.userId}}">
+          <!-- <image class="user_tx" src="../../static/images/tx.png"></image> -->
+          <image class="user_tx" src="{{filter.getgimg(item.followAvatar)}}"></image>
+          <image wx:if="{{item.type==2}}" class="user_v" src="../../static/images/star_b.png"></image>
+          <image wx:if="{{item.type==3}}" class="user_v" src="../../static/images/star_d.png"></image>
+        </view>
+        <view class="user_name oh1">{{item.followName}}</view>
+        <view wx:if="{{item.tp_type==1}}" bindtap="guanzhu" data-id="{{item.userId}}" 
+        data-name="{{item.followName}}" data-tx="{{item.followAvatar}}" data-type="{{ss_cur}}" class="user_btn">+关注</view>
+        <view wx:else class="user_btn user_btn1" data-id="{{item.userId}}"  bindtap="guanzhu_qx" data-id="{{item.userId}}">已关注</view>
+      </view>
+      <!-- 代言圈 -->
+      <view class="li_box" wx:if="{{item.type==5}}">
+        <view class="user_tx" bindtap="jump" data-url="/pages/daiyan_quan_xq/daiyan_quan_xq?id={{item.userId}}">
+          <image class="user_tx" src="{{filter.getgimg(item.followAvatar)}}"></image>
+        </view>
+        <view class="user_name oh1">{{item.followName}}</view>
+        <view wx:if="{{item.tp_type==1}}" bindtap="guanzhu" data-id="{{item.userId}}" 
+        data-name="{{item.followName}}" data-tx="{{item.followAvatar}}" data-type="{{ss_cur}}" class="user_btn">+关注</view>
+        <view wx:else class="user_btn user_btn1" data-id="{{item.userId}}" bindtap="guanzhu_qx">已关注</view>
+      </view>
+    </block>
+
+  </view>
+  <!-- 代言圈 -->
+  <!-- <view class="ss_list" wx:elif="{{ss_cur==4}}" >
 		 <view class="data_null" wx:if="{{data_list.length==0}}">
 		 			 <image src="../../static/images/data_null1.png"></image>
 		 </view>
 		 <view wx:if="{{data_list.length>0}}" class="li_box" wx:for="{{data_list}}"  wx:for-index="idx" wx:for-item="item" >
-			 <view class="user_tx" bindtap="jump" data-url="/pages/daiyan_quan_xq/daiyan_quan_xq">
-			 	<image class="user_tx" src="../../static/images/tx.jpg"></image>
+			 <view class="user_tx" bindtap="jump" data-url="/pages/daiyan_quan_xq/daiyan_quan_xq?id={{item.userId}}">
+			  <image class="user_tx" src="{{filter.getgimg(item.followAvatar)}}"></image>
 			 </view>
-			 <view class="user_name oh1">国潮</view>
-			 <view  wx:if="{{item.tp_type==1}}"  catchtap="toupiao" data-idx="{{idx}}" class="user_btn">+关注</view>
+			 <view class="user_name oh1" >{{item.followName}}</view>
+			 <view  wx:if="{{item.tp_type==1}}"  bindtap="guanzhu" 
+        data-id="{{item.userId}}" 
+        data-name="{{item.followName}}" 
+        data-tx="{{item.followAvatar}}"
+         data-type="{{ss_cur}}" class="user_btn">+关注</view>
 				<view wx:else class="user_btn user_btn1">已关注</view>
 		 </view>
-	 </view>
-	<!-- 用户 -->
-	 <view class="ss_list"  wx:else>
-		 <view class="data_null" wx:if="{{data_list.length==0}}">
-		 			 <image src="../../static/images/data_null1.png"></image>
-		 </view>
-		 <view  wx:if="{{data_list.length>0}}" class="li_box" wx:for="{{data_list}}" wx:for-index="idx" wx:for-item="item" >
-				<view class="user_tx" bindtap="jump" data-url="/pages/my_index/my_index">
-					<image class="user_tx" src="../../static/images/tx.png"></image>
-					<image class="user_v" src="../../static/images/star_b.png"></image>
-				</view>
-				<view class="user_name oh1">王力宏</view>
-				<view  wx:if="{{item.tp_type==1}}"  catchtap="toupiao" data-idx="{{idx}}" class="user_btn">+关注</view>
-				<view wx:else class="user_btn user_btn1">已关注</view>
-		 </view>
-	 </view>
+	 </view> -->
+  <!-- 用户 -->
+  <!-- <view class="ss_list" wx:else>
+    <view class="data_null" wx:if="{{data_list.length==0}}">
+      <image src="../../static/images/data_null1.png"></image>
+    </view>
+    <view wx:if="{{data_list.length>0}}" class="li_box" wx:for="{{data_list}}" wx:for-index="idx" wx:for-item="item">
+      <view class="user_tx" bindtap="jump" data-url="/pages/my_index/my_index?id={{item.userId}}">
+        <image class="user_tx" src="{{filter.getgimg(item.followAvatar)}}"></image>
+        <image wx:if="{{item.type==2}}" class="user_v" src="../../static/images/star_b.png"></image>
+        <image wx:if="{{item.type==3}}" class="user_v" src="../../static/images/star_d.png"></image>
+      </view>
+      <view class="user_name oh1">{{item.followName}}</view>
+      <view wx:if="{{item.tp_type==1}}" bindtap="guanzhu" data-id="{{item.userId}}" data-name="{{item.followName}}" data-tx="{{item.followAvatar}}" data-type="{{ss_cur}}" class="user_btn">+关注</view>
+      <view wx:else class="user_btn user_btn1" bindtap="guanzhu_qx" data-id="{{item.userId}}">已关注</view>
+    </view>
+  </view> -->
 </view>

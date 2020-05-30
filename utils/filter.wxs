@@ -1,4 +1,5 @@
-var imgip ='http://www.wanbonet.com/suxin/images/'
+var imgip = 'http://www.wanbonet.com/suxin/images/'
+var imgip1 ='http://39.105.211.150:801/'
 // filter.wxs
 var dateFormat = function(date) {
     var dates = date.split('/');
@@ -23,7 +24,7 @@ var getgimg = function (pic){
   var arr1 = []
   arr1 = arr[0].split("|");
   // console.log(imgurl+arr1[1])
-  return imgip + arr1[1]
+  return imgip1 + arr1[1]
 }
 // var getgimg = function(img) {
 // 	var img1=img.split(",")

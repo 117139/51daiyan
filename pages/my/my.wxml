@@ -5,16 +5,29 @@
 <view class="container">
  
 	<view class="header_box">
-		<view class="user_box">
+    <view  class="user_box" wx:if="{{!loginmsg}}">
+      <view class="user_tx" data-url="/pages/login/login" bindtap='jump'>
+				<image class="user_tx" src="../../static/images/tx.jpg"></image>
+			</view>
+			<!-- <view class="user_tx">
+				<image class="user_tx" src="../../static/images/tx.jpg"></image>
+			</view> -->
+			<view class="user_msg" data-url="/pages/login/login" bindtap='jump'>
+				<view class="user_name">登录</view>
+			</view>
+			
+    </view>
+		<view class="user_box" wx:if="{{loginmsg}}">
 			<view class="user_tx">
-				<image class="user_tx" src="../../static/images/tx.png"></image>
-				<image class="star_v" src="../../static/images/star_b.png"></image>
+				<image class="user_tx" src="{{loginmsg.avatarUrl?loginmsg.avatarUrl:userInfo.avatarUrl}}"></image>
+				<image wx:if="{{loginmsg.role==1}}" class="star_v" src="../../static/images/star_b.png"></image>
+				<image wx:if="{{loginmsg.role==2}}" class="star_v" src="../../static/images/star_d.png"></image>
 			</view>
 			<!-- <view class="user_tx">
 				<image class="user_tx" src="../../static/images/tx.jpg"></image>
 			</view> -->
 			<view class="user_msg">
-				<view class="user_name"><text>范冰冰</text> <view class="daiyan_lv"><text class="iconfont iconxingzhuang60kaobei2"></text>代言星级 3</view></view>
+				<view class="user_name"><text>{{loginmsg.userName?loginmsg.userName:userInfo.nickName}}</text> <view class="daiyan_lv"><text class="iconfont iconxingzhuang60kaobei2"></text>代言星级 3</view></view>
 				<view class="user_id">代言ID: zy010</view>
 			</view>
 			<view bindtap="jump" data-url="/pages/mymsg/mymsg">
@@ -60,19 +73,19 @@
 			<view class="inr_box">
 				<view class="yue_li">
 					<view>代言商品</view>
-					<view class="zhishu"><text>1135</text>件</view>
+					<view class="zhishu"><text>{{daiyanzs.endorNum?daiyanzs.endorNum:0}}</text>件</view>
 				</view>
 				<view class="yue_li">
 					<view>跟随购买</view>
-					<view class="zhishu"><text>1135</text>件</view>
+					<view class="zhishu"><text>{{daiyanzs.followNum?daiyanzs.followNum:0}}</text>件</view>
 				</view>
 				<view class="yue_li">
 					<view>超过好友</view>
-					<view class="zhishu"><text>1135</text>件</view>
+					<view class="zhishu"><text>{{daiyanzs.friendPer?daiyanzs.friendPer:0}}</text>%</view>
 				</view>
 				<view class="yue_li">
 					<view>公益指数</view>
-					<view class="zhishu"><text>1135</text>件</view>
+					<view class="zhishu"><text>{{daiyanzs.welfareNum?daiyanzs.welfareNum:0}}</text></view>
 				</view>
 			</view>
     </view>
@@ -137,6 +150,11 @@
 			<view class="fx_li" data-url="/pages/my_qianbao/my_qianbao" bindtap="jump">
 			  <image class="li_icon" src="{{filter.imgIP('ny_14.png')}}"></image>
 			  <view class="fx_tit">我的钱包</view>
+			  <text class="iconfont iconnext3"></text>
+			</view>
+			<view class="fx_li" data-url="/pages/my_qianbao1/my_qianbao" bindtap="jump">
+			  <image class="li_icon" src="{{filter.imgIP('ny_14.png')}}"></image>
+			  <view class="fx_tit">我的代言豆</view>
 			  <text class="iconfont iconnext3"></text>
 			</view>
 			<!-- <view class="fx_li" bindtap="jump" data-url="">

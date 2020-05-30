@@ -5,7 +5,8 @@
   <template is="htmlStatus" data="{{...htmlStatus}}" />
   <view class="header_box">
     <view class="index_box1">
-      <image class="user_tx" src="{{filter.imgIP('tx.png')}}"></image>
+      <image wx:if="{{loginmsg}}" class="user_tx" src="{{loginmsg.avatarUrl?loginmsg.avatarUrl:userInfo.avatarUrl}}"></image>
+      <image wx:if="{{!loginmsg}}" class="user_tx" src="{{filter.imgIP('tx.png')}}"></image>
       <view class="sousuo_box" bindtap="jump" data-url="/pages/search/search">
         <text class="iconfont iconsousuo"></text> 搜索人名代言号/商品/品牌
       </view>
@@ -33,15 +34,17 @@
   </view>
   <scroll-view class="start_list" scroll-x>
     <view class="start_list1">
-      <view class="start_li" wx:for="{{start_li}}" wx:for-item="item" bindtap="jump" data-url="/pages/my_index/my_index">
+      <view class="start_li" wx:for="{{star_list}}" wx:for-item="item">
         <view class="star_tx">
-          <image src="{{filter.imgIP('tx.png')}}" mode="aspectFill"></image>
+          <image  bindtap="jump" data-url="/pages/my_index/my_index?id={{item.userId}}" src="{{filter.getgimg(item.photo)}}" mode="aspectFill"></image>
           <view>
             <image src="/static/images/star_b.png"></image>
           </view>
         </view>
-        <view class="star_name">范冰冰</view>
-        <view class="star_btn">关注</view>
+        <view class="star_name">{{item.name}}</view>
+        <view class="star_btn quan_user_btn1" wx:if="isFollow==1" bindtap="guanzhu_qx" data-id="{{item.userId}}">已关注</view>
+        <view class="star_btn" wx:else bindtap="guanzhu" 
+        data-id="{{item.userId}}" data-name="{{item.name}}" data-tx="{{item.photo}}" data-type="3">关注</view>
       </view>
     </view>
   </scroll-view>
@@ -52,11 +55,7 @@
     </view>
     <view class="find_sj">
       <view class="sj_list">
-        <image class="sj_li" src="{{filter.imgIP('tx.png')}}" mode="aspectFill"></image>
-        <image class="sj_li" src="{{filter.imgIP('tx.png')}}" mode="aspectFill"></image>
-        <image class="sj_li" src="{{filter.imgIP('tx.png')}}" mode="aspectFill"></image>
-        <image class="sj_li" src="{{filter.imgIP('tx.png')}}" mode="aspectFill"></image>
-        <image class="sj_li" src="{{filter.imgIP('tx.png')}}" mode="aspectFill"></image>
+        <image class="sj_li" wx:for="{{finddyr}}"  wx:for-item="item" src="{{filter.imgIP('tx.png')}}" mode="aspectFill"></image>
       </view>
       <text class="iconfont iconnext3"></text>
     </view>
@@ -93,7 +92,7 @@
   </view>
   <!-- 代言圈 -->
   <view class="quan_list">
-    <view class="quan_li" wx:for="{{start_li}}" wx:for-index="idx" wx:for-item="item">
+    <view class="quan_li" wx:for="{{data_list}}" wx:for-index="idx" wx:for-item="item">
       <view class="quan_user_box">
         <image bindtap="jump" data-url="/pages/my_index/my_index" class="quan_user_tx" src="{{filter.imgIP('tx.png')}}" mode="aspectFill"></image>
         <view class="quan_user_msg">

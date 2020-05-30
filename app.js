@@ -1,11 +1,11 @@
 //app.js
 App({
-  IPurl: 'http://39.105.211.150:801/a',
+  IPurl: 'http://39.105.211.150:801/',
   IPurl1:'http://39.105.211.150:801/',
 	onLaunch: function() {
 		let that=this
-		wx.removeStorageSync('userInfo')
-		wx.removeStorageSync('tokenstr')
+		// wx.removeStorageSync('userInfo')
+		// wx.removeStorageSync('tokenstr')
 		// 获取用户信息
 		wx.getSetting({
 		  success: res => {
@@ -22,20 +22,23 @@ App({
 							if(!that.globalData.userInfo){
 							
 							}else{
-                return
+                console.log('有授权')
 		            wx.login({
 		              success: function (res) {
+                    console.log('登录')
 		                // 发送 res.code 到后台换取 openId, sessionKey, unionId
 		                var uinfo = that.globalData.userInfo
 		                let data = {
 		                  code: res.code,
-		                  nickname: uinfo.nickName,
-		                  avatarurl: uinfo.avatarUrl
+		                  // nickname: uinfo.nickName,
+		                  // avatarurl: uinfo.avatarUrl
+                      userName:'少女心',
+                      password:'test'
 		                }
 		                let rcode = res.code
 		                console.log(res.code)
 		                wx.request({
-		                  url: that.IPurl+'/api/appletLogin',
+                      url: that.IPurl +'/f/myinfo/login/login',
 		                  data: data,
 		                  header: {
 		                    'content-type': 'application/x-www-form-urlencoded'
@@ -44,9 +47,11 @@ App({
 		                  method: 'POST',
 		                  success(res) {
 		                    console.log(res.data)
-		                    if (res.data.code == 1) {
+		                    if (res.data.code == 100) {
 		                      console.log('登录成功')
-                          wx.setStorageSync('tokenstr', res.data.data.userToken)
+                          wx.setStorageSync('token', res.data.token)
+                          wx.setStorageSync('loginmsg', res.data.data[0])
+                          console.log(res.data.data[0])
 		                    } else {
 		                      wx.removeStorageSync('userInfo')
 		                      wx.removeStorageSync('tokenstr')
@@ -77,7 +82,6 @@ App({
 		})
 	},
   dologin(type) {
-    return
     let that = this
     wx.login({
       success: function (res) {
@@ -85,13 +89,15 @@ App({
         var uinfo = that.globalData.userInfo
         let data = {
           code: res.code,
-          nickname: uinfo.nickName,
-          avatarurl: uinfo.avatarUrl
+          // nickname: uinfo.nickName,
+          // avatarurl: uinfo.avatarUrl
+          userName: '少女心',
+          password: 'test'
         }
         let rcode = res.code
         console.log(res.code)
         wx.request({
-          url: that.IPurl + '/api/appletLogin',
+          url: that.IPurl + '/f/myinfo/login/login',
           data: data,
           header: {
             'content-type': 'application/x-www-form-urlencoded'
@@ -100,9 +106,10 @@ App({
           method: 'POST',
           success(res) {
             console.log(res.data)
-            if (res.data.code == 1) {
+            if (res.data.code == 100) {
               console.log('登录成功')
-              wx.setStorageSync('tokenstr', res.data.data.userToken)
+              wx.setStorageSync('token', res.data.token)
+              wx.setStorageSync('loginmsg', res.data.data[0])
               if (type == 'shouquan') {
                 wx.navigateBack()
               }
@@ -111,7 +118,7 @@ App({
 
             } else {
               wx.removeStorageSync('userInfo')
-              wx.removeStorageSync('tokenstr')
+              wx.removeStorageSync('token')
               wx.showToast({
                 icon: 'none',
                 title: '登录失败',
