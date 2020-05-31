@@ -32,13 +32,17 @@ var getgimg = function (pic){
 //     return imgip+img1[0]
 // }
 var getgimgarr = function (img) {
-  var img1 = img.split(",")
+  var img1 = img.split("|")
+  if(img1[0]==''){
+    img1.shift()
+  }
   // console.log(img1[0])
   return img1
 }
 
 var getgimgarrIP = function (img) {
   var img1 = img.split(",")
+  var img2=[]
   // console.log(img1[0])
   for (var i = 0; i < img1.length; i++) {
     img1[i] = imgip + img1[i]

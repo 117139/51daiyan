@@ -28,17 +28,34 @@ App({
                     console.log('登录')
 		                // 发送 res.code 到后台换取 openId, sessionKey, unionId
 		                var uinfo = that.globalData.userInfo
+                    // 必须是在用户已经授权的情况下调用
+                    // wx.getUserInfo({
+                    //   success: function (res) {
+                    //     console.log(res)
+                    //     // var userInfo = res.userInfo
+                    //     // var nickName = userInfo.nickName
+                    //     // var avatarUrl = userInfo.avatarUrl
+                    //     // var gender = userInfo.gender //性别 0：未知、1：男、2：女
+                    //     // var province = userInfo.province
+                    //     // var city = userInfo.city
+                    //     // var country = userInfo.country
+                       
+                    //   }
+                    // })
+                    var rawData = JSON.stringify(uinfo)
 		                let data = {
 		                  code: res.code,
+                      rawData: rawData,
 		                  // nickname: uinfo.nickName,
 		                  // avatarurl: uinfo.avatarUrl
-                      userName:'少女心',
-                      password:'test'
+                      // userName:'少女心',
+                      // password:'test'
 		                }
 		                let rcode = res.code
 		                console.log(res.code)
 		                wx.request({
-                      url: that.IPurl +'/f/myinfo/login/login',
+                      // url: that.IPurl +'/f/myinfo/login/login',
+                      url: that.IPurl +'/f/myinfo/wxlogin/login',
 		                  data: data,
 		                  header: {
 		                    'content-type': 'application/x-www-form-urlencoded'
