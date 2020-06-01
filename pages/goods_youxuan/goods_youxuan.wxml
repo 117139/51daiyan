@@ -5,7 +5,7 @@
 	</view>
   <view class='dis_flex ju_a w100 pb40 pt20 bgfff tab_box'>
     <block wx:for="{{datalist}}" wx:for-index="idx" wx:for-item="item" wx:key="idx">
-      <view class="{{type==idx?'typecur':''}}" data-type="{{idx}}" bindtap='bindcur'>{{item}}</view>
+      <view class="{{type==idx?'typecur':''}}" data-type="{{item.type}}" bindtap='bindcur'>{{item.name}}</view>
     </block>
 
   </view>
@@ -28,11 +28,11 @@
 					</view>
 					<view class="goods_msg">
 						<view class="goods_name2 ">
-							<view class="flex_1 oh1">苏泊尔IH家用大容量智能电饭锅</view>
+							<view class="flex_1 oh1">{{item.productName}}</view>
 							<view class="yx_icon">严选</view>
 						</view>
 						<view class="goods_pri">
-							<view class="pri1">¥668</view>
+							<view class="pri1">¥{{item.productPrice}}</view>
 							
 						</view>
 						<view class="goods_btn1">
@@ -43,7 +43,7 @@
 							  <image class="sj_li" src="/static/images/tx.png" mode="aspectFill"></image>
 							  <image class="sj_li" src="/static/images/tx.png" mode="aspectFill"></image>
 							</view>
-							<view class="goods_dy_num2">代言费：<text>¥30</text></view>
+							<view class="goods_dy_num2">代言费：<text>¥{{item.endorsementFee}}</text></view>
 						</view>
 					</view>
 				</view>

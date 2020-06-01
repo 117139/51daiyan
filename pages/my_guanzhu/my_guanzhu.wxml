@@ -22,7 +22,7 @@
       <!-- 品牌 -->
       <view class="li_box" wx:if="{{item.type==1}}">
         <view class="user_tx" bindtap="jump" data-url="/pages/dp_index/dp_index?id={{item.userId}}">
-          <image class="user_tx" src="{{filter.getgimg(item.followAvatar)}}"></image>
+          <image class="user_tx" src="{{filter.getgimg(item.followAvatar)}}" mode="aspectFill"></image>
         </view>
         <view class="user_name oh1">{{item.followName}}</view>
         <view wx:if="{{item.tp_type==1}}" bindtap="guanzhu" data-id="{{item.userId}}" 
@@ -33,7 +33,7 @@
       <view wx:if="{{item.type==2||item.type==3}}" class="li_box">
         <view class="user_tx" bindtap="jump" data-url="/pages/my_index/my_index?id={{item.userId}}">
           <!-- <image class="user_tx" src="../../static/images/tx.png"></image> -->
-          <image class="user_tx" src="{{filter.getgimg(item.followAvatar)}}"></image>
+          <image class="user_tx" src="{{filter.getgimg(item.followAvatar)}}" mode="aspectFill"></image>
           <image wx:if="{{item.type==2}}" class="user_v" src="../../static/images/star_b.png"></image>
           <image wx:if="{{item.type==3}}" class="user_v" src="../../static/images/star_d.png"></image>
         </view>
@@ -45,7 +45,7 @@
       <!-- 代言圈 -->
       <view class="li_box" wx:if="{{item.type==5}}">
         <view class="user_tx" bindtap="jump" data-url="/pages/daiyan_quan_xq/daiyan_quan_xq?id={{item.userId}}">
-          <image class="user_tx" src="{{filter.getgimg(item.followAvatar)}}"></image>
+          <image class="user_tx" src="{{filter.getgimg(item.followAvatar)}}" mode="aspectFill"></image>
         </view>
         <view class="user_name oh1">{{item.followName}}</view>
         <view wx:if="{{item.tp_type==1}}" bindtap="guanzhu" data-id="{{item.userId}}" 

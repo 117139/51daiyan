@@ -1,5 +1,6 @@
 // pages/my_friends/my_friends.js
 var htmlStatus = require('../../utils/htmlStatus/index.js')
+var http = require('../../utils/httputils.js'); //请求
 const app = getApp()
 Page({
 
@@ -18,6 +19,7 @@ Page({
   onLoad: function (options) {
     var that =this
     // that.getdata()
+    that.retry()
   },
 
   /**
@@ -26,8 +28,12 @@ Page({
   onReady: function () {
 
   },
-	retry() {
-    this.getdata()
+  retry() {
+    this.setData({
+      data_list: []
+    })
+    this.getstarlist()
+    // this.getdata()
   },
   /**
    * 生命周期函数--监听页面显示
@@ -54,8 +60,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    wx.stopPullDownRefresh();
-    // this.getdata()
+    this.retry()
   },
 
   /**
@@ -84,55 +89,110 @@ Page({
 			list_type:!that.data.list_type
 		})
 	},
-  getdata(){
-    ///api/homeIndex
-    var that = this
-    const htmlStatus1 = htmlStatus.default(that)
-    wx.request({
-      url: app.IPurl + '/api/homeIndex',
-      data: {},
-      header: {
-        'content-type': 'application/x-www-form-urlencoded'
-      },
-      dataType: 'json',
-      method: 'get',
-      success(res) {
-        // 停止下拉动作
-        wx.stopPullDownRefresh();
-        htmlStatus1.finish()
-        console.log(res.data)
-        if (res.data.code == 1) {  //数据为空
+  guanzhu(e) {
+    console.log(e.currentTarget.dataset)
+    var datas = e.currentTarget.dataset
+    var jkurl = '/f/myinfo/atten/save'
 
-          that.setData({
-            banner: res.data.data.homeBanner,
-            homeSeek: res.data.data.homeSeek,
-            homeTeacher: res.data.data.homeTeacher,
-            homeVideo: res.data.data.homeVideo,
+    var prams = {}
+    http.request(jkurl, prams,
+      function (res) {
+        if (res.data.code == 100) {
+
+          wx.showToast({
+            icon: 'none',
+            title: '操作成功'
+          })
+
+        } else {
+          if (res.data.message) {
+            wx.showToast({
+              icon: 'none',
+              title: res.data.message
+            })
+          } else {
+            wx.showToast({
+              icon: 'none',
+              title: '加载失败'
+            })
+          }
+        }
+      },
+      function (err) {
+        if (err.data.message) {
+          wx.showToast({
+            icon: 'none',
+            title: err.data.message
           })
         } else {
-          htmlStatus1.error()
           wx.showToast({
             icon: 'none',
             title: '加载失败'
           })
-
         }
-      },
-      fail() {
-        // 停止下拉动作
-        wx.stopPullDownRefresh();
-        htmlStatus1.error()
-        wx.showToast({
-          icon: 'none',
-          title: '加载失败'
-        })
-
-      },
-      complete() {
-        // // 停止下拉动作
-        // wx.stopPullDownRefresh();
+      })
+  },
+  guanzhu_qx(e) {
+    wx.showModal({
+      title: '提示',
+      content: '是否取消关注',
+      success(res) {
+        if (res.confirm) {
+          console.log('用户点击确定')
+          console.log(e.currentTarget.dataset)
+          var datas = e.currentTarget.dataset
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
       }
     })
+  },
+  getstarlist() {
+    var that = this
+    var jkurl = '/f/detection/frind/list'
+
+    var prams = {
+      type: that.data.ss_cur
+    }
+    wx.showLoading({
+      title: "正在加载中...",
+    })
+    http.postRequest(jkurl, prams,
+      function (res) {
+        if (res.data.code == 100) {
+
+          console.log('获取成功')
+          that.setData({
+            data_list: res.data.info ? res.data.info : []
+          })
+
+        } else {
+          if (res.data.message) {
+            wx.showToast({
+              icon: 'none',
+              title: res.data.message
+            })
+          } else {
+            wx.showToast({
+              icon: 'none',
+              title: '加载失败'
+            })
+          }
+        }
+      },
+      function (err) {
+        if (err.data.message) {
+          wx.showToast({
+            icon: 'none',
+            title: err.data.message
+          })
+        } else {
+          wx.showToast({
+            icon: 'none',
+            title: '加载失败'
+          })
+        }
+      })
   },
   zan(e){
     console.log(e.currentTarget.dataset.id)

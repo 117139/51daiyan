@@ -14,22 +14,20 @@
 							<view class="pri1">¥{{item.commodityPrice?item.commodityPrice:0}}</view>
 							<view class="pri2">代言费：¥{{item.endorsementFee?item.endorsementFee:0}}</view>
 						</view>
-						<view class="goods_btn1">
+						<!-- <view class="goods_btn1">
 							<view class="goods_dy_num2"><text class="iconfont icondianzan2"></text>5200代言人</view>
-						</view>
+						</view> -->
 					</view>
 				</view>
 				<view class="goods_li2_d2">
 					<view class="dy_tx">
-						<image class="dy_tx" src="{{loginmsg.avatarUrl?loginmsg.avatarUrl:userInfo.avatarUrl}}"></image>
+						<image class="dy_tx" src="{{filter.getgimg(item.photo)}}"></image>
 					</view>
-					<view class="dy_star">{{item.appUser.userName}}代言：</view>
+					<view class="dy_star">{{item.name}}代言：</view>
 					<view class="dy_text oh1">{{item.commentContent}}</view>
 				</view>
         <view class="sc_box">
-          <view bindtap="daiyan_del" data-id="{{item.id}}">
-          <text class="iconfont iconshanchushu"></text>
-          删除</view>
+          
         </view>
 			</view>
 		</view>

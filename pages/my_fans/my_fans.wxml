@@ -15,9 +15,7 @@
 	</view> -->
 	<!-- 用户 -->
 	 <view class="ss_list">
-		 <view class="data_null" wx:if="{{data_list.length==0}}">
-		 			 <image src="../../static/images/data_null1.png"></image>
-		 </view>
+		 <view class="zanwu" wx:if="{{data_list.length==0}}">暂无数据</view>
 		 <view  wx:if="{{data_list.length>0}}" class="li_box" wx:for="{{data_list}}"  wx:for-index="idx" wx:for-item="item">
 				<view class="user_tx" bindtap="jump" data-url="/pages/my_index/my_index">
 					<image class="user_tx" src="../../static/images/tx.png"></image>

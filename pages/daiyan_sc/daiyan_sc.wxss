@@ -110,7 +110,7 @@
 .goods_pri{
 	display: flex;
 	align-items: center;
-	margin: 12rpx 0;
+	margin: 10rpx 0;
 }
 .goods_tximg{
 	width: 45rpx;
@@ -126,6 +126,7 @@
 .hy_sy{
 	display: flex;
 	align-items: center;
+  flex-wrap: wrap;
 }
 .hy_sy_box{
 	width: 106rpx;
@@ -176,6 +177,7 @@
 	width: 338rpx;
 	margin-bottom: 20rpx;
 	border-radius: 12rpx;
+  overflow:hidden; 
 }
 .b_li:nth-child(2n){
 	margin-left: 18rpx;
@@ -188,7 +190,7 @@
 	color: #5c5c5c;
 	font-size: 26rpx;
 	
-	margin-bottom: 15rpx;
+	margin-bottom: 10rpx;
 }
 .li_msg{
 	background: #fff;
@@ -199,6 +201,7 @@
 .sy_xl{
 	color: #999;
 	font-size: 24rpx;
+  margin-top: 10rpx;
 }
 
 
