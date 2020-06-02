@@ -54,8 +54,8 @@ App({
 		                let rcode = res.code
 		                console.log(res.code)
 		                wx.request({
-                      url: that.IPurl +'/f/myinfo/login/login',
-                      // url: that.IPurl +'/f/myinfo/wxlogin/login',
+                      // url: that.IPurl +'/f/myinfo/login/login',
+                      url: that.IPurl +'/f/myinfo/wxlogin/login',
 		                  data: data,
 		                  header: {
 		                    'content-type': 'application/x-www-form-urlencoded'
