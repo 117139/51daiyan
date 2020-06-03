@@ -107,15 +107,22 @@ Page({
 
   },
   guanzhu(e) {
+    var that=this
     console.log(e.currentTarget.dataset)
     var datas = e.currentTarget.dataset
     var jkurl = '/f/myinfo/atten/save'
 
-    var prams = {}
-    http.request(jkurl, prams,
+    var prams = {
+      followId: datas.id,
+      followName: datas.name,
+      followAvatar: datas.tx,
+      followAvatar:datas.tx,
+      type:datas.type
+    }
+    http.postRequest(jkurl, prams,
       function(res) {
         if (res.data.code == 100) {
-
+          that.getstarlist()
           wx.showToast({
             icon: 'none',
             title: '操作成功'
@@ -150,6 +157,7 @@ Page({
       })
   },
   guanzhu_qx(e) {
+    var that =this
     wx.showModal({
       title: '提示',
       content: '是否取消关注',
@@ -158,6 +166,46 @@ Page({
           console.log('用户点击确定')
           console.log(e.currentTarget.dataset)
           var datas = e.currentTarget.dataset
+          var jkurl ='/f/myinfo/atten/delete'
+          var prams={
+            ids: datas.id
+          }
+          http.postRequest(jkurl, prams,
+            function (res) {
+              if (res.data.code == 100) {
+                that.getstarlist()
+                wx.showToast({
+                  icon: 'none',
+                  title: '操作成功'
+                })
+
+              } else {
+                if (res.data.message) {
+                  wx.showToast({
+                    icon: 'none',
+                    title: res.data.message
+                  })
+                } else {
+                  wx.showToast({
+                    icon: 'none',
+                    title: '加载失败'
+                  })
+                }
+              }
+            },
+            function (err) {
+              if (err.data.message) {
+                wx.showToast({
+                  icon: 'none',
+                  title: err.data.message
+                })
+              } else {
+                wx.showToast({
+                  icon: 'none',
+                  title: '操作失败'
+                })
+              }
+            })
         } else if (res.cancel) {
           console.log('用户点击取消')
         }

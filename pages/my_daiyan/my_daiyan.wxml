@@ -15,7 +15,7 @@
 							<view class="pri2">代言费：¥{{item.endorsementFee?item.endorsementFee:0}}</view>
 						</view>
 						<view class="goods_btn1">
-							<view class="goods_dy_num2"><text class="iconfont icondianzan2"></text>5200代言人</view>
+							<view class="goods_dy_num2"><text class="iconfont icondianzan2"></text>{{item.endorNum}}代言人</view>
 						</view>
 					</view>
 				</view>

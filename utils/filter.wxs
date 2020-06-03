@@ -1,10 +1,26 @@
 var imgip = 'http://www.wanbonet.com/suxin/images/'
 var imgip1 ='http://39.105.211.150:801/'
 // filter.wxs
-var dateFormat = function(date) {
-    var dates = date.split('/');
-    return dates[0] + "年" + dates[1] + "月" + dates[2] + "日";
+var dateFormat = function (date) {
+  if(!date){
+    return
+  }
+  var time = getDate(date);
+  var year = time.getFullYear();
+  var month = time.getMonth() + 1;
+  var date = time.getDate();
+  console.log(year, month, date)
+  return year + "年" + month + "月" + date + "日";
+  // var dates = date.split(' ');
+  // // console.log(11111111)
+  // console.log(datas)
+  // var newdates = dates[0].split('-');
+  // return newdates[0] + "年" + newdates[1] + "月" + newdates[2] + "日";
 }
+// var dateFormat = function (date) {
+//   var dates = date.split('/');
+//   return dates[0] + "年" + dates[1] + "月" + dates[2] + "日";
+// }
 var imgIP=function(img){
 	var newimg =imgip+img
 	// console.log(newimg)

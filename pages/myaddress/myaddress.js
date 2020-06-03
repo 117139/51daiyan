@@ -7,34 +7,7 @@ Page({
   data: {
     btnkg: 0,
     moren: 1,
-    data_list: [{
-        user_name: '昵称',
-        phone: '18300000000',
-        area: '北京市海淀区',
-        address: '中关村e世界5层',
-        id: 1
-      },
-      {
-        user_name: '昵称',
-        phone: '18300000000',
-        area: '北京市海淀区',
-        address: '中关村e世界5层',
-        id: 2
-      },
-      {
-        user_name: '昵称',
-        phone: '18300000000',
-        area: '北京市海淀区',
-        address: '中关村e世界5层',
-        id: 3
-      },
-      {
-        user_name: '昵称',
-        phone: '18300000000',
-        area: '北京市海淀区',
-        address: '中关村e世界5曾',
-        id: 4
-      },
+    data_list: [
     ],
     mridx: 0,
     form_type: 0
@@ -46,7 +19,7 @@ Page({
         form_type: option.type
       })
     }
-    // that.retry()
+    that.retry()
   },
   onShow() {
 
@@ -149,7 +122,7 @@ Page({
   addressEdit(e) {
 
     console.log(e.currentTarget.dataset.id)
-    let address = this.data.addresslist[e.currentTarget.dataset.id]
+    let address = this.data.data_list[e.currentTarget.dataset.id]
     address = JSON.stringify(address)
     wx.navigateTo({
       url: '/pages/addressEdit/addressEdit?address=' + address
@@ -171,59 +144,52 @@ Page({
               btnkg: 1
             })
           }
-          wx.showToast({
-            title: '删除'
-          })
-          return
-          wx.request({
-            url: app.IPurl + '/api/userAddress/' + e.currentTarget.dataset.id,
-            data: {
-              token: wx.getStorageSync('token')
-            },
-            header: {
-              'content-type': 'application/x-www-form-urlencoded'
-            },
-            dataType: 'json',
-            method: 'DELETE',
-            success(res) {
-              console.log(res.data)
+          var jkurl ='/f/myinfo/buyaddress/delete'
+          var prams={
+            ids: id
+          }
+          http.postRequest(jkurl, prams,
+            function (res) {
               that.setData({
                 btnkg: 0
               })
-              if (res.data.code == 1) {
+              if (res.data.code == 100) {
+
                 wx.showToast({
-                  title: '操作成功'
+                  icon: 'none',
+                  title: '操作成功',
                 })
-                setTimeout(function() {
-                  that.getaddlist()
-                }, 1000)
+                that.getdatalist()
               } else {
-                if (res.data.msg) {
+                if (res.data.message) {
                   wx.showToast({
-                    title: res.data.msg,
-                    duration: 2000,
-                    icon: 'none'
-                  });
+                    icon: 'none',
+                    title: res.data.message
+                  })
                 } else {
                   wx.showToast({
-                    title: '网络异常',
-                    duration: 2000,
-                    icon: 'none'
-                  });
+                    icon: 'none',
+                    title: '加载失败'
+                  })
                 }
               }
             },
-            fail() {
+            function (err) {
               that.setData({
                 btnkg: 0
               })
-              wx.showToast({
-                title: '网络异常',
-                duration: 2000,
-                icon: 'none'
-              });
-            }
-          })
+              if (err.data.message) {
+                wx.showToast({
+                  icon: 'none',
+                  title: err.data.message
+                })
+              } else {
+                wx.showToast({
+                  icon: 'none',
+                  title: '加载失败'
+                })
+              }
+            })
 
         } else if (res.cancel) {
           console.log('用户点击取消')
@@ -233,7 +199,7 @@ Page({
   },
   getdatalist() {
     var that = this
-    var jkurl = '/f/myinfo/endorinfo/list'
+    var jkurl = '/f/myinfo/buyaddress/list'
 
     var prams = {}
     wx.showLoading({

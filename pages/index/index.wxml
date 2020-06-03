@@ -38,13 +38,14 @@
         <view class="star_tx">
           <image  bindtap="jump" data-url="/pages/my_index/my_index?id={{item.userId}}" src="{{filter.getgimg(item.photo)}}" mode="aspectFill"></image>
           <view>
-            <image src="/static/images/star_b.png"></image>
+            <image wx:if="{{item.appUser.role==1}}" src="/static/images/star_b.png"></image>
+            <image wx:if="{{item.appUser.role==2}}" src="/static/images/star_d.png"></image>
           </view>
         </view>
-        <view class="star_name">{{item.name}}</view>
-        <view class="star_btn quan_user_btn1" wx:if="isFollow==1" bindtap="guanzhu_qx" data-id="{{item.userId}}">已关注</view>
+        <view class="star_name">{{item.appUser.userName}}</view>
+        <view class="star_btn quan_user_btn1" wx:if="{{item.isFollow==1}}" bindtap="guanzhu_qx" data-id="{{item.userId}}">已关注</view>
         <view class="star_btn" wx:else bindtap="guanzhu" 
-        data-id="{{item.userId}}" data-name="{{item.name}}" data-tx="{{item.photo}}" data-type="3">关注</view>
+        data-id="{{item.userId}}" data-name="{{item.appUser.userName}}" data-tx="{{item.photo}}" data-type="{{item.appUser.role-1+2}}">关注</view>
       </view>
     </view>
   </scroll-view>

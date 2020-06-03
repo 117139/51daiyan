@@ -1,4 +1,5 @@
 //logs.js
+var http = require('../../utils/httputils.js'); //请求
 const app = getApp()
 
 Page({
@@ -6,27 +7,29 @@ Page({
 		btnkg:0,   //0ok  1off
     region: [],
 		moren:false,
-		editaddress:{
-			name: "aaa", 
-			tel: "18300000000", 
-			address: "北京市北京市东城区", 
-			xxaddress: "街道街道街道", 
-			moren: "true",
-		}
+		editaddress:{}
   },
   onLoad: function (option) {
+    var that =this
+    // if(option.id){
+    //   this.setData({
+    //     id: option.id
+    //   })
+    // }
     if(option.address){
 			console.log(option.address)
-      this.setData({
+      that.setData({
         editaddress: JSON.parse(option.address)
       })
-      var area = this.data.editaddress.area.split(' ')
-      this.data.region = area
-      this.setData({
-        region: this.data.region,
-        moren: this.data.editaddress.is_default
+      // var area = this.data.editaddress.area.split(' ')
+      that.data.region =[
+        that.data.editaddress.provinceName, that.data.editaddress.cityName, that.data.editaddress.countyName
+      ]
+      that.setData({
+        region: that.data.region,
+        moren: that.data.editaddress.is_default
       })
-      console.log(this.data.region)
+      console.log(that.data.region)
 		}
 		
 		
@@ -45,6 +48,49 @@ Page({
 		this.setData({
 			moren:e.detail.value==true?1:0
 		})
+  },
+  getaddress(){
+    var that=this
+    var jkurl ='/f/myinfo/buyaddress/view'
+    var prams={
+      id:that.data.id
+    }
+    http.postRequest(jkurl, prams,
+      function (res) {
+        if (res.data.code == 100) {
+
+          console.log('获取成功')
+          that.setData({
+            data_list: res.data.info ? res.data.info : []
+          })
+
+        } else {
+          if (res.data.message) {
+            wx.showToast({
+              icon: 'none',
+              title: res.data.message
+            })
+          } else {
+            wx.showToast({
+              icon: 'none',
+              title: '加载失败'
+            })
+          }
+        }
+      },
+      function (err) {
+        if (err.data.message) {
+          wx.showToast({
+            icon: 'none',
+            title: err.data.message
+          })
+        } else {
+          wx.showToast({
+            icon: 'none',
+            title: '加载失败'
+          })
+        }
+      })
   },
 	//提交表单
 	formSubmit(e) {
@@ -78,7 +124,7 @@ Page({
 		}
 		if (formresult.xxaddress=='') {
 			wx.showToast({
-				title: '请填写详情地址',
+				title: '请填写详细地址',
 				duration: 2000,
 				icon:'none'
 			});
@@ -95,75 +141,67 @@ Page({
 				btnkg:1
 			})
 		}
-    wx.showToast({
-      title: '操作成功'
-    })
-    setTimeout(function () {
-      that.setData({
-        btnkg: 0
-      })
-      wx.navigateBack()
+    var jkurl = '/f/myinfo/buyaddress/save'   //新增
 
-    }, 1000)
-    return
-		wx.request({
-			url: app.IPurl+'/api/userAddress/'+that.data.editaddress.id,
-			data:  {
-					
-					token:wx.getStorageSync('token'),
-					area:areaz, 
-					address:formresult.xxaddress,
-					user_name: formresult.name,
-					phone:formresult.tel,
-					is_default:formresult.moren
-			},
-			header: {
-				'content-type': 'application/x-www-form-urlencoded' 
-			},
-			dataType:'json',
-			method:'PUT',
-			success(res) {
-				console.log(res.data)
-				if(res.data.code==1){
-					wx.showToast({
-						title:'操作成功'
-					})
-					setTimeout(function(){
-						that.setData({
-							btnkg:0
-						})
-						wx.navigateBack()
-						
-					},1000)
-				}else{
-					that.setData({
-						btnkg:0
-					})
-					if(res.data.msg){
-						wx.showToast({
-							icon:'none',
-							title:res.data.msg
-						})
-					}else{
-						wx.showToast({
-							icon:'none',
-							title:'操作失败'
-						})
-					}
-				}
-			},
-			fail(err){
-				that.setData({
-					btnkg:0
-				})
-				wx.showToast({
-					icon:'none',
-					title:'操作失败'
-				})
-				console.log(err)
-			}
-			
-		})
+    var prams = {
+      orderId: '',
+      trackingNum: '',
+      receivername: formresult.name,
+      receiverPhone: formresult.tel,
+      receiverMobile: formresult.tel,
+      receiverMobile: formresult.tel,
+      provinceCode: '',
+      provinceName: that.data.region[0],
+      cityCode: '',
+      cityName: that.data.region[1],
+      countyCode: '',
+      countyName: that.data.region[2],
+      townCode: '',
+      townName: '',
+      address: formresult.xxaddress
+    }
+    wx.showLoading({
+      title: "正在提交中...",
+    })
+    http.postRequest(jkurl, prams,
+      function (res) {
+        if (res.data.code == 100) {
+
+          console.log('获取成功')
+          wx.showToast({
+            icon:'none',
+            title: '操作成功',
+          })
+          setTimeout(function (){
+            wx.navigateBack()
+          },1000)
+        } else {
+          if (res.data.message) {
+            wx.showToast({
+              icon: 'none',
+              title: res.data.message
+            })
+          } else {
+            wx.showToast({
+              icon: 'none',
+              title: '加载失败'
+            })
+          }
+        }
+      },
+      function (err) {
+        if (err.data.message) {
+          wx.showToast({
+            icon: 'none',
+            title: err.data.message
+          })
+        } else {
+          wx.showToast({
+            icon: 'none',
+            title: '加载失败'
+          })
+        }
+      })
   }
 	
 })

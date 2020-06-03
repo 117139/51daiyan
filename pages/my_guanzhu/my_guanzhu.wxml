@@ -5,7 +5,7 @@
   <template is="htmlStatus" data="{{...htmlStatus}}" />
   <view class="top_box">
     <view class="search_type">
-      <view class="{{ss_cur==0?'cur':''}}" bindtap="ss_type" data-type="0">全部</view>
+      <view class="{{ss_cur==''?'cur':''}}" bindtap="ss_type" data-type="">全部</view>
       <view class="{{ss_cur==1?'cur':''}}" bindtap="ss_type" data-type="1">店铺</view>
       <view class="{{ss_cur==2?'cur':''}}" bindtap="ss_type" data-type="2">明星</view>
       <view class="{{ss_cur==3?'cur':''}}" bindtap="ss_type" data-type="3">达人</view>
@@ -27,7 +27,7 @@
         <view class="user_name oh1">{{item.followName}}</view>
         <view wx:if="{{item.tp_type==1}}" bindtap="guanzhu" data-id="{{item.userId}}" 
         data-name="{{item.followName}}" data-tx="{{item.followAvatar}}" data-type="{{ss_cur}}" class="user_btn">+关注</view>
-        <view wx:else class="user_btn user_btn1" data-id="{{item.userId}}" bindtap="guanzhu_qx">已关注</view>
+        <view wx:else class="user_btn user_btn1" data-id="{{item.id}}" bindtap="guanzhu_qx">已关注</view>
       </view>
       <!-- 用户 -->
       <view wx:if="{{item.type==2||item.type==3}}" class="li_box">
@@ -40,7 +40,7 @@
         <view class="user_name oh1">{{item.followName}}</view>
         <view wx:if="{{item.tp_type==1}}" bindtap="guanzhu" data-id="{{item.userId}}" 
         data-name="{{item.followName}}" data-tx="{{item.followAvatar}}" data-type="{{ss_cur}}" class="user_btn">+关注</view>
-        <view wx:else class="user_btn user_btn1" data-id="{{item.userId}}"  bindtap="guanzhu_qx" data-id="{{item.userId}}">已关注</view>
+        <view wx:else class="user_btn user_btn1" data-id="{{item.userId}}"  bindtap="guanzhu_qx" data-id="{{item.id}}">已关注</view>
       </view>
       <!-- 代言圈 -->
       <view class="li_box" wx:if="{{item.type==5}}">
@@ -50,7 +50,7 @@
         <view class="user_name oh1">{{item.followName}}</view>
         <view wx:if="{{item.tp_type==1}}" bindtap="guanzhu" data-id="{{item.userId}}" 
         data-name="{{item.followName}}" data-tx="{{item.followAvatar}}" data-type="{{ss_cur}}" class="user_btn">+关注</view>
-        <view wx:else class="user_btn user_btn1" data-id="{{item.userId}}" bindtap="guanzhu_qx">已关注</view>
+        <view wx:else class="user_btn user_btn1" data-id="{{item.id}}" bindtap="guanzhu_qx">已关注</view>
       </view>
     </block>
 

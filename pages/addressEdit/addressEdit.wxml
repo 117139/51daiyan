@@ -3,11 +3,11 @@
 <form class="container" bindsubmit="formSubmit">
   <view class="addmsg">
 		<view class="msgtit">收货人</view>
-		<input class="msgsrk" name="name" value="{{editaddress.user_name}}" type="text" placeholder="请填写收货人姓名"/>
+		<input class="msgsrk" name="name" value="{{editaddress.receivername}}" type="text" placeholder="请填写收货人姓名"/>
 	</view>
   <view class="addmsg">
 		<view class="msgtit">手机号码</view>
-		<input class="msgsrk" name="tel" value="{{editaddress.phone}}" type="text" placeholder="请填写收货人手机号码"/>
+		<input class="msgsrk" name="tel" value="{{editaddress.receiverMobile}}" type="text" placeholder="请填写收货人手机号码"/>
 	</view>
   
 	 <picker class="addmsg"

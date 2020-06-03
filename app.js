@@ -49,18 +49,18 @@ App({
                       code: res.code,
                       rawData: rawData,
                       signature: resdata.signature,
-                      encryptedData: resdata.encryptedData,
-                      iv: resdata.iv
+                      encrypteData: resdata.encryptedData,
+                      iv: resdata.iv,
                       // nickname: uinfo.nickName,
                       // avatarurl: uinfo.avatarUrl
-                      // userName:'少女心',
-                      // password:'test'
+                      userName:'少女心',
+                      password:'test'
                     }
                     let rcode = res.code
                     console.log(res.code)
                     wx.request({
-                      // url: that.IPurl +'/f/myinfo/login/login',
-                      url: that.IPurl + '/f/myinfo/wxlogin/login',
+                      url: that.IPurl +'/f/myinfo/login/login',
+                      // url: that.IPurl + '/f/myinfo/wxlogin/login',
                       data: data,
                       header: {
                         'content-type': 'application/x-www-form-urlencoded'
@@ -69,11 +69,47 @@ App({
                       method: 'POST',
                       success(res) {
                         console.log(res.data)
-                        if (res.data.code == 100) {
+                        if (res.data.code == 100 || res.data.result=="0") {
                           console.log('登录成功')
                           wx.setStorageSync('token', res.data.token)
-                          wx.setStorageSync('loginmsg', res.data.data[0])
-                          console.log(res.data.data[0])
+                          // wx.setStorageSync('loginmsg', res.data.token)
+                          // wx.setStorageSync('loginmsg', res.data.data[0])
+                          // console.log(res.data.data[0])
+                          // return
+                          wx.request({
+                            // url: that.IPurl +'/f/myinfo/login/login',
+                            url: that.IPurl + '/f/myinfo/info/view',
+                            data: data,
+                            header: {
+                              'content-type': 'application/x-www-form-urlencoded',
+                              'Token': wx.getStorageSync("token")
+                            },
+                            dataType: 'json',
+                            method: 'POST',
+                            success(res) {
+                              console.log(res.data)
+                              if (res.data.code == 100 || res.data.result == "0") {
+                                console.log('登录成功')
+                                // wx.setStorageSync('token', res.data.token)
+                                wx.setStorageSync('usermsg', res.data.info)
+                                // console.log(res.data.data[0])
+                              } else {
+                                wx.removeStorageSync('userInfo')
+                                wx.removeStorageSync('tokenstr')
+                                wx.showToast({
+                                  icon: 'none',
+                                  title: '操作失败',
+                                })
+                              }
+
+                            },
+                            fail() {
+                              wx.showToast({
+                                icon: 'none',
+                                title: '操作失败'
+                              })
+                            }
+                          })
                         } else {
                           wx.removeStorageSync('userInfo')
                           wx.removeStorageSync('tokenstr')
@@ -123,7 +159,7 @@ App({
               // password: 'test',
               rawData: resdata.rawData,
               signature: resdata.signature,
-              encryptedData: resdata.encryptedData,
+              encrypteData: resdata.encryptedData,
               iv: resdata.iv
             }
 

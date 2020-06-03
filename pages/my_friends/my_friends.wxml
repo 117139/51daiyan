@@ -22,11 +22,11 @@
 			<view class="td1">
 				<view class="user_tx" bindtap="jump" data-url="/pages/my_index/my_index?id={{item.userId}}">
           <!-- <image class="user_tx" src="../../static/images/tx.png"></image> -->
-          <image class="user_tx" src="{{filter.getgimg(item.photo)}}" mode=""></image>
-          <image wx:if="{{item.type==2}}" class="user_v" src="../../static/images/star_b.png"></image>
-          <image wx:if="{{item.type==3}}" class="user_v" src="../../static/images/star_d.png"></image>
+          <image class="user_tx" src="{{filter.getgimg(item.photo)}}" mode="aspectFill"></image>
+          <image wx:if="{{item.appUser.role==1}}" class="user_v" src="../../static/images/star_b.png"></image>
+          <image wx:if="{{item.appUser.role==2}}" class="user_v" src="../../static/images/star_d.png"></image>
         </view>
-				<text>{{item.name}}</text>
+				<text>{{item.appUser.userName}}</text>
 			</view>
 			<view class="td2">55</view>
 			<view class="td2">{{item.endorNum}}件</view>
