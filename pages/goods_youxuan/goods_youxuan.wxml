@@ -1,4 +1,5 @@
 <!--pages/goods_tj/goods_tj.wxml-->
+<wxs src="../../utils/filter.wxs" module="filter" />
 <view class="container">
 	<view class="h_bg">
 		<image class="h_bg" src="../../static/images/images/youxuan_02.jpg"></image>
@@ -21,10 +22,12 @@
 		</view> -->
 		<!-- goods_li -->
 		<view class="goods_list2">
-			<view class="goods_li2" wx:for="{{data_list}}" wx:for-item="item" bindtap="jump" data-url="/pages/details/details">
+      <view class="zanwu c3" wx:if="{{data_list.length==0}}">
+      暂无数据</view>
+			<view class="goods_li2" wx:for="{{data_list}}" wx:for-item="item" bindtap="jump" data-url="/pages/details/details?id={{item.productId}}">
 				<view class="goods_li2_d1">
 					<view class="goods_img2">
-						<image class="goods_img2" src="../../static/images/goods.png"></image>
+						<image class="goods_img2" src="{{filter.getgimg(item.productPhoto)}}"></image>
 					</view>
 					<view class="goods_msg">
 						<view class="goods_name2 ">
@@ -36,12 +39,9 @@
 							
 						</view>
 						<view class="goods_btn1">
-							<view class="sj_list"  bindtap="jump" data-url="/pages/daiyanren/daiyanren">
-							  <image class="sj_li" src="/static/images/tx.png" mode="aspectFill"></image>
-							  <image class="sj_li" src="/static/images/tx.png" mode="aspectFill"></image>
-							  <image class="sj_li" src="/static/images/tx.png" mode="aspectFill"></image>
-							  <image class="sj_li" src="/static/images/tx.png" mode="aspectFill"></image>
-							  <image class="sj_li" src="/static/images/tx.png" mode="aspectFill"></image>
+							<view class="sj_list"  bindtap="jump" data-url="/pages/daiyanren/daiyanren?id={{item.productId}}">
+							  <image class="sj_li" src="{{filter.getgimg(item1.photo)}}" mode="aspectFill" wx:for="{{item.perEndor}}" wx:for-item="item1"></image>
+							 
 							</view>
 							<view class="goods_dy_num2">代言费：<text>¥{{item.endorsementFee}}</text></view>
 						</view>

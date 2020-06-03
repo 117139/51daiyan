@@ -59,7 +59,8 @@
 		<!-- box3 -->
 		<view class="b_list">
 			<view class="b_list_tab">
-				<view class="{{s_type==0?'cur':''}}"  bindtap="ss_type" data-type="0">爆款美妆</view>
+				<view class="{{s_type==''?'cur':''}}"  bindtap="ss_type" data-type="">全部</view>
+				<view class="{{s_type=='0'?'cur':''}}"  bindtap="ss_type" data-type="0">爆款美妆</view>
 				<view class="{{s_type==1?'cur':''}}"  bindtap="ss_type" data-type="1">精品服饰</view>
 				<view class="{{s_type==2?'cur':''}}"  bindtap="ss_type" data-type="2">品质数码</view>
 				<view class="{{s_type==3?'cur':''}}"  bindtap="ss_type" data-type="3">轻奢护肤</view>

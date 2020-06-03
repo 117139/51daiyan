@@ -18,14 +18,14 @@ Page({
       { name: '运动品', type: 3 },
       { name: '数码产品',type:4},
 		],
-		type:0,
+		type:'',
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // this.retry()
+    this.retry()
   },
 
   /**

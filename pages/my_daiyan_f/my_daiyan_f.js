@@ -7,6 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    id:'',
     loginmsg:'',
     dy_mon: 0,
     dy_num: 0,
@@ -28,6 +29,11 @@ Page({
     if (loginmsg) {
       that.setData({
         loginmsg: loginmsg
+      })
+    }
+    if(options.id){
+      that.setData({
+        id:options.id
       })
     }
     this.retry()

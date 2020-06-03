@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-		s_type:0,
+		s_type:'',
     f_data_list: [1, 1, 1, 1],
 		data_list:[1,1,1,1]
   },
@@ -126,7 +126,7 @@ Page({
     var jkurl = '/f/detection/mall/list'
 
     var prams = {
-      type: that.data.type
+      cateId: that.data.s_type
     }
     wx.showLoading({
       title: "正在加载中...",
