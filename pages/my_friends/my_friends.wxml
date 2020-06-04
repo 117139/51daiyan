@@ -15,21 +15,38 @@
 				<text wx:else class="iconfont iconXSJ-copy"></text>
 			</view>
 		</view>
-		 <view class="zanwu" wx:if="{{data_list.length==0}}">
-      暂无数据
-    </view>
-    <view wx:if="{{data_list.length>0}}" wx:for="{{data_list}}" wx:for-index="idx" wx:for-item="item" class="box_tit box_li">
+		<view class="box_tit box_li">
 			<view class="td1">
-				<view class="user_tx" bindtap="jump" data-url="/pages/my_index/my_index?id={{item.userId}}">
-          <!-- <image class="user_tx" src="../../static/images/tx.png"></image> -->
-          <image class="user_tx" src="{{filter.getgimg(item.photo)}}" mode="aspectFill"></image>
-          <image wx:if="{{item.appUser.role==1}}" class="user_v" src="../../static/images/star_b.png"></image>
-          <image wx:if="{{item.appUser.role==2}}" class="user_v" src="../../static/images/star_d.png"></image>
-        </view>
-				<text>{{item.appUser.userName}}</text>
+				<view class="user_tx" bindtap="jump" data-url="/pages/my_index/my_index">
+					<image class="user_tx" src="../../static/images/tx.png"></image>
+					<image class="user_v" src="../../static/images/star_b.png"></image>
+				</view>
+				<text>李勇</text>
 			</view>
 			<view class="td2">55</view>
-			<view class="td2">{{item.endorNum}}件</view>
+			<view class="td2">1255件</view>
+		</view>
+		<view class="box_tit box_li">
+			<view class="td1">
+				<view class="user_tx">
+					<image class="user_tx" src="../../static/images/tx.png"></image>
+					<image class="user_v" src="../../static/images/star_b.png"></image>
+				</view>
+				<text>李勇</text>
+			</view>
+			<view class="td2">55</view>
+			<view class="td2">1255件</view>
+		</view>
+		<view class="box_tit box_li">
+			<view class="td1">
+				<view class="user_tx">
+					<image class="user_tx" src="../../static/images/tx.png"></image>
+					<image class="user_v" src="../../static/images/star_b.png"></image>
+				</view>
+				<text>李勇</text>
+			</view>
+			<view class="td2">55</view>
+			<view class="td2">1255件</view>
 		</view>
 	</view>
 </view>

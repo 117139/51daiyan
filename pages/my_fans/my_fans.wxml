@@ -15,15 +15,15 @@
 	</view> -->
 	<!-- 用户 -->
 	 <view class="ss_list">
-		 <view class="zanwu" wx:if="{{data_list.length==0}}">暂无数据</view>
+		 <view class="data_null" wx:if="{{data_list.length==0}}">
+		 			 <image src="../../static/images/data_null1.png"></image>
+		 </view>
 		 <view  wx:if="{{data_list.length>0}}" class="li_box" wx:for="{{data_list}}"  wx:for-index="idx" wx:for-item="item">
 				<view class="user_tx" bindtap="jump" data-url="/pages/my_index/my_index">
-					<image class="user_tx" src="{{filter.getgimg(item.photo)}}" mode="aspectFill"></image>
+					<image class="user_tx" src="../../static/images/tx.png"></image>
 					<image class="user_v" src="../../static/images/star_b.png"></image>
-           <image wx:if="{{item.appUser.role==1}}" class="user_v" src="../../static/images/star_b.png"></image>
-          <image wx:if="{{item.appUser.role==2}}" class="user_v" src="../../static/images/star_d.png"></image>
 				</view>
-				<view class="user_name oh1">{{item.userName}}</view>
+				<view class="user_name oh1">王力宏</view>
 				<view  wx:if="{{item.tp_type==1}}"  catchtap="toupiao" data-idx="{{idx}}" class="user_btn">+关注</view>
 				<view wx:else class="user_btn user_btn1">已关注</view>
 		 </view>

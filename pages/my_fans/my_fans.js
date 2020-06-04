@@ -1,6 +1,5 @@
 // pages/search/search.js
 var htmlStatus = require('../../utils/htmlStatus/index.js')
-var http = require('../../utils/httputils.js'); //请求
 const app = getApp()
 Page({
 
@@ -114,7 +113,6 @@ Page({
         title: that.options.name,
       })
     }
-    this.retry()
   },
 
   /**
@@ -144,18 +142,12 @@ Page({
   onUnload: function () {
 
   },
-  retry() {
-    this.setData({
-      data_list: []
-    })
-    this.getstarlist()
-    // this.getdata()
-  },
+
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    this.retry()
+wx.stopPullDownRefresh();
   },
 
   /**
@@ -170,109 +162,6 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  guanzhu(e) {
-    console.log(e.currentTarget.dataset)
-    var datas = e.currentTarget.dataset
-    var jkurl = '/f/myinfo/atten/save'
-
-    var prams = {}
-    http.request(jkurl, prams,
-      function (res) {
-        if (res.data.code == 100) {
-
-          wx.showToast({
-            icon: 'none',
-            title: '操作成功'
-          })
-
-        } else {
-          if (res.data.message) {
-            wx.showToast({
-              icon: 'none',
-              title: res.data.message
-            })
-          } else {
-            wx.showToast({
-              icon: 'none',
-              title: '加载失败'
-            })
-          }
-        }
-      },
-      function (err) {
-        if (err.data.message) {
-          wx.showToast({
-            icon: 'none',
-            title: err.data.message
-          })
-        } else {
-          wx.showToast({
-            icon: 'none',
-            title: '加载失败'
-          })
-        }
-      })
-  },
-  guanzhu_qx(e) {
-    wx.showModal({
-      title: '提示',
-      content: '是否取消关注',
-      success(res) {
-        if (res.confirm) {
-          console.log('用户点击确定')
-          console.log(e.currentTarget.dataset)
-          var datas = e.currentTarget.dataset
-        } else if (res.cancel) {
-          console.log('用户点击取消')
-        }
-      }
-    })
-  },
-  getstarlist() {
-    var that = this
-    var jkurl = '/f/detection/fans/list'
-
-    var prams = {}
-    wx.showLoading({
-      title: "正在加载中...",
-    })
-    http.postRequest(jkurl, prams,
-      function (res) {
-        if (res.data.code == 100) {
-
-          console.log('获取成功')
-          that.setData({
-            data_list: res.data.info ? res.data.info : []
-          })
-
-        } else {
-          if (res.data.message) {
-            wx.showToast({
-              icon: 'none',
-              title: res.data.message
-            })
-          } else {
-            wx.showToast({
-              icon: 'none',
-              title: '加载失败'
-            })
-          }
-        }
-      },
-      function (err) {
-        if (err.data.message) {
-          wx.showToast({
-            icon: 'none',
-            title: err.data.message
-          })
-        } else {
-          wx.showToast({
-            icon: 'none',
-            title: '加载失败'
-          })
-        }
-      })
   },
   toupiao(e) {
     var idx = e.currentTarget.dataset.idx

@@ -44,8 +44,10 @@ page{
 	text-align: center;
 }
 .yhq_li_img{
-	width:650rpx;
-	height:236rpx;
+	/* width:650rpx; */
+  width:690rpx;
+	/* height:236rpx; */
+	height:248rpx;
 	position: relative;
 	z-index: 1;
 }
@@ -293,4 +295,16 @@ page{
 .data_null image{
 	width: 122rpx;
 	height: 152rpx;
+}
+.no_btn{
+  margin: 100rpx auto 50rpx;
+  width: 300rpx;
+  height: 80rpx;
+  background:#F73B67;
+  border-radius:29px;
+	color: #fff;
+	font-size: 30rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }

@@ -29,7 +29,7 @@
 			<view class="find_user1">
 				<view class="find_uimg"  wx:for="{{data_list}}" wx:index="idx" wx:for-item="item" bindtap="jump" data-url="/pages/activity/activity">
 						<image class="find_uimg" src="{{filter.imgIP('goods.png')}}"></image>
-						<view class="find_zcc">{{item.busManage.storeName}}</view>
+						<view class="find_zcc">曼特宁咖啡</view>
 				</view>
 			</view>
 		</scroll-view>
@@ -37,17 +37,17 @@
 			<image class="hd_bg_tit" src="../../static/images/hd_jl_tit.png"></image>
 			<view class="hdtit_tit">品牌代言人招募</view>
 		</view>
-		<view class="xx_box1 xx_box2" wx:for="{{data_list}}" wx:for-index="idx" wx:for-item="item">
+		<view class="xx_box1 xx_box2" wx:for="{{pinpai}}" wx:for-index="idx" wx:for-item="item">
 			<view class="pp_v1">
 				<view class="pp_img">
 					<image class="pp_img" src="{{filter.imgIP('tx.png')}}"></image>
 				</view>
 				<view class="pp_msg">
 					<view class="pp_d1">
-						<view class="pp_name oh1">{{item.busManage.storeName}}代言人优选招募</view>
-						<view class="pp_to"  bindtap="jump" data-url="/pages/activity/activity?id={{item.id}}">活动详情<text class="iconfont iconnext3"></text></view>
+						<view class="pp_name oh1">耐克代言人优选招募</view>
+						<view class="pp_to"  bindtap="jump" data-url="/pages/activity/activity">活动详情<text class="iconfont iconnext3"></text></view>
 					</view>
-					<view class="pp_d2">招募<text>{{item.recruitment}}</text>人</view>
+					<view class="pp_d2">招募<text>60</text>人</view>
 				</view>
 			</view>
 			<view class="pp_jjc">
@@ -55,23 +55,23 @@
 				<view class="pp_ph_list">
 					<view  class="pp_ph_li">
 						<view>一等奖</view>
-						<view>第{{item.detPrizePool.firstStartBonus}}～{{item.detPrizePool.firstEndBonus}}名</view>
-						<view>¥{{item.detPrizePool.firstBonus}}</view>
+						<view>第1～10名</view>
+						<view>¥10000</view>
 					</view>
 					<view  class="pp_ph_li">
 						<view>二等奖</view>
-						<view>第{{item.detPrizePool.secondStartBonus}}～{{item.detPrizePool.secondEndBonus}}名</view>
-						<view>¥{{item.detPrizePool.secondBonus}}</view>
+						<view>第11～25名</view>
+						<view>¥500</view>
 					</view>
 					<view  class="pp_ph_li">
 						<view>三等奖</view>
-						<view>第{{item.detPrizePool.thirdStartBonus}}～{{item.detPrizePool.thirdEndBonus}}名</view>
-						<view>¥{{item.detPrizePool.thirdBonus}}</view>
+						<view>第26～60名</view>
+						<view>¥300</view>
 					</view>
 				</view>
 			</view>
 			<view class="pp_tip">
-				<view class="tip_text">活动起止时间：{{filter.dateFormat(item.eventStartDate)}}-{{filter.dateFormat(item.eventEndDate)}}</view>
+				<view class="tip_text">活动起止时间：2019年1月1日</view>
 				<view wx:if="{{item.bm=='1'}}" class="tip_btn" data-idx="{{idx}}" bindtap="bm_fuc">报名</view>
 				<view wx:else class="tip_btn" >已报名</view>
 			</view>

@@ -1,5 +1,4 @@
 // pages/daiyan_find/daiyan_find.js
-var http = require('../../utils/httputils.js');   //请求
 const app = getApp()
 Page({
 
@@ -25,7 +24,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.retry()
+
   },
 
   /**
@@ -34,7 +33,7 @@ Page({
   onReady: function () {
 
   },
-  
+
   /**
    * 生命周期函数--监听页面显示
    */
@@ -55,15 +54,12 @@ Page({
   onUnload: function () {
 
   },
-  retry() {
-    this.getdyr_list()
-    // this.getdata()
-  },
+
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    this.retry()
+wx.stopPullDownRefresh();
   },
 
   /**
@@ -78,49 +74,6 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  getdyr_list() {
-    ///f/detection/person/list
-    var that = this
-    var jkurl = '/f/detection/person/list'
-
-    var prams = {}
-    http.postRequest(jkurl, prams,
-      function (res) {
-        if (res.data.code == 100) {
-
-          console.log('获取成功')
-          that.setData({
-            data_list: res.data.info
-          })
-
-        } else {
-          if (res.data.message) {
-            wx.showToast({
-              icon: 'none',
-              title: res.data.message
-            })
-          } else {
-            wx.showToast({
-              icon: 'none',
-              title: '加载失败'
-            })
-          }
-        }
-      },
-      function (err) {
-        if (err.data.message) {
-          wx.showToast({
-            icon: 'none',
-            title: err.data.message
-          })
-        } else {
-          wx.showToast({
-            icon: 'none',
-            title: '加载失败'
-          })
-        }
-      })
   },
   bm_fuc(e){
     var idx = e.currentTarget.dataset.idx

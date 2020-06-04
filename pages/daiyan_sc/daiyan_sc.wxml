@@ -9,13 +9,13 @@
 			<view><image class="c_bl" src="../../static/images/images/lj_bl_05.jpg"></image>1分钟了解51代言</view>
 			<text class="iconfont iconnext3"></text>
 		</view>
-		<!-- <view class="yhq_box">
+		<view class="yhq_box">
 			<view class="yhp_tit">
 				<view class="yhq_t_l">共享优惠券</view>
 				<view class="yhq_t_r"  bindtap="jump" data-url="/pages/my_yhq/my_yhq">更多<text class="iconfont iconnext3"></text></view>
 			</view>
 			<view class="yhq_li">
-				!-- <image class="yhq_li" src="../../static/images/images/yhq_09.jpg"></image> --
+				<!-- <image class="yhq_li" src="../../static/images/images/yhq_09.jpg"></image> -->
         <view class="yhq_li_img">
           <image class="yhq_li_img" src="../../static/images/yhq_bg_03.png"  mode="aspectFill"></image>
           <view class="yhq_pri">
@@ -31,27 +31,57 @@
 				</view>
 				<view class="user_form">来自好友<text>张鸣</text>的共享</view>
 			</view>
-		</view> -->
+		</view>
 		<!-- box2 -->
 		<view class="yhq_box">
 			<view class="yhp_tit">
 				<view class="yhq_t_l">好友的代言商品</view>
-				<view class="yhq_t_r" bindtap="jump" data-url="/pages/my_daiyan_f/my_daiyan_f">更多<text class="iconfont iconnext3"></text></view>
+				<view class="yhq_t_r" bindtap="jump" data-url="/pages/my_daiyan/my_daiyan">更多<text class="iconfont iconnext3"></text></view>
 			</view>
 			<view class="hy_goods">
-				<view class="hy_goods_li" wx:if="{{idx<3}}" wx:for="{{f_data_list}}" wx:for-index="idx" wx:for-item="item" bindtap="jump" data-url="/pages/details/details?id={{item.id}}">
+				<view class="hy_goods_li"  bindtap="jump" data-url="/pages/details/details">
 					<view class="hy_goods_img">
-						<image class="hy_goods_img" src="{{filter.getgimg(item.commodityPhone)}}" mode="aspectFill"></image>
+						<image class="hy_goods_img" src="{{filter.imgIP('goods.png')}}"></image>
 					</view>
 					<view class="goods_pri">
 						<view class="goods_tximg">
-							<image class="goods_tximg" src="{{filter.getgimg(item.photo)}}"></image>
+							<image class="goods_tximg" src="{{filter.imgIP('tx.png')}}"></image>
 						</view>
-						<view class="goods_mon">￥{{item.commodityPrice}}</view>
+						<view class="goods_mon">￥688</view>
 					</view>
 					<view class="hy_sy">
 							<view class="hy_sy_box">代言收益</view>
-							<view class="sy_mon">￥{{item.endorsementFee}}</view>
+							<view class="sy_mon">￥30</view>
+					</view>
+				</view>
+				<view class="hy_goods_li"  bindtap="jump" data-url="/pages/details/details">
+					<view class="hy_goods_img">
+						<image class="hy_goods_img" src="{{filter.imgIP('goods.png')}}"></image>
+					</view>
+					<view class="goods_pri">
+						<view class="goods_tximg">
+							<image class="goods_tximg" src="{{filter.imgIP('tx.png')}}"></image>
+						</view>
+						<view class="goods_mon">￥688</view>
+					</view>
+					<view class="hy_sy">
+							<view class="hy_sy_box">代言收益</view>
+							<view class="sy_mon">￥30</view>
+					</view>
+				</view>
+				<view class="hy_goods_li"  bindtap="jump" data-url="/pages/details/details">
+					<view class="hy_goods_img">
+						<image class="hy_goods_img" src="{{filter.imgIP('goods.png')}}"></image>
+					</view>
+					<view class="goods_pri">
+						<view class="goods_tximg">
+							<image class="goods_tximg" src="{{filter.imgIP('tx.png')}}"></image>
+						</view>
+						<view class="goods_mon">￥688</view>
+					</view>
+					<view class="hy_sy">
+							<view class="hy_sy_box">代言收益</view>
+							<view class="sy_mon">￥30</view>
 					</view>
 				</view>
 			</view>
@@ -59,31 +89,29 @@
 		<!-- box3 -->
 		<view class="b_list">
 			<view class="b_list_tab">
-				<view class="{{s_type==''?'cur':''}}"  bindtap="ss_type" data-type="">全部</view>
-				<view class="{{s_type=='0'?'cur':''}}"  bindtap="ss_type" data-type="0">爆款美妆</view>
+				<view class="{{s_type==0?'cur':''}}"  bindtap="ss_type" data-type="0">爆款美妆</view>
 				<view class="{{s_type==1?'cur':''}}"  bindtap="ss_type" data-type="1">精品服饰</view>
 				<view class="{{s_type==2?'cur':''}}"  bindtap="ss_type" data-type="2">品质数码</view>
 				<view class="{{s_type==3?'cur':''}}"  bindtap="ss_type" data-type="3">轻奢护肤</view>
 				<view class="{{s_type==4?'cur':''}}"  bindtap="ss_type" data-type="4">限时特惠</view>
 			</view>
 			<view class="b_li_box">
-				<view class="b_li"  wx:for="{{data_list}}" wx:for-item="item" 
-          bindtap="jump" data-url="/pages/details/details?id={{item.id}}">
+				<view class="b_li"  wx:for="{{data_list}}" wx:for-item="item" bindtap="jump" data-url="/pages/details/details">
 					<view class="li_img">
-						<image class="li_img" src="{{filter.getgimg(item.mainImage)}}" mode="aspectFill"></image>
+						<image class="li_img" src="{{filter.imgIP('/images/goods15_02.jpg')}}"></image>
 					</view>
 					<view class="li_msg">
-						<view class="li_name oh1">{{item.name}}</view>
+						<view class="li_name oh1">意式浓精品挂耳咖啡新款</view>
 						<view class="goods_pri">
 							<view class="goods_tximg">
 								<image class="goods_tximg" src="{{filter.imgIP('tx.png')}}"></image>
 							</view>
-							<view class="goods_mon">￥{{item.perferentialPrice}}</view>
+							<view class="goods_mon">￥688</view>
 						</view>
 						<view class="hy_sy">
 								<view class="hy_sy_box">代言收益</view>
-								<view class="sy_mon">￥{{item.endorsementFee}}</view>
-								<view class="sy_xl">销量：{{'99'}}</view>
+								<view class="sy_mon">￥30</view>
+								<view class="sy_xl">销量：99</view>
 						</view>
 					</view>
 				</view>

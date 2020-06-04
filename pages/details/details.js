@@ -1,7 +1,6 @@
 // pages/details/details.js
 
 var htmlStatus = require('../../utils/htmlStatus/index.js')
-var http = require('../../utils/httputils.js'); //请求
 const app = getApp()
 Page({
 
@@ -9,15 +8,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-    id:'',
     indicatorDots: false,
     autoplay: true,
     circular: true,
     interval: 3000,
     duration: 1000,
-
-    goods:'',     //商品信息
-
     data_list:[
       { value1: '苏门答腊黄金曼特宁深度烘培' },
       { value1: '耳挂咖啡' },
@@ -55,13 +50,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    if(options.id){
-      this.setData({
-        id:options.id
-      })
-      this.retry()
-    }
-   
+    
   },
 
   /**
@@ -93,14 +82,12 @@ Page({
   onUnload: function () {
 
   },
-  retry() {
-    this.getdatas()
-  },
+
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    this.retry()
+    wx.stopPullDownRefresh();
   },
 
   /**
@@ -122,51 +109,6 @@ Page({
     this.setData({
       cur_swiper:num
     })
-  },
-  getdatas(){
-    ///f/detection/mall/view
-    var that = this
-    var jkurl = '/f/detection/mall/view'
-
-    var prams = {
-      id:that.data.id
-    }
-    http.postRequest(jkurl, prams,
-      function (res) {
-        if (res.data.code == 100) {
-
-          console.log('获取成功')
-          that.setData({
-            goods: res.data.info ? res.data.info : ''
-          })
-
-        } else {
-          if (res.data.message) {
-            wx.showToast({
-              icon: 'none',
-              title: res.data.message
-            })
-          } else {
-            wx.showToast({
-              icon: 'none',
-              title: '加载失败'
-            })
-          }
-        }
-      },
-      function (err) {
-        if (err.data.message) {
-          wx.showToast({
-            icon: 'none',
-            title: err.data.message
-          })
-        } else {
-          wx.showToast({
-            icon: 'none',
-            title: '加载失败'
-          })
-        }
-      })
   },
   //数量
   onChange(e) {

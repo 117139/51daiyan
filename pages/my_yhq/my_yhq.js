@@ -5,6 +5,11 @@ Page({
   data: {
     btnkg: 0,     //0  ok       1 off
     htmlReset: 0,
+    data_list:[
+      { arg1: 10, type: 1 },
+      { arg1: 20, type: 2 },
+      {arg1:10,type:1},
+    ],
     goods: [
       { "num": 1, xuan: false },
         { "num": 1, xuan: false },
@@ -14,15 +19,22 @@ Page({
     spimg: [],
     goods_sele: [
      { "num": 1, xuan: false },
+      { "num": 1, xuan: false },
        { "num": 1, xuan: false },
     ],
 		// goods_sele: [],
     xuan: false,
     all: false,
-    sum: '0.00'
+    sum: '0.00',
+    form_type:''
   },
-  onLoad: function () {
-
+  onLoad: function (option) {
+    var that = this
+    if (option.type) {
+      that.setData({
+        form_type: option.type
+      })
+    }
   },
   onShow() {
     // wx.setNavigationBarTitle({
@@ -45,6 +57,38 @@ Page({
   },
   onReady() {
 
+  },
+  nouse(){
+    var pages = getCurrentPages();   //当前页面
+    var prevPage = pages[pages.length - 2];   //上一页面
+    prevPage.setData({
+      //直接给上一个页面赋值
+      yhmsg:'',
+    });
+
+    wx.navigateBack({
+      //返回
+      delta: 1
+    })
+  },
+  xz_add(e) {
+    var that = this
+    if (that.data.form_type != 1) {
+      return
+    }
+    console.log(e.currentTarget.dataset.idx)
+    var idx = e.currentTarget.dataset.idx
+    var pages = getCurrentPages();   //当前页面
+    var prevPage = pages[pages.length - 2];   //上一页面
+    prevPage.setData({
+      //直接给上一个页面赋值
+      yhmsg: that.data.data_list[idx],
+    });
+
+    wx.navigateBack({
+      //返回
+      delta: 1
+    })
   },
   onfocus() {
     return false;

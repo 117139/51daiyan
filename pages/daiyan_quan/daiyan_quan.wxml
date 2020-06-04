@@ -5,17 +5,16 @@
 <view class="container">
   <template is="htmlStatus" data="{{...htmlStatus}}" />
   <view class="index_box1">
-    <view class="sousuo_box">
-    <text class="iconfont iconsousuo"></text>
-      <input placeholder="搜索代言圈"  confirm-type="search" bindconfirm="sub_ss"></input>
+    <view class="sousuo_box" bindtap="jump" data-url="/pages/search/search">
+      <text class="iconfont iconsousuo"></text> 搜索代言圈
     </view>
   </view>
   <view class="list">
-    <view class="li_box" wx:for="{{data_list}}" wx:for-item="item" bindtap="jump" data-url="/pages/daiyan_quan_xq/daiyan_quan_xq?id={{item.id}}&name={{item.name}}">
+    <view class="li_box" wx:for="{{data_list}}" wx:for-item="item" bindtap="jump" data-url="/pages/daiyan_quan_xq/daiyan_quan_xq">
       <view class="li_img">
-        <image class="li_img" src="{{filter.getgimg(item.commodityPhone)}}"></image>
+        <image class="li_img" src="{{filter.imgIP('tx.png')}}"></image>
       </view>
-      <text class="li_name">{{item.name}}</text>
+      <text class="li_name">国潮</text>
       <view class="li_js oh2">体验国潮文化的魅力体验国潮文化的魅力</view>
     </view>
   </view>

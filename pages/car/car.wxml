@@ -118,7 +118,7 @@
 			<!-- <view><text class="fz26">合计:</text>￥{{sum}}</view>
 			<view class="fz22 c9">不含运费</view> -->
 		</view>
-		<view class="jiesuan jiesuan1" bindtap="openOrder">删除</view>
+		<view class="jiesuan jiesuan1" bindtap="cardel">删除</view>
 		<view class="jiesuan" bindtap="openOrder">结算</view>
 	</view>
 </view>

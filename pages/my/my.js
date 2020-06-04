@@ -1,6 +1,5 @@
 // pages/my/my.js
 var htmlStatus = require('../../utils/htmlStatus/index.js')
-var http = require('../../utils/httputils.js'); //请求
 const app = getApp()
 Page({
 
@@ -8,26 +7,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userInfo:'',
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that =this
-    var userInfo = wx.getStorageSync('userInfo')
-    console.log(userInfo)
-    that.setData({
-      userInfo: userInfo
-    })
-    var loginmsg = wx.getStorageSync('loginmsg')
-    if (loginmsg){
-      that.setData({
-        loginmsg: loginmsg
-      })
-      
-    }
+
   },
 
   /**
@@ -41,19 +28,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    var that = this
-    var userInfo = wx.getStorageSync('userInfo')
-    console.log(userInfo)
-    that.setData({
-      userInfo: userInfo
-    })
-    var loginmsg = wx.getStorageSync('loginmsg')
-    if (loginmsg) {
-      that.setData({
-        loginmsg: loginmsg
-      })
-      that.getdaiyanzs()
-    }
+
   },
 
   /**
@@ -89,49 +64,6 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  getdaiyanzs(){
-    ///f/myinfo/index/list
-    var that = this
-    var jkurl = '/f/myinfo/index/list'
-
-    var prams = {}
-    http.postRequest(jkurl, prams,
-      function (res) {
-        if (res.data.code == 100) {
-
-          console.log('获取成功')
-          that.setData({
-            daiyanzs: res.data.info ? res.data.info : ''
-          })
-
-        } else {
-          if (res.data.message) {
-            wx.showToast({
-              icon: 'none',
-              title: res.data.message
-            })
-          } else {
-            wx.showToast({
-              icon: 'none',
-              title: '加载失败'
-            })
-          }
-        }
-      },
-      function (err) {
-        if (err.data.message) {
-          wx.showToast({
-            icon: 'none',
-            title: err.data.message
-          })
-        } else {
-          wx.showToast({
-            icon: 'none',
-            title: '加载失败'
-          })
-        }
-      })
   },
   jump(e) {
     console.log(e.currentTarget.dataset.type)
