@@ -141,9 +141,10 @@ Page({
     })
   },
   openOrder() {
-    // wx.navigateTo({
-    // 	url:"/pages/Order/Order"
-    // })
+    wx.navigateTo({
+      url: '/pages/Order/Order'
+    })
+    return
     let that = this
     let xuanG = that.data.goods_sele
     let idG = ''
@@ -325,6 +326,10 @@ Page({
     app.jump(e)
   },
   cardel(e) {
+    wx.showToast({
+      title: '删除成功',
+    })
+    return
     var that = this
     if (that.data.btnkg == 1) {
       return

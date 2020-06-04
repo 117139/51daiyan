@@ -1,4 +1,5 @@
 <!--pages/car/car.wxml-->
+<wxs src="../../utils/filter.wxs" module="filter" />
 <view wx:if="{{htmlReset==1}}" class="chongshi" bindtap='cload'>重试</view>
 <view class="container" wx:if="{{htmlReset==0}}">
 	<view class="data_null" wx:if="{{goods.length==0}}">
@@ -13,18 +14,18 @@
      
 		<view class="goods1">
 		
-			<view class="xuanze" data-selec="{{idx}}" catchtap="select">
+			<!-- <view class="xuanze" data-selec="{{idx}}" catchtap="select">
 				<view class="xuanze1 {{goods_sele[idx].xuan==true? 'xuanze2':''}}">
 					<icon  wx:if="{{goods_sele[idx].xuan==true}}" type="success" size="14" color="#F7B43B" />
 				</view>
-			</view>
+			</view> -->
 			<!-- <view class="goodsImg" wx:if="{{item.goods_pic}}"> -->
-			<view class="yhq_li_img">
-				<image wx:if="{{idx==0}}" class="yhq_li_img" src="../../static/images/yhq_bg_03.png"  mode="aspectFill"></image>
+			<view class="yhq_li_img"  bindtap="xz_add" data-idx="{{idx}}">
+				<image wx:if="{{idx==0}}" class="yhq_li_img" src="{{filter.imgIP('mj.png')}}"  mode="aspectFill"></image>
 				<image wx:if="{{idx==1}}" class="yhq_li_img" src="../../static/images/yhq_bg_07.png"  mode="aspectFill"></image>
 				<image wx:if="{{idx==2}}" class="yhq_li_img" src="../../static/images/yhq_bg_10.png"  mode="aspectFill"></image>
 				<view class="yhq_pri">
-					<view class="d1"><text>¥10元</text> 代金券</view>
+					<view class="d1"><text>¥{{data_list[idx].arg1}}元</text> 代金券</view>
 					<view class="d2">2020.02.14-2020.02.18</view>
 				</view>
 				
@@ -32,8 +33,8 @@
 		</view>	
     
 	</view>
-	
-	<view class="vbottom" wx:if="{{goods.length!==0}}">
+	<view class="no_btn" bindtap="nouse">不使用优惠券</view>
+	<!-- <view class="vbottom" wx:if="{{goods.length!==0}}">
 		<view class="selecAll" bindtap="selecAll">
 			<view class="xuanze1 all {{all==true? 'xuanze2':''}}">
 				<icon  wx:if="{{all==true}}" type="success" size="14" color="#F7B43B" />
@@ -41,10 +42,9 @@
 			全选
 		</view>
 		<view class="heji flex_1">
-			<!-- <view><text class="fz26">合计:</text>￥{{sum}}</view>
-			<view class="fz22 c9">不含运费</view> -->
+			
 		</view>
 		<view class="jiesuan jiesuan1" bindtap="data_del">删除</view>
 		<view class="jiesuan" bindtap="data_open">共享</view>
-	</view>
+	</view> -->
 </view>

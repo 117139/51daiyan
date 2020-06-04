@@ -5,14 +5,14 @@
 <view class="hengxian"></view>
 <view wx:if="{{htmlReset==1}}" class="chongshi" bindtap='cload'>重试</view>
 <view class="container" wx:if="{{htmlReset==0}}">
- 
+
   <view class="address" data-url="/pages/myaddress/myaddress?type=1" bindtap="jump">
     <view class="add_l">
       <view wx:if="{{address.user_name}}" class="al_1">{{address.user_name}}
         <text class="l_tel" as>{{address.phone}}</text>
       </view>
       <view wx:if="{{address.user_name}}" class="al_2">{{address.area}}{{address.address}}</view>
-      <view wx:if="{{!address.user_name}}">请选择地址</view>
+      <view wx:if="{{!address.user_name}}" class="fz30">请选择地址</view>
     </view>
     <!-- <view class="add_r"> -->
     <text class="iconfont iconnext"></text>
@@ -22,7 +22,7 @@
     <image src="/static/images/orderborder.png"></image>
   </view>
   <view class="goodsBox contbox">
-    <view class="goods" wx:for="{{goods}}" wx:for-index="idx" wx:for-item="item" wx:key="idx" data-tab="{{idx}}" >
+    <view class="goods" wx:for="{{goods}}" wx:for-index="idx" wx:for-item="item" wx:key="idx" data-tab="{{idx}}">
       <view class="dianpu_tit">
         <image class="dp_logo" src="../../static/images/tx.png"></image>
         <text>石说的达开旗舰店</text>
@@ -46,12 +46,14 @@
       </view>
       <view class="o_xj">
         <view></view>
-        <view>共3件，小记 <text>¥144</text></view>
-        
+        <view>共3件，小记
+          <text>¥144</text>
+        </view>
+
       </view>
     </view>
   </view>
-  
+
   <!-- <view class="guige">
     <view class="guige_l">
       <view class="guige_l_name">优惠券</view>
@@ -64,7 +66,7 @@
   <!-- <view class="hengxian"></view> -->
   <view class="guige">
     <view class="guige_l">
-    <view class="bl1"></view>
+      <view class="bl1"></view>
       <view class="guige_l_name">支付方式</view>
     </view>
     <view class="fz26 c3 paytype">
@@ -81,6 +83,28 @@
     <view class="fz26 c9">{{yunfei==0? '免运费':'+￥'+yunfei}}</view>
     <!-- <text class="iconfont iconsangedian fz36 c9"></text> -->
     <!-- </view> -->
+  </view>
+  <view class="guige" data-url="/pages/my_yhq/my_yhq?type=1" bindtap="jump">
+    <view class="guige_l">
+      <view class="guige_l_name">优惠券</view>
+      <!-- <view>10元</view> -->
+    </view>
+    <view class="dis_flex aic">
+      <view class="fz26 c9">{{!yhmsg? '无可用':'-￥'+yhmsg.arg1}}</view>
+      <text class="iconfont iconnext3 fz30 c9"></text>
+    </view>
+  </view>
+  <view class="guige">
+    <view class="guige_l">
+      <view class="guige_l_name">代言豆抵扣</view>
+      <!-- <view>10元</view> -->
+    </view>
+    <view class="dis_flex aic">
+      <view class="fz26 c9">我的代言豆：{{my_dou}}</view>
+      <view class="xuanze1 {{my_dou_xuan==true? 'xuanze2':''}}" catchtap="select">
+        <icon wx:if="{{my_dou_xuan==true}}" type="success" size="14" color="#F7B43B" />
+      </view>
+    </view>
   </view>
 
 

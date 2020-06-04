@@ -338,3 +338,18 @@ text{
   border-radius:3rpx;
   margin-right: 6rpx;
 }
+.xuanze1{
+	width: 34rpx;
+	height: 34rpx;
+	border-radius: 50%;
+	border: 1px solid #ddd;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex:none;
+  margin-left: 15rpx;
+}
+.xuanze2{
+	border: 0;
+}
