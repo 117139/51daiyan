@@ -14,7 +14,15 @@
         <image class="dy_logo" src="{{filter.imgIP('tx.png')}}"></image>
       </view>
       <view class="dy_msg">
-        <view class="pd_name">体育</view>
+        <!-- <view class="pd_name">体育</view> -->
+         <view class="pd_name dis_flex aic">体育
+ 
+         <view  wx:if="{{item.tp_type==1}}" data-idx="{{idx}}" catchtap="toupiao" class="user_btn">+关注</view>
+ 
+                             <view wx:else class="user_btn user_btn1">已关注</view>
+ 
+        </view>
+ 
         <view class="py_js"><text>简介</text>这是一个具有很多体育爱好者集结而成的圈子，里面包含各种体育达人的日常分享，以及如何辨别名牌运动器材真假等等…</view>
       </view>
     </view>
