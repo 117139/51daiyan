@@ -1,4 +1,5 @@
 // pages/star_list/star_list.js
+var http = require('../../utils/httputils.js'); //请求
 const app = getApp()
 Page({
 
@@ -6,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-		s_type:0
+		s_type:1
   },
 
   /**
@@ -18,6 +19,7 @@ Page({
 				s_type:options.type
 			})
 		}
+    this.retry()
   },
 
   /**
@@ -47,12 +49,18 @@ Page({
   onUnload: function () {
 
   },
-
+  retry() {
+    this.setData({
+      data_list: []
+    })
+    this.getstarlist()
+    // this.getdata()
+  },
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    wx.stopPullDownRefresh();
+    this.retry()
   },
 
   /**
@@ -81,6 +89,53 @@ Page({
     that.setData({
     	s_type:e.currentTarget.dataset.type
     })
+  },
+  getstarlist() {
+    var that = this
+    var jkurl = '/f/detection/celebrity/list'
+
+    var prams = {
+      type: that.data.s_type
+    }
+    wx.showLoading({
+      title: "正在加载中...",
+    })
+    http.postRequest(jkurl, prams,
+      function (res) {
+        if (res.data.code == 100) {
+
+          console.log('获取成功')
+          that.setData({
+            data_list: res.data.info ? res.data.info : []
+          })
+
+        } else {
+          if (res.data.message) {
+            wx.showToast({
+              icon: 'none',
+              title: res.data.message
+            })
+          } else {
+            wx.showToast({
+              icon: 'none',
+              title: '加载失败'
+            })
+          }
+        }
+      },
+      function (err) {
+        if (err.data.message) {
+          wx.showToast({
+            icon: 'none',
+            title: err.data.message
+          })
+        } else {
+          wx.showToast({
+            icon: 'none',
+            title: '加载失败'
+          })
+        }
+      })
   },
 	jiazai:function (){
     console.log('触底')

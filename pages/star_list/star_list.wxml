@@ -8,8 +8,8 @@
       <view class="js_box">
 				<view class="js_box1">
 					<view class="show_type">
-						<view class="show_type_li {{s_type==0?'cur':''}}"  bindtap="ss_type" data-type="0">明星</view>
-						<view class="show_type_li {{s_type==1?'cur':''}}" bindtap="ss_type" data-type="1">达人</view>
+						<view class="show_type_li {{s_type==1?'cur':''}}"  bindtap="ss_type" data-type="1">明星</view>
+						<view class="show_type_li {{s_type==2?'cur':''}}" bindtap="ss_type" data-type="2">达人</view>
 						<view class="flex_1"></view>
 						<view class="star_ss">
 							<input type="text" />
