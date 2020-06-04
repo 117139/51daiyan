@@ -5,8 +5,8 @@
 <view class="container">
   <template is="htmlStatus" data="{{...htmlStatus}}" />
   <view class="index_box1">
-    <view class="sousuo_box" bindtap="jump" data-url="/pages/search/search">
-      <text class="iconfont iconsousuo"></text> 搜索代言圈
+    <view class="sousuo_box">
+      <text class="iconfont iconsousuo"></text> <input class="flex_1 c3" type="text" placeholder="搜索代言圈" />
     </view>
   </view>
   <view class="list">
