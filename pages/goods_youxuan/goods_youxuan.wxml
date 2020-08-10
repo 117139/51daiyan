@@ -36,7 +36,7 @@
 							
 						</view>
 						<view class="goods_btn1">
-							<view class="sj_list"  bindtap="jump" data-url="/pages/daiyanren/daiyanren">
+							<view class="sj_list"  catchtap="jump" data-url="/pages/daiyanren/daiyanren">
 							  <image class="sj_li" src="/static/images/tx.png" mode="aspectFill"></image>
 							  <image class="sj_li" src="/static/images/tx.png" mode="aspectFill"></image>
 							  <image class="sj_li" src="/static/images/tx.png" mode="aspectFill"></image>

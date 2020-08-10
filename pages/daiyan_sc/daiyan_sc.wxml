@@ -9,13 +9,13 @@
 			<view><image class="c_bl" src="../../static/images/images/lj_bl_05.jpg"></image>1分钟了解51代言</view>
 			<text class="iconfont iconnext3"></text>
 		</view>
-		<view class="yhq_box">
+		<!-- <view class="yhq_box">
 			<view class="yhp_tit">
 				<view class="yhq_t_l">共享优惠券</view>
 				<view class="yhq_t_r"  bindtap="jump" data-url="/pages/my_yhq/my_yhq">更多<text class="iconfont iconnext3"></text></view>
 			</view>
 			<view class="yhq_li">
-				<!-- <image class="yhq_li" src="../../static/images/images/yhq_09.jpg"></image> -->
+				<!-- <image class="yhq_li" src="../../static/images/images/yhq_09.jpg"></image> --
         <view class="yhq_li_img">
           <image class="yhq_li_img" src="../../static/images/yhq_bg_03.png"  mode="aspectFill"></image>
           <view class="yhq_pri">
@@ -31,7 +31,7 @@
 				</view>
 				<view class="user_form">来自好友<text>张鸣</text>的共享</view>
 			</view>
-		</view>
+		</view> -->
 		<!-- box2 -->
 		<view class="yhq_box">
 			<view class="yhp_tit">

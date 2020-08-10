@@ -180,7 +180,7 @@
         <image class="htk_tx" src="{{filter.imgIP('tx.png')}}"></image>
       </view>
       <view class="htk_name">张佳</view>
-      <view class="htk_num">买过14次</view>
+      <!-- <view class="htk_num">买过14次</view> -->
     </view>
   </view>
   <!-- 本店回头客都在买 -->
